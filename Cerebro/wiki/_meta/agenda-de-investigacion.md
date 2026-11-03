@@ -17,6 +17,7 @@ etiquetas: [sprint-1]
 Es el plan de trabajo del segundo cerebro. Las preguntas detalladas viven en cada página de área (sección «Preguntas a investigar»). El objetivo, las fuentes y el criterio de terminado de cada área están en `PROMPT-MAESTRO.md` §8. Cada tarea cerrada se marca aquí y se registra en `log.md` como `research`.
 
 ## Sprint 1 · Semanas 1–2 · «Sin esto no hay precios ni cobros»
+Plan detallado, con responsables y fuentes de la semana: [[plan-sprint-1]].
 - [ ] Preparar y agendar las 10 entrevistas → [[programa-10-entrevistas]]
 - [ ] Hacer y transcribir las primeras 3 a 5 entrevistas e ingerirlas (flujo 7.4)
 - [ ] Lista de preguntas al contador en Polonia y en Colombia, y reunión → [[impuestos-y-facturacion]], [[figura-legal]]

@@ -4,7 +4,7 @@
 > Formato: `[[página]]: resumen de una línea · *estado* · número de fuentes`.
 > Las plantillas están en `wiki/_plantillas/` y no se indexan.
 
-**Páginas:** 97 · **Fuentes ingeridas:** 1 · **Última actualización:** 2026-11-03
+**Páginas:** 98 · **Fuentes ingeridas:** 1 · **Última actualización:** 2026-11-03
 
 **Empieza por aquí:** [[tesis-arvyon]] → [[preguntas-abiertas]] → [[agenda-de-investigacion]] → [[curriculo]]
 
@@ -140,7 +140,7 @@
 
 ## 15 · Análisis archivados
 
-*(Vacío: aquí se archivan las respuestas valiosas de las consultas).*
+- [[plan-sprint-1]]: Plan del Sprint 1 (semanas 1–2): 5 tareas, 3 fuentes prioritarias y criterio de terminado, con el estado del cerebro al arrancar. · *borrador* · fuentes: 1
 
 
 ## 16 · Decisiones
