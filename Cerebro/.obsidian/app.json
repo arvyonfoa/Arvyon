@@ -1,0 +1,12 @@
+{
+  "attachmentFolderPath": "raw/assets",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "wiki/15-analisis",
+  "showFrontmatter": true,
+  "userIgnoreFilters": [
+    "wiki/_plantillas/"
+  ]
+}
