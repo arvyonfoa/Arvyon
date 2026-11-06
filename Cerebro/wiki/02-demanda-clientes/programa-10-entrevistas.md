@@ -21,7 +21,6 @@ Validar las hipótesis H2, H3, H4 y H8 de la [[tesis-arvyon]]: dolores reales, d
 
 ## Muestra propuesta (por validar)
 - 4 de comercio, 4 de servicios y 2 de medianas o grandes empresas (para contrastar).
-- Incluir 1 o 2 **contadores**: cuentan su propio dolor y muestran si podrían enviarnos clientes ([[nichos-y-alianzas]]).
 - Al menos 3 ciudades distintas.
 - Quien decide la compra (dueño o gerente), no un empleado.
 - Cómo conseguirlas: red personal, LinkedIn, grupos de empresarios, cámaras de comercio y contadores.
@@ -32,9 +31,6 @@ Validar las hipótesis H2, H3, H4 y H8 de la [[tesis-arvyon]]: dolores reales, d
 3. Hablar el 20 % del tiempo y escuchar el 80 %.
 4. Pedir permiso para grabar o tomar notas, y **anonimizar** (Ley 1581; ver [[proteccion-de-datos]]).
 5. Duración: 30 a 40 minutos por videollamada.
-
-## Mensaje para conseguir la cita (WhatsApp o LinkedIn)
-> «Hola, [nombre]. Soy [tu nombre], de Arvyon. Estamos investigando cómo las empresas colombianas están usando (o no) la inteligencia artificial. ¿Me regalarías 30 minutos por videollamada esta semana? No te voy a vender nada: quiero aprender de tu experiencia. Como agradecimiento, te ofrezco un diagnóstico gratis de lo que la IA podría hacer en tu empresa».
 
 ## Guion (listo para usar)
 **Apertura (3 min).** «Gracias por tu tiempo. Estamos investigando cómo las empresas colombianas están usando la IA. No te voy a vender nada hoy; quiero aprender de tu experiencia. ¿Te parece bien si tomo notas?»
@@ -67,11 +63,6 @@ Validar las hipótesis H2, H3, H4 y H8 de la [[tesis-arvyon]]: dolores reales, d
 15. ¿Conoces a otro empresario al que le interese esta conversación?
 16. Como agradecimiento, te ofrezco un diagnóstico exprés gratis de 45 minutos. ¿Te interesa agendarlo?
 
-## Justo después de colgar (5 min)
-1. Anota las 3 frases textuales más fuertes.
-2. Puntúa la señal de compra de 0 a 5.
-3. Guarda las notas anonimizadas en `raw/entrevistas/AAAA-MM-DD-sector-tamano.md` y pide al agente: «Ingiere la entrevista».
-
 ## Registro
 | # | Fecha | Página | Sector | Tamaño | Ciudad | Señal de compra (0–5) |
 |---|---|---|---|---|---|---|
@@ -95,4 +86,3 @@ Validar las hipótesis H2, H3, H4 y H8 de la [[tesis-arvyon]]: dolores reales, d
 - [[estrategia-de-precios]]: las preguntas 9 a 11 alimentan los precios.
 - [[perfil-cliente-ideal]]: los perfiles se afinan aquí.
 - [[habilidades-de-consultoria]]: técnica de entrevista de descubrimiento.
-- [[plan-sprint-1]]: las entrevistas son las tareas 1 y 2 del sprint.
