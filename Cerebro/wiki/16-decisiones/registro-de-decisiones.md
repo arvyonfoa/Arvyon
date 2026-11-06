@@ -20,12 +20,13 @@ Cada decisión importante tiene su página `dec-NNN-…` (plantilla [[decision]]
 |---|---|---|
 | 001 | [[dec-001-nombre-de-la-consultora]] | ✅ decidida: **Arvyon** |
 | 002 | [[dec-002-roles-y-participacion]] | abierta |
-| 003 | [[dec-003-figura-legal-y-pais-de-facturacion]] | abierta · prioridad Sprint 1 |
+| 003 | [[dec-003-figura-legal-y-pais-de-facturacion]] | abierta · prioridad al salir al mercado |
 | 004 | [[dec-004-sectores-para-empezar]] | abierta · propuesta: comercio y servicios |
 | 005 | [[dec-005-precios-de-los-paquetes]] | abierta · después de las 10 entrevistas |
 | 006 | [[dec-006-inversion-inicial]] | abierta |
 | 007 | [[dec-007-fecha-de-arranque]] | abierta |
 | 008 | [[dec-008-youtube-como-canal-estrategico]] | ✅ decidida: Instagram + YouTube |
+| 009 | [[dec-009-fase-de-aprendizaje]] | ✅ decidida: primero aprender, después investigar el mercado |
 
 > [!tip] Propuesta de la presentación
 > Una sesión de trabajo de 2 horas para cerrar los puntos 1 a 4 y arrancar el mes 1 ([[presentacion-socios-2026-10]], diapositiva 18). El punto 1 (nombre) ya está cerrado.

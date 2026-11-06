@@ -13,6 +13,9 @@ etiquetas: [curriculo]
 
 # Currículo del consultor de IA de Arvyon
 
+> [!note] Fase actual
+> Esta es la prioridad mientras el fundador aprende ([[dec-009-fase-de-aprendizaje]]).
+
 ## Principio
 Estudia lo que el cliente va a comprar, no lo que está de moda. Cada bloque termina en tres cosas: un **ejercicio aplicado**, una **pieza de contenido** ([[sistema-de-contenido]]) y un **módulo vendible** ([[paquetes-estandar]], [[paquete-a-la-medida]]).
 
@@ -54,7 +57,7 @@ Niveles: **B** (explicarlo) · **I** (implementarlo) · **A** (diseñarlo y vend
 
 *(Marca `[x]` cuando el nivel esté aprendido **y** tenga su ejercicio hecho).*
 
-## Plan de 12 semanas (paralelo a la [[hoja-de-ruta-90-dias]])
+## Plan de 12 semanas (fase de aprendizaje, antes de la [[hoja-de-ruta-90-dias]])
 | Semanas | Bloques | Resultado concreto |
 |---|---|---|
 | 1–2 | 1, 2, 11-B | Saber dar el [[diagnostico-expres]] y las entrevistas |

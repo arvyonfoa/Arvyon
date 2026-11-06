@@ -40,6 +40,7 @@ Cada hipótesis tiene un **estado** (sin validar · reforzada · debilitada · v
 3. Que las herramientas de software incorporen la IA "sin consultor" (Copilot, el software contable) → ver [[mapa-competitivo]].
 
 ## Historial de la tesis
+- 2026-11-06: el fundador entra en fase de aprendizaje antes de validar hipótesis en el mercado ([[dec-009-fase-de-aprendizaje]]). Se elimina el Sprint 1.
 - 2026-11-03: versión inicial a partir de la presentación para socios. Se añade YouTube como canal estratégico ([[dec-008-youtube-como-canal-estrategico]]). Nombre decidido: Arvyon ([[dec-001-nombre-de-la-consultora]]).
 
 ## Conexiones
