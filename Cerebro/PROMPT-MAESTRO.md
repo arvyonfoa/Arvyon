@@ -201,7 +201,7 @@ Las plantillas completas están en `wiki/_plantillas/`. Si no existen, créalas 
 5. Crea las páginas de cada área en estado `semilla`, con las preguntas de la sección 8.
 6. Ejecuta `python3 herramientas/revisar_wiki.py` (créalo si no existe; ver 7.7) y corrige todo lo que marque como error.
 7. Escribe en `log.md` las entradas `setup` e `ingest`.
-8. Entrega al humano un resumen de 10 líneas y **propón el Sprint 1 de la sección 10**.
+8. Entrega al humano un resumen de 10 líneas y **propón el siguiente paso del plan de estudio (sección 9.3)**.
 
 ### 7.2 Ingesta de una fuente (el flujo más importante)
 1. **Ubica** la fuente en `raw/`. Si te pasan una URL, guarda primero el contenido en Markdown en la subcarpeta adecuada de `raw/` (con la URL y la fecha de captura en la cabecera). Nunca resumas algo que no quedó guardado.
@@ -549,14 +549,15 @@ Cada bloque tiene tres niveles: **B** (básico, para explicarlo), **I** (interme
 
 ## 10. Orden de prioridades (sprints de investigación)
 
+> **Fase actual: aprendizaje.** Antes de cualquier sprint, el fundador sigue el plan de estudio de la sección 9.3. Mientras dure esta fase, no propongas entrevistas ni otras acciones con terceros ([[dec-009-fase-de-aprendizaje]]).
+
 | Sprint | Semanas | Foco | Por qué primero |
 |---|---|---|---|
-| 1 | 1–2 | Guion y arranque de las 10 entrevistas · Retención en la fuente y figura legal (preguntas al contador) · Mapa competitivo (15 competidores) | Sin esto no hay precios ni forma de cobrar |
-| 2 | 3–4 | Precios por valor · Costos fijos · Punto de equilibrio · Herramientas | Decisión [[dec-005-precios-de-los-paquetes]] e [[dec-006-inversion-inicial]] |
-| 3 | 5–6 | Sistema de contenido: Instagram + YouTube (búsquedas, formatos, calendario de 30 días) · Web | Empezar a atraer los 10 diagnósticos exprés |
-| 4 | 7–8 | Casos de uso por sector (comercio y servicios) · Fichas técnicas de los paquetes | Para los 2 pilotos |
-| 5 | 9–10 | Dimensionamiento del mercado (TAM, SAM, SOM) · Financiación pública · Alianzas (contadores, cámaras) | Escalar después de validar |
-| 6 | 11–12 | Revisión de la tesis · DOFA actualizada · Riesgos · Plan del trimestre siguiente | Cierre de los 90 días |
+| 1 | 1–2 | Precios por valor · Costos fijos · Punto de equilibrio · Herramientas | Decisión [[dec-005-precios-de-los-paquetes]] e [[dec-006-inversion-inicial]] |
+| 2 | 3–4 | Sistema de contenido: Instagram + YouTube (búsquedas, formatos, calendario de 30 días) · Web | Empezar a atraer los 10 diagnósticos exprés |
+| 3 | 5–6 | Casos de uso por sector (comercio y servicios) · Fichas técnicas de los paquetes | Para los 2 pilotos |
+| 4 | 7–8 | Dimensionamiento del mercado (TAM, SAM, SOM) · Financiación pública · Alianzas (contadores, cámaras) | Escalar después de validar |
+| 5 | 9–10 | Revisión de la tesis · DOFA actualizada · Riesgos · Plan del trimestre siguiente | Cierre de los 90 días |
 
 ## 11. Reglas de calidad (y lo que NO debes hacer)
 
@@ -575,6 +576,6 @@ Cada bloque tiene tres niveles: **B** (básico, para explicarlo), **I** (interme
 
 1. Ejecuta el flujo de **Arranque (7.1)**.
 2. Si la estructura ya existe, ejecuta `python3 herramientas/revisar_wiki.py`, lee `index.md`, `00-panorama/tesis-arvyon.md` y `_meta/agenda-de-investigacion.md`, y dime en 10 líneas cómo está el segundo cerebro.
-3. Propón el **Sprint 1** con 5 tareas concretas, las 3 fuentes que debo conseguir esta semana y el guion de la primera entrevista listo para usar.
+3. Mira el avance marcado en [[curriculo]] y propón **el siguiente paso de estudio**: qué bloque toca, qué recursos conseguir esta semana y qué ejercicio hacer.
 
 ## ===== FIN DEL PROMPT =====

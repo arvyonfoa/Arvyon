@@ -29,3 +29,11 @@
 - Aportes del fundador posteriores a la fuente: nombre **Arvyon** ([[dec-001-nombre-de-la-consultora]]) y YouTube como canal estratégico ([[dec-008-youtube-como-canal-estrategico]], [[youtube]]).
 - Contradicción o precisión: el dato 61 % / 37,7 % es de empresas de 50+ empleados y no aplica a micro ([[adopcion-ia-colombia]]).
 - Siguiente paso propuesto: Sprint 1 de [[agenda-de-investigacion]] (entrevistas, contador, competencia).
+
+## [2026-11-06] decision | Fase de aprendizaje: se elimina el Sprint 1
+- El fundador está aprendiendo y no hará entrevistas ni otras acciones con terceros por ahora → [[dec-009-fase-de-aprendizaje]].
+- Se elimina el Sprint 1 de [[agenda-de-investigacion]]; los demás sprints se renumeran (1 a 5) y quedan en pausa. Se cierra sin unir el PR del plan del Sprint 1.
+- Páginas tocadas: [[agenda-de-investigacion]], [[preguntas-abiertas]], [[programa-10-entrevistas]] (en pausa), [[impuestos-y-facturacion]], [[dec-003-figura-legal-y-pais-de-facturacion]], [[registro-de-decisiones]], [[curriculo]] (ahora es la prioridad), [[tesis-arvyon]].
+
+## [2026-11-06] schema | El prompt maestro arranca por el estudio
+- `PROMPT-MAESTRO.md`: §7.1 y §12 proponen el siguiente paso de estudio en lugar del Sprint 1; §10 sin el Sprint 1 y con la fase de aprendizaje como fase actual.

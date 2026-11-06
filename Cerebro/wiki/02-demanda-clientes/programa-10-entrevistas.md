@@ -8,13 +8,16 @@ fuentes: ["[[presentacion-socios-2026-10]]"]
 creado: 2026-11-03
 actualizado: 2026-11-03
 revisar_antes: 2027-02-03
-etiquetas: [sprint-1]
+etiquetas: []
 ---
 
 # Programa de 10 entrevistas con empresarios
 
 ## En una frase
 Son 10 conversaciones con empresarios colombianos **antes** de poner precios ([[presentacion-socios-2026-10]], diapositivas 10 y 16). Son la fuente más valiosa del segundo cerebro.
+
+> [!warning] En pausa
+> No se hacen entrevistas durante la fase de aprendizaje ([[dec-009-fase-de-aprendizaje]]). El guion queda listo para cuando se retomen.
 
 ## Objetivo
 Validar las hipótesis H2, H3, H4 y H8 de la [[tesis-arvyon]]: dolores reales, disposición a pagar, forma de compra, confianza en un servicio remoto desde Europa y canales donde se informan.

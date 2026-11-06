@@ -4,7 +4,7 @@
 > Formato: `[[página]]: resumen de una línea · *estado* · número de fuentes`.
 > Las plantillas están en `wiki/_plantillas/` y no se indexan.
 
-**Páginas:** 97 · **Fuentes ingeridas:** 1 · **Última actualización:** 2026-11-03
+**Páginas:** 98 · **Fuentes ingeridas:** 1 · **Última actualización:** 2026-11-06
 
 **Empieza por aquí:** [[tesis-arvyon]] → [[preguntas-abiertas]] → [[agenda-de-investigacion]] → [[curriculo]]
 
@@ -154,9 +154,10 @@
 - [[dec-006-inversion-inicial]]: [abierta] Cuánto se invierte al arrancar en web, dominio, herramientas y publicidad, y quién lo aporta. · *borrador* · fuentes: 1
 - [[dec-007-fecha-de-arranque]]: [abierta] El día 1 del plan de 90 días. · *borrador* · fuentes: 1
 - [[dec-008-youtube-como-canal-estrategico]]: [decidida] Además de Instagram, Arvyon usará YouTube (y otros medios) como canal estratégico de autoridad y búsqueda. · *estable* · fuentes: 0
+- [[dec-009-fase-de-aprendizaje]]: [decidida] Antes de salir al mercado, el fundador se forma; entrevistas y otras acciones con terceros quedan en pausa. · *estable* · fuentes: 0
 
 ## Meta · agenda, lagunas y glosario
 
-- [[agenda-de-investigacion]]: Sprints de investigación de 2 semanas con tareas concretas, entregables y criterio de terminado, enlazados a cada área. · *borrador* · fuentes: 0
+- [[agenda-de-investigacion]]: Sprints de investigación de 2 semanas, en pausa durante la fase de aprendizaje; con tareas, entregables y criterio de terminado. · *borrador* · fuentes: 0
 - [[glosario]]: Términos de IA, consultoría, finanzas y legal usados en la wiki, en lenguaje simple. · *borrador* · fuentes: 0
 - [[lagunas]]: Lista viva de datos que faltan, fuentes por conseguir y afirmaciones por verificar, detectadas en ingestas y revisiones. · *borrador* · fuentes: 0
