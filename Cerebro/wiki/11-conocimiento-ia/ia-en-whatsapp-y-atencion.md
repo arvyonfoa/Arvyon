@@ -4,9 +4,9 @@ area: conocimiento
 estado: semilla
 confianza: media
 resumen: "Bloque 5: asistentes de WhatsApp con base de conocimiento y traspaso a un humano, métricas y costos de la plataforma."
-fuentes: []
+fuentes: ["[[2026-11-barrido-ligero-competidores]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -34,6 +34,9 @@ Monta un asistente de demostración para una clínica estética ficticia: pregun
 ## Cómo se convierte en producto y contenido
 - Módulo: «Atención al cliente con IA» ([[paquete-a-la-medida]]) y el asistente de WhatsApp de Optimiza.
 - Video de YouTube: «Cómo responder WhatsApp 24/7 sin perder el trato humano».
+
+## Lo que usa la competencia (2026-11)
+Es el servicio más repetido entre las agencias que atienden pymes: asistentes de WhatsApp que responden, agendan, califican clientes y cobran, conectados al CRM; algunas suman **agentes de voz** telefónicos ([[capacidades-de-la-competencia]], [[2026-11-barrido-ligero-competidores]]).
 
 ## Conexiones
 - [[curriculo]]: bloque n.º 5.

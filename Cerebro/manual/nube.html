@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La nube de Claude Code · Manual Cerebro Arvyon</title>
+<meta name="description" content="Por qué el cerebro vive en GitHub y qué son los entornos en la nube.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/estilo.css">
+<script src="assets/manual.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <rect x="1" y="1" width="30" height="30" rx="8" class="solid-a"/>
+  <circle cx="10" cy="20" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <circle cx="22" cy="12" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+</svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
+    <span class="topbar-spacer"></span>
+    <span class="version-pill">v1.0 · 2026-11-08</span>
+    <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="nav-details" open>
+      <summary>Capítulos del manual</summary>
+      <div class="nav-panel">
+        <p class="nav-title">Capítulos</p>
+        <ul class="nav-list" id="chapters"></ul>
+        <div class="toc-block">
+          <p class="nav-title">En esta página</p>
+          <ul class="nav-list toc" id="toc"></ul>
+        </div>
+      </div>
+    </details>
+  </aside>
+  <main>
+    <article class="content">
+      <p class="eyebrow">Capítulo 6</p>
+
+<h1>La nube de Claude Code</h1>
+<p class="lead">Cuando usas Claude Code desde la web, la app de escritorio o el teléfono, el agente no trabaja en tu computador: trabaja en una máquina temporal en la nube. Entender eso explica por qué todo tiene que terminar en GitHub.</p>
+
+<h2 id="sesion">Qué es una sesión en la nube</h2>
+<p>Cada sesión recibe una <strong>máquina virtual nueva</strong>: un computador prestado, con Ubuntu 24.04, unos 4 procesadores, 16 GB de memoria y 30 GB de disco (límites aproximados que pueden cambiar). En esa máquina se clona tu repositorio, Claude trabaja y, al final, sube los cambios a GitHub.</p>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 250" role="img" aria-labelledby="d-ses-t">
+    <title id="d-ses-t">Ciclo de vida de una sesión en la nube</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="10" y="30" width="130" height="70" rx="10" class="box-amber"/>
+    <text x="75" y="60" text-anchor="middle" class="t-b">Abres sesión</text><text x="75" y="82" text-anchor="middle" class="t-s">repo + entorno</text>
+    <rect x="165" y="30" width="130" height="70" rx="10" class="box"/>
+    <text x="230" y="60" text-anchor="middle" class="t-b">Máquina nueva</text><text x="230" y="82" text-anchor="middle" class="t-s">Ubuntu 24.04</text>
+    <rect x="320" y="30" width="130" height="70" rx="10" class="box"/>
+    <text x="385" y="60" text-anchor="middle" class="t-b">Script</text><text x="385" y="82" text-anchor="middle" class="t-s">si el entorno tiene</text>
+    <rect x="475" y="30" width="130" height="70" rx="10" class="box"/>
+    <text x="540" y="60" text-anchor="middle" class="t-b">Clona el repo</text><text x="540" y="82" text-anchor="middle" class="t-m">arvyonfoa/Arvyon</text>
+    <rect x="630" y="30" width="120" height="70" rx="10" class="box-a"/>
+    <text x="690" y="60" text-anchor="middle" class="t-b">Claude</text><text x="690" y="82" text-anchor="middle" class="t-s">trabaja</text>
+    <path d="M142 65 L161 65" class="ln" marker-end="url(#fl)"/>
+    <path d="M297 65 L316 65" class="ln" marker-end="url(#fl)"/>
+    <path d="M452 65 L471 65" class="ln" marker-end="url(#fl)"/>
+    <path d="M607 65 L626 65" class="ln" marker-end="url(#fl)"/>
+    <path d="M690 102 L690 150" class="ln-a" marker-end="url(#fla)"/>
+    <rect x="560" y="152" width="190" height="64" rx="10" class="box-green"/>
+    <text x="655" y="180" text-anchor="middle" class="t-b">Commit y push</text><text x="655" y="200" text-anchor="middle" class="t-s">a GitHub: se guarda</text>
+    <rect x="200" y="152" width="300" height="64" rx="10" class="box-red"/>
+    <text x="350" y="180" text-anchor="middle" class="t-b">Inactiva: se pausa; luego se borra</text>
+    <text x="350" y="200" text-anchor="middle" class="t-s">lo que no se subió, se pierde</text>
+    <path d="M556 184 L504 184" class="ln" marker-end="url(#fl)"/>
+  </svg>
+  </div>
+  <figcaption>Tras unos minutos sin actividad, la máquina se pausa con sus archivos; si pasa mucho tiempo, se recupera para otros usuarios y hay que empezar en una máquina nueva.</figcaption>
+</figure>
+
+<h2 id="por-que-github">Por qué GitHub es el disco duro del cerebro</h2>
+<ol class="steps">
+  <li><strong>La máquina es temporal.</strong> Cada sesión empieza con un repositorio recién clonado y la máquina se recupera después. GitHub es lo único que permanece.</li>
+  <li><strong>Las sesiones no comparten disco.</strong> Una sesión nueva no ve lo que otra dejó a medias: solo ve lo que está en GitHub.</li>
+  <li><strong>Revisas antes de aceptar.</strong> El agente sube a una rama y abre un pull request; tú decides si entra en <code>main</code>.</li>
+  <li><strong>Tus credenciales quedan fuera.</strong> Un proxy de GitHub pone tus permisos reales por fuera de la máquina; dentro solo hay una credencial limitada.</li>
+</ol>
+<div class="note warn"><p class="note-title">Regla práctica</p><p>Si algo importante solo está en el chat o en la máquina, no existe todavía. Pide siempre: «haz commit y push».</p></div>
+
+<h2 id="entornos">Qué es un entorno en la nube</h2>
+<p>Un <strong>entorno</strong> es la configuración guardada con la que arrancan las sesiones: qué sitios de internet pueden visitar, qué claves pueden usar sin verlas, qué se instala al empezar y qué variables se definen. Lo eliges en el selector que está debajo del cuadro de mensaje al empezar una sesión. Tienes dos:</p>
+<div class="table-wrap"><table>
+  <tr><th>Entorno</th><th>Acceso a la red</th><th>Variables</th><th>Script</th><th>Secretos</th></tr>
+  <tr><td><strong>Arvyon</strong> (el que usa este proyecto)</td><td>Completo: cualquier sitio</td><td>ninguna</td><td>no tiene</td><td>ninguno</td></tr>
+  <tr><td><strong>Default</strong> (el que crea Claude por defecto)</td><td>De confianza: solo la lista de sitios permitidos</td><td>ninguna</td><td>no tiene</td><td>ninguno</td></tr>
+</table></div>
+<p>Un entorno tiene cuatro piezas:</p>
+
+<h3 id="red">1 · Acceso a la red</h3>
+<p>Decide a qué sitios de internet puede conectarse la máquina. Hay cuatro niveles:</p>
+<div class="table-wrap"><table>
+  <tr><th>Nivel</th><th>Qué permite</th><th>Cuándo usarlo</th></tr>
+  <tr><td><strong>Ninguno</strong></td><td>Sin salida a internet desde la máquina</td><td>Trabajo con información muy sensible</td></tr>
+  <tr><td><strong>De confianza</strong> (Trusted)</td><td>Solo una lista de sitios conocidos: registros de paquetes, GitHub, herramientas de la nube</td><td>Programar sin necesidad de navegar</td></tr>
+  <tr><td><strong>Completo</strong> (Full)</td><td>Cualquier sitio</td><td>Investigación web abierta, como la de este proyecto</td></tr>
+  <tr><td><strong>Personalizado</strong> (Custom)</td><td>Tu propia lista de dominios, con o sin la lista por defecto</td><td>Cuando solo necesitas unos pocos sitios concretos</td></tr>
+</table></div>
+<pre><code># Ejemplo de dominios permitidos en el nivel Personalizado (uno por línea)
+api.ejemplo.com
+*.ejemplo.com</code></pre>
+<p>Algunas cosas funcionan con cualquier nivel: GitHub (por su propio proxy), los conectores de Claude que actives (como Gmail o Google Drive, que pasan por los servidores de Anthropic) y los sitios que tengan un secreto de red guardado.</p>
+
+<h3 id="secretos">2 · Secretos de red</h3>
+<p>Un <strong>secreto de red</strong> es una clave de API o un token que guardas en el entorno para que Claude pueda usar un servicio <strong>sin ver nunca la clave</strong>. Cuando una petición sale de la máquina hacia el sitio indicado, el proxy de Anthropic le añade la clave por fuera.</p>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 220" role="img" aria-labelledby="d-sec-t">
+    <title id="d-sec-t">Cómo viaja una petición con un secreto de red</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="10" y="50" width="200" height="110" rx="12" class="box"/>
+    <text x="110" y="85" text-anchor="middle" class="t-b">Máquina de la sesión</text>
+    <text x="110" y="108" text-anchor="middle" class="t-s">Claude pide datos</text>
+    <text x="110" y="128" text-anchor="middle" class="t-s">sin la clave</text>
+    <rect x="290" y="50" width="180" height="110" rx="12" class="box-violet"/>
+    <text x="380" y="85" text-anchor="middle" class="t-b">Proxy</text>
+    <text x="380" y="108" text-anchor="middle" class="t-s">añade la clave</text>
+    <text x="380" y="128" text-anchor="middle" class="t-s">guardada en el entorno</text>
+    <rect x="550" y="50" width="200" height="110" rx="12" class="box-green"/>
+    <text x="650" y="85" text-anchor="middle" class="t-b">Servicio externo</text>
+    <text x="650" y="108" text-anchor="middle" class="t-m">api.ejemplo.com</text>
+    <text x="650" y="128" text-anchor="middle" class="t-s">responde normal</text>
+    <path d="M212 105 L286 105" class="ln" marker-end="url(#fl)"/>
+    <path d="M472 105 L546 105" class="ln-a" marker-end="url(#fla)"/>
+    <text x="510" y="96" text-anchor="middle" class="t-a">+ clave</text>
+    <text x="380" y="195" text-anchor="middle" class="t-s">La clave nunca entra en la máquina ni aparece en archivos o variables.</text>
+  </svg>
+  </div>
+</figure>
+<ul>
+  <li>Se añaden en el entorno, en la sección <em>Network secrets</em>, de uno en uno, indicando el sitio y la clave.</li>
+  <li>Después de guardarla, la clave no se puede volver a ver.</li>
+  <li>Nunca se envía a GitHub, a la API de Anthropic, a los registros públicos de paquetes ni durante el script de configuración.</li>
+  <li><strong>Nunca pegues una clave en el chat.</strong> Si el agente necesita una, te mostrará un formulario seguro para guardarla.</li>
+</ul>
+
+<h3 id="script">3 · Script de configuración</h3>
+<p>Un pequeño programa (en Bash) que se ejecuta <strong>al empezar una sesión nueva, antes de que arranque Claude</strong>, con permisos de administrador. Sirve para instalar herramientas que la máquina no trae.</p>
+<pre><code>#!/bin/bash
+# Ejemplo: instalar un programa que no viene instalado
+apt update && apt install -y shellcheck</code></pre>
+<ul>
+  <li>Debe terminar sin errores; si falla, la sesión no arranca bien.</li>
+  <li>Debe tardar menos de unos 5 minutos: así Anthropic guarda una foto de la máquina ya preparada y las siguientes sesiones arrancan rápido. Esa foto se renueva cuando cambias el script o la red, o a los 7 días aproximadamente.</li>
+  <li>No puede leer las variables ni los secretos del entorno.</li>
+</ul>
+<p>El cerebro de Arvyon solo usa Python, que ya viene instalado, así que <strong>no necesita script</strong>.</p>
+
+<h3 id="variables">4 · Variables de entorno</h3>
+<p>Valores de configuración que cualquier comando de la sesión puede leer. Se escriben con el formato <code>NOMBRE=valor</code>, una por línea.</p>
+<pre><code>NIVEL_LOG=detallado
+ZONA_HORARIA=America/Bogota</code></pre>
+<div class="note bad"><p class="note-title">No son para claves</p><p>Cualquiera que use el entorno puede leer las variables. Para claves y contraseñas se usan los secretos de red.</p></div>
+<p>Si cambias una variable, una sesión que ya está abierta la verá cuando su máquina se reanude o se reconstruya; una sesión nueva la ve desde el principio.</p>
+
+<h2 id="comparacion">Variables, secretos y script: cuál uso</h2>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Variable de entorno</th><th>Secreto de red</th><th>Script de configuración</th></tr>
+  <tr><td>Para qué</td><td>Configuración no sensible</td><td>Claves de API y tokens</td><td>Instalar herramientas</td></tr>
+  <tr><td>¿Claude lo ve?</td><td>Sí</td><td>No</td><td>Ve el resultado</td></tr>
+  <tr><td>¿Cuándo actúa?</td><td>En cada comando</td><td>En cada petición al sitio indicado</td><td>Al crear la máquina</td></tr>
+  <tr><td>Ejemplo</td><td><code>ZONA_HORARIA=America/Bogota</code></td><td>La clave de la API de un CRM</td><td><code>apt install -y …</code></td></tr>
+</table></div>
+
+<h2 id="editar">Dónde se cambia</h2>
+<ol class="steps">
+  <li>Al empezar una sesión nueva: el primer control debajo del cuadro de mensaje abre el selector de entornos. Pasa el cursor sobre <strong>Arvyon</strong> y pulsa el icono de ajustes.</li>
+  <li>En una sesión abierta: pulsa la flecha junto al título de la sesión y elige <em>Edit cloud environment</em>.</li>
+  <li>En el diálogo verás <em>Network access</em>, <em>Setup script</em>, <em>Environment variables</em> y <em>Network secrets</em>. Guarda con <em>Save changes</em>.</li>
+</ol>
+<p>El agente también puede proponerte cambios en el entorno, pero siempre aparece una tarjeta para que tú los apruebes.</p>
+
+<h2 id="recomendacion">Recomendación para Arvyon</h2>
+<div class="note ok"><p class="note-title">Hoy está bien así</p><p>El acceso completo es práctico para la investigación web de la Fase 1, y el entorno no guarda claves, así que hay poco que proteger.</p></div>
+<div class="note warn"><p class="note-title">Cuándo revisarlo</p><p>Si un día guardas un secreto de red (por ejemplo, la clave de un CRM o de WhatsApp para una demo), considera pasar a <strong>Personalizado</strong> con solo los sitios necesarios. Así, aunque el agente lea una página web con instrucciones maliciosas, no podrá enviar información a cualquier sitio.</p></div>
+
+      <nav class="pager" id="pager" aria-label="Capítulos anterior y siguiente"></nav>
+      <p class="foot">Manual Cerebro Arvyon v1.0 · 2026-11-08 · Se actualiza solo cuando el fundador lo decide. Archivo en el repositorio: <code>Cerebro/manual/nube.html</code></p>
+    </article>
+  </main>
+</div>
+<script>
+  // En pantallas pequeñas el menú empieza cerrado.
+  if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
+    var d = document.getElementById("nav-details"); if (d) d.removeAttribute("open");
+  }
+</script>
+</body>
+</html>

@@ -14,21 +14,24 @@ etiquetas: []
 # Preguntas abiertas prioritarias
 
 ## Cómo se usa
+> [!note] Fase de aprendizaje
+> Estas preguntas se investigarán cuando termine la fase de aprendizaje ([[dec-009-fase-de-aprendizaje]]).
+
 Es la lista corta. El detalle está en las páginas de cada área y en [[agenda-de-investigacion]]. Cuando una pregunta se responde, se tacha, se enlaza el análisis de `wiki/15-analisis/` (si existe) y se sube la siguiente.
 
-## Prioridad 1 (Sprint 1)
+## Prioridad 1
 - [ ] ¿Qué dolores y qué disposición a pagar aparecen en las 10 entrevistas? → [[programa-10-entrevistas]]
 - [ ] ¿Qué retención en la fuente aplica el cliente colombiano si facturamos desde Polonia? ¿Hay convenio de doble imposición? → [[impuestos-y-facturacion]]
 - [ ] ¿Qué figura legal conviene: Polonia, Colombia o ambos países? → [[figura-legal]]
 - [ ] ¿Quiénes son los 15 competidores más visibles y qué cobran? → [[mapa-competitivo]]
 
-## Prioridad 2 (Sprint 2–3)
+## Prioridad 2
 - [ ] ¿Qué precio en COP tiene cada paquete y cuál es el punto de equilibrio? → [[estrategia-de-precios]], [[escenarios-y-punto-de-equilibrio]]
 - [ ] ¿Qué búsquedas sobre IA para negocios hacen los empresarios colombianos en YouTube y Google? → [[youtube]], [[senales-de-demanda]]
 - [ ] ¿Qué 10 casos de uso dan resultado en menos de 30 días en comercio y servicios? → [[casos-de-uso-por-sector]]
 - [ ] ¿Qué herramientas y qué costo mensual tendrá la operación? → [[stack-herramientas]]
 
-## Prioridad 3 (Sprint 4–6)
+## Prioridad 3
 - [ ] ¿Cuál es el TAM, el SAM y el SOM en número de empresas y en COP? → [[tamano-de-mercado]]
 - [ ] ¿Hay convocatorias públicas que financien la adopción de IA en mipymes? → [[financiacion-y-convocatorias]]
 - [ ] ¿Qué aliados pueden referir clientes (contadores, cámaras, gremios)? → [[nichos-y-alianzas]]

@@ -4,9 +4,9 @@ area: competencia
 estado: borrador
 confianza: media
 resumen: "Los cuatro diferenciales de Arvyon, la frase que usamos con el cliente y la que evitamos."
-fuentes: ["[[presentacion-socios-2026-10]]"]
+fuentes: ["[[presentacion-socios-2026-10]]", "[[2026-11-barrido-ligero-competidores]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -30,6 +30,10 @@ etiquetas: []
 - [ ] ¿Qué diferencial valoran más los empresarios en las entrevistas? (Hipótesis H2 de [[tesis-arvyon]]).
 - [ ] ¿Algún competidor usa ya el argumento europeo? ([[matriz-comparativa]])
 - [ ] Probar 3 variantes del mensaje en anuncios o publicaciones y medir cuál genera más diagnósticos.
+
+## Alerta de la competencia (2026-11-08)
+> [!warning] La oferta tipo Inicia ya existe
+> En Colombia ya se venden talleres por rol con política de uso de IA, bancos de prompts y seguimiento a 30 y 60 días (por ejemplo, Think TIC, desde 6.000.000 COP + IVA por programa) ([[2026-11-barrido-ligero-competidores]]). El estándar europeo y la medición del antes y el después tienen que ser visibles y demostrables, no solo una frase.
 
 ## Conexiones
 - [[matriz-comparativa]]: evidencia de la diferenciación.

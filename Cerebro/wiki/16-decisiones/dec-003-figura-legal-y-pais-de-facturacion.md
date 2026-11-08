@@ -39,7 +39,7 @@ etiquetas: []
 El mayor ingreso neto después de impuestos, la facilidad de cobro en COP y la confianza del cliente.
 
 ## Decisión
-*(Pendiente; prioridad del Sprint 1).*
+*(Pendiente; prioridad cuando termine la fase de aprendizaje).*
 
 ## Conexiones
 - [[registro-de-decisiones]]: índice de decisiones.

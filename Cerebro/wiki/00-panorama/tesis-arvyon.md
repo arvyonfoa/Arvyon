@@ -4,9 +4,9 @@ area: panorama
 estado: borrador
 confianza: media
 resumen: "Hipótesis centrales del negocio, su estado de validación y el historial de cambios de la tesis."
-fuentes: ["[[presentacion-socios-2026-10]]"]
+fuentes: ["[[presentacion-socios-2026-10]]", "[[2026-11-barrido-ligero-competidores]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: [tesis]
 ---
@@ -40,6 +40,8 @@ Cada hipótesis tiene un **estado** (sin validar · reforzada · debilitada · v
 3. Que las herramientas de software incorporen la IA "sin consultor" (Copilot, el software contable) → ver [[mapa-competitivo]].
 
 ## Historial de la tesis
+- 2026-11-08: el barrido de competidores muestra que la oferta tipo Inicia (taller + política de IA + seguimiento) ya existe en Colombia; se refuerza la necesidad de demostrar el diferencial europeo y la medición (afecta a H2 y H4) ([[2026-11-barrido-ligero-competidores]]). Fase 1 fijada del 2026-11-09 al 2026-12-15.
+- 2026-11-06: el fundador entra en fase de aprendizaje antes de validar hipótesis en el mercado ([[dec-009-fase-de-aprendizaje]]). Se elimina el Sprint 1.
 - 2026-11-03: versión inicial a partir de la presentación para socios. Se añade YouTube como canal estratégico ([[dec-008-youtube-como-canal-estrategico]]). Nombre decidido: Arvyon ([[dec-001-nombre-de-la-consultora]]).
 
 ## Conexiones

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mapa del cerebro · Manual Cerebro Arvyon</title>
+<meta name="description" content="Cada carpeta, archivo y apartado del cerebro, explicado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/estilo.css">
+<script src="assets/manual.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <rect x="1" y="1" width="30" height="30" rx="8" class="solid-a"/>
+  <circle cx="10" cy="20" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <circle cx="22" cy="12" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+</svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
+    <span class="topbar-spacer"></span>
+    <span class="version-pill">v1.0 · 2026-11-08</span>
+    <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="nav-details" open>
+      <summary>Capítulos del manual</summary>
+      <div class="nav-panel">
+        <p class="nav-title">Capítulos</p>
+        <ul class="nav-list" id="chapters"></ul>
+        <div class="toc-block">
+          <p class="nav-title">En esta página</p>
+          <ul class="nav-list toc" id="toc"></ul>
+        </div>
+      </div>
+    </details>
+  </aside>
+  <main>
+    <article class="content">
+      <p class="eyebrow">Capítulo 3</p>
+
+<h1>Mapa del cerebro</h1>
+<p class="lead">Este capítulo recorre el cerebro carpeta por carpeta. Todo está dentro de la carpeta <code>Cerebro/</code> del repositorio.</p>
+
+<h2 id="vista-general">Vista general</h2>
+<div class="tree"><span class="f">Cerebro/</span>
+├── <span class="f">PROMPT-MAESTRO.md</span>   <span class="c">el prompt completo: rol, reglas, flujos, agenda y currículo</span>
+├── <span class="f">CLAUDE.md</span>           <span class="c">las reglas que Claude Code lee en cada sesión</span>
+├── <span class="f">AGENTS.md</span>           <span class="c">lo mismo para otros agentes (OpenCode, Codex)</span>
+├── <span class="f">README.md</span>           <span class="c">guía rápida para el humano</span>
+├── <span class="f">index.md</span>            <span class="c">catálogo de todas las páginas</span>
+├── <span class="f">log.md</span>              <span class="c">registro de todo lo que pasó, en orden</span>
+├── herramientas/
+│   └── revisar_wiki.py <span class="c">revisión automática de salud</span>
+├── manual/             <span class="c">este manual</span>
+├── .obsidian/          <span class="c">configuración de Obsidian</span>
+├── <span class="f">raw/</span>                <span class="c">capa 1: fuentes originales (no se tocan)</span>
+└── <span class="f">wiki/</span>               <span class="c">capa 2: lo que escribe el agente</span>
+    ├── 00-panorama/ … 16-decisiones/
+    ├── _plantillas/
+    └── _meta/</div>
+
+<h2 id="raiz">Los archivos de la raíz</h2>
+<details class="fold" open><summary><span><code>PROMPT-MAESTRO.md</code> · el prompt maestro</span></summary><div class="fold-body">
+<p>Es el documento más completo. Empieza con el principio rector (primero se aprende, después se actúa) y explica el rol del agente, el contexto de Arvyon, la arquitectura, las convenciones, los flujos paso a paso, la agenda de investigación y el currículo.</p>
+<p><strong>Cuándo usarlo:</strong> se copia y se pega en un agente nuevo, o cuando el agente parece haber olvidado las reglas.</p></div></details>
+<details class="fold"><summary><span><code>CLAUDE.md</code> y <code>AGENTS.md</code> · el esquema</span></summary><div class="fold-body">
+<p><code>CLAUDE.md</code> es la versión corta y operativa de las reglas. Claude Code la lee al trabajar en la carpeta. Arriba dice la fase vigente. <code>AGENTS.md</code> solo remite a <code>CLAUDE.md</code>, para que otros agentes como OpenCode o Codex sigan las mismas reglas.</p>
+<p>En la raíz del repositorio hay otro <code>CLAUDE.md</code> cortito que avisa al agente de que el cerebro está en <code>Cerebro/</code>.</p></div></details>
+<details class="fold"><summary><span><code>index.md</code> · el catálogo</span></summary><div class="fold-body">
+<p>Lista todas las páginas de la wiki por área, cada una con un resumen de una línea, su estado y su número de fuentes. <strong>El agente lo lee primero en cada consulta.</strong> Para ti es la forma más rápida de saber qué hay.</p></div></details>
+<details class="fold"><summary><span><code>log.md</code> · el registro</span></summary><div class="fold-body">
+<p>Es el diario del cerebro: cada entrada empieza con <code>## [AAAA-MM-DD] tipo | título</code>. Solo se añaden entradas al final; nunca se borran. Tipos: <code>setup</code>, <code>ingest</code>, <code>query</code>, <code>research</code>, <code>study</code>, <code>lint</code>, <code>decision</code>, <code>schema</code>.</p>
+<pre><code>## [2026-11-08] research | Cursos de la Etapa 1, competidores y artículo 4 del Reglamento de IA
+- Fuentes guardadas e ingeridas: …
+- Páginas nuevas: [[guia-etapa-1]], [[capacidades-de-la-competencia]] …</code></pre></div></details>
+<details class="fold"><summary><span><code>herramientas/revisar_wiki.py</code> · la revisión de salud</span></summary><div class="fold-body">
+<p>Un pequeño programa que revisa el cerebro: enlaces rotos, páginas sin datos obligatorios, páginas que faltan en el índice, páginas huérfanas (que nadie enlaza), nombres repetidos y páginas con la fecha de revisión vencida. El agente lo ejecuta al terminar cada sesión.</p>
+<pre><code>python3 herramientas/revisar_wiki.py
+Revisión de salud · 2026-11-08 · 105 páginas en wiki/
+ERRORES (0)
+AVISOS (0)
+Resultado: OK</code></pre></div></details>
+
+<h2 id="raw">Capa 1 · Las fuentes (<code>raw/</code>)</h2>
+<p>Aquí se guarda el material original. <strong>Nunca se edita, se renombra ni se borra.</strong> Si el agente encuentra algo en la web, primero lo guarda aquí y después lo resume.</p>
+<div class="table-wrap"><table>
+  <tr><th>Subcarpeta</th><th>Qué va ahí</th><th>Ejemplo</th></tr>
+  <tr><td><code>00-internos/</code></td><td>Documentos propios: presentaciones, actas de socios, notas</td><td>La presentación para socios</td></tr>
+  <tr><td><code>articulos/</code></td><td>Artículos web guardados con Obsidian Web Clipper</td><td>—</td></tr>
+  <tr><td><code>informes/</code></td><td>Estudios en PDF</td><td>«Colombia AI Pulse» (por conseguir)</td></tr>
+  <tr><td><code>datos/</code></td><td>Hojas de cálculo y CSV</td><td>El modelo financiero (futuro)</td></tr>
+  <tr><td><code>entrevistas/</code></td><td>Notas de entrevistas, siempre anonimizadas</td><td>— (en pausa)</td></tr>
+  <tr><td><code>transcripciones/</code></td><td>Videos de YouTube, podcasts y webinars</td><td>—</td></tr>
+  <tr><td><code>competencia/</code></td><td>Capturas y notas de competidores</td><td>Barrido ligero del 2026-11-08</td></tr>
+  <tr><td><code>legal/</code></td><td>Normas, circulares y conceptos de contadores o abogados</td><td>Preguntas y respuestas de la UE sobre alfabetización en IA</td></tr>
+  <tr><td><code>cursos/</code></td><td><strong>Tus apuntes de cursos y libros</strong> (lo más usado en la Fase 1)</td><td>Catálogo de cursos de la Etapa 1</td></tr>
+  <tr><td><code>assets/</code></td><td>Imágenes descargadas</td><td>—</td></tr>
+</table></div>
+
+<h2 id="wiki">Capa 2 · La wiki (<code>wiki/</code>), apartado por apartado</h2>
+<p>Las carpetas llevan número para que aparezcan siempre en el mismo orden. Abre cada una para ver para qué sirve.</p>
+<details class="fold"><summary><span class="nav-num">00</span><span>Panorama <code>wiki/00-panorama/</code> </span></summary>
+<div class="fold-body"><p>La vista de pájaro del negocio: la tesis viva (8 hipótesis con su estado), las preguntas abiertas más importantes, un tablero automático y la hoja de ruta de 90 días.</p><p><strong>Páginas clave:</strong> <code>tesis-arvyon</code>, <code>preguntas-abiertas</code>, <code>tablero</code>, <code>hoja-de-ruta-90-dias</code></p><p><strong>Cuándo la usas:</strong> Antes de una decisión importante o en la revisión mensual.</p></div></details>
+<details class="fold"><summary><span class="nav-num">01</span><span>Mercado <code>wiki/01-mercado/</code> </span></summary>
+<div class="fold-body"><p>Cuántas empresas pueden comprar, dónde están, cuánto usan IA y qué dice la política pública.</p><p><strong>Páginas clave:</strong> <code>adopcion-ia-colombia</code>, <code>mipymes-colombia</code>, <code>tamano-de-mercado</code>, <code>sectores-prioritarios</code>, <code>politica-publica-ia</code>, <code>adopcion-ia-europa</code></p><p><strong>Cuándo la usas:</strong> Para dimensionar el negocio y elegir sectores (Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">02</span><span>Demanda y clientes <code>wiki/02-demanda-clientes/</code> </span></summary>
+<div class="fold-body"><p>Qué compran de verdad los empresarios, sus dolores, sus objeciones y el programa de entrevistas (en pausa durante la Fase 1).</p><p><strong>Páginas clave:</strong> <code>segmentos</code>, <code>perfil-cliente-ideal</code>, <code>dolores-y-necesidades</code>, <code>objeciones</code>, <code>programa-10-entrevistas</code></p><p><strong>Cuándo la usas:</strong> Cuando salgas al mercado y después de cada entrevista.</p></div></details>
+<details class="fold"><summary><span class="nav-num">03</span><span>Competencia <code>wiki/03-competencia/</code> </span></summary>
+<div class="fold-body"><p>Contra quién compite Arvyon en la cabeza del cliente, qué saben y qué usan los competidores, y cómo diferenciarse.</p><p><strong>Páginas clave:</strong> <code>mapa-competitivo</code>, <code>capacidades-de-la-competencia</code>, <code>matriz-comparativa</code>, <code>posicionamiento</code></p><p><strong>Cuándo la usas:</strong> Para orientar el estudio (Fase 1) y el posicionamiento (Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">04</span><span>Oferta <code>wiki/04-oferta/</code> </span></summary>
+<div class="fold-body"><p>Los paquetes, el diagnóstico exprés, el Método 4D, el acompañamiento mensual y el catálogo de casos de uso por sector.</p><p><strong>Páginas clave:</strong> <code>paquetes-estandar</code>, <code>paquete-a-la-medida</code>, <code>diagnostico-expres</code>, <code>metodo-4d</code>, <code>casos-de-uso-por-sector</code></p><p><strong>Cuándo la usas:</strong> Al diseñar demos y propuestas.</p></div></details>
+<details class="fold"><summary><span class="nav-num">05</span><span>Finanzas <code>wiki/05-finanzas/</code> </span></summary>
+<div class="fold-body"><p>Ingresos, precios, costos, métricas por cliente, punto de equilibrio y cobros internacionales.</p><p><strong>Páginas clave:</strong> <code>modelo-de-ingresos</code>, <code>estrategia-de-precios</code>, <code>unit-economics</code>, <code>escenarios-y-punto-de-equilibrio</code>, <code>cobros-y-cambio</code></p><p><strong>Cuándo la usas:</strong> Antes de fijar precios (Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">06</span><span>Administración y legal <code>wiki/06-administracion-legal/</code> </span></summary>
+<div class="fold-body"><p>Figura legal, impuestos y facturación, protección de datos, contratos, acuerdo de socios y marca. Todo son preguntas para un contador o abogado, no conclusiones.</p><p><strong>Páginas clave:</strong> <code>figura-legal</code>, <code>impuestos-y-facturacion</code>, <code>proteccion-de-datos</code>, <code>acuerdo-de-socios</code>, <code>registro-de-marca</code></p><p><strong>Cuándo la usas:</strong> Al crear la empresa (Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">07</span><span>Marketing y canales <code>wiki/07-marketing-canales/</code> </span></summary>
+<div class="fold-body"><p>El embudo de clientes y una página por canal: Instagram, YouTube, LinkedIn, WhatsApp y web, más el sistema de contenido y las métricas.</p><p><strong>Páginas clave:</strong> <code>embudo</code>, <code>youtube</code>, <code>instagram</code>, <code>sistema-de-contenido</code>, <code>metricas-de-marketing</code></p><p><strong>Cuándo la usas:</strong> Al preparar contenido (las ideas se anotan ya; se publica en la Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">08</span><span>Operación <code>wiki/08-operacion/</code> </span></summary>
+<div class="fold-body"><p>Cómo se trabaja día a día: husos horarios, herramientas internas y el proceso de entrega con sus checklists.</p><p><strong>Páginas clave:</strong> <code>husos-horarios</code>, <code>stack-herramientas</code>, <code>proceso-de-entrega</code></p><p><strong>Cuándo la usas:</strong> Al organizar el trabajo con clientes.</p></div></details>
+<details class="fold"><summary><span class="nav-num">09</span><span>Riesgos <code>wiki/09-riesgos/</code> </span></summary>
+<div class="fold-body"><p>El registro de 15 riesgos con probabilidad, impacto, mitigación e indicador de alerta.</p><p><strong>Páginas clave:</strong> <code>registro-de-riesgos</code></p><p><strong>Cuándo la usas:</strong> En la revisión mensual.</p></div></details>
+<details class="fold"><summary><span class="nav-num">10</span><span>Oportunidades <code>wiki/10-oportunidades/</code> </span></summary>
+<div class="fold-body"><p>La DOFA, el radar de tendencias, nichos y alianzas posibles, y financiación pública.</p><p><strong>Páginas clave:</strong> <code>dofa</code>, <code>tendencias</code>, <code>nichos-y-alianzas</code>, <code>financiacion-y-convocatorias</code></p><p><strong>Cuándo la usas:</strong> Cada trimestre.</p></div></details>
+<details class="fold"><summary><span class="nav-num">11</span><span>Conocimiento de IA <code>wiki/11-conocimiento-ia/</code> <span class="tag amber">Fase 1</span></span></summary>
+<div class="fold-body"><p>El currículo del consultor: 12 bloques de estudio en tres niveles, la guía de la etapa en curso y la alfabetización técnica. <strong>Es el apartado más importante de la Fase 1.</strong></p><p><strong>Páginas clave:</strong> <code>curriculo</code>, <code>guia-etapa-1</code>, <code>fundamentos-llm</code>, <code>prompting-para-empresas</code>, <code>alfabetizacion-tecnica</code></p><p><strong>Cuándo la usas:</strong> Todos los días de la Fase 1.</p></div></details>
+<details class="fold"><summary><span class="nav-num">12</span><span>Entidades <code>wiki/12-entidades/</code> </span></summary>
+<div class="fold-body"><p>Una página por institución, norma o empresa relevante: Arvyon, CONPES 4144, Ley 1581, RGPD, Reglamento Europeo de IA, SIC, DIAN, Endeavor, MinComercio.</p><p><strong>Páginas clave:</strong> <code>arvyon</code>, <code>reglamento-europeo-de-ia</code>, <code>ley-1581-de-2012</code></p><p><strong>Cuándo la usas:</strong> Cuando aparece un nombre y quieres saber qué es.</p></div></details>
+<details class="fold"><summary><span class="nav-num">13</span><span>Conceptos <code>wiki/13-conceptos/</code> </span></summary>
+<div class="fold-body"><p>Ideas que se repiten en muchas páginas: brecha de adopción, precio basado en valor, ingreso recurrente, IA en la sombra, alfabetización en IA, caso de éxito, imán de clientes.</p><p><strong>Páginas clave:</strong> <code>brecha-de-adopcion</code>, <code>alfabetizacion-en-ia</code>, <code>ia-en-la-sombra</code></p><p><strong>Cuándo la usas:</strong> Para entender el vocabulario del negocio.</p></div></details>
+<details class="fold"><summary><span class="nav-num">14</span><span>Fuentes <code>wiki/14-fuentes/</code> </span></summary>
+<div class="fold-body"><p>Un resumen por cada fuente ingerida: ficha, resumen en 5 líneas, datos, qué cambió en la wiki, contradicciones y preguntas que abre.</p><p><strong>Páginas clave:</strong> <code>presentacion-socios-2026-10</code>, <code>2026-11-investigacion-web-cursos-etapa-1</code>, <code>2026-11-barrido-ligero-competidores</code></p><p><strong>Cuándo la usas:</strong> Para saber de dónde sale un dato.</p></div></details>
+<details class="fold"><summary><span class="nav-num">15</span><span>Análisis <code>wiki/15-analisis/</code> </span></summary>
+<div class="fold-body"><p>Respuestas valiosas que no deben quedarse en el chat: comparaciones, cálculos y recomendaciones.</p><p><strong>Páginas clave:</strong> <code>programacion-y-bases-de-datos</code></p><p><strong>Cuándo la usas:</strong> Cuando el agente te ofrece archivar una respuesta.</p></div></details>
+<details class="fold"><summary><span class="nav-num">16</span><span>Decisiones <code>wiki/16-decisiones/</code> </span></summary>
+<div class="fold-body"><p>Una página por decisión importante, con sus opciones, lo que falta saber y el criterio. Estados: abierta, decidida, revisada.</p><p><strong>Páginas clave:</strong> <code>registro-de-decisiones</code>, <code>dec-009-fase-de-aprendizaje</code></p><p><strong>Cuándo la usas:</strong> Antes y después de decidir algo.</p></div></details>
+<details class="fold"><summary><span class="nav-num">·</span><span>Plantillas <code>wiki/_plantillas/</code> </span></summary>
+<div class="fold-body"><p>Moldes de página para cada tipo: fuente, tema, entidad, concepto, competidor, entrevista, análisis, decisión, estudio y riesgo. No son contenido.</p><p><strong>Páginas clave:</strong> las 10 plantillas</p><p><strong>Cuándo la usas:</strong> Lo usa el agente; tú casi nunca.</p></div></details>
+<details class="fold"><summary><span class="nav-num">·</span><span>Meta <code>wiki/_meta/</code> </span></summary>
+<div class="fold-body"><p>La agenda de investigación (sprints de la Fase 2), la lista de lagunas por verificar y el glosario del cerebro.</p><p><strong>Páginas clave:</strong> <code>agenda-de-investigacion</code>, <code>lagunas</code>, <code>glosario</code></p><p><strong>Cuándo la usas:</strong> Para saber qué falta.</p></div></details>
+
+<h2 id="mapa-conceptual">Cómo se conectan los apartados</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 800 440" role="img" aria-labelledby="d-mapa-t">
+    <title id="d-mapa-t">Mapa conceptual: la tesis en el centro, rodeada de las áreas del negocio</title>
+    <g class="ln"><path d="M400 220 L482 46"/><path d="M400 220 L623 93"/><path d="M400 220 L704 173"/><path d="M400 220 L704 267"/><path d="M400 220 L623 347"/><path d="M400 220 L482 394"/><path d="M400 220 L318 394"/><path d="M400 220 L177 347"/><path d="M400 220 L96 267"/><path d="M400 220 L96 173"/><path d="M400 220 L177 93"/><path d="M400 220 L318 46"/></g>
+    <circle cx="400" cy="220" r="62" class="solid-a"/>
+    <text x="400" y="215" text-anchor="middle" class="t-on">Tesis de</text>
+    <text x="400" y="234" text-anchor="middle" class="t-on">Arvyon</text>
+    <rect x="407" y="28" width="150" height="36" rx="18" class="box"/><text x="482" y="51" text-anchor="middle" class="t">02 Demanda</text>
+    <rect x="548" y="75" width="150" height="36" rx="18" class="box"/><text x="623" y="98" text-anchor="middle" class="t">03 Competencia</text>
+    <rect x="629" y="155" width="150" height="36" rx="18" class="box"/><text x="704" y="178" text-anchor="middle" class="t">05 Finanzas</text>
+    <rect x="629" y="249" width="150" height="36" rx="18" class="box"/><text x="704" y="272" text-anchor="middle" class="t">07 Marketing</text>
+    <rect x="548" y="329" width="150" height="36" rx="18" class="box"/><text x="623" y="352" text-anchor="middle" class="t">09 Riesgos</text>
+    <rect x="407" y="376" width="150" height="36" rx="18" class="box-violet"/><text x="482" y="399" text-anchor="middle" class="t">16 Decisiones</text>
+    <rect x="236" y="376" width="164" height="36" rx="18" class="box-amber"/><text x="318" y="399" text-anchor="middle" class="t">11 Conocimiento IA</text>
+    <rect x="102" y="329" width="150" height="36" rx="18" class="box"/><text x="177" y="352" text-anchor="middle" class="t">10 Oportunidades</text>
+    <rect x="21" y="249" width="150" height="36" rx="18" class="box"/><text x="96" y="272" text-anchor="middle" class="t">08 Operación</text>
+    <rect x="21" y="155" width="150" height="36" rx="18" class="box"/><text x="96" y="178" text-anchor="middle" class="t">06 Legal</text>
+    <rect x="102" y="75" width="150" height="36" rx="18" class="box"/><text x="177" y="98" text-anchor="middle" class="t">04 Oferta</text>
+    <rect x="243" y="28" width="150" height="36" rx="18" class="box"/><text x="318" y="51" text-anchor="middle" class="t">01 Mercado</text>
+  </svg>
+  </div>
+  <figcaption>Entidades, conceptos, fuentes y análisis (12 a 15) alimentan a todas las áreas; por eso no aparecen como un solo punto.</figcaption>
+</figure>
+
+<h2 id="anatomia">Anatomía de una página</h2>
+<p>Todas las páginas de la wiki tienen la misma estructura. Así el agente y Obsidian las entienden igual.</p>
+<h3>1. La ficha de arriba (frontmatter)</h3>
+<pre><code>---
+tipo: estudio
+area: conocimiento
+estado: borrador
+confianza: media
+resumen: "Guía detallada de la Etapa 1: calendario, cursos, ejercicios…"
+fuentes: ["[[2026-11-investigacion-web-cursos-etapa-1]]"]
+creado: 2026-11-08
+actualizado: 2026-11-08
+revisar_antes: 2027-02-08
+etiquetas: [fase-1, etapa-1]
+---</code></pre>
+<div class="table-wrap"><table>
+  <tr><th>Campo</th><th>Qué significa</th><th>Valores</th></tr>
+  <tr><td><code>tipo</code></td><td>Qué clase de página es</td><td>tema, entidad, concepto, fuente, analisis, decision, competidor, entrevista, estudio, panorama, meta</td></tr>
+  <tr><td><code>area</code></td><td>A qué parte del negocio pertenece</td><td>panorama, mercado, demanda, competencia, oferta, finanzas, legal, marketing, operacion, riesgos, oportunidades, conocimiento, transversal</td></tr>
+  <tr><td><code>estado</code></td><td>Qué tan madura está</td><td><span class="tag">semilla</span> solo preguntas · <span class="tag blue">borrador</span> datos parciales · <span class="tag green">estable</span> validada · <span class="tag red">obsoleto</span></td></tr>
+  <tr><td><code>confianza</code></td><td>Cuánto fiarse</td><td>alta (fuente primaria reciente) · media · baja (supuesto)</td></tr>
+  <tr><td><code>resumen</code></td><td>Una línea; es la misma que sale en el índice</td><td>texto</td></tr>
+  <tr><td><code>fuentes</code></td><td>De qué fuentes sale</td><td>enlaces a páginas de <code>14-fuentes/</code></td></tr>
+  <tr><td><code>revisar_antes</code></td><td>Desde cuándo puede estar vieja</td><td>3 meses (mercado y herramientas), 6 meses (normas), 12 meses (conceptos)</td></tr>
+</table></div>
+<h3>2. El cuerpo</h3>
+<p>Una página de tema empieza con <strong>«En una frase»</strong> y <strong>«Lo que sabemos»</strong>, para que lo importante esté arriba. Sigue con las implicaciones para Arvyon, las preguntas a investigar (casillas que se marcan) y las fuentes sugeridas.</p>
+<h3>3. Los enlaces</h3>
+<p>Las páginas se enlazan escribiendo el nombre entre dobles corchetes: <code>[[paquetes-estandar]]</code>. Con un alias se ve otro texto: <code>[[paquetes-estandar|Optimiza]]</code>. Cada dato lleva su cita: <code>… 37,7 % ([[presentacion-socios-2026-10]])</code>. En Obsidian, esos enlaces se pueden pulsar y forman la vista gráfica.</p>
+<h3>4. Las conexiones</h3>
+<p>Toda página termina con <strong>«Conexiones»</strong>: de 3 a 8 enlaces a otras páginas, cada uno con una frase que explica la relación. Por eso no quedan páginas aisladas.</p>
+<div class="note"><p class="note-title">Nombres de archivo</p><p>En minúsculas, con guiones, sin tildes, sin ñ y sin espacios: <code>proteccion-de-datos.md</code>. Cada nombre es único en todo el cerebro, porque Obsidian encuentra las páginas por su nombre.</p></div>
+
+      <nav class="pager" id="pager" aria-label="Capítulos anterior y siguiente"></nav>
+      <p class="foot">Manual Cerebro Arvyon v1.0 · 2026-11-08 · Se actualiza solo cuando el fundador lo decide. Archivo en el repositorio: <code>Cerebro/manual/mapa-del-cerebro.html</code></p>
+    </article>
+  </main>
+</div>
+<script>
+  // En pantallas pequeñas el menú empieza cerrado.
+  if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
+    var d = document.getElementById("nav-details"); if (d) d.removeAttribute("open");
+  }
+</script>
+</body>
+</html>

@@ -4,9 +4,9 @@ area: finanzas
 estado: borrador
 confianza: baja
 resumen: "Cómo fijar los precios en COP: 10 entrevistas, precio por valor y cobro en pesos; con la fórmula y la tabla por completar."
-fuentes: ["[[presentacion-socios-2026-10]]"]
+fuentes: ["[[presentacion-socios-2026-10]]", "[[2026-11-barrido-ligero-competidores]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-05-03
 etiquetas: []
 ---
@@ -41,6 +41,14 @@ Los precios están **por definir** y saldrán de tres pasos ([[presentacion-soci
 - [ ] Precios de los competidores ([[matriz-comparativa]]).
 - [ ] Efecto de la retención en la fuente y de las comisiones en el precio neto ([[impuestos-y-facturacion]]).
 - [ ] ¿Precio de lanzamiento para pilotos? ¿Cuánto descuento y a cambio de qué? ([[caso-de-exito]])
+
+## Primeras referencias de la competencia (2026-11-08)
+> [!note] Hecho (precios publicados por los propios vendedores, sin IVA)
+> - Diagnóstico de automatización: 149.900 COP, descontable (Mentora Colombia).
+> - Chatbot de WhatsApp + 1 integración: 1.890.000 COP; agente + 2–3 integraciones: 4.890.000 COP; a medida desde 9.890.000 COP; mantenimiento desde 190.000 COP/mes (Mentora Colombia).
+> - Capacitación en IA para un equipo: desde 6.000.000 COP por programa virtual; 7.146.000 COP presencial de 8 h (Think TIC).
+>
+> Fuente: [[2026-11-barrido-ligero-competidores]]. Son referencias para la Fase 2; no fijan los precios de Arvyon.
 
 ## Conexiones
 - [[dec-005-precios-de-los-paquetes]]: la decisión que cierra esta página.

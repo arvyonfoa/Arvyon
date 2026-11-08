@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cómo se crea la empresa · Manual Cerebro Arvyon</title>
+<meta name="description" content="Línea de tiempo, fases, decisiones y paso a paso para crear Arvyon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/estilo.css">
+<script src="assets/manual.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <rect x="1" y="1" width="30" height="30" rx="8" class="solid-a"/>
+  <circle cx="10" cy="20" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <circle cx="22" cy="12" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+</svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
+    <span class="topbar-spacer"></span>
+    <span class="version-pill">v1.0 · 2026-11-08</span>
+    <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="nav-details" open>
+      <summary>Capítulos del manual</summary>
+      <div class="nav-panel">
+        <p class="nav-title">Capítulos</p>
+        <ul class="nav-list" id="chapters"></ul>
+        <div class="toc-block">
+          <p class="nav-title">En esta página</p>
+          <ul class="nav-list toc" id="toc"></ul>
+        </div>
+      </div>
+    </details>
+  </aside>
+  <main>
+    <article class="content">
+      <p class="eyebrow">Capítulo 7</p>
+
+<h1>Cómo se crea la empresa</h1>
+<p class="lead">Este capítulo cuenta cómo se está construyendo Arvyon: qué se hizo hasta hoy, qué viene después y qué decisiones faltan. El cerebro registra cada paso, así que siempre puedes reconstruir por qué se hizo algo.</p>
+
+<h2 id="linea-de-tiempo">Línea de tiempo</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 250" role="img" aria-labelledby="d-tl-t">
+    <title id="d-tl-t">Línea de tiempo del proyecto Arvyon</title>
+    <path d="M30 120 L740 120" class="ln"/>
+    <circle cx="55" cy="120" r="9" class="dot-main"/>
+    <text x="55" y="94" text-anchor="middle" class="t-m">oct 2026</text>
+    <text x="55" y="150" text-anchor="middle" class="t">Presentación</text>
+    <text x="55" y="168" text-anchor="middle" class="t-s">para socios</text>
+    <circle cx="167" cy="120" r="9" class="dot"/>
+    <text x="167" y="94" text-anchor="middle" class="t-m">3 nov</text>
+    <text x="167" y="150" text-anchor="middle" class="t">Nace el cerebro</text>
+    <text x="167" y="168" text-anchor="middle" class="t-s">PR #1</text>
+    <circle cx="292" cy="120" r="9" class="dot"/>
+    <text x="292" y="94" text-anchor="middle" class="t-m">6–8 nov</text>
+    <text x="292" y="150" text-anchor="middle" class="t">Primero aprender</text>
+    <text x="292" y="168" text-anchor="middle" class="t-s">dec-009 · PR #3</text>
+    <rect x="365" y="104" width="180" height="32" rx="16" fill="var(--surface)"/><rect x="365" y="104" width="180" height="32" rx="16" class="box-amber"/>
+    <text x="455" y="125" text-anchor="middle" class="t-b">Fase 1 · Aprender</text>
+    <text x="455" y="94" text-anchor="middle" class="t-m">9 nov – 15 dic</text>
+    <text x="455" y="158" text-anchor="middle" class="t-s">etapas 1, 2 y 3</text>
+    <rect x="560" y="104" width="180" height="32" rx="16" fill="var(--surface)"/><rect x="560" y="104" width="180" height="32" rx="16" class="box-green"/>
+    <text x="650" y="125" text-anchor="middle" class="t-b">Fase 2 · Actuar</text>
+    <text x="650" y="94" text-anchor="middle" class="t-m">fecha por decidir</text>
+    <text x="650" y="158" text-anchor="middle" class="t-s">90 días: Fundar,</text>
+    <text x="650" y="176" text-anchor="middle" class="t-s">Validar, Vender</text>
+  </svg>
+  </div>
+</figure>
+
+<h2 id="hasta-hoy">Lo que se hizo hasta hoy</h2>
+<div class="table-wrap"><table>
+  <tr><th>Fecha</th><th>Qué pasó</th><th>Dónde quedó</th></tr>
+  <tr><td class="num">oct 2026</td><td>Se escribió la propuesta de negocio para socios (19 diapositivas)</td><td><code>Raw/</code> y <code>Cerebro/raw/00-internos/</code></td></tr>
+  <tr><td class="num">2026-11-03</td><td>Se creó el segundo cerebro y se ingirió la presentación; se decidió el nombre Arvyon y sumar YouTube</td><td>PR #1 · <code>dec-001</code>, <code>dec-008</code></td></tr>
+  <tr><td class="num">2026-11-03</td><td>Se propuso un Sprint 1 con entrevistas y consulta al contador</td><td>PR #2, cerrado sin unir</td></tr>
+  <tr><td class="num">2026-11-06</td><td>Decisión: primero aprender, después actuar</td><td><code>dec-009-fase-de-aprendizaje</code></td></tr>
+  <tr><td class="num">2026-11-08</td><td>Fechas de la Fase 1, prompt maestro actualizado, guía de la Etapa 1, barrido de competidores y este manual</td><td>PR #3</td></tr>
+</table></div>
+
+<h2 id="fase-1">Fase 1 · Aprender (9 de noviembre a 15 de diciembre)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Semana</th><th>Etapa</th><th>Resultado</th></tr>
+  <tr><td class="num">9–15 nov</td><td>1 · Entender la IA</td><td>Explicar qué es la IA, qué hace bien y en qué falla</td></tr>
+  <tr><td class="num">16–22 nov</td><td>1 · Usarla con criterio</td><td>Biblioteca de 15 instrucciones y tabla de herramientas con su privacidad</td></tr>
+  <tr><td class="num">23–29 nov</td><td>2 · Automatizar</td><td>Demo 1: cotización automática con n8n</td></tr>
+  <tr><td class="num">30 nov–6 dic</td><td>2 · Atender y medir</td><td>Demo 2: asistente de WhatsApp con traspaso a un humano</td></tr>
+  <tr><td class="num">7–13 dic</td><td>3 · Pensar como consultor</td><td>Política de uso de IA y propuesta para una empresa ficticia</td></tr>
+  <tr><td class="num">14–15 dic</td><td>Cierre</td><td>Revisión de los criterios de paso</td></tr>
+</table></div>
+<h3>Criterios para pasar a la Fase 2</h3>
+<ol class="steps">
+  <li>Etapas 1 y 2 terminadas, cada una con su ejercicio.</li>
+  <li>Explicar en 5 minutos, sin tecnicismos, qué hace bien la IA, en qué falla y qué datos no se le pegan.</li>
+  <li>Dos demos funcionando con empresas ficticias.</li>
+  <li>Una política de uso de IA de 2 páginas.</li>
+  <li>Una propuesta completa para una empresa ficticia.</li>
+</ol>
+<p>El agente revisa los criterios; <strong>la decisión de pasar es del fundador</strong> y se registra en <code>wiki/16-decisiones/</code>.</p>
+
+<h2 id="fase-2">Fase 2 · Actuar: los 90 días</h2>
+<div class="grid">
+  <div class="card"><p class="card-kicker">Mes 1</p><h3>Fundar</h3><ul><li>Logo, marca y registro de la marca</li><li>Acuerdo de socios por escrito</li><li>Figura legal con un contador</li><li>Paquetes cerrados y web</li><li>Instagram y YouTube listos</li><li>10 entrevistas con empresarios</li></ul></div>
+  <div class="card"><p class="card-kicker">Mes 2</p><h3>Validar</h3><ul><li>Publicar con constancia</li><li>Precios definidos con lo aprendido</li><li>10 diagnósticos exprés</li><li>2 clientes piloto a cambio de testimonio</li></ul></div>
+  <div class="card"><p class="card-kicker">Mes 3</p><h3>Vender</h3><ul><li>3 clientes que pagan</li><li>Primer caso de éxito publicado</li><li>Primer cliente en acompañamiento mensual</li><li>Ajuste de paquetes</li></ul></div>
+</div>
+
+<h2 id="paso-a-paso">Paso a paso para crear la empresa (cuando llegue la Fase 2)</h2>
+<div class="note warn"><p class="note-title">No es asesoría legal</p><p>Estos pasos ordenan las preguntas. Cada uno debe confirmarse con un contador o abogado de cada país; el cerebro guarda sus respuestas en <code>raw/legal/</code>.</p></div>
+<ol class="steps">
+  <li><strong>Acordar roles y participación entre socios.</strong> Quién lleva Crecimiento y quién Entrega, y qué porcentaje tiene cada uno. Decisión <code>dec-002</code>; página <code>roles-de-socios</code>.</li>
+  <li><strong>Firmar el acuerdo de socios.</strong> Aportes, decisiones, reparto de utilidades y qué pasa si uno se retira. Página <code>acuerdo-de-socios</code>.</li>
+  <li><strong>Elegir la figura legal y el país de facturación.</strong> Polonia, Colombia o ambos. La pregunta clave para el contador es cuánto retiene el cliente colombiano al pagar a una empresa del exterior. Decisión <code>dec-003</code>; páginas <code>figura-legal</code> e <code>impuestos-y-facturacion</code>.</li>
+  <li><strong>Proteger la marca Arvyon.</strong> Buscar antecedentes y registrar en Colombia (SIC) y/o en la UE (EUIPO); dominio y redes. Página <code>registro-de-marca</code>.</li>
+  <li><strong>Definir cómo se cobra.</strong> Precios en pesos colombianos y plataforma de cobro. Página <code>cobros-y-cambio</code>.</li>
+  <li><strong>Preparar la protección de datos y los contratos.</strong> Política de tratamiento de datos (Ley 1581), contrato de servicios y acuerdo de confidencialidad. Páginas <code>proteccion-de-datos</code> y <code>contratos-y-responsabilidad</code>.</li>
+  <li><strong>Validar con el mercado.</strong> Las 10 entrevistas, los precios (decisión <code>dec-005</code>) y la inversión inicial (decisión <code>dec-006</code>).</li>
+  <li><strong>Fijar la fecha de arranque</strong> del plan de 90 días. Decisión <code>dec-007</code>.</li>
+</ol>
+
+<h2 id="decisiones">El registro de decisiones</h2>
+<div class="table-wrap"><table>
+  <tr><th>Decisión</th><th>Estado</th></tr>
+  <tr><td><code>dec-001</code> Nombre de la consultora</td><td><span class="tag green">decidida</span> Arvyon</td></tr>
+  <tr><td><code>dec-002</code> Roles y participación</td><td><span class="tag">abierta</span></td></tr>
+  <tr><td><code>dec-003</code> Figura legal y país de facturación</td><td><span class="tag">abierta</span> prioridad al salir al mercado</td></tr>
+  <tr><td><code>dec-004</code> Sectores para empezar</td><td><span class="tag">abierta</span> propuesta: comercio y servicios</td></tr>
+  <tr><td><code>dec-005</code> Precios de los paquetes</td><td><span class="tag">abierta</span> después de las entrevistas</td></tr>
+  <tr><td><code>dec-006</code> Inversión inicial</td><td><span class="tag">abierta</span></td></tr>
+  <tr><td><code>dec-007</code> Fecha de arranque</td><td><span class="tag">abierta</span></td></tr>
+  <tr><td><code>dec-008</code> YouTube como canal estratégico</td><td><span class="tag green">decidida</span></td></tr>
+  <tr><td><code>dec-009</code> Fase de aprendizaje</td><td><span class="tag green">decidida</span> 9 nov – 15 dic</td></tr>
+</table></div>
+
+<h2 id="como-se-construye">Cómo se está elaborando el proyecto</h2>
+<p>El método es siempre el mismo, y por eso el proyecto no pierde el hilo:</p>
+<ol class="steps">
+  <li><strong>Una fuente o una pregunta</strong> (la presentación, un curso, una investigación).</li>
+  <li><strong>El agente la integra en el cerebro</strong> y marca lo que es hecho, estimación o supuesto.</li>
+  <li><strong>Las hipótesis se ponen a prueba</strong> en la tesis (por ejemplo, el barrido de competidores mostró que la oferta tipo Inicia ya existe en Colombia).</li>
+  <li><strong>Las decisiones se registran</strong> con sus opciones y su criterio.</li>
+  <li><strong>Todo queda en GitHub</strong> a través de pull requests que tú revisas.</li>
+</ol>
+
+      <nav class="pager" id="pager" aria-label="Capítulos anterior y siguiente"></nav>
+      <p class="foot">Manual Cerebro Arvyon v1.0 · 2026-11-08 · Se actualiza solo cuando el fundador lo decide. Archivo en el repositorio: <code>Cerebro/manual/empresa.html</code></p>
+    </article>
+  </main>
+</div>
+<script>
+  // En pantallas pequeñas el menú empieza cerrado.
+  if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
+    var d = document.getElementById("nav-details"); if (d) d.removeAttribute("open");
+  }
+</script>
+</body>
+</html>

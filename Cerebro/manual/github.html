@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GitHub sin miedo · Manual Cerebro Arvyon</title>
+<meta name="description" content="Repositorio, commits, ramas y pull requests, con la historia real del proyecto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/estilo.css">
+<script src="assets/manual.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <rect x="1" y="1" width="30" height="30" rx="8" class="solid-a"/>
+  <circle cx="10" cy="20" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <circle cx="22" cy="12" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+</svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
+    <span class="topbar-spacer"></span>
+    <span class="version-pill">v1.0 · 2026-11-08</span>
+    <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="nav-details" open>
+      <summary>Capítulos del manual</summary>
+      <div class="nav-panel">
+        <p class="nav-title">Capítulos</p>
+        <ul class="nav-list" id="chapters"></ul>
+        <div class="toc-block">
+          <p class="nav-title">En esta página</p>
+          <ul class="nav-list toc" id="toc"></ul>
+        </div>
+      </div>
+    </details>
+  </aside>
+  <main>
+    <article class="content">
+      <p class="eyebrow">Capítulo 5</p>
+
+<h1>GitHub sin miedo</h1>
+<p class="lead">GitHub es el lugar donde vive el cerebro. Guarda cada versión de cada archivo, deja ver qué cambió y quién lo cambió, y permite revisar los cambios antes de aceptarlos.</p>
+
+<h2 id="por-que">Por qué el cerebro vive en GitHub</h2>
+<div class="grid">
+  <div class="card"><h4>Historial completo</h4><p>Cada cambio queda guardado. Siempre puedes ver o recuperar cómo estaba una página hace una semana.</p></div>
+  <div class="card"><h4>Revisión antes de aceptar</h4><p>El agente propone; tú decides. Nada entra en la versión principal sin tu visto bueno.</p></div>
+  <div class="card"><h4>Disco duro de la nube</h4><p>Las sesiones de Claude Code en la nube se borran. Lo que no se sube a GitHub, se pierde. Ver <a href="nube.html">La nube</a>.</p></div>
+  <div class="card"><h4>Colaboración</h4><p>El otro socio podrá ver y proponer cambios sobre el mismo cerebro.</p></div>
+</div>
+
+<h2 id="conceptos">Los conceptos, uno por uno</h2>
+<dl class="def">
+  <dt>Repositorio</dt>
+  <dd>La carpeta del proyecto en GitHub, con todo su historial. El de Arvyon es <code>arvyonfoa/Arvyon</code>: <code>arvyonfoa</code> es el dueño y <code>Arvyon</code> el nombre. Contiene <code>README.md</code>, <code>Raw/</code> (la presentación) y <code>Cerebro/</code>.</dd>
+  <dt>Commit</dt>
+  <dd>Una foto guardada de los cambios, con un mensaje que explica qué se hizo y por qué. Ejemplo real: <code>baf8201 Fase 1 (aprender, 9 nov-15 dic): prompt maestro, guía de la Etapa 1 y competencia</code>. El código de 7 letras es su identificador.</dd>
+  <dt>Rama (branch)</dt>
+  <dd>Una línea de trabajo paralela. Permite hacer cambios sin tocar la versión principal hasta que estén listos. Es como trabajar en una copia del cuaderno y, al final, pasar al original solo lo que se aprobó.</dd>
+  <dt><code>main</code></dt>
+  <dd>La rama principal: la versión oficial del cerebro. Es la que ves en GitHub por defecto y la que descargas a Obsidian.</dd>
+  <dt>Push y pull</dt>
+  <dd><em>Push</em> es subir commits de una máquina a GitHub. <em>Pull</em> es bajar a tu computador los cambios que hay en GitHub.</dd>
+  <dt>Pull request (PR)</dt>
+  <dd>Una solicitud para unir los cambios de una rama a <code>main</code>. Muestra exactamente qué archivos cambian y permite comentar antes de aceptar. Se puede <strong>unir</strong> (merge) o <strong>cerrar sin unir</strong>.</dd>
+  <dt>Diff</dt>
+  <dd>La comparación línea por línea entre el antes y el después. En verde lo que se añade; en rojo lo que se quita.</dd>
+  <dt>Merge (unir)</dt>
+  <dd>Juntar los cambios de una rama con otra. Al unir un PR, sus cambios pasan a <code>main</code>.</dd>
+  <dt>Conflicto</dt>
+  <dd>Cuando dos ramas cambian las mismas líneas de forma distinta y Git no sabe cuál quedarse. Hay que elegir a mano. El agente puede resolverlos.</dd>
+  <dt>Revert</dt>
+  <dd>Un commit nuevo que deshace otro commit, sin borrar la historia. Es la forma segura de deshacer.</dd>
+  <dt>Force push</dt>
+  <dd>Subir cambios reescribiendo la historia de una rama. Es peligroso porque puede borrar trabajo; por eso Claude Code lo tiene bloqueado y usa <em>revert</em> en su lugar.</dd>
+  <dt>Clonar</dt>
+  <dd>Descargar una copia completa del repositorio a tu computador (lo que haces con GitHub Desktop).</dd>
+</dl>
+
+<h2 id="historia">La historia real del proyecto</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 330" role="img" aria-labelledby="d-git-t">
+    <title id="d-git-t">Historial real: la rama main y la rama de trabajo de Claude con los pull requests 1, 2 y 3</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <text x="10" y="84" class="t-b">main</text>
+    <path d="M70 80 L740 80" class="ln" />
+    <text x="10" y="214" class="t-b">rama</text>
+    <text x="10" y="232" class="t-m">claude/…</text>
+    <path d="M290 210 L410 210" class="ln-a"/>
+    <path d="M520 210 L740 210" class="ln-a"/>
+    <path d="M456 88 L514 202" class="ln-a"/>
+
+    <circle cx="80" cy="80" r="8" class="dot-main"/><text x="80" y="56" text-anchor="middle" class="t-m">b5e7db8</text><text x="80" y="36" text-anchor="middle" class="t-s">inicio</text>
+    <circle cx="170" cy="80" r="8" class="dot-main"/><text x="170" y="56" text-anchor="middle" class="t-m">0e903fa</text><text x="170" y="36" text-anchor="middle" class="t-s">presentación</text>
+    <circle cx="265" cy="80" r="8" class="dot-main"/><text x="265" y="56" text-anchor="middle" class="t-m">8a6b96b</text><text x="265" y="36" text-anchor="middle" class="t-s">mueves a Raw</text>
+
+    <path d="M175 88 L283 204" class="ln-a"/>
+    <circle cx="290" cy="210" r="8" class="dot"/><text x="290" y="240" text-anchor="middle" class="t-s">crea el cerebro</text>
+    <path d="M271 87 L344 203" class="ln-d"/>
+    <circle cx="350" cy="210" r="8" class="dot"/><text x="350" y="262" text-anchor="middle" class="t-s">trae main</text>
+    <circle cx="410" cy="210" r="8" class="dot"/><text x="410" y="240" text-anchor="middle" class="t-s">README</text>
+    <path d="M414 202 L446 88" class="ln-green" marker-end="url(#fl)"/>
+    <circle cx="450" cy="80" r="10" class="dot-main"/><text x="450" y="56" text-anchor="middle" class="t-m">780275a</text><text x="450" y="36" text-anchor="middle" class="t-a">PR #1 unido</text>
+
+    <circle cx="520" cy="210" r="8" class="dot-red"/><text x="520" y="240" text-anchor="middle" class="t-s">Sprint 1</text><text x="520" y="258" text-anchor="middle" class="t-s">PR #2 cerrado</text>
+    <circle cx="580" cy="210" r="8" class="dot"/><text x="580" y="290" text-anchor="middle" class="t-s">revert</text>
+    <circle cx="640" cy="210" r="8" class="dot"/><text x="640" y="240" text-anchor="middle" class="t-s">fase 1</text>
+    <circle cx="700" cy="210" r="8" class="dot"/><text x="700" y="290" text-anchor="middle" class="t-s">guía y manual</text>
+    <rect x="590" y="140" width="150" height="32" rx="16" class="box-a"/>
+    <text x="665" y="161" text-anchor="middle" class="t-a">PR #3 abierto</text>
+  </svg>
+  </div>
+  <figcaption>Arriba, la rama principal; abajo, la rama de trabajo de Claude Code. Los cambios suben a <code>main</code> solo cuando unes un pull request. Después de unir el PR #1, la rama de trabajo vuelve a empezar desde <code>main</code>.</figcaption>
+</figure>
+<div class="table-wrap"><table>
+  <tr><th>Pull request</th><th>Qué contenía</th><th>Qué pasó</th></tr>
+  <tr><td><span class="tag green">#1</span></td><td>La creación del cerebro: prompt maestro, esquema, 97 páginas, plantillas y revisión de salud</td><td>Unido a <code>main</code> el 3 de noviembre</td></tr>
+  <tr><td><span class="tag red">#2</span></td><td>El plan del Sprint 1 (entrevistas, contador, competencia)</td><td>Cerrado sin unir: decidiste aprender primero. Su commit se deshizo con un <em>revert</em></td></tr>
+  <tr><td><span class="tag blue">#3</span></td><td>La fase de aprendizaje, la guía de la Etapa 1, la competencia y este manual</td><td>Abierto, esperando tu revisión</td></tr>
+</table></div>
+
+<h2 id="ciclo">El ciclo de un cambio</h2>
+<ol class="steps">
+  <li>Le pides algo al agente en Claude Code.</li>
+  <li>El agente trabaja en su rama (en este proyecto, <code>claude/magical-bohr-5nj070</code>) y hace commits.</li>
+  <li>Hace <strong>push</strong>: los commits suben a GitHub, a esa rama.</li>
+  <li>Abre un <strong>pull request</strong> hacia <code>main</code>, o añade los commits a uno que ya esté abierto.</li>
+  <li>Tú revisas el PR en GitHub y decides: unir, pedir cambios o cerrar.</li>
+  <li>Si lo unes, los cambios están en <code>main</code>. En tu computador haces <strong>pull</strong> para verlos en Obsidian.</li>
+</ol>
+
+<h2 id="decidir">Cómo revisar y decidir un pull request</h2>
+<ol class="steps">
+  <li>Abre el PR en GitHub (te llega el enlace en el chat o en <em>Pull requests</em> del repositorio).</li>
+  <li>Lee la descripción: qué cambia y por qué.</li>
+  <li>Abre la pestaña <strong>Files changed</strong> y mira el diff de los archivos que te importan.</li>
+  <li>Si algo no te gusta, díselo al agente en el chat (o deja un comentario en el PR) y espera la corrección.</li>
+  <li>Si todo está bien, pulsa <strong>Merge pull request</strong> y confirma.</li>
+  <li>Si ya no quieres esos cambios, pulsa <strong>Close pull request</strong>. No se pierde nada: el PR queda cerrado y se puede consultar.</li>
+</ol>
+<div class="table-wrap"><table>
+  <tr><th>Situación</th><th>Qué hacer</th></tr>
+  <tr><td>El PR hace lo que pediste y la revisión de salud da 0 errores</td><td>Unirlo</td></tr>
+  <tr><td>Está casi bien, pero quieres cambiar algo</td><td>Pedir el cambio al agente; el PR se actualiza solo con el nuevo commit</td></tr>
+  <tr><td>Cambiaste de idea y no quieres esos cambios</td><td>Cerrarlo sin unir (como el PR #2)</td></tr>
+  <tr><td>GitHub dice que hay conflictos</td><td>Pedir al agente que traiga <code>main</code> a la rama y los resuelva</td></tr>
+  <tr><td>Ya uniste algo y te arrepientes</td><td>Pedir un <em>revert</em>: un commit nuevo que lo deshace</td></tr>
+  <tr><td>Hay varios PR abiertos que tocan lo mismo</td><td>Unir primero el más antiguo y pedir al agente que actualice el resto</td></tr>
+</table></div>
+
+<h2 id="reglas">Reglas para decidir con coherencia</h2>
+<ol class="steps">
+  <li><strong><code>main</code> es la verdad oficial.</strong> Lo que no está en <code>main</code> todavía es una propuesta.</li>
+  <li><strong>Un PR, un tema.</strong> Es más fácil revisar cambios pequeños y con un objetivo claro.</li>
+  <li><strong>Revisa antes de unir.</strong> Al menos la descripción y los archivos principales.</li>
+  <li><strong>No dejes PR abiertos mucho tiempo.</strong> Cuanto más esperan, más probable es un conflicto.</li>
+  <li><strong>Deshaz con revert, nunca reescribiendo la historia.</strong></li>
+  <li><strong>Un PR unido está terminado.</strong> El trabajo nuevo va en un PR nuevo.</li>
+  <li><strong>Nunca subas claves ni contraseñas al repositorio.</strong> Para eso existen los <a href="nube.html#secretos">secretos de red</a>.</li>
+</ol>
+
+<h2 id="permisos">Quién puede hacer qué</h2>
+<p>Claude Code entra a GitHub con la <strong>app de Claude para GitHub</strong>, que tú autorizaste para el repositorio <code>arvyonfoa/Arvyon</code>. En la nube, tus credenciales reales nunca entran en la máquina: un proxy de GitHub las pone por fuera. Ese proxy no permite borrar ramas ni subir etiquetas, y solo da acceso a los repositorios conectados a la sesión.</p>
+<div class="note"><p class="note-title">Quien une los PR eres tú</p><p>El agente puede abrir, actualizar y comentar pull requests, pero la decisión de unir o cerrar es tuya.</p></div>
+
+      <nav class="pager" id="pager" aria-label="Capítulos anterior y siguiente"></nav>
+      <p class="foot">Manual Cerebro Arvyon v1.0 · 2026-11-08 · Se actualiza solo cuando el fundador lo decide. Archivo en el repositorio: <code>Cerebro/manual/github.html</code></p>
+    </article>
+  </main>
+</div>
+<script>
+  // En pantallas pequeñas el menú empieza cerrado.
+  if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
+    var d = document.getElementById("nav-details"); if (d) d.removeAttribute("open");
+  }
+</script>
+</body>
+</html>

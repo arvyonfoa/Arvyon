@@ -8,13 +8,13 @@ fuentes: []
 creado: 2026-11-03
 actualizado: 2026-11-03
 revisar_antes: 2027-05-03
-etiquetas: [sprint-1]
+etiquetas: []
 ---
 
 # Impuestos y facturación
 
 ## En una frase
-Es probablemente el factor que más puede cambiar el precio neto que recibe Arvyon. **Es prioridad 1** ([[preguntas-abiertas]]).
+Es probablemente el factor que más puede cambiar el precio neto que recibe Arvyon. **Es prioridad 1** cuando se salga al mercado ([[preguntas-abiertas]]).
 
 > [!warning] No es asesoría legal ni tributaria
 > Esta página organiza preguntas y opciones. Toda conclusión debe confirmarla un contador o abogado de cada país, y su concepto se guarda en `raw/legal/`.

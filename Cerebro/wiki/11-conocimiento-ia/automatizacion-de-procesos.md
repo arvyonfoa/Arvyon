@@ -4,9 +4,9 @@ area: conocimiento
 estado: semilla
 confianza: media
 resumen: "Bloque 4: automatizar cotizaciones, facturas, correos y reportes con Make, n8n o Zapier y con IA en medio del flujo."
-fuentes: []
+fuentes: ["[[2026-11-barrido-ligero-competidores]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -34,6 +34,9 @@ Automatiza de punta a punta una cotización: formulario → IA que redacta la pr
 ## Cómo se convierte en producto y contenido
 - Módulo: las 2 o 3 automatizaciones de Optimiza ([[paquetes-estandar]]) y el módulo «Automatización de procesos» ([[paquete-a-la-medida]]).
 - Video de YouTube: «Automaticé las cotizaciones de una pyme en 1 hora (paso a paso)».
+
+## Lo que usa la competencia (2026-11)
+**n8n** es la herramienta más citada por las agencias que atienden pymes en Colombia, a veces instalada en el servidor del cliente; Make y Zapier aparecen como alternativas. Integran Siigo, Alegra, World Office, SAP, SIESA, Zoho, HubSpot y la facturación electrónica DIAN, y ofrecen lectura de facturas con OCR e IA ([[capacidades-de-la-competencia]], [[2026-11-barrido-ligero-competidores]]). Conclusión para la Etapa 2: aprender primero n8n.
 
 ## Conexiones
 - [[curriculo]]: bloque n.º 4.
