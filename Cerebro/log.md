@@ -66,3 +66,12 @@
 
 ## [2026-11-08] schema | Manual en un solo archivo
 - A pedido del fundador, el manual pasa a ser un único archivo HTML autocontenido y descargable: `manual/manual-cerebro-arvyon.html`. Se eliminan las 9 páginas sueltas y `manual/assets/`. Se retira la copia publicada en claude.ai.
+
+## [2026-11-08] lint | Limpieza de todo el repositorio
+- Revisión de salud del cerebro: 0 errores, 0 avisos. Revisión de los archivos fuera del cerebro.
+- Eliminados (decisión del fundador):
+  - `Cerebro.md` y `Raw.md` en la raíz: notas vacías (0 bytes) creadas por Obsidian.
+  - `Raw/` en la raíz: copia idéntica de `raw/00-internos/` (la presentación queda solo dentro del cerebro).
+  - `.obsidian/` de la raíz: la bóveda de Obsidian es `Cerebro/`; se añade un `.gitignore` en la raíz para que no se vuelva a subir.
+- Actualizados: `README.md` y `CLAUDE.md` de la raíz, y el manual a v1.1 (referencias a `Raw/` y estado de los pull requests).
+- Se conservan los `.gitkeep` de `raw/`: mantienen las subcarpetas vacías que el agente usará.
