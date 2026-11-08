@@ -58,3 +58,8 @@
 ## [2026-11-08] query | ¿Debo aprender Python, TypeScript o PostgreSQL?
 - Archivado en [[programacion-y-bases-de-datos]]: no en la Fase 1; sí [[alfabetizacion-tecnica]]; Python y SQL básicos en la Fase 2; TypeScript y administración de PostgreSQL solo si se construyen productos.
 - Siguiente paso: empezar la Etapa 1 el lunes 2026-11-09 con «IA Para Todos (Español)», módulo 1 ([[guia-etapa-1]]).
+
+## [2026-11-08] schema | Manual Cerebro Arvyon v1.0
+- Nuevo sitio HTML de 9 páginas en `manual/` (estilo y comportamiento comunes en `manual/assets/`): inicio, el proyecto, qué es un segundo cerebro, mapa del cerebro, cómo se usa, GitHub, la nube de Claude Code y sus entornos, cómo se crea la empresa, glosario y preguntas.
+- Regla: el manual solo se actualiza cuando el fundador lo pide (en `CLAUDE.md` y en el prompt maestro).
+- Nuevo `CLAUDE.md` en la raíz del repositorio que apunta a `Cerebro/CLAUDE.md`, para que el agente encuentre las reglas aunque la sesión empiece en la raíz.

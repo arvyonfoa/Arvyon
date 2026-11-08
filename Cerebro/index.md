@@ -6,6 +6,8 @@
 
 **Páginas:** 105 · **Fuentes ingeridas:** 4 · **Última actualización:** 2026-11-08 · **Fase vigente:** 1 · Aprender (9 nov–15 dic)
 
+**Manual para humanos:** `manual/index.html` (v1.0)
+
 **Empieza por aquí (Fase 1):** [[curriculo]] → [[guia-etapa-1]] → [[dec-009-fase-de-aprendizaje]] → [[tesis-arvyon]]
 
 ## Panorama · tesis, prioridades y hoja de ruta

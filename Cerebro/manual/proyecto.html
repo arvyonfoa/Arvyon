@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El proyecto Arvyon · Manual Cerebro Arvyon</title>
+<meta name="description" content="Qué es Arvyon: propuesta, clientes, paquetes, método y fases.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/estilo.css">
+<script src="assets/manual.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <rect x="1" y="1" width="30" height="30" rx="8" class="solid-a"/>
+  <circle cx="10" cy="20" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <circle cx="22" cy="12" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+</svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
+    <span class="topbar-spacer"></span>
+    <span class="version-pill">v1.0 · 2026-11-08</span>
+    <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="nav-details" open>
+      <summary>Capítulos del manual</summary>
+      <div class="nav-panel">
+        <p class="nav-title">Capítulos</p>
+        <ul class="nav-list" id="chapters"></ul>
+        <div class="toc-block">
+          <p class="nav-title">En esta página</p>
+          <ul class="nav-list toc" id="toc"></ul>
+        </div>
+      </div>
+    </details>
+  </aside>
+  <main>
+    <article class="content">
+      <p class="eyebrow">Capítulo 1</p>
+
+<h1>El proyecto Arvyon</h1>
+<p class="lead">Arvyon es una consultora de inteligencia artificial 100 % virtual que opera desde Polonia, en la Unión Europea, para empresas colombianas pequeñas, medianas y grandes.</p>
+
+<h2 id="en-una-frase">Arvyon en una frase</h2>
+<div class="note"><p class="note-title">La propuesta</p><p>«Traemos lo que ya funciona en Europa, adaptado a tu empresa». Arvyon <strong>enseña</strong> (que el equipo entienda la IA y la use sin miedo), <strong>implementa</strong> (herramientas funcionando dentro del negocio) y <strong>acompaña</strong> (mide y mejora cada mes).</p></div>
+<p>Todo esto viene de la presentación para socios de octubre de 2026, que es la primera fuente del cerebro (<code>Cerebro/raw/00-internos/presentacion-consultora-ia.pdf</code>).</p>
+
+<h2 id="problema">El problema que resuelve</h2>
+<div class="grid">
+  <div class="card"><p class="card-kicker">Brecha de adopción</p><h3 class="num">61 % frente a 37,7 %</h3><p>El 61 % de las empresas colombianas de 50 o más empleados ve la IA como prioridad, pero solo el 37,7 % la ha incorporado de verdad (Endeavor, «Colombia AI Pulse»).</p></div>
+  <div class="card"><p class="card-kicker">Mipymes</p><h3 class="num">Más del 99 %</h3><p>Casi todas las empresas del país son mipymes y generan el 79 % del empleo (MinComercio).</p></div>
+  <div class="card"><p class="card-kicker">Política pública</p><h3>CONPES 4144</h3><p>En febrero de 2025 Colombia aprobó su Política Nacional de Inteligencia Artificial.</p></div>
+</div>
+<div class="note warn"><p class="note-title">Ojo con el dato</p><p>La cifra 61 % / 37,7 % es de empresas con 50 o más empleados. No describe a las microempresas, que son el público del paquete Inicia. El cerebro lo deja anotado en <code>wiki/01-mercado/adopcion-ia-colombia.md</code>.</p></div>
+
+<h2 id="diferenciales">El puente entre Europa y Colombia</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 230" role="img" aria-labelledby="d-puente-t">
+    <title id="d-puente-t">Arvyon como puente entre Polonia y Colombia</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="20" y="40" width="220" height="150" rx="12" class="box-a"/>
+    <text x="130" y="78" text-anchor="middle" class="t-b">Polonia · UE</text>
+    <text x="130" y="102" text-anchor="middle" class="t-s">donde vive Arvyon</text>
+    <text x="130" y="134" text-anchor="middle" class="t-m">UTC+1 (invierno)</text>
+    <text x="130" y="152" text-anchor="middle" class="t-m">UTC+2 (verano)</text>
+    <text x="130" y="174" text-anchor="middle" class="t-s">RGPD · Reglamento de IA</text>
+
+    <rect x="520" y="40" width="220" height="150" rx="12" class="box-amber"/>
+    <text x="630" y="78" text-anchor="middle" class="t-b">Colombia</text>
+    <text x="630" y="102" text-anchor="middle" class="t-s">donde están los clientes</text>
+    <text x="630" y="134" text-anchor="middle" class="t-m">UTC−5 todo el año</text>
+    <text x="630" y="152" text-anchor="middle" class="t-m">mañana: 8:00 a 12:00</text>
+    <text x="630" y="174" text-anchor="middle" class="t-s">Ley 1581 de 2012</text>
+
+    <path d="M244 100 L516 100" class="ln-a" marker-end="url(#fla)"/>
+    <text x="380" y="88" text-anchor="middle" class="t-a">métodos probados en Europa</text>
+    <path d="M516 140 L244 140" class="ln" marker-end="url(#fl)"/>
+    <text x="380" y="132" text-anchor="middle" class="t-s">necesidades de la empresa</text>
+    <rect x="320" y="160" width="120" height="30" rx="15" class="solid-a"/>
+    <text x="380" y="180" text-anchor="middle" class="t-on">6 a 7 horas</text>
+  </svg>
+  </div>
+  <figcaption>Mientras Colombia duerme, Arvyon trabaja: el cliente encuentra el avance listo al empezar su día.</figcaption>
+</figure>
+<div class="table-wrap"><table>
+  <tr><th>Diferencial</th><th>Qué significa</th></tr>
+  <tr><td>Vemos el futuro primero</td><td>Vivir en la UE permite ver cómo usan la IA las empresas europeas y llevar lo probado, no la moda.</td></tr>
+  <tr><td>IA responsable con estándar europeo</td><td>Se trabaja con la lógica del Reglamento Europeo de IA y del RGPD, aplicada según la Ley 1581 de Colombia.</td></tr>
+  <tr><td>Hablamos como el cliente</td><td>Español colombiano, ejemplos de su realidad, su ritmo y su presupuesto.</td></tr>
+  <tr><td>Trabajamos mientras Colombia duerme</td><td>Con 6 a 7 horas de diferencia, el trabajo avanza de un día para otro.</td></tr>
+</table></div>
+
+<h2 id="clientes">Clientes y paquetes</h2>
+<div class="table-wrap"><table>
+  <tr><th>Segmento</th><th>Qué dicen</th><th>Paquete</th><th>Duración</th></tr>
+  <tr><td>Micro y pequeñas</td><td>«No tengo tiempo para todo»</td><td><strong>Inicia</strong>: taller de 3 h, 3 herramientas configuradas, guía de uso, 30 días de soporte</td><td>2 semanas</td></tr>
+  <tr><td>Medianas</td><td>«Crecimos y los procesos no dan abasto»</td><td><strong>Optimiza</strong> (el que más se quiere vender): diagnóstico, 2 o 3 automatizaciones, capacitación, 60 días de acompañamiento</td><td>6 semanas</td></tr>
+  <tr><td>Grandes</td><td>«Necesitamos un plan serio de IA»</td><td><strong>Transforma</strong>: hoja de ruta, política de datos, formación por roles, pilotos medibles; o un paquete <strong>a la medida</strong></td><td>3 meses</td></tr>
+</table></div>
+<p>Hay <strong>tres puertas de entrada</strong>: un diagnóstico exprés gratis de 45 minutos, los paquetes estándar de precio fijo y el paquete a la medida. Las tres llevan al <strong>acompañamiento mensual</strong>, que es el ingreso recurrente que sostiene el negocio. Los precios todavía no están definidos.</p>
+
+<h2 id="metodo">El Método 4D</h2>
+<ol class="steps">
+  <li><strong>Descubrir.</strong> Entender el negocio, sus procesos y dónde se pierde el tiempo. Entrega: mapa del negocio.</li>
+  <li><strong>Diseñar.</strong> Priorizar por impacto y esfuerzo y elegir 2 o 3 oportunidades. Entrega: plan priorizado.</li>
+  <li><strong>Desplegar.</strong> Implementar, capacitar y dejar guías, con pilotos de 30 días. Entrega: herramientas funcionando.</li>
+  <li><strong>Demostrar.</strong> Medir el antes y el después en números. Entrega: informe de resultados.</li>
+</ol>
+<div class="note idea"><p class="note-title">Pendiente de decidir</p><p>Anthropic enseña un marco llamado también «4D» (Delegación, Descripción, Discernimiento, Diligencia). El cerebro lo dejó anotado en <code>wiki/04-oferta/metodo-4d.md</code> para decidir si se mantiene el nombre.</p></div>
+
+<h2 id="canales">Canales para llegar a los clientes</h2>
+<div class="grid">
+  <div class="card"><h4>Instagram</h4><p>La vitrina inicial: educa, demuestra y genera confianza.</p></div>
+  <div class="card"><h4>YouTube</h4><p>Canal estratégico de autoridad y búsqueda: un buen tutorial trae clientes durante años.</p></div>
+  <div class="card"><h4>LinkedIn</h4><p>Para gerentes de empresas grandes, con un tono más corporativo.</p></div>
+  <div class="card"><h4>WhatsApp Business</h4><p>El canal de cierre: donde conversa el empresario colombiano.</p></div>
+  <div class="card"><h4>Página web</h4><p>La oficina que no existe: demuestra que la empresa es seria.</p></div>
+</div>
+
+<h2 id="fases">Las dos fases del proyecto</h2>
+<p>El principio rector del proyecto es: <strong>primero se aprende, después se actúa</strong>.</p>
+<div class="grid">
+  <div class="card" style="border-top:3px solid var(--amber)"><p class="card-kicker">Fase 1 · ahora</p><h3>Aprender</h3><p>Del 9 de noviembre al 15 de diciembre de 2026. Cursos, lecturas, ejercicios y demos con empresas ficticias. No se hacen entrevistas, ventas ni trámites.</p></div>
+  <div class="card" style="border-top:3px solid var(--green)"><p class="card-kicker">Fase 2 · después</p><h3>Actuar</h3><p>Cuando se cumplan los criterios de paso: entrevistas, diagnósticos, pilotos, contenido público, trámites y la hoja de ruta de 90 días.</p></div>
+</div>
+<p>El detalle está en el capítulo <a href="empresa.html">Cómo se crea la empresa</a>.</p>
+
+      <nav class="pager" id="pager" aria-label="Capítulos anterior y siguiente"></nav>
+      <p class="foot">Manual Cerebro Arvyon v1.0 · 2026-11-08 · Se actualiza solo cuando el fundador lo decide. Archivo en el repositorio: <code>Cerebro/manual/proyecto.html</code></p>
+    </article>
+  </main>
+</div>
+<script>
+  // En pantallas pequeñas el menú empieza cerrado.
+  if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
+    var d = document.getElementById("nav-details"); if (d) d.removeAttribute("open");
+  }
+</script>
+</body>
+</html>

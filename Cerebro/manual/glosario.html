@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glosario y preguntas · Manual Cerebro Arvyon</title>
+<meta name="description" content="Glosario con buscador y preguntas frecuentes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/estilo.css">
+<script src="assets/manual.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <rect x="1" y="1" width="30" height="30" rx="8" class="solid-a"/>
+  <circle cx="10" cy="20" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <circle cx="22" cy="12" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+</svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
+    <span class="topbar-spacer"></span>
+    <span class="version-pill">v1.0 · 2026-11-08</span>
+    <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="nav-details" open>
+      <summary>Capítulos del manual</summary>
+      <div class="nav-panel">
+        <p class="nav-title">Capítulos</p>
+        <ul class="nav-list" id="chapters"></ul>
+        <div class="toc-block">
+          <p class="nav-title">En esta página</p>
+          <ul class="nav-list toc" id="toc"></ul>
+        </div>
+      </div>
+    </details>
+  </aside>
+  <main>
+    <article class="content">
+      <p class="eyebrow">Capítulo 8</p>
+
+<h1>Glosario y preguntas frecuentes</h1>
+<p class="lead">Todas las palabras nuevas del manual, en orden alfabético y con buscador.</p>
+
+<h2 id="glosario">Glosario</h2>
+<label for="gloss-search" class="nav-title">Buscar un término</label>
+<input id="gloss-search" class="search" type="search" placeholder="Por ejemplo: rama, secreto, ingesta" autocomplete="off">
+<div class="gloss">
+<dl class="def"><dt>Agente</dt><dd>Un programa de IA que no solo responde, sino que ejecuta tareas: lee archivos, escribe, busca en la web, hace commits. Claude Code es un agente.</dd></dl>
+<dl class="def"><dt>AGENTS.md</dt><dd>Archivo con las instrucciones para agentes distintos de Claude Code (OpenCode, Codex). En Arvyon remite a CLAUDE.md.</dd></dl>
+<dl class="def"><dt>Alfabetización en IA</dt><dd>Saber usar la IA con criterio y de forma segura. El Reglamento Europeo de IA pide a las empresas que forman a su personal en esto.</dd></dl>
+<dl class="def"><dt>API</dt><dd>La forma en que dos programas se comunican. Una automatización usa APIs para conectar, por ejemplo, WhatsApp con una hoja de cálculo.</dd></dl>
+<dl class="def"><dt>Branch / rama</dt><dd>Una línea de trabajo paralela en Git. Los cambios se hacen en una rama y se unen a main con un pull request.</dd></dl>
+<dl class="def"><dt>Callout</dt><dd>Recuadro de color en Obsidian. En el cerebro marcan Hecho, Estimación, Supuesto, Por verificar y Contradicción.</dd></dl>
+<dl class="def"><dt>CLAUDE.md</dt><dd>Archivo de reglas que Claude Code lee al trabajar en una carpeta. Es el esquema operativo del cerebro.</dd></dl>
+<dl class="def"><dt>Claude Code</dt><dd>El agente de Anthropic para trabajar con archivos y código. Se usa en la web, el escritorio, el teléfono o la terminal.</dd></dl>
+<dl class="def"><dt>Clonar</dt><dd>Descargar una copia completa de un repositorio a tu computador.</dd></dl>
+<dl class="def"><dt>Commit</dt><dd>Una foto guardada de los cambios, con un mensaje. Forma el historial del repositorio.</dd></dl>
+<dl class="def"><dt>Conflicto</dt><dd>Cuando dos ramas cambian las mismas líneas de forma distinta y hay que elegir a mano.</dd></dl>
+<dl class="def"><dt>Conectores</dt><dd>Integraciones de Claude con servicios como Gmail, Google Drive o Notion. Funcionan sin añadir sus dominios al entorno.</dd></dl>
+<dl class="def"><dt>Dataview</dt><dd>Plugin de Obsidian que crea tablas automáticas a partir de la ficha de las páginas. Lo usa el tablero.</dd></dl>
+<dl class="def"><dt>Diff</dt><dd>La comparación entre el antes y el después de un archivo.</dd></dl>
+<dl class="def"><dt>Entorno en la nube</dt><dd>La configuración guardada con la que arrancan las sesiones de Claude Code: acceso a la red, secretos, script y variables.</dd></dl>
+<dl class="def"><dt>Esquema</dt><dd>La capa de reglas del cerebro: CLAUDE.md, AGENTS.md y el prompt maestro.</dd></dl>
+<dl class="def"><dt>Fase 1 / Fase 2</dt><dd>Las dos fases de Arvyon: Aprender (9 nov – 15 dic de 2026) y Actuar (cuando se cumplan los criterios de paso).</dd></dl>
+<dl class="def"><dt>Force push</dt><dd>Subir cambios reescribiendo la historia de una rama. Peligroso; Claude Code lo tiene bloqueado.</dd></dl>
+<dl class="def"><dt>Frontmatter</dt><dd>La ficha entre líneas --- al principio de cada página: tipo, área, estado, confianza, resumen, fuentes y fechas.</dd></dl>
+<dl class="def"><dt>Fuente</dt><dd>Material original que se guarda en raw/ y se resume en wiki/14-fuentes/.</dd></dl>
+<dl class="def"><dt>GitHub</dt><dd>El servicio en internet donde vive el repositorio con todo su historial.</dd></dl>
+<dl class="def"><dt>Índice (index.md)</dt><dd>El catálogo de todas las páginas del cerebro. El agente lo lee primero en cada consulta.</dd></dl>
+<dl class="def"><dt>Ingesta</dt><dd>Darle una fuente al agente para que la lea, la resuma y la integre en todas las páginas afectadas.</dd></dl>
+<dl class="def"><dt>JSON</dt><dd>Formato de texto en el que viajan los datos entre aplicaciones.</dd></dl>
+<dl class="def"><dt>Laguna</dt><dd>Un dato que falta o que hay que verificar. Se anotan en wiki/_meta/lagunas.md.</dd></dl>
+<dl class="def"><dt>LLM</dt><dd>Modelo de lenguaje grande, como Claude, GPT o Gemini.</dd></dl>
+<dl class="def"><dt>main</dt><dd>La rama principal del repositorio: la versión oficial del cerebro.</dd></dl>
+<dl class="def"><dt>Markdown</dt><dd>Formato de texto sencillo con títulos (#), listas (-) y enlaces. Todas las páginas del cerebro están en Markdown.</dd></dl>
+<dl class="def"><dt>Merge / unir</dt><dd>Juntar los cambios de una rama con otra. Al unir un pull request, sus cambios pasan a main.</dd></dl>
+<dl class="def"><dt>Método 4D</dt><dd>El método de trabajo de Arvyon: Descubrir, Diseñar, Desplegar y Demostrar.</dd></dl>
+<dl class="def"><dt>n8n</dt><dd>Herramienta de automatización sin código, la más usada por la competencia que atiende pymes en Colombia.</dd></dl>
+<dl class="def"><dt>Obsidian</dt><dd>Aplicación gratuita para leer y navegar archivos Markdown enlazados. Es el lector del cerebro.</dd></dl>
+<dl class="def"><dt>OpenCode</dt><dd>Agente de código abierto que funciona en tu computador; lee AGENTS.md.</dd></dl>
+<dl class="def"><dt>Prompt maestro</dt><dd>El documento completo con el rol, las reglas, los flujos, la agenda y el currículo del cerebro (PROMPT-MAESTRO.md).</dd></dl>
+<dl class="def"><dt>Proxy</dt><dd>Un intermediario por el que pasan las conexiones de la máquina en la nube. Filtra sitios y añade credenciales por fuera.</dd></dl>
+<dl class="def"><dt>Pull</dt><dd>Bajar a tu computador los cambios que hay en GitHub.</dd></dl>
+<dl class="def"><dt>Pull request (PR)</dt><dd>Solicitud para unir los cambios de una rama a main, con revisión previa.</dd></dl>
+<dl class="def"><dt>Push</dt><dd>Subir commits a GitHub.</dd></dl>
+<dl class="def"><dt>RAG</dt><dd>Técnica en la que el modelo busca fragmentos de documentos en cada pregunta. No acumula conocimiento, a diferencia de la wiki LLM.</dd></dl>
+<dl class="def"><dt>raw/</dt><dd>La carpeta de fuentes originales. Nunca se modifica.</dd></dl>
+<dl class="def"><dt>Registro (log.md)</dt><dd>El diario cronológico del cerebro. Solo se añaden entradas.</dd></dl>
+<dl class="def"><dt>Repositorio</dt><dd>La carpeta de un proyecto en GitHub, con todo su historial. El de Arvyon es arvyonfoa/Arvyon.</dd></dl>
+<dl class="def"><dt>Revert</dt><dd>Un commit que deshace otro sin borrar la historia.</dd></dl>
+<dl class="def"><dt>Revisión de salud</dt><dd>El programa herramientas/revisar_wiki.py, que encuentra enlaces rotos, páginas sin ficha, huérfanas o vencidas.</dd></dl>
+<dl class="def"><dt>Script de configuración</dt><dd>Programa que se ejecuta al crear la máquina de una sesión, antes de que arranque Claude, para instalar herramientas.</dd></dl>
+<dl class="def"><dt>Secreto de red</dt><dd>Clave de API guardada en el entorno que el proxy añade a las peticiones sin que Claude la vea.</dd></dl>
+<dl class="def"><dt>Segundo cerebro</dt><dd>Una colección ordenada de lo que sabes, guardada fuera de tu cabeza. En Arvyon la mantiene un agente.</dd></dl>
+<dl class="def"><dt>Sesión de estudio</dt><dd>El flujo de la Fase 1: estudias, el agente ingiere tus apuntes, explica, propone un ejercicio y comprueba lo aprendido.</dd></dl>
+<dl class="def"><dt>Tesis</dt><dd>La síntesis viva del negocio: 8 hipótesis con su estado. Está en wiki/00-panorama/tesis-arvyon.md.</dd></dl>
+<dl class="def"><dt>Variable de entorno</dt><dd>Valor de configuración que leen los comandos de la sesión. No sirve para claves.</dd></dl>
+<dl class="def"><dt>Wiki LLM</dt><dd>Una wiki escrita y mantenida por un modelo de lenguaje: el patrón en el que se basa el cerebro.</dd></dl>
+<dl class="def"><dt>Wikilink</dt><dd>Un enlace entre páginas escrito como [[nombre-de-pagina]].</dd></dl>
+</div>
+<p class="gloss-empty" id="gloss-empty" hidden>No hay términos con esa palabra. Prueba con otra.</p>
+
+<h2 id="preguntas">Preguntas frecuentes</h2>
+<details class="fold"><summary><span>¿Tengo que escribir las páginas yo?</span></summary><div class="fold-body"><p>No. Tú das fuentes e instrucciones; el agente escribe. Si quieres corregir algo, díselo y él lo cambia.</p></div></details>
+<details class="fold"><summary><span>¿Qué pasa si cierro el chat sin pedir commit?</span></summary><div class="fold-body"><p>Lo que no se subió a GitHub se pierde cuando la máquina de la sesión se recupera. Pide siempre «haz commit y push» antes de terminar.</p></div></details>
+<details class="fold"><summary><span>¿Puedo usar otro agente que no sea Claude Code?</span></summary><div class="fold-body"><p>Sí. OpenCode y otros leen AGENTS.md. Si notas que no siguen las reglas, pégales el prompt maestro completo.</p></div></details>
+<details class="fold"><summary><span>¿Por qué el agente no une los pull requests él mismo?</span></summary><div class="fold-body"><p>Porque la decisión de qué entra en la versión oficial es tuya. Así siempre sabes qué cambió.</p></div></details>
+<details class="fold"><summary><span>¿Qué hago si un PR tiene conflictos?</span></summary><div class="fold-body"><p>Pide al agente que traiga main a la rama y los resuelva. Después revisas y unes.</p></div></details>
+<details class="fold"><summary><span>¿Cómo deshago algo que ya uní?</span></summary><div class="fold-body"><p>Pide un revert: un commit nuevo que deshace el anterior sin borrar la historia.</p></div></details>
+<details class="fold"><summary><span>¿Puedo guardar contraseñas en el cerebro?</span></summary><div class="fold-body"><p>No. Ni en el repositorio ni en las variables de entorno. Las claves van como secretos de red, y nunca se pegan en el chat.</p></div></details>
+<details class="fold"><summary><span>¿Cada cuánto se actualiza este manual?</span></summary><div class="fold-body"><p>Solo cuando el fundador lo pide. Cada cambio sube la versión y queda en el historial de la portada.</p></div></details>
+
+      <nav class="pager" id="pager" aria-label="Capítulos anterior y siguiente"></nav>
+      <p class="foot">Manual Cerebro Arvyon v1.0 · 2026-11-08 · Se actualiza solo cuando el fundador lo decide. Archivo en el repositorio: <code>Cerebro/manual/glosario.html</code></p>
+    </article>
+  </main>
+</div>
+<script>
+  // En pantallas pequeñas el menú empieza cerrado.
+  if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
+    var d = document.getElementById("nav-details"); if (d) d.removeAttribute("open");
+  }
+</script>
+</body>
+</html>

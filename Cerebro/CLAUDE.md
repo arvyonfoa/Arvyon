@@ -77,6 +77,11 @@ Tipos: `setup`, `ingest`, `query`, `research`, `study`, `lint`, `decision`, `sch
 3. Haz commit en Git (`ingest: …`, `query: …`, `lint: …`).
 4. Propón el siguiente paso.
 
+## Manual Cerebro Arvyon
+- Está en `manual/` (sitio de varias páginas HTML; empieza en `manual/index.html`, estilo común en `manual/assets/`).
+- **Solo se actualiza cuando el fundador lo pide.** Al hacerlo: sube la versión (v1.0 → v1.1 para cambios pequeños, v2.0 para cambios grandes) en la cabecera de todas las páginas, añade una fila a «Cómo se actualiza este manual» en `manual/index.html` y escribe una entrada `schema` en `log.md`.
+- Mantén el manual coherente con el cerebro: si cambian la fase, las carpetas o las reglas, avisa al fundador de que el manual quedó desactualizado.
+
 ## Mapa rápido
 - Tesis y prioridades: `wiki/00-panorama/`
 - Qué investigar: `wiki/_meta/agenda-de-investigacion.md`
@@ -87,3 +92,4 @@ Tipos: `setup`, `ingest`, `query`, `research`, `study`, `lint`, `decision`, `sch
 ## Historial del esquema
 - 2026-11-03: versión inicial.
 - 2026-11-08: fase vigente (aprender antes de actuar), sesión de estudio y tipo de registro `study`.
+- 2026-11-08: Manual Cerebro Arvyon v1.0 y regla de actualización.

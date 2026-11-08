@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Qué es un segundo cerebro · Manual Cerebro Arvyon</title>
+<meta name="description" content="La idea de la wiki LLM: tres capas, roles y reglas de oro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/estilo.css">
+<script src="assets/manual.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <rect x="1" y="1" width="30" height="30" rx="8" class="solid-a"/>
+  <circle cx="10" cy="20" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <circle cx="22" cy="12" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+</svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
+    <span class="topbar-spacer"></span>
+    <span class="version-pill">v1.0 · 2026-11-08</span>
+    <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="nav-details" open>
+      <summary>Capítulos del manual</summary>
+      <div class="nav-panel">
+        <p class="nav-title">Capítulos</p>
+        <ul class="nav-list" id="chapters"></ul>
+        <div class="toc-block">
+          <p class="nav-title">En esta página</p>
+          <ul class="nav-list toc" id="toc"></ul>
+        </div>
+      </div>
+    </details>
+  </aside>
+  <main>
+    <article class="content">
+      <p class="eyebrow">Capítulo 2</p>
+
+<h1>Qué es un segundo cerebro</h1>
+<p class="lead">Un segundo cerebro es una colección ordenada de todo lo que sabes sobre un tema, guardada fuera de tu cabeza para que no se pierda y se pueda consultar. En Arvyon, ese cerebro lo escribe y lo mantiene un agente de IA.</p>
+
+<h2 id="la-idea">La idea en palabras simples</h2>
+<p>Piensa en un cuaderno de proyecto que se escribe solo. Cada vez que le das algo para leer (un informe, un curso, una conversación), el agente lo resume, lo conecta con lo que ya sabías y actualiza todas las páginas afectadas. Con el tiempo, el cuaderno se vuelve más completo y más útil.</p>
+<dl class="def">
+  <dt>Wiki LLM</dt>
+  <dd>Una wiki (páginas enlazadas entre sí, como Wikipedia) escrita y mantenida por un modelo de lenguaje (LLM). Tú eliges qué leer y qué preguntar; el modelo hace el trabajo pesado de resumir, enlazar, archivar y mantener todo al día.</dd>
+</dl>
+
+<h2 id="rag">Por qué no es un chat que olvida</h2>
+<p>La mayoría de las herramientas con documentos funcionan como un buscador: subes archivos y, en cada pregunta, el modelo busca fragmentos y arma una respuesta desde cero. Eso se llama <strong>RAG</strong>. Funciona, pero no acumula nada.</p>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Chat con documentos (RAG)</th><th>Segundo cerebro (wiki LLM)</th></tr>
+  <tr><td>Qué pasa con una fuente nueva</td><td>Se guarda para buscarla después</td><td>Se lee, se resume y se integra en las páginas existentes</td></tr>
+  <tr><td>Qué pasa en cada pregunta</td><td>El modelo redescubre todo desde cero</td><td>El modelo lee el índice y las páginas ya escritas</td></tr>
+  <tr><td>Contradicciones entre fuentes</td><td>Pasan desapercibidas</td><td>Quedan señaladas en las dos páginas</td></tr>
+  <tr><td>Buenas respuestas</td><td>Se pierden en el historial del chat</td><td>Se archivan como páginas nuevas</td></tr>
+  <tr><td>Con el tiempo</td><td>Igual que el primer día</td><td>Cada fuente y cada pregunta lo enriquecen</td></tr>
+</table></div>
+<p>La idea viene de lejos: en 1945 Vannevar Bush imaginó el <em>Memex</em>, un archivo personal con caminos entre documentos. Lo que faltaba era quién lo mantuviera. Ahora lo hace el agente, que no se cansa ni olvida actualizar una referencia.</p>
+
+<h2 id="capas">Las tres capas</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 330" role="img" aria-labelledby="d-capas-t">
+    <title id="d-capas-t">Las tres capas del cerebro: esquema, wiki y fuentes</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="170" y="20" width="420" height="76" rx="10" class="box-violet"/>
+    <text x="380" y="50" text-anchor="middle" class="t-b">3 · Esquema: las reglas</text>
+    <text x="380" y="74" text-anchor="middle" class="t-m">CLAUDE.md · AGENTS.md · PROMPT-MAESTRO.md</text>
+
+    <rect x="170" y="126" width="420" height="76" rx="10" class="box-a"/>
+    <text x="380" y="156" text-anchor="middle" class="t-b">2 · Wiki: lo que sabemos</text>
+    <text x="380" y="180" text-anchor="middle" class="t-m">wiki/ · index.md · log.md</text>
+
+    <rect x="170" y="232" width="420" height="76" rx="10" class="box-amber"/>
+    <text x="380" y="262" text-anchor="middle" class="t-b">1 · Fuentes: la verdad original</text>
+    <text x="380" y="286" text-anchor="middle" class="t-m">raw/ (nunca se modifica)</text>
+
+    <path d="M380 230 L380 206" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M380 98 L380 122" class="ln" marker-end="url(#fl)"/>
+
+    <text x="20" y="258" class="t-b">Tú</text>
+    <text x="20" y="278" class="t-s">añades fuentes</text>
+    <path d="M128 270 L166 270" class="ln" marker-end="url(#fl)"/>
+    <text x="20" y="152" class="t-b">Tú</text>
+    <text x="20" y="172" class="t-s">lees y preguntas</text>
+    <path d="M166 164 L134 164" class="ln" marker-end="url(#fl)"/>
+
+    <text x="608" y="152" class="t-b">Agente</text>
+    <text x="608" y="172" class="t-s">escribe y mantiene</text>
+    <path d="M660 182 L660 250 L594 250" class="ln-a" marker-end="url(#fla)"/>
+    <text x="608" y="234" class="t-a">lee</text>
+    <text x="608" y="46" class="t-b">Juntos</text>
+    <text x="608" y="66" class="t-s">ajustan las reglas</text>
+  </svg>
+  </div>
+  <figcaption>Las fuentes alimentan la wiki; el esquema dice cómo se escribe la wiki.</figcaption>
+</figure>
+<div class="grid">
+  <div class="card"><p class="card-kicker">Capa 1 · raw/</p><h4>Fuentes originales</h4><p>Informes, artículos, apuntes de cursos, transcripciones y la presentación. Son la fuente de verdad: el agente las lee pero <strong>nunca las cambia</strong>.</p></div>
+  <div class="card"><p class="card-kicker">Capa 2 · wiki/</p><h4>La wiki</h4><p>Resúmenes, temas, entidades, conceptos, análisis y decisiones. La escribe el agente; tú la lees y la corriges hablando con él.</p></div>
+  <div class="card"><p class="card-kicker">Capa 3 · esquema</p><h4>Las reglas</h4><p>Le dicen al agente cómo nombrar archivos, qué secciones lleva cada página y qué pasos seguir. Se mejoran con el tiempo.</p></div>
+</div>
+
+<h2 id="roles">Quién hace qué</h2>
+<div class="table-wrap"><table>
+  <tr><th>El fundador</th><th>El agente</th></tr>
+  <tr><td>Elige las fuentes que vale la pena leer</td><td>Lee las fuentes completas y evalúa su fiabilidad</td></tr>
+  <tr><td>Dirige el análisis: qué destacar, qué investigar</td><td>Resume, enlaza y actualiza de 5 a 15 páginas por fuente</td></tr>
+  <tr><td>Hace las preguntas</td><td>Responde citando las páginas y archiva las buenas respuestas</td></tr>
+  <tr><td>Decide (precios, socios, fases)</td><td>Prepara las opciones y registra la decisión</td></tr>
+  <tr><td>Revisa y une los pull requests en GitHub</td><td>Hace commit y push a una rama y abre el pull request</td></tr>
+</table></div>
+<div class="note"><p class="note-title">Una comparación útil</p><p>Obsidian es el editor, el agente es el programador y la wiki es el código. Igual que en un proyecto de software, nada cambia sin quedar registrado en el historial.</p></div>
+
+<h2 id="reglas">Las reglas de oro</h2>
+<ol class="steps">
+  <li><strong>Nada entra sin fuente.</strong> Si no hay fuente, se marca como SUPUESTO.</li>
+  <li><strong>No se inventa.</strong> Ni cifras, ni empresas, ni leyes, ni enlaces. Lo que no se sabe va a «Por verificar» y a la lista de lagunas.</li>
+  <li><strong>Todo deja huella.</strong> Cada ingesta, consulta archivada o revisión actualiza el índice y el registro.</li>
+  <li><strong>Una fuente toca muchas páginas.</strong> Si solo se actualizó una, probablemente faltó integrar.</li>
+  <li><strong>Las contradicciones se señalan, no se borran.</strong></li>
+</ol>
+
+<h2 id="evidencia">Cómo distinguir lo que es seguro de lo que no</h2>
+<p>Cada afirmación lleva un nivel de evidencia. En Obsidian se ven como recuadros de colores (llamados <em>callouts</em>).</p>
+<div class="note ok"><p class="note-title">Hecho</p><p>Está en una fuente verificable y citada. Ejemplo: «Más del 99 % de las empresas del país son mipymes (MinComercio)».</p></div>
+<div class="note idea"><p class="note-title">Estimación</p><p>Es un cálculo propio a partir de hechos, con la fórmula a la vista. Ejemplo: horas ahorradas × costo por hora × 12.</p></div>
+<div class="note warn"><p class="note-title">Supuesto</p><p>Es una hipótesis sin validar, con la forma de comprobarla. Ejemplo: «El empresario busca en YouTube cómo hacer cosas con IA».</p></div>
+<div class="note"><p class="note-title">Por verificar</p><p>Algo que falta confirmar. Además queda anotado en <code>wiki/_meta/lagunas.md</code>.</p></div>
+<div class="note bad"><p class="note-title">Contradicción</p><p>Dos fuentes dicen cosas distintas. Se muestran las dos, sin promediar, con la posible causa.</p></div>
+
+      <nav class="pager" id="pager" aria-label="Capítulos anterior y siguiente"></nav>
+      <p class="foot">Manual Cerebro Arvyon v1.0 · 2026-11-08 · Se actualiza solo cuando el fundador lo decide. Archivo en el repositorio: <code>Cerebro/manual/segundo-cerebro.html</code></p>
+    </article>
+  </main>
+</div>
+<script>
+  // En pantallas pequeñas el menú empieza cerrado.
+  if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
+    var d = document.getElementById("nav-details"); if (d) d.removeAttribute("open");
+  }
+</script>
+</body>
+</html>

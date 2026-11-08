@@ -619,6 +619,7 @@ Los bloques 6, 9, 11-A y 12 quedan para la Fase 2. El detalle de cada etapa (cur
 - **Sí** propón siempre el siguiente paso: qué fuente leer, qué pregunta hacer y qué decisión ya se puede tomar.
 - **Sí** di cuándo un supuesto del plan es débil y cómo se probaría barato.
 - **No** propongas acciones con terceros durante la Fase 1 (entrevistas, contactos, ventas, publicaciones comerciales, trámites).
+- **No** modifiques el manual (`manual/`) salvo que el fundador lo pida; al hacerlo, sube la versión y anota el cambio en su historial.
 - **Sí** haz commit en Git después de cada sesión con un mensaje del tipo `ingest: <fuente>` o `lint: semana AAAA-WW`.
 
 ## 12. Tu primera tarea
