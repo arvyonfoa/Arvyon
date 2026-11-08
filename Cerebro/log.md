@@ -75,3 +75,11 @@
   - `.obsidian/` de la raíz: la bóveda de Obsidian es `Cerebro/`; se añade un `.gitignore` en la raíz para que no se vuelva a subir.
 - Actualizados: `README.md` y `CLAUDE.md` de la raíz, y el manual a v1.1 (referencias a `Raw/` y estado de los pull requests).
 - Se conservan los `.gitkeep` de `raw/`: mantienen las subcarpetas vacías que el agente usará.
+
+## [2026-11-08] lint | Revisión de salud antes de empezar la Fase 1
+- `revisar_wiki.py`: 105 páginas, 0 errores, 0 avisos. Estados: borrador=65, semilla=35, estable=5.
+- Contradicciones abiertas: 1 (artículo 4 del Reglamento Europeo de IA tras el Ómnibus Digital; pendiente de leer el texto final en EUR-Lex).
+- Lagunas abiertas: 16. Callouts «Por verificar»: 6. Decisiones abiertas: 6 de 9.
+- Avance del currículo: 0 niveles marcados (la Fase 1 empieza el 2026-11-09).
+- Revisiones que vencen pronto: ninguna antes del 2027-02-03; ese mes vencen unas 70 páginas de mercado y herramientas.
+- Entidades mencionadas en 5 o más páginas sin página propia: n8n, Microsoft Copilot, Make, Zapier, HubSpot, Siigo, Alegra. Se propone crearlas cuando se estudien en la Etapa 2.
