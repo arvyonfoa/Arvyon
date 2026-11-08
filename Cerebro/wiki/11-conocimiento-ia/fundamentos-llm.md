@@ -4,9 +4,9 @@ area: conocimiento
 estado: semilla
 confianza: media
 resumen: "Bloque 1: qué es un modelo de lenguaje, qué puede y qué no puede hacer, cuánto cuesta y qué pasa con los datos."
-fuentes: []
+fuentes: ["[[2026-11-investigacion-web-cursos-etapa-1]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -28,6 +28,7 @@ El empresario tiene miedo a equivocarse o a exponer sus datos ([[dolores-y-neces
 Toma una tarea real de una pyme colombiana (por ejemplo, responder 20 preguntas frecuentes de una clínica). Pruébala en 3 asistentes y documenta calidad, errores, tiempo y costo en una tabla en `wiki/15-analisis/`.
 
 ## Recursos (por verificar)
+- Detalle verificado el 2026-11-08 en [[guia-etapa-1]]: «IA Para Todos (Español)», Elements of AI y «Cointeligencia».
 - Documentación oficial de cada proveedor (políticas de datos de los planes empresariales).
 - Cursos introductorios de IA generativa de universidades o de los propios proveedores.
 - Stanford AI Index (contexto general).

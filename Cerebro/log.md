@@ -1,7 +1,7 @@
 # Registro del segundo cerebro de Arvyon
 
 > Registro cronológico en el que solo se añaden entradas al final; nunca se editan las anteriores. Formato: `## [AAAA-MM-DD] tipo | Título`.
-> Tipos: `setup`, `ingest`, `query`, `research`, `lint`, `decision`, `schema`.
+> Tipos: `setup`, `ingest`, `query`, `research`, `study`, `lint`, `decision`, `schema`.
 > Últimas entradas: `grep "^## \[" log.md | tail -5`
 
 ## [2026-11-03] setup | Creación de la estructura del segundo cerebro
@@ -37,3 +37,24 @@
 
 ## [2026-11-06] schema | El prompt maestro arranca por el estudio
 - `PROMPT-MAESTRO.md`: §7.1 y §12 proponen el siguiente paso de estudio en lugar del Sprint 1; §10 sin el Sprint 1 y con la fase de aprendizaje como fase actual.
+
+## [2026-11-08] decision | Fechas de la Fase 1: del 2026-11-09 al 2026-12-15
+- El fundador fija la fase de aprendizaje del lunes 2026-11-09 al 2026-12-15 → [[dec-009-fase-de-aprendizaje]], con criterios de paso a la Fase 2.
+- [[curriculo]]: el plan de 12 semanas pasa a 5 semanas en 3 etapas; los bloques 6, 9, 11-A y 12 quedan para la Fase 2.
+
+## [2026-11-08] schema | Principio rector: primero se aprende, después se actúa
+- `PROMPT-MAESTRO.md`: principio rector con las dos fases y los criterios de paso; el agente también es tutor; flujos 7.9 (sesión de estudio) y 7.10 (cambio de fase); la agenda y los sprints son de la Fase 2; plan 9.3 de 5 semanas; primera tarea según la fase; tipo de registro `study`.
+- `CLAUDE.md`: bloque de fase vigente y sesión de estudio.
+
+## [2026-11-08] research | Cursos de la Etapa 1, competidores y artículo 4 del Reglamento de IA
+- Fuentes guardadas e ingeridas (modo agrupado, investigación ligera pedida por el fundador):
+  - [[2026-11-investigacion-web-cursos-etapa-1]] (`raw/cursos/`)
+  - [[2026-11-barrido-ligero-competidores]] (`raw/competencia/`)
+  - [[2026-11-comision-europea-faq-alfabetizacion-ia]] (`raw/legal/`)
+- Páginas nuevas: [[guia-etapa-1]], [[capacidades-de-la-competencia]], [[alfabetizacion-tecnica]].
+- Páginas tocadas: [[curriculo]], [[mapa-competitivo]], [[estrategia-de-precios]], [[posicionamiento]], [[tesis-arvyon]], [[metodo-4d]] (choque de nombre con las «4D» de Anthropic), [[reglamento-europeo-de-ia]] y [[alfabetizacion-en-ia]] (Ómnibus Digital 2026/1744), [[whatsapp-business]], [[automatizacion-de-procesos]], [[ia-en-whatsapp-y-atencion]], [[herramientas-para-pymes]], [[fundamentos-llm]], [[prompting-para-empresas]], [[lagunas]].
+- Contradicción registrada: el artículo 4 ya no exige un nivel «suficiente» de alfabetización.
+
+## [2026-11-08] query | ¿Debo aprender Python, TypeScript o PostgreSQL?
+- Archivado en [[programacion-y-bases-de-datos]]: no en la Fase 1; sí [[alfabetizacion-tecnica]]; Python y SQL básicos en la Fase 2; TypeScript y administración de PostgreSQL solo si se construyen productos.
+- Siguiente paso: empezar la Etapa 1 el lunes 2026-11-09 con «IA Para Todos (Español)», módulo 1 ([[guia-etapa-1]]).

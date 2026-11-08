@@ -4,9 +4,9 @@ area: conocimiento
 estado: semilla
 confianza: media
 resumen: "Bloque 2: escribir instrucciones claras para la IA, crear bibliotecas por área y enseñarlo en un taller de 3 horas."
-fuentes: []
+fuentes: ["[[2026-11-investigacion-web-cursos-etapa-1]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -28,6 +28,7 @@ La mayoría de las empresas «prueba ChatGPT suelto, sin método» ([[dolores-y-
 Crea una biblioteca de 15 instrucciones para una pyme de comercio: 5 de ventas, 5 de atención y 5 de administración. Pruébalas, mejóralas y conviértelas en la guía del paquete Inicia.
 
 ## Recursos (por verificar)
+- Detalle verificado el 2026-11-08 en [[guia-etapa-1]]: «AI Fluency: Framework & Foundations» (Anthropic), Google Prompting Essentials y OpenAI Academy.
 - Guías oficiales de escritura de instrucciones de los proveedores de IA.
 - Bibliotecas públicas de instrucciones (revisar la calidad).
 

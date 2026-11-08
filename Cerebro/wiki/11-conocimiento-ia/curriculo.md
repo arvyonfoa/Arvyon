@@ -3,10 +3,10 @@ tipo: estudio
 area: conocimiento
 estado: borrador
 confianza: media
-resumen: "Página central del estudio: mapa de lo que piden las empresas, 12 bloques por niveles, plan de 12 semanas y avance."
-fuentes: []
+resumen: "Página central del estudio: mapa de lo que piden las empresas, 12 bloques por niveles, plan de la Fase 1 (9 nov–15 dic) y avance."
+fuentes: ["[[2026-11-barrido-ligero-competidores]]", "[[2026-11-investigacion-web-cursos-etapa-1]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: [curriculo]
 ---
@@ -14,7 +14,7 @@ etiquetas: [curriculo]
 # Currículo del consultor de IA de Arvyon
 
 > [!note] Fase actual
-> Esta es la prioridad mientras el fundador aprende ([[dec-009-fase-de-aprendizaje]]).
+> Fase 1 · Aprender, del 2026-11-09 al 2026-12-15. Esta es la prioridad ([[dec-009-fase-de-aprendizaje]]). Etapa en curso: [[guia-etapa-1]].
 
 ## Principio
 Estudia lo que el cliente va a comprar, no lo que está de moda. Cada bloque termina en tres cosas: un **ejercicio aplicado**, una **pieza de contenido** ([[sistema-de-contenido]]) y un **módulo vendible** ([[paquetes-estandar]], [[paquete-a-la-medida]]).
@@ -42,6 +42,7 @@ Niveles: **B** (explicarlo) · **I** (implementarlo) · **A** (diseñarlo y vend
 
 | # | Bloque | B | I | A |
 |---|---|---|---|---|
+| 0 | [[alfabetizacion-tecnica]] (complemento) | [ ] | [ ] | [ ] |
 | 1 | [[fundamentos-llm]] | [ ] | [ ] | [ ] |
 | 2 | [[prompting-para-empresas]] | [ ] | [ ] | [ ] |
 | 3 | [[herramientas-para-pymes]] | [ ] | [ ] | [ ] |
@@ -57,16 +58,25 @@ Niveles: **B** (explicarlo) · **I** (implementarlo) · **A** (diseñarlo y vend
 
 *(Marca `[x]` cuando el nivel esté aprendido **y** tenga su ejercicio hecho).*
 
-## Plan de 12 semanas (fase de aprendizaje, antes de la [[hoja-de-ruta-90-dias]])
-| Semanas | Bloques | Resultado concreto |
-|---|---|---|
-| 1–2 | 1, 2, 11-B | Saber dar el [[diagnostico-expres]] y las entrevistas |
-| 3–4 | 3, 8-B/I | Guía de uso y política de IA del paquete Inicia |
-| 5–6 | 4, 5 | 2 automatizaciones de demostración (cotización y WhatsApp) |
-| 7–8 | 10, 11-I | Plantilla de propuesta, cálculo de ROI e informe de resultados |
-| 9–10 | 7, 9 | Módulo de formación por roles de Optimiza |
-| 11–12 | 6, 8-A | Material de Transforma: hoja de ruta, gobernanza y RAG |
-| Todas | 12 | 1 video largo por semana y su reaprovechamiento |
+## Plan de la Fase 1 (del 2026-11-09 al 2026-12-15)
+Cinco semanas no alcanzan para dominar los 12 bloques. La meta es **dominar las etapas 1 y 2 y tener la base de la 3**; el resto sigue en la Fase 2 ([[dec-009-fase-de-aprendizaje]]).
+
+| Semana | Fechas | Etapa | Bloques | Resultado concreto | Guía |
+|---|---|---|---|---|---|
+| 1 | 9–15 nov | 1 · Usar la IA con criterio (entender) | 1 | Explicar qué es la IA, qué hace bien y en qué falla | [[guia-etapa-1]] |
+| 2 | 16–22 nov | 1 · Usar la IA con criterio (practicar) | 2, 3, 8-B | Biblioteca de 15 instrucciones y tabla de herramientas con su privacidad | [[guia-etapa-1]] |
+| 3 | 23–29 nov | 2 · Construir (automatizar) | 4 + [[alfabetizacion-tecnica]] | Demo 1: cotización automática con n8n | por crear |
+| 4 | 30 nov–6 dic | 2 · Construir (atender y medir) | 5, 7 + datos en tablas | Demo 2: asistente de WhatsApp con traspaso a un humano | por crear |
+| 5 | 7–13 dic | 3 · Pensar como consultor (base) | 8-I, 10, 11-B/I | Política de uso de IA y propuesta para una empresa ficticia | por crear |
+| — | 14–15 dic | Cierre | — | Revisión de los criterios de paso a la Fase 2 | — |
+
+**Para la Fase 2:** bloques 6 ([[rag-y-agentes]]), 9 ([[gestion-del-cambio]]), 11-A, 12 ([[contenido-y-marca-personal]]), y Python y SQL básicos ([[programacion-y-bases-de-datos]]).
+
+## Lo que la competencia cambia en el plan
+Según [[capacidades-de-la-competencia]] ([[2026-11-barrido-ligero-competidores]]):
+- En la Etapa 1, practicar también con **Copilot en Microsoft 365 y Gemini en Google Workspace**, que es lo que la competencia enseña «con las herramientas que el equipo ya tiene».
+- En la Etapa 2, priorizar **n8n** (la herramienta más citada) y la integración con **Siigo y Alegra**.
+- En la Etapa 3, preparar los entregables que ya son estándar: política de uso de IA, seguimiento a 30 y 60 días, medición.
 
 ## Reparto sugerido por rol
 - **Rol 1 · Crecimiento:** prioridad en los bloques 11, 12, 2 y 10 ([[roles-de-socios]]).
@@ -85,3 +95,4 @@ Niveles: **B** (explicarlo) · **I** (implementarlo) · **A** (diseñarlo y vend
 - [[tendencias]]: qué bloque nuevo puede hacer falta.
 - [[alfabetizacion-en-ia]]: lo que se enseña a los clientes.
 - [[glosario]]: los términos en lenguaje simple.
+- [[guia-etapa-1]]: la etapa en curso.

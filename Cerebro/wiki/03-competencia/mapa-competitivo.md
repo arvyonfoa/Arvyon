@@ -4,9 +4,9 @@ area: competencia
 estado: semilla
 confianza: baja
 resumen: "Las 7 categorías de alternativas contra las que compite Arvyon en la cabeza del cliente y los competidores identificados."
-fuentes: []
+fuentes: ["[[2026-11-barrido-ligero-competidores]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -36,6 +36,20 @@ El cliente no compara a Arvyon solo con otras consultoras: también con un curso
 ## Fuentes sugeridas (por verificar)
 - Búsquedas en Google, Instagram, YouTube y LinkedIn con "consultoría IA Colombia", "automatización WhatsApp", "curso IA empresas".
 - Meta Ad Library, Clutch y Google Maps.
+
+## Primeros nombres identificados (barrido ligero, 2026-11-08)
+> [!note] Hecho (fuentes comerciales)
+> Nombres tomados de sus webs y de dos rankings publicados por empresas del sector ([[2026-11-barrido-ligero-competidores]]). Aún no tienen página propia ni verificación de casos; eso queda para la Fase 2.
+
+| Categoría | Nombres |
+|---|---|
+| 1 · Consultoras grandes y de tecnología | EY, Globant, Pragma (AWS), Xebia |
+| 2 · Consultoras y agencias de IA locales | Zero Azul, Sofinte, Claria, Ztrategia, AGC SEO, Arpón, Automaxia, Agencia IA, Vorantis (México, enfocada en Colombia), Quantil (analítica) |
+| 3 · Freelancers y agencias de automatización | Mentora Colombia, Nexia Automation, AutoLatam, Miss Yera, Andrés Rey, Francisco Cuéllar |
+| 4 · Formación | Think TIC (formación empresarial), Platzi, Coursera, SENA |
+| 5 · Creadores de contenido | por identificar |
+
+Lo que saben y usan está resumido en [[capacidades-de-la-competencia]].
 
 ## Conexiones
 - [[matriz-comparativa]]: comparación detallada.

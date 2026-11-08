@@ -4,9 +4,9 @@ area: conocimiento
 estado: semilla
 confianza: media
 resumen: "Bloque 3: qué herramientas usan y pueden pagar las pymes colombianas, por caso de uso, por presupuesto y por riesgo."
-fuentes: []
+fuentes: ["[[2026-11-barrido-ligero-competidores]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-08
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -34,6 +34,9 @@ Construye en `wiki/15-analisis/` una tabla de 15 herramientas con: caso de uso, 
 ## Cómo se convierte en producto y contenido
 - Módulo: las 3 herramientas configuradas de Inicia ([[paquetes-estandar]]).
 - Video de YouTube: «Las 5 herramientas de IA que toda pyme colombiana debería conocer (y cuánto cuestan)».
+
+## Lo que usa la competencia (2026-11)
+Los talleres de la competencia enseñan con las herramientas que la empresa ya tiene: **Microsoft 365 Copilot, Gemini en Google Workspace, ChatGPT o Claude** ([[capacidades-de-la-competencia]], [[2026-11-barrido-ligero-competidores]]). La Etapa 1 incluye practicar con las cuatro ([[guia-etapa-1]]).
 
 ## Conexiones
 - [[curriculo]]: bloque n.º 3.
