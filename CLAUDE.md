@@ -5,6 +5,6 @@ Este repositorio es de **Arvyon**, una consultora de IA. El trabajo vive en la c
 Antes de hacer cualquier cosa:
 1. Lee `Cerebro/CLAUDE.md`, que tiene las reglas y la fase vigente del proyecto.
 2. Trabaja dentro de `Cerebro/`. El contexto completo está en `Cerebro/PROMPT-MAESTRO.md`.
-3. No modifiques `Raw/` ni `Cerebro/raw/`: son fuentes originales.
+3. No modifiques `Cerebro/raw/`: son las fuentes originales (ahí está también la presentación para socios).
 
 El manual para humanos está en `Cerebro/manual/manual-cerebro-arvyon.html` (un solo archivo HTML).

@@ -1,0 +1,5 @@
+# La bóveda de Obsidian es Cerebro/ (tiene su propia configuración en Cerebro/.obsidian).
+# Si se abre la raíz del repositorio en Obsidian por error, su configuración no se sube.
+/.obsidian/
+.trash/
+.DS_Store
