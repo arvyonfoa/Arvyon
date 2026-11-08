@@ -1,0 +1,1382 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manual Cerebro Arvyon</title>
+<meta name="description" content="Manual para aprender a usar el segundo cerebro de Arvyon, GitHub y la nube de Claude Code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<style>
+/* Manual Cerebro Arvyon · estilo compartido
+   Concepto: documentación técnica con la identidad de la presentación de Arvyon
+   (azul Arvyon, Manrope para títulos, Inter para texto). Barra lateral de capítulos
+   a la izquierda en escritorio; menú desplegable arriba en el teléfono. */
+:root {
+  --bg: #F5F7FA;
+  --surface: #FFFFFF;
+  --surface-2: #EBEFF6;
+  --line: #D6DDE8;
+  --fg: #111827;
+  --muted: #4B5567;
+  --accent: #2B5FD6;
+  --accent-ink: #FFFFFF;
+  --accent-soft: rgba(43, 95, 214, 0.10);
+  --amber: #9A5B00;
+  --amber-soft: rgba(196, 122, 0, 0.12);
+  --green: #1C7346;
+  --green-soft: rgba(28, 115, 70, 0.10);
+  --red: #B3261E;
+  --red-soft: rgba(179, 38, 30, 0.09);
+  --violet: #6741C4;
+  --violet-soft: rgba(103, 65, 196, 0.10);
+  --code-bg: #101624;
+  --code-fg: #E3E9F4;
+  --shadow: 0 1px 2px rgba(17, 24, 39, 0.06), 0 6px 20px rgba(17, 24, 39, 0.05);
+  --head: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --radius: 10px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A0C10; --surface: #121720; --surface-2: #19202B; --line: #283041;
+    --fg: #F1F4F8; --muted: #A4AEBE; --accent: #8AAEFF; --accent-ink: #0A0C10;
+    --accent-soft: rgba(59, 116, 242, 0.18); --amber: #F2B347; --amber-soft: rgba(242, 179, 71, 0.13);
+    --green: #63CF97; --green-soft: rgba(99, 207, 151, 0.12); --red: #FF8F86; --red-soft: rgba(255, 143, 134, 0.12);
+    --violet: #B9A2FF; --violet-soft: rgba(185, 162, 255, 0.14);
+    --code-bg: #070A0F; --code-fg: #E3E9F4; --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A0C10; --surface: #121720; --surface-2: #19202B; --line: #283041;
+  --fg: #F1F4F8; --muted: #A4AEBE; --accent: #8AAEFF; --accent-ink: #0A0C10;
+  --accent-soft: rgba(59, 116, 242, 0.18); --amber: #F2B347; --amber-soft: rgba(242, 179, 71, 0.13);
+  --green: #63CF97; --green-soft: rgba(99, 207, 151, 0.12); --red: #FF8F86; --red-soft: rgba(255, 143, 134, 0.12);
+  --violet: #B9A2FF; --violet-soft: rgba(185, 162, 255, 0.14);
+  --code-bg: #070A0F; --code-fg: #E3E9F4; --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 400 16px/1.65 var(--body); -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* ── Cabecera ── */
+.topbar {
+  position: sticky; top: 0; z-index: 20; background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.topbar-inner { max-width: 1240px; margin: 0 auto; height: 60px; display: flex; align-items: center; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
+.brand-mark { width: 30px; height: 30px; flex: none; }
+.brand-name { font: 800 17px/1 var(--head); letter-spacing: -0.01em; }
+.brand-sub { font: 500 12px/1 var(--body); color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.topbar-spacer { flex: 1; }
+.version-pill { font: 600 12px/1 var(--mono); color: var(--accent); background: var(--accent-soft); padding: 6px 9px; border-radius: 999px; white-space: nowrap; }
+.theme-btn {
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 8px;
+  height: 34px; padding: 0 10px; font: 500 13px var(--body); cursor: pointer;
+}
+.theme-btn:hover { background: var(--surface-2); }
+
+/* ── Estructura ── */
+.layout {
+  max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 80px;
+}
+.sidebar { position: sticky; top: 84px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; }
+.sidebar details { border: 0; }
+.sidebar summary { display: none; }
+.nav-title { font: 600 11px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.nav-list { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 2px; }
+.nav-list a {
+  display: flex; gap: 10px; align-items: baseline; padding: 7px 10px; border-radius: 8px; color: var(--fg);
+  text-decoration: none; font-size: 14.5px; line-height: 1.35;
+}
+.nav-list a:hover { background: var(--surface-2); }
+.nav-list a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.nav-num { font: 500 12px var(--mono); color: var(--muted); min-width: 18px; }
+.toc a { font-size: 13.5px; color: var(--muted); padding: 5px 10px; }
+.toc a.is-active { color: var(--accent); background: var(--accent-soft); }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 16px 64px; }
+  .sidebar { position: static; max-height: none; overflow: visible; }
+  .sidebar summary {
+    display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none;
+    padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+    font: 600 14px var(--body);
+  }
+  .sidebar summary::-webkit-details-marker { display: none; }
+  .sidebar summary::after { content: "▾"; color: var(--muted); }
+  .sidebar details[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+  .sidebar .nav-panel { border: 1px solid var(--line); border-top: 0; border-radius: 0 0 var(--radius) var(--radius); padding: 14px; background: var(--surface); }
+  .brand-sub, .version-pill { display: none; }
+}
+
+/* ── Contenido ── */
+main { min-width: 0; }
+.content { max-width: 780px; }
+.eyebrow { font: 600 12px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+h1 { font: 800 clamp(30px, 4.4vw, 44px)/1.12 var(--head); letter-spacing: -0.02em; margin: 0 0 16px; text-wrap: balance; }
+h2 { font: 700 clamp(22px, 2.8vw, 28px)/1.2 var(--head); letter-spacing: -0.01em; margin: 56px 0 14px; text-wrap: balance; padding-top: 8px; }
+h3 { font: 700 19px/1.3 var(--head); margin: 32px 0 10px; text-wrap: balance; }
+h4 { font: 600 16px/1.4 var(--body); margin: 22px 0 8px; }
+p, ul, ol { margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+.lead { font-size: 18.5px; line-height: 1.6; color: var(--muted); max-width: 64ch; }
+strong { font-weight: 650; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+code { font: 0.88em var(--mono); background: var(--surface-2); padding: 1px 5px; border-radius: 5px; overflow-wrap: anywhere; }
+pre {
+  background: var(--code-bg); color: var(--code-fg); font: 13.5px/1.6 var(--mono); padding: 16px 18px;
+  border-radius: var(--radius); overflow-x: auto; margin: 0 0 18px;
+}
+pre code { background: none; padding: 0; color: inherit; font-size: inherit; overflow-wrap: normal; }
+kbd { font: 12.5px var(--mono); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 6px; background: var(--surface); }
+
+/* Tablas */
+.table-wrap { overflow-x: auto; margin: 0 0 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+th { font: 600 12.5px/1.3 var(--body); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+tr:last-child td { border-bottom: 0; }
+td code { white-space: nowrap; }
+
+/* Avisos */
+.note { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 14px 16px; border-radius: 0 var(--radius) var(--radius) 0; margin: 0 0 20px; }
+.note > :last-child { margin-bottom: 0; }
+.note-title { font: 700 13px/1.3 var(--body); letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 6px; color: var(--accent); }
+.note.warn { border-color: var(--amber); background: var(--amber-soft); } .note.warn .note-title { color: var(--amber); }
+.note.ok { border-color: var(--green); background: var(--green-soft); } .note.ok .note-title { color: var(--green); }
+.note.bad { border-color: var(--red); background: var(--red-soft); } .note.bad .note-title { color: var(--red); }
+.note.idea { border-color: var(--violet); background: var(--violet-soft); } .note.idea .note-title { color: var(--violet); }
+
+/* Definición */
+.def { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 16px; }
+.def dt { font: 700 16px/1.3 var(--head); margin: 0 0 4px; }
+.def dd { margin: 0; color: var(--muted); }
+.def dd + dt { margin-top: 14px; }
+
+/* Rejillas de tarjetas */
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 0 0 24px; }
+.card { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); padding: 16px; min-width: 0; }
+.card h3, .card h4 { margin-top: 0; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+a.card { color: inherit; text-decoration: none; display: block; transition: border-color .15s, transform .15s; }
+a.card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.card-kicker { font: 600 12px var(--mono); color: var(--accent); margin: 0 0 6px; }
+
+/* Pasos */
+.steps { counter-reset: paso; list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 12px; }
+.steps > li { counter-increment: paso; position: relative; padding: 12px 14px 12px 52px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); margin: 0; }
+.steps > li::before {
+  content: counter(paso); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent); color: var(--accent-ink); font: 700 13px/26px var(--body); text-align: center;
+}
+.steps > li > :last-child { margin-bottom: 0; }
+
+/* Árbol de carpetas */
+.tree { font: 13.5px/1.75 var(--mono); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; overflow-x: auto; margin: 0 0 20px; white-space: pre; }
+.tree .c { color: var(--muted); }
+.tree .f { color: var(--accent); font-weight: 600; }
+
+/* Acordeones */
+details.fold { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); margin: 0 0 10px; }
+details.fold > summary { cursor: pointer; padding: 12px 16px; font: 600 15.5px/1.4 var(--body); list-style: none; display: flex; gap: 12px; align-items: baseline; }
+details.fold > summary::-webkit-details-marker { display: none; }
+details.fold > summary::before { content: "+"; font: 600 16px var(--mono); color: var(--accent); width: 12px; flex: none; }
+details.fold[open] > summary::before { content: "−"; }
+details.fold > summary code { font-size: 13px; }
+details.fold > .fold-body { padding: 0 16px 14px 40px; }
+details.fold > .fold-body > :last-child { margin-bottom: 0; }
+
+/* Etiquetas */
+.tag { display: inline-block; font: 600 11.5px/1 var(--body); letter-spacing: 0.04em; padding: 4px 8px; border-radius: 999px; background: var(--surface-2); color: var(--muted); vertical-align: middle; }
+.tag.blue { background: var(--accent-soft); color: var(--accent); }
+.tag.amber { background: var(--amber-soft); color: var(--amber); }
+.tag.green { background: var(--green-soft); color: var(--green); }
+.tag.red { background: var(--red-soft); color: var(--red); }
+.tag.violet { background: var(--violet-soft); color: var(--violet); }
+
+/* Frases para copiar */
+.prompt { position: relative; border: 1px dashed var(--line); background: var(--surface); border-radius: var(--radius); padding: 12px 92px 12px 16px; margin: 0 0 10px; font: 14px/1.55 var(--mono); }
+.copy-btn {
+  position: absolute; right: 8px; top: 8px; border: 1px solid var(--line); background: var(--surface-2); color: var(--fg);
+  border-radius: 7px; font: 600 12px var(--body); padding: 6px 10px; cursor: pointer;
+}
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Diagramas */
+figure.diagram { margin: 8px 0 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 16px; }
+figure.diagram .svg-wrap { overflow-x: auto; }
+figure.diagram svg { display: block; min-width: 560px; width: 100%; height: auto; }
+figure.diagram figcaption { font-size: 13.5px; color: var(--muted); margin-top: 10px; }
+svg .t { fill: var(--fg); font-family: var(--body); font-size: 14px; }
+svg .t-s { fill: var(--muted); font-family: var(--body); font-size: 12px; }
+svg .t-b { fill: var(--fg); font-family: var(--head); font-size: 15px; font-weight: 700; }
+svg .t-m { fill: var(--muted); font-family: var(--mono); font-size: 11.5px; }
+svg .t-a { fill: var(--accent); font-family: var(--body); font-size: 12.5px; font-weight: 600; }
+svg .t-on { fill: var(--accent-ink); font-family: var(--head); font-size: 14px; font-weight: 700; }
+svg .box { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.2; }
+svg .box-a { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.4; }
+svg .box-amber { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 1.4; }
+svg .box-green { fill: var(--green-soft); stroke: var(--green); stroke-width: 1.4; }
+svg .box-red { fill: var(--red-soft); stroke: var(--red); stroke-width: 1.4; }
+svg .box-violet { fill: var(--violet-soft); stroke: var(--violet); stroke-width: 1.4; }
+svg .solid-a { fill: var(--accent); }
+svg .ln { stroke: var(--muted); stroke-width: 1.4; fill: none; }
+svg .ln-a { stroke: var(--accent); stroke-width: 2; fill: none; }
+svg .ln-d { stroke: var(--muted); stroke-width: 1.3; fill: none; stroke-dasharray: 5 4; }
+svg .ln-green { stroke: var(--green); stroke-width: 2.2; fill: none; }
+svg .ln-red { stroke: var(--red); stroke-width: 2; fill: none; stroke-dasharray: 5 4; }
+svg .dot { fill: var(--surface); stroke: var(--accent); stroke-width: 2.4; }
+svg .dot-main { fill: var(--surface); stroke: var(--fg); stroke-width: 2.4; }
+svg .dot-red { fill: var(--surface); stroke: var(--red); stroke-width: 2.4; }
+svg .arrow-head { fill: var(--muted); }
+svg .arrow-head-a { fill: var(--accent); }
+
+/* Portada */
+.hero { padding: 8px 0 8px; }
+.hero h1 { font-size: clamp(34px, 5.4vw, 54px); }
+.quick { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 24px 0 8px; }
+.quick .card { border-top: 3px solid var(--accent); }
+
+/* Glosario */
+.search { width: 100%; height: 44px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--fg); padding: 0 14px; font: 15px var(--body); margin: 0 0 18px; }
+.gloss { display: grid; gap: 10px; }
+.gloss .def { margin: 0; }
+.gloss-empty { color: var(--muted); }
+
+/* Navegación entre páginas */
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 64px; }
+.pager a { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); padding: 14px 16px; text-decoration: none; color: var(--fg); min-width: 0; }
+.pager a:hover { border-color: var(--accent); }
+.pager small { display: block; color: var(--muted); font-size: 12.5px; margin-bottom: 2px; }
+.pager .next { text-align: right; grid-column: 2; }
+@media (max-width: 520px) { .pager { grid-template-columns: 1fr; } .pager .next { grid-column: 1; } }
+
+.foot { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Archivo único: sin JavaScript se ven todos los capítulos seguidos */
+.chapter + .chapter { border-top: 1px solid var(--line); margin-top: 64px; padding-top: 32px; }
+body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
+</style>
+<script>
+(function(){
+  var raiz=document.documentElement;
+  try{var g=localStorage.getItem("manual-arvyon-tema");if(g==="dark"||g==="light")raiz.setAttribute("data-theme",g);}catch(e){}
+  function tema(){var t=raiz.getAttribute("data-theme");if(t)return t;return matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}
+  document.addEventListener("DOMContentLoaded",function(){
+    document.body.classList.add("js");
+    var b=document.getElementById("theme-btn");
+    function rot(){b.textContent=tema()==="dark"?"Tema claro":"Tema oscuro";}
+    rot();b.addEventListener("click",function(){var n=tema()==="dark"?"light":"dark";raiz.setAttribute("data-theme",n);try{localStorage.setItem("manual-arvyon-tema",n);}catch(e){}rot();});
+    var caps=[].slice.call(document.querySelectorAll(".chapter"));
+    var toc=document.getElementById("toc"); var obs=null;
+    function mostrar(){
+      var h=decodeURIComponent(location.hash.slice(1))||"inicio";
+      var el=document.getElementById(h)||document.getElementById("inicio");
+      var cap=el.closest(".chapter")||caps[0];
+      caps.forEach(function(c){c.hidden=c!==cap;});
+      document.querySelectorAll("#chapters a").forEach(function(a){if(a.dataset.cap===cap.id)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
+      toc.innerHTML="";
+      var hs=[].slice.call(cap.querySelectorAll("h2[id]"));
+      hs.forEach(function(x){var li=document.createElement("li");var a=document.createElement("a");a.href="#"+x.id;a.textContent=x.textContent;li.appendChild(a);toc.appendChild(li);});
+      document.getElementById("toc-block").hidden=!hs.length;
+      if(obs)obs.disconnect();
+      if("IntersectionObserver" in window){var ls=toc.querySelectorAll("a");obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)ls.forEach(function(a){a.classList.toggle("is-active",a.getAttribute("href")==="#"+e.target.id);});});},{rootMargin:"-80px 0px -70% 0px"});hs.forEach(function(x){obs.observe(x);});}
+      setTimeout(function(){if(el===cap)window.scrollTo(0,0);else el.scrollIntoView();},0);
+      document.title=(cap.dataset.nombre==="Inicio"?"":cap.dataset.nombre+" · ")+"Manual Cerebro Arvyon";
+      var d=document.getElementById("nav-details");if(matchMedia("(max-width: 900px)").matches)d.removeAttribute("open");
+    }
+    window.addEventListener("hashchange",mostrar);mostrar();
+    document.querySelectorAll(".prompt").forEach(function(c){var bt=document.createElement("button");bt.type="button";bt.className="copy-btn";bt.textContent="Copiar";
+      bt.addEventListener("click",function(){var tx=c.getAttribute("data-copy")||c.firstChild.textContent.trim();
+        function ok(){bt.textContent="Copiado";setTimeout(function(){bt.textContent="Copiar";},1600);}
+        function sel(){var r=document.createRange();r.selectNodeContents(c.firstChild);var s=getSelection();s.removeAllRanges();s.addRange(r);bt.textContent="Seleccionado";}
+        if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(tx).then(ok,sel);else sel();});c.appendChild(bt);});
+    var q=document.getElementById("gloss-search");
+    if(q){var it=[].slice.call(document.querySelectorAll(".gloss .def"));var v=document.getElementById("gloss-empty");
+      q.addEventListener("input",function(){var s=q.value.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");var n=0;
+        it.forEach(function(x){var t=x.textContent.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");var o=!s||t.indexOf(s)!==-1;x.hidden=!o;if(o)n++;});v.hidden=n!==0;});}
+  });
+})();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <rect x="1" y="1" width="30" height="30" rx="8" class="solid-a"/>
+  <circle cx="10" cy="20" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <circle cx="22" cy="12" r="4" fill="none" stroke="var(--accent-ink)" stroke-width="2.4"/>
+  <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+</svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
+    <span class="topbar-spacer"></span>
+    <span class="version-pill">v1.0 · 2026-11-08</span>
+    <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="nav-details" open>
+      <summary>Capítulos del manual</summary>
+      <div class="nav-panel">
+        <p class="nav-title">Capítulos</p>
+        <ul class="nav-list" id="chapters"><li><a href="#inicio" data-cap="inicio"><span class="nav-num">·</span><span>Inicio</span></a></li><li><a href="#proyecto" data-cap="proyecto"><span class="nav-num">1</span><span>El proyecto Arvyon</span></a></li><li><a href="#segundo-cerebro" data-cap="segundo-cerebro"><span class="nav-num">2</span><span>Qué es un segundo cerebro</span></a></li><li><a href="#mapa" data-cap="mapa"><span class="nav-num">3</span><span>Mapa del cerebro</span></a></li><li><a href="#uso" data-cap="uso"><span class="nav-num">4</span><span>Cómo se usa</span></a></li><li><a href="#github" data-cap="github"><span class="nav-num">5</span><span>GitHub sin miedo</span></a></li><li><a href="#nube" data-cap="nube"><span class="nav-num">6</span><span>La nube de Claude Code</span></a></li><li><a href="#empresa" data-cap="empresa"><span class="nav-num">7</span><span>Cómo se crea la empresa</span></a></li><li><a href="#glosario" data-cap="glosario"><span class="nav-num">8</span><span>Glosario y preguntas</span></a></li></ul>
+        <div id="toc-block">
+          <p class="nav-title">En esta página</p>
+          <ul class="nav-list toc" id="toc"></ul>
+        </div>
+      </div>
+    </details>
+  </aside>
+  <main>
+    <article class="content">
+<section class="chapter" id="inicio" data-nombre="Inicio">
+      <p class="eyebrow">Versión 1 · 8 de noviembre de 2026</p>
+
+<div class="hero">
+  <h1>Manual Cerebro Arvyon</h1>
+  <p class="lead">Este manual explica, desde cero, cómo funciona el segundo cerebro de Arvyon: qué hay dentro, cómo se usa con Claude Code, cómo se guarda en GitHub y cómo se está construyendo la empresa paso a paso.</p>
+</div>
+
+<div class="quick">
+  <a class="card" href="#segundo-cerebro"><p class="card-kicker">Si es tu primer día</p><h3>Entiende la idea</h3><p>Qué es un segundo cerebro y por qué no es un chat que olvida.</p></a>
+  <a class="card" href="#uso-sesion-de-estudio"><p class="card-kicker">Si vas a estudiar hoy</p><h3>Abre una sesión de estudio</h3><p>Qué decirle al agente y cómo queda registrado tu avance.</p></a>
+  <a class="card" href="#github-decidir"><p class="card-kicker">Si tienes un PR pendiente</p><h3>Decide sin miedo</h3><p>Cómo revisar un pull request y cuándo unirlo o cerrarlo.</p></a>
+</div>
+
+<h2 id="inicio-sistema">El sistema en 30 segundos</h2>
+<p>Hay cuatro piezas. Tú decides y preguntas; el agente (Claude Code) lee, escribe y ordena; GitHub guarda todo con su historial; Obsidian te deja leer el cerebro cómodamente en tu computador.</p>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 300" role="img" aria-labelledby="d-sis-t">
+    <title id="d-sis-t">Cómo se conectan el fundador, Claude Code, GitHub y Obsidian</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="20" y="110" width="150" height="80" rx="10" class="box-amber"/>
+    <text x="95" y="145" text-anchor="middle" class="t-b">Tú</text>
+    <text x="95" y="166" text-anchor="middle" class="t-s">el fundador decide</text>
+
+    <rect x="300" y="20" width="170" height="80" rx="10" class="box-a"/>
+    <text x="385" y="55" text-anchor="middle" class="t-b">Claude Code</text>
+    <text x="385" y="76" text-anchor="middle" class="t-s">el agente trabaja</text>
+
+    <rect x="290" y="200" width="190" height="80" rx="10" class="box"/>
+    <text x="385" y="232" text-anchor="middle" class="t-b">GitHub</text>
+    <text x="385" y="253" text-anchor="middle" class="t-m">arvyonfoa/Arvyon</text>
+
+    <rect x="590" y="110" width="150" height="80" rx="10" class="box-green"/>
+    <text x="665" y="145" text-anchor="middle" class="t-b">Obsidian</text>
+    <text x="665" y="166" text-anchor="middle" class="t-s">tú lees y navegas</text>
+
+    <path d="M170 135 L298 72" class="ln-a" marker-end="url(#fla)"/>
+    <text x="70" y="100" class="t-a">pides: «ingiere», «explica»</text>
+    <path d="M385 100 L385 198" class="ln-a" marker-end="url(#fla)"/>
+    <text x="395" y="150" class="t-a">escribe, commit, push, PR</text>
+    <path d="M170 168 L288 228" class="ln" marker-end="url(#fl)"/>
+    <text x="150" y="226" class="t-s">revisas y unes el PR</text>
+    <path d="M482 228 L588 168" class="ln" marker-end="url(#fl)"/>
+    <text x="520" y="230" class="t-s">descargas (pull)</text>
+  </svg>
+  </div>
+  <figcaption>El agente nunca decide por ti: propone cambios en una rama y tú los aceptas en GitHub.</figcaption>
+</figure>
+
+<h2 id="inicio-capitulos">Qué encontrarás en el manual</h2>
+<div class="grid">
+  <a class="card" href="#proyecto"><p class="card-kicker">Capítulo 1</p><h3>El proyecto Arvyon</h3><p>La consultora, su propuesta, sus clientes, sus paquetes y sus dos fases.</p></a>
+  <a class="card" href="#segundo-cerebro"><p class="card-kicker">Capítulo 2</p><h3>Qué es un segundo cerebro</h3><p>La idea de la wiki LLM, sus tres capas y quién hace qué.</p></a>
+  <a class="card" href="#mapa"><p class="card-kicker">Capítulo 3</p><h3>Mapa del cerebro</h3><p>Cada carpeta, cada archivo y cada apartado de la wiki, explicado.</p></a>
+  <a class="card" href="#uso"><p class="card-kicker">Capítulo 4</p><h3>Cómo se usa</h3><p>Claude Code, OpenCode y Obsidian; flujos paso a paso y frases listas para copiar.</p></a>
+  <a class="card" href="#github"><p class="card-kicker">Capítulo 5</p><h3>GitHub sin miedo</h3><p>Repositorios, commits, ramas y pull requests, con el historial real del proyecto.</p></a>
+  <a class="card" href="#nube"><p class="card-kicker">Capítulo 6</p><h3>La nube de Claude Code</h3><p>Por qué todo vive en GitHub y qué son los entornos: red, secretos, script y variables.</p></a>
+  <a class="card" href="#empresa"><p class="card-kicker">Capítulo 7</p><h3>Cómo se crea la empresa</h3><p>La línea de tiempo, las decisiones y el paso a paso hasta los primeros clientes.</p></a>
+  <a class="card" href="#glosario"><p class="card-kicker">Capítulo 8</p><h3>Glosario y preguntas</h3><p>Todas las palabras nuevas, con buscador, y las dudas más comunes.</p></a>
+</div>
+
+<h2 id="inicio-estado">Dónde estamos hoy</h2>
+<div class="table-wrap"><table>
+  <tr><th>Tema</th><th>Estado al 8 de noviembre de 2026</th></tr>
+  <tr><td>Fase del proyecto</td><td><span class="tag amber">Fase 1 · Aprender</span> del 9 de noviembre al 15 de diciembre de 2026</td></tr>
+  <tr><td>Etapa de estudio en curso</td><td>Etapa 1 · Usar la IA con criterio (9 al 22 de noviembre)</td></tr>
+  <tr><td>Tamaño del cerebro</td><td class="num">105 páginas en la wiki · 4 fuentes ingeridas · 0 errores de salud</td></tr>
+  <tr><td>Pull requests</td><td>#1 unido · #2 cerrado sin unir · #3 abierto (fase de aprendizaje, guía de la Etapa 1 y este manual)</td></tr>
+  <tr><td>Decisiones</td><td>3 decididas (nombre Arvyon, YouTube como canal, aprender primero) · 6 abiertas</td></tr>
+</table></div>
+
+<h2 id="inicio-versiones">Cómo se actualiza este manual</h2>
+<p>El manual <strong>solo cambia cuando el fundador lo pide</strong>. Cada cambio sube el número de versión y deja una línea en esta tabla y en el registro del cerebro (<code>Cerebro/log.md</code>).</p>
+<div class="prompt" data-copy="Actualiza el Manual Cerebro Arvyon: [qué quieres cambiar]. Sube la versión y anótalo en el historial.">Actualiza el Manual Cerebro Arvyon: [qué quieres cambiar]. Sube la versión y anótalo en el historial.</div>
+<div class="table-wrap"><table>
+  <tr><th>Versión</th><th>Fecha</th><th>Cambios</th></tr>
+  <tr><td><code>v1.0</code></td><td class="num">2026-11-08</td><td>Primera versión: proyecto, segundo cerebro, mapa, uso diario, GitHub, nube y entornos, creación de la empresa, glosario. Un solo archivo HTML descargable.</td></tr>
+</table></div>
+
+      <nav class="pager"><a class="next" href="#proyecto"><small>Siguiente</small>El proyecto Arvyon</a></nav></section><section class="chapter" id="proyecto" data-nombre="El proyecto Arvyon">
+      <p class="eyebrow">Capítulo 1</p>
+
+<h1>El proyecto Arvyon</h1>
+<p class="lead">Arvyon es una consultora de inteligencia artificial 100 % virtual que opera desde Polonia, en la Unión Europea, para empresas colombianas pequeñas, medianas y grandes.</p>
+
+<h2 id="proyecto-en-una-frase">Arvyon en una frase</h2>
+<div class="note"><p class="note-title">La propuesta</p><p>«Traemos lo que ya funciona en Europa, adaptado a tu empresa». Arvyon <strong>enseña</strong> (que el equipo entienda la IA y la use sin miedo), <strong>implementa</strong> (herramientas funcionando dentro del negocio) y <strong>acompaña</strong> (mide y mejora cada mes).</p></div>
+<p>Todo esto viene de la presentación para socios de octubre de 2026, que es la primera fuente del cerebro (<code>Cerebro/raw/00-internos/presentacion-consultora-ia.pdf</code>).</p>
+
+<h2 id="proyecto-problema">El problema que resuelve</h2>
+<div class="grid">
+  <div class="card"><p class="card-kicker">Brecha de adopción</p><h3 class="num">61 % frente a 37,7 %</h3><p>El 61 % de las empresas colombianas de 50 o más empleados ve la IA como prioridad, pero solo el 37,7 % la ha incorporado de verdad (Endeavor, «Colombia AI Pulse»).</p></div>
+  <div class="card"><p class="card-kicker">Mipymes</p><h3 class="num">Más del 99 %</h3><p>Casi todas las empresas del país son mipymes y generan el 79 % del empleo (MinComercio).</p></div>
+  <div class="card"><p class="card-kicker">Política pública</p><h3>CONPES 4144</h3><p>En febrero de 2025 Colombia aprobó su Política Nacional de Inteligencia Artificial.</p></div>
+</div>
+<div class="note warn"><p class="note-title">Ojo con el dato</p><p>La cifra 61 % / 37,7 % es de empresas con 50 o más empleados. No describe a las microempresas, que son el público del paquete Inicia. El cerebro lo deja anotado en <code>wiki/01-mercado/adopcion-ia-colombia.md</code>.</p></div>
+
+<h2 id="proyecto-diferenciales">El puente entre Europa y Colombia</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 230" role="img" aria-labelledby="d-puente-t">
+    <title id="d-puente-t">Arvyon como puente entre Polonia y Colombia</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="20" y="40" width="220" height="150" rx="12" class="box-a"/>
+    <text x="130" y="78" text-anchor="middle" class="t-b">Polonia · UE</text>
+    <text x="130" y="102" text-anchor="middle" class="t-s">donde vive Arvyon</text>
+    <text x="130" y="134" text-anchor="middle" class="t-m">UTC+1 (invierno)</text>
+    <text x="130" y="152" text-anchor="middle" class="t-m">UTC+2 (verano)</text>
+    <text x="130" y="174" text-anchor="middle" class="t-s">RGPD · Reglamento de IA</text>
+
+    <rect x="520" y="40" width="220" height="150" rx="12" class="box-amber"/>
+    <text x="630" y="78" text-anchor="middle" class="t-b">Colombia</text>
+    <text x="630" y="102" text-anchor="middle" class="t-s">donde están los clientes</text>
+    <text x="630" y="134" text-anchor="middle" class="t-m">UTC−5 todo el año</text>
+    <text x="630" y="152" text-anchor="middle" class="t-m">mañana: 8:00 a 12:00</text>
+    <text x="630" y="174" text-anchor="middle" class="t-s">Ley 1581 de 2012</text>
+
+    <path d="M244 100 L516 100" class="ln-a" marker-end="url(#fla)"/>
+    <text x="380" y="88" text-anchor="middle" class="t-a">métodos probados en Europa</text>
+    <path d="M516 140 L244 140" class="ln" marker-end="url(#fl)"/>
+    <text x="380" y="132" text-anchor="middle" class="t-s">necesidades de la empresa</text>
+    <rect x="320" y="160" width="120" height="30" rx="15" class="solid-a"/>
+    <text x="380" y="180" text-anchor="middle" class="t-on">6 a 7 horas</text>
+  </svg>
+  </div>
+  <figcaption>Mientras Colombia duerme, Arvyon trabaja: el cliente encuentra el avance listo al empezar su día.</figcaption>
+</figure>
+<div class="table-wrap"><table>
+  <tr><th>Diferencial</th><th>Qué significa</th></tr>
+  <tr><td>Vemos el futuro primero</td><td>Vivir en la UE permite ver cómo usan la IA las empresas europeas y llevar lo probado, no la moda.</td></tr>
+  <tr><td>IA responsable con estándar europeo</td><td>Se trabaja con la lógica del Reglamento Europeo de IA y del RGPD, aplicada según la Ley 1581 de Colombia.</td></tr>
+  <tr><td>Hablamos como el cliente</td><td>Español colombiano, ejemplos de su realidad, su ritmo y su presupuesto.</td></tr>
+  <tr><td>Trabajamos mientras Colombia duerme</td><td>Con 6 a 7 horas de diferencia, el trabajo avanza de un día para otro.</td></tr>
+</table></div>
+
+<h2 id="proyecto-clientes">Clientes y paquetes</h2>
+<div class="table-wrap"><table>
+  <tr><th>Segmento</th><th>Qué dicen</th><th>Paquete</th><th>Duración</th></tr>
+  <tr><td>Micro y pequeñas</td><td>«No tengo tiempo para todo»</td><td><strong>Inicia</strong>: taller de 3 h, 3 herramientas configuradas, guía de uso, 30 días de soporte</td><td>2 semanas</td></tr>
+  <tr><td>Medianas</td><td>«Crecimos y los procesos no dan abasto»</td><td><strong>Optimiza</strong> (el que más se quiere vender): diagnóstico, 2 o 3 automatizaciones, capacitación, 60 días de acompañamiento</td><td>6 semanas</td></tr>
+  <tr><td>Grandes</td><td>«Necesitamos un plan serio de IA»</td><td><strong>Transforma</strong>: hoja de ruta, política de datos, formación por roles, pilotos medibles; o un paquete <strong>a la medida</strong></td><td>3 meses</td></tr>
+</table></div>
+<p>Hay <strong>tres puertas de entrada</strong>: un diagnóstico exprés gratis de 45 minutos, los paquetes estándar de precio fijo y el paquete a la medida. Las tres llevan al <strong>acompañamiento mensual</strong>, que es el ingreso recurrente que sostiene el negocio. Los precios todavía no están definidos.</p>
+
+<h2 id="proyecto-metodo">El Método 4D</h2>
+<ol class="steps">
+  <li><strong>Descubrir.</strong> Entender el negocio, sus procesos y dónde se pierde el tiempo. Entrega: mapa del negocio.</li>
+  <li><strong>Diseñar.</strong> Priorizar por impacto y esfuerzo y elegir 2 o 3 oportunidades. Entrega: plan priorizado.</li>
+  <li><strong>Desplegar.</strong> Implementar, capacitar y dejar guías, con pilotos de 30 días. Entrega: herramientas funcionando.</li>
+  <li><strong>Demostrar.</strong> Medir el antes y el después en números. Entrega: informe de resultados.</li>
+</ol>
+<div class="note idea"><p class="note-title">Pendiente de decidir</p><p>Anthropic enseña un marco llamado también «4D» (Delegación, Descripción, Discernimiento, Diligencia). El cerebro lo dejó anotado en <code>wiki/04-oferta/metodo-4d.md</code> para decidir si se mantiene el nombre.</p></div>
+
+<h2 id="proyecto-canales">Canales para llegar a los clientes</h2>
+<div class="grid">
+  <div class="card"><h4>Instagram</h4><p>La vitrina inicial: educa, demuestra y genera confianza.</p></div>
+  <div class="card"><h4>YouTube</h4><p>Canal estratégico de autoridad y búsqueda: un buen tutorial trae clientes durante años.</p></div>
+  <div class="card"><h4>LinkedIn</h4><p>Para gerentes de empresas grandes, con un tono más corporativo.</p></div>
+  <div class="card"><h4>WhatsApp Business</h4><p>El canal de cierre: donde conversa el empresario colombiano.</p></div>
+  <div class="card"><h4>Página web</h4><p>La oficina que no existe: demuestra que la empresa es seria.</p></div>
+</div>
+
+<h2 id="proyecto-fases">Las dos fases del proyecto</h2>
+<p>El principio rector del proyecto es: <strong>primero se aprende, después se actúa</strong>.</p>
+<div class="grid">
+  <div class="card" style="border-top:3px solid var(--amber)"><p class="card-kicker">Fase 1 · ahora</p><h3>Aprender</h3><p>Del 9 de noviembre al 15 de diciembre de 2026. Cursos, lecturas, ejercicios y demos con empresas ficticias. No se hacen entrevistas, ventas ni trámites.</p></div>
+  <div class="card" style="border-top:3px solid var(--green)"><p class="card-kicker">Fase 2 · después</p><h3>Actuar</h3><p>Cuando se cumplan los criterios de paso: entrevistas, diagnósticos, pilotos, contenido público, trámites y la hoja de ruta de 90 días.</p></div>
+</div>
+<p>El detalle está en el capítulo <a href="#empresa">Cómo se crea la empresa</a>.</p>
+
+      <nav class="pager"><a class="prev" href="#inicio"><small>Anterior</small>Inicio</a><a class="next" href="#segundo-cerebro"><small>Siguiente</small>Qué es un segundo cerebro</a></nav></section><section class="chapter" id="segundo-cerebro" data-nombre="Qué es un segundo cerebro">
+      <p class="eyebrow">Capítulo 2</p>
+
+<h1>Qué es un segundo cerebro</h1>
+<p class="lead">Un segundo cerebro es una colección ordenada de todo lo que sabes sobre un tema, guardada fuera de tu cabeza para que no se pierda y se pueda consultar. En Arvyon, ese cerebro lo escribe y lo mantiene un agente de IA.</p>
+
+<h2 id="segundo-cerebro-la-idea">La idea en palabras simples</h2>
+<p>Piensa en un cuaderno de proyecto que se escribe solo. Cada vez que le das algo para leer (un informe, un curso, una conversación), el agente lo resume, lo conecta con lo que ya sabías y actualiza todas las páginas afectadas. Con el tiempo, el cuaderno se vuelve más completo y más útil.</p>
+<dl class="def">
+  <dt>Wiki LLM</dt>
+  <dd>Una wiki (páginas enlazadas entre sí, como Wikipedia) escrita y mantenida por un modelo de lenguaje (LLM). Tú eliges qué leer y qué preguntar; el modelo hace el trabajo pesado de resumir, enlazar, archivar y mantener todo al día.</dd>
+</dl>
+
+<h2 id="segundo-cerebro-rag">Por qué no es un chat que olvida</h2>
+<p>La mayoría de las herramientas con documentos funcionan como un buscador: subes archivos y, en cada pregunta, el modelo busca fragmentos y arma una respuesta desde cero. Eso se llama <strong>RAG</strong>. Funciona, pero no acumula nada.</p>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Chat con documentos (RAG)</th><th>Segundo cerebro (wiki LLM)</th></tr>
+  <tr><td>Qué pasa con una fuente nueva</td><td>Se guarda para buscarla después</td><td>Se lee, se resume y se integra en las páginas existentes</td></tr>
+  <tr><td>Qué pasa en cada pregunta</td><td>El modelo redescubre todo desde cero</td><td>El modelo lee el índice y las páginas ya escritas</td></tr>
+  <tr><td>Contradicciones entre fuentes</td><td>Pasan desapercibidas</td><td>Quedan señaladas en las dos páginas</td></tr>
+  <tr><td>Buenas respuestas</td><td>Se pierden en el historial del chat</td><td>Se archivan como páginas nuevas</td></tr>
+  <tr><td>Con el tiempo</td><td>Igual que el primer día</td><td>Cada fuente y cada pregunta lo enriquecen</td></tr>
+</table></div>
+<p>La idea viene de lejos: en 1945 Vannevar Bush imaginó el <em>Memex</em>, un archivo personal con caminos entre documentos. Lo que faltaba era quién lo mantuviera. Ahora lo hace el agente, que no se cansa ni olvida actualizar una referencia.</p>
+
+<h2 id="segundo-cerebro-capas">Las tres capas</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 330" role="img" aria-labelledby="d-capas-t">
+    <title id="d-capas-t">Las tres capas del cerebro: esquema, wiki y fuentes</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="170" y="20" width="420" height="76" rx="10" class="box-violet"/>
+    <text x="380" y="50" text-anchor="middle" class="t-b">3 · Esquema: las reglas</text>
+    <text x="380" y="74" text-anchor="middle" class="t-m">CLAUDE.md · AGENTS.md · PROMPT-MAESTRO.md</text>
+
+    <rect x="170" y="126" width="420" height="76" rx="10" class="box-a"/>
+    <text x="380" y="156" text-anchor="middle" class="t-b">2 · Wiki: lo que sabemos</text>
+    <text x="380" y="180" text-anchor="middle" class="t-m">wiki/ · index.md · log.md</text>
+
+    <rect x="170" y="232" width="420" height="76" rx="10" class="box-amber"/>
+    <text x="380" y="262" text-anchor="middle" class="t-b">1 · Fuentes: la verdad original</text>
+    <text x="380" y="286" text-anchor="middle" class="t-m">raw/ (nunca se modifica)</text>
+
+    <path d="M380 230 L380 206" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M380 98 L380 122" class="ln" marker-end="url(#fl)"/>
+
+    <text x="20" y="258" class="t-b">Tú</text>
+    <text x="20" y="278" class="t-s">añades fuentes</text>
+    <path d="M128 270 L166 270" class="ln" marker-end="url(#fl)"/>
+    <text x="20" y="152" class="t-b">Tú</text>
+    <text x="20" y="172" class="t-s">lees y preguntas</text>
+    <path d="M166 164 L134 164" class="ln" marker-end="url(#fl)"/>
+
+    <text x="608" y="152" class="t-b">Agente</text>
+    <text x="608" y="172" class="t-s">escribe y mantiene</text>
+    <path d="M660 182 L660 250 L594 250" class="ln-a" marker-end="url(#fla)"/>
+    <text x="608" y="234" class="t-a">lee</text>
+    <text x="608" y="46" class="t-b">Juntos</text>
+    <text x="608" y="66" class="t-s">ajustan las reglas</text>
+  </svg>
+  </div>
+  <figcaption>Las fuentes alimentan la wiki; el esquema dice cómo se escribe la wiki.</figcaption>
+</figure>
+<div class="grid">
+  <div class="card"><p class="card-kicker">Capa 1 · raw/</p><h4>Fuentes originales</h4><p>Informes, artículos, apuntes de cursos, transcripciones y la presentación. Son la fuente de verdad: el agente las lee pero <strong>nunca las cambia</strong>.</p></div>
+  <div class="card"><p class="card-kicker">Capa 2 · wiki/</p><h4>La wiki</h4><p>Resúmenes, temas, entidades, conceptos, análisis y decisiones. La escribe el agente; tú la lees y la corriges hablando con él.</p></div>
+  <div class="card"><p class="card-kicker">Capa 3 · esquema</p><h4>Las reglas</h4><p>Le dicen al agente cómo nombrar archivos, qué secciones lleva cada página y qué pasos seguir. Se mejoran con el tiempo.</p></div>
+</div>
+
+<h2 id="segundo-cerebro-roles">Quién hace qué</h2>
+<div class="table-wrap"><table>
+  <tr><th>El fundador</th><th>El agente</th></tr>
+  <tr><td>Elige las fuentes que vale la pena leer</td><td>Lee las fuentes completas y evalúa su fiabilidad</td></tr>
+  <tr><td>Dirige el análisis: qué destacar, qué investigar</td><td>Resume, enlaza y actualiza de 5 a 15 páginas por fuente</td></tr>
+  <tr><td>Hace las preguntas</td><td>Responde citando las páginas y archiva las buenas respuestas</td></tr>
+  <tr><td>Decide (precios, socios, fases)</td><td>Prepara las opciones y registra la decisión</td></tr>
+  <tr><td>Revisa y une los pull requests en GitHub</td><td>Hace commit y push a una rama y abre el pull request</td></tr>
+</table></div>
+<div class="note"><p class="note-title">Una comparación útil</p><p>Obsidian es el editor, el agente es el programador y la wiki es el código. Igual que en un proyecto de software, nada cambia sin quedar registrado en el historial.</p></div>
+
+<h2 id="segundo-cerebro-reglas">Las reglas de oro</h2>
+<ol class="steps">
+  <li><strong>Nada entra sin fuente.</strong> Si no hay fuente, se marca como SUPUESTO.</li>
+  <li><strong>No se inventa.</strong> Ni cifras, ni empresas, ni leyes, ni enlaces. Lo que no se sabe va a «Por verificar» y a la lista de lagunas.</li>
+  <li><strong>Todo deja huella.</strong> Cada ingesta, consulta archivada o revisión actualiza el índice y el registro.</li>
+  <li><strong>Una fuente toca muchas páginas.</strong> Si solo se actualizó una, probablemente faltó integrar.</li>
+  <li><strong>Las contradicciones se señalan, no se borran.</strong></li>
+</ol>
+
+<h2 id="segundo-cerebro-evidencia">Cómo distinguir lo que es seguro de lo que no</h2>
+<p>Cada afirmación lleva un nivel de evidencia. En Obsidian se ven como recuadros de colores (llamados <em>callouts</em>).</p>
+<div class="note ok"><p class="note-title">Hecho</p><p>Está en una fuente verificable y citada. Ejemplo: «Más del 99 % de las empresas del país son mipymes (MinComercio)».</p></div>
+<div class="note idea"><p class="note-title">Estimación</p><p>Es un cálculo propio a partir de hechos, con la fórmula a la vista. Ejemplo: horas ahorradas × costo por hora × 12.</p></div>
+<div class="note warn"><p class="note-title">Supuesto</p><p>Es una hipótesis sin validar, con la forma de comprobarla. Ejemplo: «El empresario busca en YouTube cómo hacer cosas con IA».</p></div>
+<div class="note"><p class="note-title">Por verificar</p><p>Algo que falta confirmar. Además queda anotado en <code>wiki/_meta/lagunas.md</code>.</p></div>
+<div class="note bad"><p class="note-title">Contradicción</p><p>Dos fuentes dicen cosas distintas. Se muestran las dos, sin promediar, con la posible causa.</p></div>
+
+      <nav class="pager"><a class="prev" href="#proyecto"><small>Anterior</small>El proyecto Arvyon</a><a class="next" href="#mapa"><small>Siguiente</small>Mapa del cerebro</a></nav></section><section class="chapter" id="mapa" data-nombre="Mapa del cerebro">
+      <p class="eyebrow">Capítulo 3</p>
+
+<h1>Mapa del cerebro</h1>
+<p class="lead">Este capítulo recorre el cerebro carpeta por carpeta. Todo está dentro de la carpeta <code>Cerebro/</code> del repositorio.</p>
+
+<h2 id="mapa-vista-general">Vista general</h2>
+<div class="tree"><span class="f">Cerebro/</span>
+├── <span class="f">PROMPT-MAESTRO.md</span>   <span class="c">el prompt completo: rol, reglas, flujos, agenda y currículo</span>
+├── <span class="f">CLAUDE.md</span>           <span class="c">las reglas que Claude Code lee en cada sesión</span>
+├── <span class="f">AGENTS.md</span>           <span class="c">lo mismo para otros agentes (OpenCode, Codex)</span>
+├── <span class="f">README.md</span>           <span class="c">guía rápida para el humano</span>
+├── <span class="f">index.md</span>            <span class="c">catálogo de todas las páginas</span>
+├── <span class="f">log.md</span>              <span class="c">registro de todo lo que pasó, en orden</span>
+├── herramientas/
+│   └── revisar_wiki.py <span class="c">revisión automática de salud</span>
+├── manual/             <span class="c">este manual</span>
+├── .obsidian/          <span class="c">configuración de Obsidian</span>
+├── <span class="f">raw/</span>                <span class="c">capa 1: fuentes originales (no se tocan)</span>
+└── <span class="f">wiki/</span>               <span class="c">capa 2: lo que escribe el agente</span>
+    ├── 00-panorama/ … 16-decisiones/
+    ├── _plantillas/
+    └── _meta/</div>
+
+<h2 id="mapa-raiz">Los archivos de la raíz</h2>
+<details class="fold" open><summary><span><code>PROMPT-MAESTRO.md</code> · el prompt maestro</span></summary><div class="fold-body">
+<p>Es el documento más completo. Empieza con el principio rector (primero se aprende, después se actúa) y explica el rol del agente, el contexto de Arvyon, la arquitectura, las convenciones, los flujos paso a paso, la agenda de investigación y el currículo.</p>
+<p><strong>Cuándo usarlo:</strong> se copia y se pega en un agente nuevo, o cuando el agente parece haber olvidado las reglas.</p></div></details>
+<details class="fold"><summary><span><code>CLAUDE.md</code> y <code>AGENTS.md</code> · el esquema</span></summary><div class="fold-body">
+<p><code>CLAUDE.md</code> es la versión corta y operativa de las reglas. Claude Code la lee al trabajar en la carpeta. Arriba dice la fase vigente. <code>AGENTS.md</code> solo remite a <code>CLAUDE.md</code>, para que otros agentes como OpenCode o Codex sigan las mismas reglas.</p>
+<p>En la raíz del repositorio hay otro <code>CLAUDE.md</code> cortito que avisa al agente de que el cerebro está en <code>Cerebro/</code>.</p></div></details>
+<details class="fold"><summary><span><code>index.md</code> · el catálogo</span></summary><div class="fold-body">
+<p>Lista todas las páginas de la wiki por área, cada una con un resumen de una línea, su estado y su número de fuentes. <strong>El agente lo lee primero en cada consulta.</strong> Para ti es la forma más rápida de saber qué hay.</p></div></details>
+<details class="fold"><summary><span><code>log.md</code> · el registro</span></summary><div class="fold-body">
+<p>Es el diario del cerebro: cada entrada empieza con <code>## [AAAA-MM-DD] tipo | título</code>. Solo se añaden entradas al final; nunca se borran. Tipos: <code>setup</code>, <code>ingest</code>, <code>query</code>, <code>research</code>, <code>study</code>, <code>lint</code>, <code>decision</code>, <code>schema</code>.</p>
+<pre><code>## [2026-11-08] research | Cursos de la Etapa 1, competidores y artículo 4 del Reglamento de IA
+- Fuentes guardadas e ingeridas: …
+- Páginas nuevas: [[guia-etapa-1]], [[capacidades-de-la-competencia]] …</code></pre></div></details>
+<details class="fold"><summary><span><code>herramientas/revisar_wiki.py</code> · la revisión de salud</span></summary><div class="fold-body">
+<p>Un pequeño programa que revisa el cerebro: enlaces rotos, páginas sin datos obligatorios, páginas que faltan en el índice, páginas huérfanas (que nadie enlaza), nombres repetidos y páginas con la fecha de revisión vencida. El agente lo ejecuta al terminar cada sesión.</p>
+<pre><code>python3 herramientas/revisar_wiki.py
+Revisión de salud · 2026-11-08 · 105 páginas en wiki/
+ERRORES (0)
+AVISOS (0)
+Resultado: OK</code></pre></div></details>
+
+<h2 id="mapa-raw">Capa 1 · Las fuentes (<code>raw/</code>)</h2>
+<p>Aquí se guarda el material original. <strong>Nunca se edita, se renombra ni se borra.</strong> Si el agente encuentra algo en la web, primero lo guarda aquí y después lo resume.</p>
+<div class="table-wrap"><table>
+  <tr><th>Subcarpeta</th><th>Qué va ahí</th><th>Ejemplo</th></tr>
+  <tr><td><code>00-internos/</code></td><td>Documentos propios: presentaciones, actas de socios, notas</td><td>La presentación para socios</td></tr>
+  <tr><td><code>articulos/</code></td><td>Artículos web guardados con Obsidian Web Clipper</td><td>—</td></tr>
+  <tr><td><code>informes/</code></td><td>Estudios en PDF</td><td>«Colombia AI Pulse» (por conseguir)</td></tr>
+  <tr><td><code>datos/</code></td><td>Hojas de cálculo y CSV</td><td>El modelo financiero (futuro)</td></tr>
+  <tr><td><code>entrevistas/</code></td><td>Notas de entrevistas, siempre anonimizadas</td><td>— (en pausa)</td></tr>
+  <tr><td><code>transcripciones/</code></td><td>Videos de YouTube, podcasts y webinars</td><td>—</td></tr>
+  <tr><td><code>competencia/</code></td><td>Capturas y notas de competidores</td><td>Barrido ligero del 2026-11-08</td></tr>
+  <tr><td><code>legal/</code></td><td>Normas, circulares y conceptos de contadores o abogados</td><td>Preguntas y respuestas de la UE sobre alfabetización en IA</td></tr>
+  <tr><td><code>cursos/</code></td><td><strong>Tus apuntes de cursos y libros</strong> (lo más usado en la Fase 1)</td><td>Catálogo de cursos de la Etapa 1</td></tr>
+  <tr><td><code>assets/</code></td><td>Imágenes descargadas</td><td>—</td></tr>
+</table></div>
+
+<h2 id="mapa-wiki">Capa 2 · La wiki (<code>wiki/</code>), apartado por apartado</h2>
+<p>Las carpetas llevan número para que aparezcan siempre en el mismo orden. Abre cada una para ver para qué sirve.</p>
+<details class="fold"><summary><span class="nav-num">00</span><span>Panorama <code>wiki/00-panorama/</code> </span></summary>
+<div class="fold-body"><p>La vista de pájaro del negocio: la tesis viva (8 hipótesis con su estado), las preguntas abiertas más importantes, un tablero automático y la hoja de ruta de 90 días.</p><p><strong>Páginas clave:</strong> <code>tesis-arvyon</code>, <code>preguntas-abiertas</code>, <code>tablero</code>, <code>hoja-de-ruta-90-dias</code></p><p><strong>Cuándo la usas:</strong> Antes de una decisión importante o en la revisión mensual.</p></div></details>
+<details class="fold"><summary><span class="nav-num">01</span><span>Mercado <code>wiki/01-mercado/</code> </span></summary>
+<div class="fold-body"><p>Cuántas empresas pueden comprar, dónde están, cuánto usan IA y qué dice la política pública.</p><p><strong>Páginas clave:</strong> <code>adopcion-ia-colombia</code>, <code>mipymes-colombia</code>, <code>tamano-de-mercado</code>, <code>sectores-prioritarios</code>, <code>politica-publica-ia</code>, <code>adopcion-ia-europa</code></p><p><strong>Cuándo la usas:</strong> Para dimensionar el negocio y elegir sectores (Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">02</span><span>Demanda y clientes <code>wiki/02-demanda-clientes/</code> </span></summary>
+<div class="fold-body"><p>Qué compran de verdad los empresarios, sus dolores, sus objeciones y el programa de entrevistas (en pausa durante la Fase 1).</p><p><strong>Páginas clave:</strong> <code>segmentos</code>, <code>perfil-cliente-ideal</code>, <code>dolores-y-necesidades</code>, <code>objeciones</code>, <code>programa-10-entrevistas</code></p><p><strong>Cuándo la usas:</strong> Cuando salgas al mercado y después de cada entrevista.</p></div></details>
+<details class="fold"><summary><span class="nav-num">03</span><span>Competencia <code>wiki/03-competencia/</code> </span></summary>
+<div class="fold-body"><p>Contra quién compite Arvyon en la cabeza del cliente, qué saben y qué usan los competidores, y cómo diferenciarse.</p><p><strong>Páginas clave:</strong> <code>mapa-competitivo</code>, <code>capacidades-de-la-competencia</code>, <code>matriz-comparativa</code>, <code>posicionamiento</code></p><p><strong>Cuándo la usas:</strong> Para orientar el estudio (Fase 1) y el posicionamiento (Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">04</span><span>Oferta <code>wiki/04-oferta/</code> </span></summary>
+<div class="fold-body"><p>Los paquetes, el diagnóstico exprés, el Método 4D, el acompañamiento mensual y el catálogo de casos de uso por sector.</p><p><strong>Páginas clave:</strong> <code>paquetes-estandar</code>, <code>paquete-a-la-medida</code>, <code>diagnostico-expres</code>, <code>metodo-4d</code>, <code>casos-de-uso-por-sector</code></p><p><strong>Cuándo la usas:</strong> Al diseñar demos y propuestas.</p></div></details>
+<details class="fold"><summary><span class="nav-num">05</span><span>Finanzas <code>wiki/05-finanzas/</code> </span></summary>
+<div class="fold-body"><p>Ingresos, precios, costos, métricas por cliente, punto de equilibrio y cobros internacionales.</p><p><strong>Páginas clave:</strong> <code>modelo-de-ingresos</code>, <code>estrategia-de-precios</code>, <code>unit-economics</code>, <code>escenarios-y-punto-de-equilibrio</code>, <code>cobros-y-cambio</code></p><p><strong>Cuándo la usas:</strong> Antes de fijar precios (Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">06</span><span>Administración y legal <code>wiki/06-administracion-legal/</code> </span></summary>
+<div class="fold-body"><p>Figura legal, impuestos y facturación, protección de datos, contratos, acuerdo de socios y marca. Todo son preguntas para un contador o abogado, no conclusiones.</p><p><strong>Páginas clave:</strong> <code>figura-legal</code>, <code>impuestos-y-facturacion</code>, <code>proteccion-de-datos</code>, <code>acuerdo-de-socios</code>, <code>registro-de-marca</code></p><p><strong>Cuándo la usas:</strong> Al crear la empresa (Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">07</span><span>Marketing y canales <code>wiki/07-marketing-canales/</code> </span></summary>
+<div class="fold-body"><p>El embudo de clientes y una página por canal: Instagram, YouTube, LinkedIn, WhatsApp y web, más el sistema de contenido y las métricas.</p><p><strong>Páginas clave:</strong> <code>embudo</code>, <code>youtube</code>, <code>instagram</code>, <code>sistema-de-contenido</code>, <code>metricas-de-marketing</code></p><p><strong>Cuándo la usas:</strong> Al preparar contenido (las ideas se anotan ya; se publica en la Fase 2).</p></div></details>
+<details class="fold"><summary><span class="nav-num">08</span><span>Operación <code>wiki/08-operacion/</code> </span></summary>
+<div class="fold-body"><p>Cómo se trabaja día a día: husos horarios, herramientas internas y el proceso de entrega con sus checklists.</p><p><strong>Páginas clave:</strong> <code>husos-horarios</code>, <code>stack-herramientas</code>, <code>proceso-de-entrega</code></p><p><strong>Cuándo la usas:</strong> Al organizar el trabajo con clientes.</p></div></details>
+<details class="fold"><summary><span class="nav-num">09</span><span>Riesgos <code>wiki/09-riesgos/</code> </span></summary>
+<div class="fold-body"><p>El registro de 15 riesgos con probabilidad, impacto, mitigación e indicador de alerta.</p><p><strong>Páginas clave:</strong> <code>registro-de-riesgos</code></p><p><strong>Cuándo la usas:</strong> En la revisión mensual.</p></div></details>
+<details class="fold"><summary><span class="nav-num">10</span><span>Oportunidades <code>wiki/10-oportunidades/</code> </span></summary>
+<div class="fold-body"><p>La DOFA, el radar de tendencias, nichos y alianzas posibles, y financiación pública.</p><p><strong>Páginas clave:</strong> <code>dofa</code>, <code>tendencias</code>, <code>nichos-y-alianzas</code>, <code>financiacion-y-convocatorias</code></p><p><strong>Cuándo la usas:</strong> Cada trimestre.</p></div></details>
+<details class="fold"><summary><span class="nav-num">11</span><span>Conocimiento de IA <code>wiki/11-conocimiento-ia/</code> <span class="tag amber">Fase 1</span></span></summary>
+<div class="fold-body"><p>El currículo del consultor: 12 bloques de estudio en tres niveles, la guía de la etapa en curso y la alfabetización técnica. <strong>Es el apartado más importante de la Fase 1.</strong></p><p><strong>Páginas clave:</strong> <code>curriculo</code>, <code>guia-etapa-1</code>, <code>fundamentos-llm</code>, <code>prompting-para-empresas</code>, <code>alfabetizacion-tecnica</code></p><p><strong>Cuándo la usas:</strong> Todos los días de la Fase 1.</p></div></details>
+<details class="fold"><summary><span class="nav-num">12</span><span>Entidades <code>wiki/12-entidades/</code> </span></summary>
+<div class="fold-body"><p>Una página por institución, norma o empresa relevante: Arvyon, CONPES 4144, Ley 1581, RGPD, Reglamento Europeo de IA, SIC, DIAN, Endeavor, MinComercio.</p><p><strong>Páginas clave:</strong> <code>arvyon</code>, <code>reglamento-europeo-de-ia</code>, <code>ley-1581-de-2012</code></p><p><strong>Cuándo la usas:</strong> Cuando aparece un nombre y quieres saber qué es.</p></div></details>
+<details class="fold"><summary><span class="nav-num">13</span><span>Conceptos <code>wiki/13-conceptos/</code> </span></summary>
+<div class="fold-body"><p>Ideas que se repiten en muchas páginas: brecha de adopción, precio basado en valor, ingreso recurrente, IA en la sombra, alfabetización en IA, caso de éxito, imán de clientes.</p><p><strong>Páginas clave:</strong> <code>brecha-de-adopcion</code>, <code>alfabetizacion-en-ia</code>, <code>ia-en-la-sombra</code></p><p><strong>Cuándo la usas:</strong> Para entender el vocabulario del negocio.</p></div></details>
+<details class="fold"><summary><span class="nav-num">14</span><span>Fuentes <code>wiki/14-fuentes/</code> </span></summary>
+<div class="fold-body"><p>Un resumen por cada fuente ingerida: ficha, resumen en 5 líneas, datos, qué cambió en la wiki, contradicciones y preguntas que abre.</p><p><strong>Páginas clave:</strong> <code>presentacion-socios-2026-10</code>, <code>2026-11-investigacion-web-cursos-etapa-1</code>, <code>2026-11-barrido-ligero-competidores</code></p><p><strong>Cuándo la usas:</strong> Para saber de dónde sale un dato.</p></div></details>
+<details class="fold"><summary><span class="nav-num">15</span><span>Análisis <code>wiki/15-analisis/</code> </span></summary>
+<div class="fold-body"><p>Respuestas valiosas que no deben quedarse en el chat: comparaciones, cálculos y recomendaciones.</p><p><strong>Páginas clave:</strong> <code>programacion-y-bases-de-datos</code></p><p><strong>Cuándo la usas:</strong> Cuando el agente te ofrece archivar una respuesta.</p></div></details>
+<details class="fold"><summary><span class="nav-num">16</span><span>Decisiones <code>wiki/16-decisiones/</code> </span></summary>
+<div class="fold-body"><p>Una página por decisión importante, con sus opciones, lo que falta saber y el criterio. Estados: abierta, decidida, revisada.</p><p><strong>Páginas clave:</strong> <code>registro-de-decisiones</code>, <code>dec-009-fase-de-aprendizaje</code></p><p><strong>Cuándo la usas:</strong> Antes y después de decidir algo.</p></div></details>
+<details class="fold"><summary><span class="nav-num">·</span><span>Plantillas <code>wiki/_plantillas/</code> </span></summary>
+<div class="fold-body"><p>Moldes de página para cada tipo: fuente, tema, entidad, concepto, competidor, entrevista, análisis, decisión, estudio y riesgo. No son contenido.</p><p><strong>Páginas clave:</strong> las 10 plantillas</p><p><strong>Cuándo la usas:</strong> Lo usa el agente; tú casi nunca.</p></div></details>
+<details class="fold"><summary><span class="nav-num">·</span><span>Meta <code>wiki/_meta/</code> </span></summary>
+<div class="fold-body"><p>La agenda de investigación (sprints de la Fase 2), la lista de lagunas por verificar y el glosario del cerebro.</p><p><strong>Páginas clave:</strong> <code>agenda-de-investigacion</code>, <code>lagunas</code>, <code>glosario</code></p><p><strong>Cuándo la usas:</strong> Para saber qué falta.</p></div></details>
+
+<h2 id="mapa-mapa-conceptual">Cómo se conectan los apartados</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 800 440" role="img" aria-labelledby="d-mapa-t">
+    <title id="d-mapa-t">Mapa conceptual: la tesis en el centro, rodeada de las áreas del negocio</title>
+    <g class="ln"><path d="M400 220 L482 46"/><path d="M400 220 L623 93"/><path d="M400 220 L704 173"/><path d="M400 220 L704 267"/><path d="M400 220 L623 347"/><path d="M400 220 L482 394"/><path d="M400 220 L318 394"/><path d="M400 220 L177 347"/><path d="M400 220 L96 267"/><path d="M400 220 L96 173"/><path d="M400 220 L177 93"/><path d="M400 220 L318 46"/></g>
+    <circle cx="400" cy="220" r="62" class="solid-a"/>
+    <text x="400" y="215" text-anchor="middle" class="t-on">Tesis de</text>
+    <text x="400" y="234" text-anchor="middle" class="t-on">Arvyon</text>
+    <rect x="407" y="28" width="150" height="36" rx="18" class="box"/><text x="482" y="51" text-anchor="middle" class="t">02 Demanda</text>
+    <rect x="548" y="75" width="150" height="36" rx="18" class="box"/><text x="623" y="98" text-anchor="middle" class="t">03 Competencia</text>
+    <rect x="629" y="155" width="150" height="36" rx="18" class="box"/><text x="704" y="178" text-anchor="middle" class="t">05 Finanzas</text>
+    <rect x="629" y="249" width="150" height="36" rx="18" class="box"/><text x="704" y="272" text-anchor="middle" class="t">07 Marketing</text>
+    <rect x="548" y="329" width="150" height="36" rx="18" class="box"/><text x="623" y="352" text-anchor="middle" class="t">09 Riesgos</text>
+    <rect x="407" y="376" width="150" height="36" rx="18" class="box-violet"/><text x="482" y="399" text-anchor="middle" class="t">16 Decisiones</text>
+    <rect x="236" y="376" width="164" height="36" rx="18" class="box-amber"/><text x="318" y="399" text-anchor="middle" class="t">11 Conocimiento IA</text>
+    <rect x="102" y="329" width="150" height="36" rx="18" class="box"/><text x="177" y="352" text-anchor="middle" class="t">10 Oportunidades</text>
+    <rect x="21" y="249" width="150" height="36" rx="18" class="box"/><text x="96" y="272" text-anchor="middle" class="t">08 Operación</text>
+    <rect x="21" y="155" width="150" height="36" rx="18" class="box"/><text x="96" y="178" text-anchor="middle" class="t">06 Legal</text>
+    <rect x="102" y="75" width="150" height="36" rx="18" class="box"/><text x="177" y="98" text-anchor="middle" class="t">04 Oferta</text>
+    <rect x="243" y="28" width="150" height="36" rx="18" class="box"/><text x="318" y="51" text-anchor="middle" class="t">01 Mercado</text>
+  </svg>
+  </div>
+  <figcaption>Entidades, conceptos, fuentes y análisis (12 a 15) alimentan a todas las áreas; por eso no aparecen como un solo punto.</figcaption>
+</figure>
+
+<h2 id="mapa-anatomia">Anatomía de una página</h2>
+<p>Todas las páginas de la wiki tienen la misma estructura. Así el agente y Obsidian las entienden igual.</p>
+<h3>1. La ficha de arriba (frontmatter)</h3>
+<pre><code>---
+tipo: estudio
+area: conocimiento
+estado: borrador
+confianza: media
+resumen: "Guía detallada de la Etapa 1: calendario, cursos, ejercicios…"
+fuentes: ["[[2026-11-investigacion-web-cursos-etapa-1]]"]
+creado: 2026-11-08
+actualizado: 2026-11-08
+revisar_antes: 2027-02-08
+etiquetas: [fase-1, etapa-1]
+---</code></pre>
+<div class="table-wrap"><table>
+  <tr><th>Campo</th><th>Qué significa</th><th>Valores</th></tr>
+  <tr><td><code>tipo</code></td><td>Qué clase de página es</td><td>tema, entidad, concepto, fuente, analisis, decision, competidor, entrevista, estudio, panorama, meta</td></tr>
+  <tr><td><code>area</code></td><td>A qué parte del negocio pertenece</td><td>panorama, mercado, demanda, competencia, oferta, finanzas, legal, marketing, operacion, riesgos, oportunidades, conocimiento, transversal</td></tr>
+  <tr><td><code>estado</code></td><td>Qué tan madura está</td><td><span class="tag">semilla</span> solo preguntas · <span class="tag blue">borrador</span> datos parciales · <span class="tag green">estable</span> validada · <span class="tag red">obsoleto</span></td></tr>
+  <tr><td><code>confianza</code></td><td>Cuánto fiarse</td><td>alta (fuente primaria reciente) · media · baja (supuesto)</td></tr>
+  <tr><td><code>resumen</code></td><td>Una línea; es la misma que sale en el índice</td><td>texto</td></tr>
+  <tr><td><code>fuentes</code></td><td>De qué fuentes sale</td><td>enlaces a páginas de <code>14-fuentes/</code></td></tr>
+  <tr><td><code>revisar_antes</code></td><td>Desde cuándo puede estar vieja</td><td>3 meses (mercado y herramientas), 6 meses (normas), 12 meses (conceptos)</td></tr>
+</table></div>
+<h3>2. El cuerpo</h3>
+<p>Una página de tema empieza con <strong>«En una frase»</strong> y <strong>«Lo que sabemos»</strong>, para que lo importante esté arriba. Sigue con las implicaciones para Arvyon, las preguntas a investigar (casillas que se marcan) y las fuentes sugeridas.</p>
+<h3>3. Los enlaces</h3>
+<p>Las páginas se enlazan escribiendo el nombre entre dobles corchetes: <code>[[paquetes-estandar]]</code>. Con un alias se ve otro texto: <code>[[paquetes-estandar|Optimiza]]</code>. Cada dato lleva su cita: <code>… 37,7 % ([[presentacion-socios-2026-10]])</code>. En Obsidian, esos enlaces se pueden pulsar y forman la vista gráfica.</p>
+<h3>4. Las conexiones</h3>
+<p>Toda página termina con <strong>«Conexiones»</strong>: de 3 a 8 enlaces a otras páginas, cada uno con una frase que explica la relación. Por eso no quedan páginas aisladas.</p>
+<div class="note"><p class="note-title">Nombres de archivo</p><p>En minúsculas, con guiones, sin tildes, sin ñ y sin espacios: <code>proteccion-de-datos.md</code>. Cada nombre es único en todo el cerebro, porque Obsidian encuentra las páginas por su nombre.</p></div>
+
+      <nav class="pager"><a class="prev" href="#segundo-cerebro"><small>Anterior</small>Qué es un segundo cerebro</a><a class="next" href="#uso"><small>Siguiente</small>Cómo se usa</a></nav></section><section class="chapter" id="uso" data-nombre="Cómo se usa">
+      <p class="eyebrow">Capítulo 4</p>
+
+<h1>Cómo se usa el cerebro</h1>
+<p class="lead">El cerebro se usa conversando con un agente (Claude Code u OpenCode) y leyendo en Obsidian. No hace falta escribir las páginas a mano: tú das las fuentes y las instrucciones; el agente escribe.</p>
+
+<h2 id="uso-herramientas">Las herramientas</h2>
+<div class="grid">
+  <div class="card"><p class="card-kicker">El agente</p><h3>Claude Code</h3><p>El agente de Anthropic. Se usa en la web (claude.ai/code), en la app de escritorio o en el teléfono, y trabaja en una máquina en la nube con tu repositorio. Lee <code>CLAUDE.md</code> automáticamente.</p></div>
+  <div class="card"><p class="card-kicker">Alternativa</p><h3>OpenCode u otros</h3><p>Agentes de código abierto que funcionan en tu computador. Leen <code>AGENTS.md</code>, que los manda a <code>CLAUDE.md</code>. Si notas que no siguen las reglas, pégales el prompt maestro.</p></div>
+  <div class="card"><p class="card-kicker">El lector</p><h3>Obsidian</h3><p>Una aplicación gratuita para leer y navegar archivos Markdown. Ves los enlaces, la vista gráfica y las tablas automáticas del tablero.</p></div>
+  <div class="card"><p class="card-kicker">El archivo</p><h3>GitHub</h3><p>Donde vive el cerebro con todo su historial. Ahí revisas y aceptas los cambios del agente. Ver <a href="#github">GitHub sin miedo</a>.</p></div>
+</div>
+
+<h2 id="uso-preparacion">Preparación (una sola vez)</h2>
+<h3>En Claude Code</h3>
+<ol class="steps">
+  <li>Entra a <strong>claude.ai/code</strong> (o abre la app de Claude y ve a Code).</li>
+  <li>Elige el repositorio <code>arvyonfoa/Arvyon</code> y el entorno <strong>Arvyon</strong> en el selector que está debajo del cuadro de mensaje. Ver <a href="#nube-entornos">entornos</a>.</li>
+  <li>Escribe tu primer mensaje. Si es la primera vez en una sesión nueva, puedes pegar el prompt maestro completo; si no, basta con decir qué quieres hacer.</li>
+</ol>
+<h3>En tu computador, para leer con Obsidian</h3>
+<ol class="steps">
+  <li>Instala <strong>GitHub Desktop</strong> (o Git) e inicia sesión con tu cuenta de GitHub.</li>
+  <li>Clona el repositorio <code>arvyonfoa/Arvyon</code> en una carpeta de tu computador.</li>
+  <li>Instala <strong>Obsidian</strong> y elige <em>Open folder as vault</em> sobre la carpeta <code>Cerebro</code> (no sobre la raíz del repositorio).</li>
+  <li>En <em>Settings → Community plugins</em>, instala <strong>Dataview</strong> para que funcione el tablero.</li>
+  <li>Cada vez que unas un pull request en GitHub, pulsa <em>Fetch origin</em> y <em>Pull</em> en GitHub Desktop para traer los cambios.</li>
+</ol>
+<div class="note warn"><p class="note-title">No edites el cerebro en dos sitios a la vez</p><p>Si cambias archivos en Obsidian y el agente cambia los mismos en la nube, Git tendrá que unir dos versiones distintas (un «conflicto»). Lo más simple: <strong>lee en Obsidian y pide los cambios al agente</strong>.</p></div>
+
+<h2 id="uso-empezar">Cómo empezar una sesión</h2>
+<p>Al empezar, el agente lee el índice, las últimas entradas del registro y la fase vigente. Tú solo dices qué quieres hacer:</p>
+<div class="prompt">Hola. Lee Cerebro/CLAUDE.md, dime en qué fase estamos y propón la sesión de estudio de hoy.</div>
+<div class="prompt">Ejecuta la revisión de salud y dime en 10 líneas cómo está el cerebro.</div>
+
+<h2 id="uso-sesion-de-estudio">Flujo 1 · Sesión de estudio (Fase 1)</h2>
+<p>Es el flujo principal mientras dure la fase de aprendizaje.</p>
+<ol class="steps">
+  <li>Estudias: un módulo de un curso, unas páginas de un libro.</li>
+  <li>Guardas tus apuntes en <code>Cerebro/raw/cursos/</code> con un nombre como <code>2026-11-10-ia-para-todos-modulo-1.md</code>, o se los pegas al agente para que los guarde.</li>
+  <li>Le pides que los ingiera. El agente actualiza la guía de la etapa, la página del bloque y el currículo.</li>
+  <li>El agente te explica lo que no quedó claro, te propone un ejercicio con una empresa ficticia y te hace 2 o 3 preguntas de comprobación.</li>
+  <li>Solo cuando respondes bien y haces el ejercicio, marca el nivel del bloque como aprendido.</li>
+  <li>Queda una entrada <code>study</code> en el registro, y el agente hace commit y push.</li>
+</ol>
+<div class="prompt">Aquí están mis apuntes del módulo 1 de IA Para Todos. Guárdalos en raw/cursos/, ingiérelos y hazme 3 preguntas de comprobación.</div>
+<div class="prompt">Explícame la lección de Discernimiento de AI Fluency en español, con un ejemplo de una ferretería en Bogotá.</div>
+
+<h2 id="uso-ingesta">Flujo 2 · Ingesta de una fuente</h2>
+<p>«Ingerir» es darle una fuente al agente para que la lea y la integre en todo el cerebro.</p>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 210" role="img" aria-labelledby="d-ing-t">
+    <title id="d-ing-t">Flujo de ingesta de una fuente</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="10" y="30" width="130" height="64" rx="10" class="box-amber"/>
+    <text x="75" y="58" text-anchor="middle" class="t-b">Fuente</text><text x="75" y="79" text-anchor="middle" class="t-m">raw/</text>
+    <rect x="170" y="30" width="130" height="64" rx="10" class="box-a"/>
+    <text x="235" y="58" text-anchor="middle" class="t-b">Lectura</text><text x="235" y="79" text-anchor="middle" class="t-s">fiabilidad 1–5</text>
+    <rect x="330" y="30" width="130" height="64" rx="10" class="box-a"/>
+    <text x="395" y="58" text-anchor="middle" class="t-b">Resumen</text><text x="395" y="79" text-anchor="middle" class="t-m">14-fuentes/</text>
+    <rect x="490" y="30" width="130" height="64" rx="10" class="box-a"/>
+    <text x="555" y="58" text-anchor="middle" class="t-b">Integración</text><text x="555" y="79" text-anchor="middle" class="t-s">5 a 15 páginas</text>
+    <rect x="650" y="30" width="100" height="64" rx="10" class="box-green"/>
+    <text x="700" y="58" text-anchor="middle" class="t-b">Registro</text><text x="700" y="79" text-anchor="middle" class="t-m">index · log</text>
+    <path d="M142 62 L166 62" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M302 62 L326 62" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M462 62 L486 62" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M622 62 L646 62" class="ln-a" marker-end="url(#fla)"/>
+    <text x="555" y="128" text-anchor="middle" class="t-s">temas · entidades · conceptos</text>
+    <text x="555" y="148" text-anchor="middle" class="t-s">contradicciones · tesis · decisiones</text>
+    <path d="M700 96 L700 170 L380 170" class="ln" marker-end="url(#fl)"/>
+    <text x="370" y="175" text-anchor="end" class="t-a">commit, push y pull request</text>
+  </svg>
+  </div>
+  <figcaption>Una sola fuente puede tocar muchas páginas: eso es lo que hace que el conocimiento se acumule.</figcaption>
+</figure>
+<div class="prompt">Ingiere raw/informes/[archivo].pdf. Antes de escribir, dime los 5 puntos clave.</div>
+
+<h2 id="uso-otros-flujos">Los demás flujos</h2>
+<div class="table-wrap"><table>
+  <tr><th>Flujo</th><th>Para qué</th><th>Qué decir</th></tr>
+  <tr><td>Video o podcast</td><td>Ingerir una transcripción; cita con el minuto y saca lecciones de formato para YouTube o Instagram</td><td>«Ingiere esta transcripción de YouTube: [enlace]»</td></tr>
+  <tr><td>Consulta</td><td>Preguntar algo al cerebro; responde con citas y ofrece archivar la respuesta</td><td>«¿Qué sabemos de…? Si vale la pena, archívalo»</td></tr>
+  <tr><td>Investigación web</td><td>Buscar en internet una pregunta concreta; guarda las fuentes en <code>raw/</code> antes de resumir</td><td>«Investiga en la web: … y guarda las fuentes»</td></tr>
+  <tr><td>Revisión semanal</td><td>Salud del cerebro, contradicciones, cosas viejas; propone 5 preguntas y 3 fuentes</td><td>«Haz la revisión semanal»</td></tr>
+  <tr><td>Revisión mensual</td><td>Tesis, decisiones, riesgos y hoja de ruta, con un resumen para los socios</td><td>«Haz la revisión mensual»</td></tr>
+  <tr><td>Decisión</td><td>Preparar o registrar una decisión con opciones y criterio</td><td>«Prepara la decisión dec-005 con lo que ya sabemos»</td></tr>
+  <tr><td>Cambio de fase</td><td>Revisar los criterios para pasar de aprender a actuar</td><td>«Revisa si cumplimos los criterios para pasar a la Fase 2»</td></tr>
+</table></div>
+
+<h2 id="uso-frases">Frases listas para copiar</h2>
+<div class="prompt">Propón la sesión de estudio de hoy según el currículo y la guía de la etapa en curso.</div>
+<div class="prompt">Convierte el bloque [número] del currículo en un guion de video de YouTube de 10 minutos y guárdalo como idea en sistema-de-contenido.</div>
+<div class="prompt">¿Qué contradicciones hay abiertas en el cerebro? Dame una tabla.</div>
+<div class="prompt">Archiva tu última respuesta en wiki/15-analisis/ y actualiza el índice y el registro.</div>
+<div class="prompt">El agente olvidó las reglas. Vuelve a leer Cerebro/CLAUDE.md y Cerebro/PROMPT-MAESTRO.md antes de seguir.</div>
+
+<h2 id="uso-rutina">Rutina recomendada</h2>
+<div class="table-wrap"><table>
+  <tr><th>Cuándo</th><th>Qué haces tú</th><th>Qué le pides al agente</th></tr>
+  <tr><td>Cada día de estudio</td><td>Estudias 1,5 a 2 horas y escribes tu bitácora de 10 minutos</td><td>Sesión de estudio e ingesta de tus apuntes</td></tr>
+  <tr><td>Cuando el agente abre o actualiza un PR</td><td>Lo revisas en GitHub y lo unes si estás de acuerdo</td><td>Que corrija lo que no te guste antes de unir</td></tr>
+  <tr><td>Cada semana</td><td>Lees lo nuevo en Obsidian y miras la vista gráfica</td><td>Revisión semanal</td></tr>
+  <tr><td>Cada mes</td><td>Reunión de socios</td><td>Revisión mensual con resumen</td></tr>
+</table></div>
+
+<h2 id="uso-errores">Errores comunes</h2>
+<details class="fold"><summary><span>El agente propone hacer entrevistas durante la Fase 1</span></summary><div class="fold-body"><p>Recuérdale la fase: «Estamos en la Fase 1; conviértelo en un ejercicio con una empresa ficticia». Las reglas de <code>CLAUDE.md</code> lo prohíben, pero un agente nuevo puede no haberlas leído.</p></div></details>
+<details class="fold"><summary><span>Edité un archivo de <code>raw/</code> por error</span></summary><div class="fold-body"><p>No pasa nada grave: Git guarda la versión anterior. Pide al agente: «Restaura el archivo [ruta] a su última versión en main».</p></div></details>
+<details class="fold"><summary><span>Una respuesta buena se quedó en el chat</span></summary><div class="fold-body"><p>Pide que la archive en <code>wiki/15-analisis/</code>. Lo que no está en el repositorio se pierde cuando termina la sesión en la nube.</p></div></details>
+<details class="fold"><summary><span>Obsidian no muestra el tablero</span></summary><div class="fold-body"><p>Falta el plugin Dataview. Instálalo en <em>Settings → Community plugins</em>.</p></div></details>
+
+      <nav class="pager"><a class="prev" href="#mapa"><small>Anterior</small>Mapa del cerebro</a><a class="next" href="#github"><small>Siguiente</small>GitHub sin miedo</a></nav></section><section class="chapter" id="github" data-nombre="GitHub sin miedo">
+      <p class="eyebrow">Capítulo 5</p>
+
+<h1>GitHub sin miedo</h1>
+<p class="lead">GitHub es el lugar donde vive el cerebro. Guarda cada versión de cada archivo, deja ver qué cambió y quién lo cambió, y permite revisar los cambios antes de aceptarlos.</p>
+
+<h2 id="github-por-que">Por qué el cerebro vive en GitHub</h2>
+<div class="grid">
+  <div class="card"><h4>Historial completo</h4><p>Cada cambio queda guardado. Siempre puedes ver o recuperar cómo estaba una página hace una semana.</p></div>
+  <div class="card"><h4>Revisión antes de aceptar</h4><p>El agente propone; tú decides. Nada entra en la versión principal sin tu visto bueno.</p></div>
+  <div class="card"><h4>Disco duro de la nube</h4><p>Las sesiones de Claude Code en la nube se borran. Lo que no se sube a GitHub, se pierde. Ver <a href="#nube">La nube</a>.</p></div>
+  <div class="card"><h4>Colaboración</h4><p>El otro socio podrá ver y proponer cambios sobre el mismo cerebro.</p></div>
+</div>
+
+<h2 id="github-conceptos">Los conceptos, uno por uno</h2>
+<dl class="def">
+  <dt>Repositorio</dt>
+  <dd>La carpeta del proyecto en GitHub, con todo su historial. El de Arvyon es <code>arvyonfoa/Arvyon</code>: <code>arvyonfoa</code> es el dueño y <code>Arvyon</code> el nombre. Contiene <code>README.md</code>, <code>Raw/</code> (la presentación) y <code>Cerebro/</code>.</dd>
+  <dt>Commit</dt>
+  <dd>Una foto guardada de los cambios, con un mensaje que explica qué se hizo y por qué. Ejemplo real: <code>baf8201 Fase 1 (aprender, 9 nov-15 dic): prompt maestro, guía de la Etapa 1 y competencia</code>. El código de 7 letras es su identificador.</dd>
+  <dt>Rama (branch)</dt>
+  <dd>Una línea de trabajo paralela. Permite hacer cambios sin tocar la versión principal hasta que estén listos. Es como trabajar en una copia del cuaderno y, al final, pasar al original solo lo que se aprobó.</dd>
+  <dt><code>main</code></dt>
+  <dd>La rama principal: la versión oficial del cerebro. Es la que ves en GitHub por defecto y la que descargas a Obsidian.</dd>
+  <dt>Push y pull</dt>
+  <dd><em>Push</em> es subir commits de una máquina a GitHub. <em>Pull</em> es bajar a tu computador los cambios que hay en GitHub.</dd>
+  <dt>Pull request (PR)</dt>
+  <dd>Una solicitud para unir los cambios de una rama a <code>main</code>. Muestra exactamente qué archivos cambian y permite comentar antes de aceptar. Se puede <strong>unir</strong> (merge) o <strong>cerrar sin unir</strong>.</dd>
+  <dt>Diff</dt>
+  <dd>La comparación línea por línea entre el antes y el después. En verde lo que se añade; en rojo lo que se quita.</dd>
+  <dt>Merge (unir)</dt>
+  <dd>Juntar los cambios de una rama con otra. Al unir un PR, sus cambios pasan a <code>main</code>.</dd>
+  <dt>Conflicto</dt>
+  <dd>Cuando dos ramas cambian las mismas líneas de forma distinta y Git no sabe cuál quedarse. Hay que elegir a mano. El agente puede resolverlos.</dd>
+  <dt>Revert</dt>
+  <dd>Un commit nuevo que deshace otro commit, sin borrar la historia. Es la forma segura de deshacer.</dd>
+  <dt>Force push</dt>
+  <dd>Subir cambios reescribiendo la historia de una rama. Es peligroso porque puede borrar trabajo; por eso Claude Code lo tiene bloqueado y usa <em>revert</em> en su lugar.</dd>
+  <dt>Clonar</dt>
+  <dd>Descargar una copia completa del repositorio a tu computador (lo que haces con GitHub Desktop).</dd>
+</dl>
+
+<h2 id="github-historia">La historia real del proyecto</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 330" role="img" aria-labelledby="d-git-t">
+    <title id="d-git-t">Historial real: la rama main y la rama de trabajo de Claude con los pull requests 1, 2 y 3</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <text x="10" y="84" class="t-b">main</text>
+    <path d="M70 80 L740 80" class="ln" />
+    <text x="10" y="214" class="t-b">rama</text>
+    <text x="10" y="232" class="t-m">claude/…</text>
+    <path d="M290 210 L410 210" class="ln-a"/>
+    <path d="M520 210 L740 210" class="ln-a"/>
+    <path d="M456 88 L514 202" class="ln-a"/>
+
+    <circle cx="80" cy="80" r="8" class="dot-main"/><text x="80" y="56" text-anchor="middle" class="t-m">b5e7db8</text><text x="80" y="36" text-anchor="middle" class="t-s">inicio</text>
+    <circle cx="170" cy="80" r="8" class="dot-main"/><text x="170" y="56" text-anchor="middle" class="t-m">0e903fa</text><text x="170" y="36" text-anchor="middle" class="t-s">presentación</text>
+    <circle cx="265" cy="80" r="8" class="dot-main"/><text x="265" y="56" text-anchor="middle" class="t-m">8a6b96b</text><text x="265" y="36" text-anchor="middle" class="t-s">mueves a Raw</text>
+
+    <path d="M175 88 L283 204" class="ln-a"/>
+    <circle cx="290" cy="210" r="8" class="dot"/><text x="290" y="240" text-anchor="middle" class="t-s">crea el cerebro</text>
+    <path d="M271 87 L344 203" class="ln-d"/>
+    <circle cx="350" cy="210" r="8" class="dot"/><text x="350" y="262" text-anchor="middle" class="t-s">trae main</text>
+    <circle cx="410" cy="210" r="8" class="dot"/><text x="410" y="240" text-anchor="middle" class="t-s">README</text>
+    <path d="M414 202 L446 88" class="ln-green" marker-end="url(#fl)"/>
+    <circle cx="450" cy="80" r="10" class="dot-main"/><text x="450" y="56" text-anchor="middle" class="t-m">780275a</text><text x="450" y="36" text-anchor="middle" class="t-a">PR #1 unido</text>
+
+    <circle cx="520" cy="210" r="8" class="dot-red"/><text x="520" y="240" text-anchor="middle" class="t-s">Sprint 1</text><text x="520" y="258" text-anchor="middle" class="t-s">PR #2 cerrado</text>
+    <circle cx="580" cy="210" r="8" class="dot"/><text x="580" y="290" text-anchor="middle" class="t-s">revert</text>
+    <circle cx="640" cy="210" r="8" class="dot"/><text x="640" y="240" text-anchor="middle" class="t-s">fase 1</text>
+    <circle cx="700" cy="210" r="8" class="dot"/><text x="700" y="290" text-anchor="middle" class="t-s">guía y manual</text>
+    <rect x="590" y="140" width="150" height="32" rx="16" class="box-a"/>
+    <text x="665" y="161" text-anchor="middle" class="t-a">PR #3 abierto</text>
+  </svg>
+  </div>
+  <figcaption>Arriba, la rama principal; abajo, la rama de trabajo de Claude Code. Los cambios suben a <code>main</code> solo cuando unes un pull request. Después de unir el PR #1, la rama de trabajo vuelve a empezar desde <code>main</code>.</figcaption>
+</figure>
+<div class="table-wrap"><table>
+  <tr><th>Pull request</th><th>Qué contenía</th><th>Qué pasó</th></tr>
+  <tr><td><span class="tag green">#1</span></td><td>La creación del cerebro: prompt maestro, esquema, 97 páginas, plantillas y revisión de salud</td><td>Unido a <code>main</code> el 3 de noviembre</td></tr>
+  <tr><td><span class="tag red">#2</span></td><td>El plan del Sprint 1 (entrevistas, contador, competencia)</td><td>Cerrado sin unir: decidiste aprender primero. Su commit se deshizo con un <em>revert</em></td></tr>
+  <tr><td><span class="tag blue">#3</span></td><td>La fase de aprendizaje, la guía de la Etapa 1, la competencia y este manual</td><td>Abierto, esperando tu revisión</td></tr>
+</table></div>
+
+<h2 id="github-ciclo">El ciclo de un cambio</h2>
+<ol class="steps">
+  <li>Le pides algo al agente en Claude Code.</li>
+  <li>El agente trabaja en su rama (en este proyecto, <code>claude/magical-bohr-5nj070</code>) y hace commits.</li>
+  <li>Hace <strong>push</strong>: los commits suben a GitHub, a esa rama.</li>
+  <li>Abre un <strong>pull request</strong> hacia <code>main</code>, o añade los commits a uno que ya esté abierto.</li>
+  <li>Tú revisas el PR en GitHub y decides: unir, pedir cambios o cerrar.</li>
+  <li>Si lo unes, los cambios están en <code>main</code>. En tu computador haces <strong>pull</strong> para verlos en Obsidian.</li>
+</ol>
+
+<h2 id="github-decidir">Cómo revisar y decidir un pull request</h2>
+<ol class="steps">
+  <li>Abre el PR en GitHub (te llega el enlace en el chat o en <em>Pull requests</em> del repositorio).</li>
+  <li>Lee la descripción: qué cambia y por qué.</li>
+  <li>Abre la pestaña <strong>Files changed</strong> y mira el diff de los archivos que te importan.</li>
+  <li>Si algo no te gusta, díselo al agente en el chat (o deja un comentario en el PR) y espera la corrección.</li>
+  <li>Si todo está bien, pulsa <strong>Merge pull request</strong> y confirma.</li>
+  <li>Si ya no quieres esos cambios, pulsa <strong>Close pull request</strong>. No se pierde nada: el PR queda cerrado y se puede consultar.</li>
+</ol>
+<div class="table-wrap"><table>
+  <tr><th>Situación</th><th>Qué hacer</th></tr>
+  <tr><td>El PR hace lo que pediste y la revisión de salud da 0 errores</td><td>Unirlo</td></tr>
+  <tr><td>Está casi bien, pero quieres cambiar algo</td><td>Pedir el cambio al agente; el PR se actualiza solo con el nuevo commit</td></tr>
+  <tr><td>Cambiaste de idea y no quieres esos cambios</td><td>Cerrarlo sin unir (como el PR #2)</td></tr>
+  <tr><td>GitHub dice que hay conflictos</td><td>Pedir al agente que traiga <code>main</code> a la rama y los resuelva</td></tr>
+  <tr><td>Ya uniste algo y te arrepientes</td><td>Pedir un <em>revert</em>: un commit nuevo que lo deshace</td></tr>
+  <tr><td>Hay varios PR abiertos que tocan lo mismo</td><td>Unir primero el más antiguo y pedir al agente que actualice el resto</td></tr>
+</table></div>
+
+<h2 id="github-reglas">Reglas para decidir con coherencia</h2>
+<ol class="steps">
+  <li><strong><code>main</code> es la verdad oficial.</strong> Lo que no está en <code>main</code> todavía es una propuesta.</li>
+  <li><strong>Un PR, un tema.</strong> Es más fácil revisar cambios pequeños y con un objetivo claro.</li>
+  <li><strong>Revisa antes de unir.</strong> Al menos la descripción y los archivos principales.</li>
+  <li><strong>No dejes PR abiertos mucho tiempo.</strong> Cuanto más esperan, más probable es un conflicto.</li>
+  <li><strong>Deshaz con revert, nunca reescribiendo la historia.</strong></li>
+  <li><strong>Un PR unido está terminado.</strong> El trabajo nuevo va en un PR nuevo.</li>
+  <li><strong>Nunca subas claves ni contraseñas al repositorio.</strong> Para eso existen los <a href="#nube-secretos">secretos de red</a>.</li>
+</ol>
+
+<h2 id="github-permisos">Quién puede hacer qué</h2>
+<p>Claude Code entra a GitHub con la <strong>app de Claude para GitHub</strong>, que tú autorizaste para el repositorio <code>arvyonfoa/Arvyon</code>. En la nube, tus credenciales reales nunca entran en la máquina: un proxy de GitHub las pone por fuera. Ese proxy no permite borrar ramas ni subir etiquetas, y solo da acceso a los repositorios conectados a la sesión.</p>
+<div class="note"><p class="note-title">Quien une los PR eres tú</p><p>El agente puede abrir, actualizar y comentar pull requests, pero la decisión de unir o cerrar es tuya.</p></div>
+
+      <nav class="pager"><a class="prev" href="#uso"><small>Anterior</small>Cómo se usa</a><a class="next" href="#nube"><small>Siguiente</small>La nube de Claude Code</a></nav></section><section class="chapter" id="nube" data-nombre="La nube de Claude Code">
+      <p class="eyebrow">Capítulo 6</p>
+
+<h1>La nube de Claude Code</h1>
+<p class="lead">Cuando usas Claude Code desde la web, la app de escritorio o el teléfono, el agente no trabaja en tu computador: trabaja en una máquina temporal en la nube. Entender eso explica por qué todo tiene que terminar en GitHub.</p>
+
+<h2 id="nube-sesion">Qué es una sesión en la nube</h2>
+<p>Cada sesión recibe una <strong>máquina virtual nueva</strong>: un computador prestado, con Ubuntu 24.04, unos 4 procesadores, 16 GB de memoria y 30 GB de disco (límites aproximados que pueden cambiar). En esa máquina se clona tu repositorio, Claude trabaja y, al final, sube los cambios a GitHub.</p>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 250" role="img" aria-labelledby="d-ses-t">
+    <title id="d-ses-t">Ciclo de vida de una sesión en la nube</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="10" y="30" width="130" height="70" rx="10" class="box-amber"/>
+    <text x="75" y="60" text-anchor="middle" class="t-b">Abres sesión</text><text x="75" y="82" text-anchor="middle" class="t-s">repo + entorno</text>
+    <rect x="165" y="30" width="130" height="70" rx="10" class="box"/>
+    <text x="230" y="60" text-anchor="middle" class="t-b">Máquina nueva</text><text x="230" y="82" text-anchor="middle" class="t-s">Ubuntu 24.04</text>
+    <rect x="320" y="30" width="130" height="70" rx="10" class="box"/>
+    <text x="385" y="60" text-anchor="middle" class="t-b">Script</text><text x="385" y="82" text-anchor="middle" class="t-s">si el entorno tiene</text>
+    <rect x="475" y="30" width="130" height="70" rx="10" class="box"/>
+    <text x="540" y="60" text-anchor="middle" class="t-b">Clona el repo</text><text x="540" y="82" text-anchor="middle" class="t-m">arvyonfoa/Arvyon</text>
+    <rect x="630" y="30" width="120" height="70" rx="10" class="box-a"/>
+    <text x="690" y="60" text-anchor="middle" class="t-b">Claude</text><text x="690" y="82" text-anchor="middle" class="t-s">trabaja</text>
+    <path d="M142 65 L161 65" class="ln" marker-end="url(#fl)"/>
+    <path d="M297 65 L316 65" class="ln" marker-end="url(#fl)"/>
+    <path d="M452 65 L471 65" class="ln" marker-end="url(#fl)"/>
+    <path d="M607 65 L626 65" class="ln" marker-end="url(#fl)"/>
+    <path d="M690 102 L690 150" class="ln-a" marker-end="url(#fla)"/>
+    <rect x="560" y="152" width="190" height="64" rx="10" class="box-green"/>
+    <text x="655" y="180" text-anchor="middle" class="t-b">Commit y push</text><text x="655" y="200" text-anchor="middle" class="t-s">a GitHub: se guarda</text>
+    <rect x="200" y="152" width="300" height="64" rx="10" class="box-red"/>
+    <text x="350" y="180" text-anchor="middle" class="t-b">Inactiva: se pausa; luego se borra</text>
+    <text x="350" y="200" text-anchor="middle" class="t-s">lo que no se subió, se pierde</text>
+    <path d="M556 184 L504 184" class="ln" marker-end="url(#fl)"/>
+  </svg>
+  </div>
+  <figcaption>Tras unos minutos sin actividad, la máquina se pausa con sus archivos; si pasa mucho tiempo, se recupera para otros usuarios y hay que empezar en una máquina nueva.</figcaption>
+</figure>
+
+<h2 id="nube-por-que-github">Por qué GitHub es el disco duro del cerebro</h2>
+<ol class="steps">
+  <li><strong>La máquina es temporal.</strong> Cada sesión empieza con un repositorio recién clonado y la máquina se recupera después. GitHub es lo único que permanece.</li>
+  <li><strong>Las sesiones no comparten disco.</strong> Una sesión nueva no ve lo que otra dejó a medias: solo ve lo que está en GitHub.</li>
+  <li><strong>Revisas antes de aceptar.</strong> El agente sube a una rama y abre un pull request; tú decides si entra en <code>main</code>.</li>
+  <li><strong>Tus credenciales quedan fuera.</strong> Un proxy de GitHub pone tus permisos reales por fuera de la máquina; dentro solo hay una credencial limitada.</li>
+</ol>
+<div class="note warn"><p class="note-title">Regla práctica</p><p>Si algo importante solo está en el chat o en la máquina, no existe todavía. Pide siempre: «haz commit y push».</p></div>
+
+<h2 id="nube-entornos">Qué es un entorno en la nube</h2>
+<p>Un <strong>entorno</strong> es la configuración guardada con la que arrancan las sesiones: qué sitios de internet pueden visitar, qué claves pueden usar sin verlas, qué se instala al empezar y qué variables se definen. Lo eliges en el selector que está debajo del cuadro de mensaje al empezar una sesión. Tienes dos:</p>
+<div class="table-wrap"><table>
+  <tr><th>Entorno</th><th>Acceso a la red</th><th>Variables</th><th>Script</th><th>Secretos</th></tr>
+  <tr><td><strong>Arvyon</strong> (el que usa este proyecto)</td><td>Completo: cualquier sitio</td><td>ninguna</td><td>no tiene</td><td>ninguno</td></tr>
+  <tr><td><strong>Default</strong> (el que crea Claude por defecto)</td><td>De confianza: solo la lista de sitios permitidos</td><td>ninguna</td><td>no tiene</td><td>ninguno</td></tr>
+</table></div>
+<p>Un entorno tiene cuatro piezas:</p>
+
+<h3 id="nube-red">1 · Acceso a la red</h3>
+<p>Decide a qué sitios de internet puede conectarse la máquina. Hay cuatro niveles:</p>
+<div class="table-wrap"><table>
+  <tr><th>Nivel</th><th>Qué permite</th><th>Cuándo usarlo</th></tr>
+  <tr><td><strong>Ninguno</strong></td><td>Sin salida a internet desde la máquina</td><td>Trabajo con información muy sensible</td></tr>
+  <tr><td><strong>De confianza</strong> (Trusted)</td><td>Solo una lista de sitios conocidos: registros de paquetes, GitHub, herramientas de la nube</td><td>Programar sin necesidad de navegar</td></tr>
+  <tr><td><strong>Completo</strong> (Full)</td><td>Cualquier sitio</td><td>Investigación web abierta, como la de este proyecto</td></tr>
+  <tr><td><strong>Personalizado</strong> (Custom)</td><td>Tu propia lista de dominios, con o sin la lista por defecto</td><td>Cuando solo necesitas unos pocos sitios concretos</td></tr>
+</table></div>
+<pre><code># Ejemplo de dominios permitidos en el nivel Personalizado (uno por línea)
+api.ejemplo.com
+*.ejemplo.com</code></pre>
+<p>Algunas cosas funcionan con cualquier nivel: GitHub (por su propio proxy), los conectores de Claude que actives (como Gmail o Google Drive, que pasan por los servidores de Anthropic) y los sitios que tengan un secreto de red guardado.</p>
+
+<h3 id="nube-secretos">2 · Secretos de red</h3>
+<p>Un <strong>secreto de red</strong> es una clave de API o un token que guardas en el entorno para que Claude pueda usar un servicio <strong>sin ver nunca la clave</strong>. Cuando una petición sale de la máquina hacia el sitio indicado, el proxy de Anthropic le añade la clave por fuera.</p>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 220" role="img" aria-labelledby="d-sec-t">
+    <title id="d-sec-t">Cómo viaja una petición con un secreto de red</title>
+    <defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="10" y="50" width="200" height="110" rx="12" class="box"/>
+    <text x="110" y="85" text-anchor="middle" class="t-b">Máquina de la sesión</text>
+    <text x="110" y="108" text-anchor="middle" class="t-s">Claude pide datos</text>
+    <text x="110" y="128" text-anchor="middle" class="t-s">sin la clave</text>
+    <rect x="290" y="50" width="180" height="110" rx="12" class="box-violet"/>
+    <text x="380" y="85" text-anchor="middle" class="t-b">Proxy</text>
+    <text x="380" y="108" text-anchor="middle" class="t-s">añade la clave</text>
+    <text x="380" y="128" text-anchor="middle" class="t-s">guardada en el entorno</text>
+    <rect x="550" y="50" width="200" height="110" rx="12" class="box-green"/>
+    <text x="650" y="85" text-anchor="middle" class="t-b">Servicio externo</text>
+    <text x="650" y="108" text-anchor="middle" class="t-m">api.ejemplo.com</text>
+    <text x="650" y="128" text-anchor="middle" class="t-s">responde normal</text>
+    <path d="M212 105 L286 105" class="ln" marker-end="url(#fl)"/>
+    <path d="M472 105 L546 105" class="ln-a" marker-end="url(#fla)"/>
+    <text x="510" y="96" text-anchor="middle" class="t-a">+ clave</text>
+    <text x="380" y="195" text-anchor="middle" class="t-s">La clave nunca entra en la máquina ni aparece en archivos o variables.</text>
+  </svg>
+  </div>
+</figure>
+<ul>
+  <li>Se añaden en el entorno, en la sección <em>Network secrets</em>, de uno en uno, indicando el sitio y la clave.</li>
+  <li>Después de guardarla, la clave no se puede volver a ver.</li>
+  <li>Nunca se envía a GitHub, a la API de Anthropic, a los registros públicos de paquetes ni durante el script de configuración.</li>
+  <li><strong>Nunca pegues una clave en el chat.</strong> Si el agente necesita una, te mostrará un formulario seguro para guardarla.</li>
+</ul>
+
+<h3 id="nube-script">3 · Script de configuración</h3>
+<p>Un pequeño programa (en Bash) que se ejecuta <strong>al empezar una sesión nueva, antes de que arranque Claude</strong>, con permisos de administrador. Sirve para instalar herramientas que la máquina no trae.</p>
+<pre><code>#!/bin/bash
+# Ejemplo: instalar un programa que no viene instalado
+apt update && apt install -y shellcheck</code></pre>
+<ul>
+  <li>Debe terminar sin errores; si falla, la sesión no arranca bien.</li>
+  <li>Debe tardar menos de unos 5 minutos: así Anthropic guarda una foto de la máquina ya preparada y las siguientes sesiones arrancan rápido. Esa foto se renueva cuando cambias el script o la red, o a los 7 días aproximadamente.</li>
+  <li>No puede leer las variables ni los secretos del entorno.</li>
+</ul>
+<p>El cerebro de Arvyon solo usa Python, que ya viene instalado, así que <strong>no necesita script</strong>.</p>
+
+<h3 id="nube-variables">4 · Variables de entorno</h3>
+<p>Valores de configuración que cualquier comando de la sesión puede leer. Se escriben con el formato <code>NOMBRE=valor</code>, una por línea.</p>
+<pre><code>NIVEL_LOG=detallado
+ZONA_HORARIA=America/Bogota</code></pre>
+<div class="note bad"><p class="note-title">No son para claves</p><p>Cualquiera que use el entorno puede leer las variables. Para claves y contraseñas se usan los secretos de red.</p></div>
+<p>Si cambias una variable, una sesión que ya está abierta la verá cuando su máquina se reanude o se reconstruya; una sesión nueva la ve desde el principio.</p>
+
+<h2 id="nube-comparacion">Variables, secretos y script: cuál uso</h2>
+<div class="table-wrap"><table>
+  <tr><th></th><th>Variable de entorno</th><th>Secreto de red</th><th>Script de configuración</th></tr>
+  <tr><td>Para qué</td><td>Configuración no sensible</td><td>Claves de API y tokens</td><td>Instalar herramientas</td></tr>
+  <tr><td>¿Claude lo ve?</td><td>Sí</td><td>No</td><td>Ve el resultado</td></tr>
+  <tr><td>¿Cuándo actúa?</td><td>En cada comando</td><td>En cada petición al sitio indicado</td><td>Al crear la máquina</td></tr>
+  <tr><td>Ejemplo</td><td><code>ZONA_HORARIA=America/Bogota</code></td><td>La clave de la API de un CRM</td><td><code>apt install -y …</code></td></tr>
+</table></div>
+
+<h2 id="nube-editar">Dónde se cambia</h2>
+<ol class="steps">
+  <li>Al empezar una sesión nueva: el primer control debajo del cuadro de mensaje abre el selector de entornos. Pasa el cursor sobre <strong>Arvyon</strong> y pulsa el icono de ajustes.</li>
+  <li>En una sesión abierta: pulsa la flecha junto al título de la sesión y elige <em>Edit cloud environment</em>.</li>
+  <li>En el diálogo verás <em>Network access</em>, <em>Setup script</em>, <em>Environment variables</em> y <em>Network secrets</em>. Guarda con <em>Save changes</em>.</li>
+</ol>
+<p>El agente también puede proponerte cambios en el entorno, pero siempre aparece una tarjeta para que tú los apruebes.</p>
+
+<h2 id="nube-recomendacion">Recomendación para Arvyon</h2>
+<div class="note ok"><p class="note-title">Hoy está bien así</p><p>El acceso completo es práctico para la investigación web de la Fase 1, y el entorno no guarda claves, así que hay poco que proteger.</p></div>
+<div class="note warn"><p class="note-title">Cuándo revisarlo</p><p>Si un día guardas un secreto de red (por ejemplo, la clave de un CRM o de WhatsApp para una demo), considera pasar a <strong>Personalizado</strong> con solo los sitios necesarios. Así, aunque el agente lea una página web con instrucciones maliciosas, no podrá enviar información a cualquier sitio.</p></div>
+
+      <nav class="pager"><a class="prev" href="#github"><small>Anterior</small>GitHub sin miedo</a><a class="next" href="#empresa"><small>Siguiente</small>Cómo se crea la empresa</a></nav></section><section class="chapter" id="empresa" data-nombre="Cómo se crea la empresa">
+      <p class="eyebrow">Capítulo 7</p>
+
+<h1>Cómo se crea la empresa</h1>
+<p class="lead">Este capítulo cuenta cómo se está construyendo Arvyon: qué se hizo hasta hoy, qué viene después y qué decisiones faltan. El cerebro registra cada paso, así que siempre puedes reconstruir por qué se hizo algo.</p>
+
+<h2 id="empresa-linea-de-tiempo">Línea de tiempo</h2>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 250" role="img" aria-labelledby="d-tl-t">
+    <title id="d-tl-t">Línea de tiempo del proyecto Arvyon</title>
+    <path d="M30 120 L740 120" class="ln"/>
+    <circle cx="55" cy="120" r="9" class="dot-main"/>
+    <text x="55" y="94" text-anchor="middle" class="t-m">oct 2026</text>
+    <text x="55" y="150" text-anchor="middle" class="t">Presentación</text>
+    <text x="55" y="168" text-anchor="middle" class="t-s">para socios</text>
+    <circle cx="167" cy="120" r="9" class="dot"/>
+    <text x="167" y="94" text-anchor="middle" class="t-m">3 nov</text>
+    <text x="167" y="150" text-anchor="middle" class="t">Nace el cerebro</text>
+    <text x="167" y="168" text-anchor="middle" class="t-s">PR #1</text>
+    <circle cx="292" cy="120" r="9" class="dot"/>
+    <text x="292" y="94" text-anchor="middle" class="t-m">6–8 nov</text>
+    <text x="292" y="150" text-anchor="middle" class="t">Primero aprender</text>
+    <text x="292" y="168" text-anchor="middle" class="t-s">dec-009 · PR #3</text>
+    <rect x="365" y="104" width="180" height="32" rx="16" fill="var(--surface)"/><rect x="365" y="104" width="180" height="32" rx="16" class="box-amber"/>
+    <text x="455" y="125" text-anchor="middle" class="t-b">Fase 1 · Aprender</text>
+    <text x="455" y="94" text-anchor="middle" class="t-m">9 nov – 15 dic</text>
+    <text x="455" y="158" text-anchor="middle" class="t-s">etapas 1, 2 y 3</text>
+    <rect x="560" y="104" width="180" height="32" rx="16" fill="var(--surface)"/><rect x="560" y="104" width="180" height="32" rx="16" class="box-green"/>
+    <text x="650" y="125" text-anchor="middle" class="t-b">Fase 2 · Actuar</text>
+    <text x="650" y="94" text-anchor="middle" class="t-m">fecha por decidir</text>
+    <text x="650" y="158" text-anchor="middle" class="t-s">90 días: Fundar,</text>
+    <text x="650" y="176" text-anchor="middle" class="t-s">Validar, Vender</text>
+  </svg>
+  </div>
+</figure>
+
+<h2 id="empresa-hasta-hoy">Lo que se hizo hasta hoy</h2>
+<div class="table-wrap"><table>
+  <tr><th>Fecha</th><th>Qué pasó</th><th>Dónde quedó</th></tr>
+  <tr><td class="num">oct 2026</td><td>Se escribió la propuesta de negocio para socios (19 diapositivas)</td><td><code>Raw/</code> y <code>Cerebro/raw/00-internos/</code></td></tr>
+  <tr><td class="num">2026-11-03</td><td>Se creó el segundo cerebro y se ingirió la presentación; se decidió el nombre Arvyon y sumar YouTube</td><td>PR #1 · <code>dec-001</code>, <code>dec-008</code></td></tr>
+  <tr><td class="num">2026-11-03</td><td>Se propuso un Sprint 1 con entrevistas y consulta al contador</td><td>PR #2, cerrado sin unir</td></tr>
+  <tr><td class="num">2026-11-06</td><td>Decisión: primero aprender, después actuar</td><td><code>dec-009-fase-de-aprendizaje</code></td></tr>
+  <tr><td class="num">2026-11-08</td><td>Fechas de la Fase 1, prompt maestro actualizado, guía de la Etapa 1, barrido de competidores y este manual</td><td>PR #3</td></tr>
+</table></div>
+
+<h2 id="empresa-fase-1">Fase 1 · Aprender (9 de noviembre a 15 de diciembre)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Semana</th><th>Etapa</th><th>Resultado</th></tr>
+  <tr><td class="num">9–15 nov</td><td>1 · Entender la IA</td><td>Explicar qué es la IA, qué hace bien y en qué falla</td></tr>
+  <tr><td class="num">16–22 nov</td><td>1 · Usarla con criterio</td><td>Biblioteca de 15 instrucciones y tabla de herramientas con su privacidad</td></tr>
+  <tr><td class="num">23–29 nov</td><td>2 · Automatizar</td><td>Demo 1: cotización automática con n8n</td></tr>
+  <tr><td class="num">30 nov–6 dic</td><td>2 · Atender y medir</td><td>Demo 2: asistente de WhatsApp con traspaso a un humano</td></tr>
+  <tr><td class="num">7–13 dic</td><td>3 · Pensar como consultor</td><td>Política de uso de IA y propuesta para una empresa ficticia</td></tr>
+  <tr><td class="num">14–15 dic</td><td>Cierre</td><td>Revisión de los criterios de paso</td></tr>
+</table></div>
+<h3>Criterios para pasar a la Fase 2</h3>
+<ol class="steps">
+  <li>Etapas 1 y 2 terminadas, cada una con su ejercicio.</li>
+  <li>Explicar en 5 minutos, sin tecnicismos, qué hace bien la IA, en qué falla y qué datos no se le pegan.</li>
+  <li>Dos demos funcionando con empresas ficticias.</li>
+  <li>Una política de uso de IA de 2 páginas.</li>
+  <li>Una propuesta completa para una empresa ficticia.</li>
+</ol>
+<p>El agente revisa los criterios; <strong>la decisión de pasar es del fundador</strong> y se registra en <code>wiki/16-decisiones/</code>.</p>
+
+<h2 id="empresa-fase-2">Fase 2 · Actuar: los 90 días</h2>
+<div class="grid">
+  <div class="card"><p class="card-kicker">Mes 1</p><h3>Fundar</h3><ul><li>Logo, marca y registro de la marca</li><li>Acuerdo de socios por escrito</li><li>Figura legal con un contador</li><li>Paquetes cerrados y web</li><li>Instagram y YouTube listos</li><li>10 entrevistas con empresarios</li></ul></div>
+  <div class="card"><p class="card-kicker">Mes 2</p><h3>Validar</h3><ul><li>Publicar con constancia</li><li>Precios definidos con lo aprendido</li><li>10 diagnósticos exprés</li><li>2 clientes piloto a cambio de testimonio</li></ul></div>
+  <div class="card"><p class="card-kicker">Mes 3</p><h3>Vender</h3><ul><li>3 clientes que pagan</li><li>Primer caso de éxito publicado</li><li>Primer cliente en acompañamiento mensual</li><li>Ajuste de paquetes</li></ul></div>
+</div>
+
+<h2 id="empresa-paso-a-paso">Paso a paso para crear la empresa (cuando llegue la Fase 2)</h2>
+<div class="note warn"><p class="note-title">No es asesoría legal</p><p>Estos pasos ordenan las preguntas. Cada uno debe confirmarse con un contador o abogado de cada país; el cerebro guarda sus respuestas en <code>raw/legal/</code>.</p></div>
+<ol class="steps">
+  <li><strong>Acordar roles y participación entre socios.</strong> Quién lleva Crecimiento y quién Entrega, y qué porcentaje tiene cada uno. Decisión <code>dec-002</code>; página <code>roles-de-socios</code>.</li>
+  <li><strong>Firmar el acuerdo de socios.</strong> Aportes, decisiones, reparto de utilidades y qué pasa si uno se retira. Página <code>acuerdo-de-socios</code>.</li>
+  <li><strong>Elegir la figura legal y el país de facturación.</strong> Polonia, Colombia o ambos. La pregunta clave para el contador es cuánto retiene el cliente colombiano al pagar a una empresa del exterior. Decisión <code>dec-003</code>; páginas <code>figura-legal</code> e <code>impuestos-y-facturacion</code>.</li>
+  <li><strong>Proteger la marca Arvyon.</strong> Buscar antecedentes y registrar en Colombia (SIC) y/o en la UE (EUIPO); dominio y redes. Página <code>registro-de-marca</code>.</li>
+  <li><strong>Definir cómo se cobra.</strong> Precios en pesos colombianos y plataforma de cobro. Página <code>cobros-y-cambio</code>.</li>
+  <li><strong>Preparar la protección de datos y los contratos.</strong> Política de tratamiento de datos (Ley 1581), contrato de servicios y acuerdo de confidencialidad. Páginas <code>proteccion-de-datos</code> y <code>contratos-y-responsabilidad</code>.</li>
+  <li><strong>Validar con el mercado.</strong> Las 10 entrevistas, los precios (decisión <code>dec-005</code>) y la inversión inicial (decisión <code>dec-006</code>).</li>
+  <li><strong>Fijar la fecha de arranque</strong> del plan de 90 días. Decisión <code>dec-007</code>.</li>
+</ol>
+
+<h2 id="empresa-decisiones">El registro de decisiones</h2>
+<div class="table-wrap"><table>
+  <tr><th>Decisión</th><th>Estado</th></tr>
+  <tr><td><code>dec-001</code> Nombre de la consultora</td><td><span class="tag green">decidida</span> Arvyon</td></tr>
+  <tr><td><code>dec-002</code> Roles y participación</td><td><span class="tag">abierta</span></td></tr>
+  <tr><td><code>dec-003</code> Figura legal y país de facturación</td><td><span class="tag">abierta</span> prioridad al salir al mercado</td></tr>
+  <tr><td><code>dec-004</code> Sectores para empezar</td><td><span class="tag">abierta</span> propuesta: comercio y servicios</td></tr>
+  <tr><td><code>dec-005</code> Precios de los paquetes</td><td><span class="tag">abierta</span> después de las entrevistas</td></tr>
+  <tr><td><code>dec-006</code> Inversión inicial</td><td><span class="tag">abierta</span></td></tr>
+  <tr><td><code>dec-007</code> Fecha de arranque</td><td><span class="tag">abierta</span></td></tr>
+  <tr><td><code>dec-008</code> YouTube como canal estratégico</td><td><span class="tag green">decidida</span></td></tr>
+  <tr><td><code>dec-009</code> Fase de aprendizaje</td><td><span class="tag green">decidida</span> 9 nov – 15 dic</td></tr>
+</table></div>
+
+<h2 id="empresa-como-se-construye">Cómo se está elaborando el proyecto</h2>
+<p>El método es siempre el mismo, y por eso el proyecto no pierde el hilo:</p>
+<ol class="steps">
+  <li><strong>Una fuente o una pregunta</strong> (la presentación, un curso, una investigación).</li>
+  <li><strong>El agente la integra en el cerebro</strong> y marca lo que es hecho, estimación o supuesto.</li>
+  <li><strong>Las hipótesis se ponen a prueba</strong> en la tesis (por ejemplo, el barrido de competidores mostró que la oferta tipo Inicia ya existe en Colombia).</li>
+  <li><strong>Las decisiones se registran</strong> con sus opciones y su criterio.</li>
+  <li><strong>Todo queda en GitHub</strong> a través de pull requests que tú revisas.</li>
+</ol>
+
+      <nav class="pager"><a class="prev" href="#nube"><small>Anterior</small>La nube de Claude Code</a><a class="next" href="#glosario"><small>Siguiente</small>Glosario y preguntas</a></nav></section><section class="chapter" id="glosario" data-nombre="Glosario y preguntas">
+      <p class="eyebrow">Capítulo 8</p>
+
+<h1>Glosario y preguntas frecuentes</h1>
+<p class="lead">Todas las palabras nuevas del manual, en orden alfabético y con buscador.</p>
+
+<h2 id="glosario-glosario">Glosario</h2>
+<label for="gloss-search" class="nav-title">Buscar un término</label>
+<input id="gloss-search" class="search" type="search" placeholder="Por ejemplo: rama, secreto, ingesta" autocomplete="off">
+<div class="gloss">
+<dl class="def"><dt>Agente</dt><dd>Un programa de IA que no solo responde, sino que ejecuta tareas: lee archivos, escribe, busca en la web, hace commits. Claude Code es un agente.</dd></dl>
+<dl class="def"><dt>AGENTS.md</dt><dd>Archivo con las instrucciones para agentes distintos de Claude Code (OpenCode, Codex). En Arvyon remite a CLAUDE.md.</dd></dl>
+<dl class="def"><dt>Alfabetización en IA</dt><dd>Saber usar la IA con criterio y de forma segura. El Reglamento Europeo de IA pide a las empresas que forman a su personal en esto.</dd></dl>
+<dl class="def"><dt>API</dt><dd>La forma en que dos programas se comunican. Una automatización usa APIs para conectar, por ejemplo, WhatsApp con una hoja de cálculo.</dd></dl>
+<dl class="def"><dt>Branch / rama</dt><dd>Una línea de trabajo paralela en Git. Los cambios se hacen en una rama y se unen a main con un pull request.</dd></dl>
+<dl class="def"><dt>Callout</dt><dd>Recuadro de color en Obsidian. En el cerebro marcan Hecho, Estimación, Supuesto, Por verificar y Contradicción.</dd></dl>
+<dl class="def"><dt>CLAUDE.md</dt><dd>Archivo de reglas que Claude Code lee al trabajar en una carpeta. Es el esquema operativo del cerebro.</dd></dl>
+<dl class="def"><dt>Claude Code</dt><dd>El agente de Anthropic para trabajar con archivos y código. Se usa en la web, el escritorio, el teléfono o la terminal.</dd></dl>
+<dl class="def"><dt>Clonar</dt><dd>Descargar una copia completa de un repositorio a tu computador.</dd></dl>
+<dl class="def"><dt>Commit</dt><dd>Una foto guardada de los cambios, con un mensaje. Forma el historial del repositorio.</dd></dl>
+<dl class="def"><dt>Conflicto</dt><dd>Cuando dos ramas cambian las mismas líneas de forma distinta y hay que elegir a mano.</dd></dl>
+<dl class="def"><dt>Conectores</dt><dd>Integraciones de Claude con servicios como Gmail, Google Drive o Notion. Funcionan sin añadir sus dominios al entorno.</dd></dl>
+<dl class="def"><dt>Dataview</dt><dd>Plugin de Obsidian que crea tablas automáticas a partir de la ficha de las páginas. Lo usa el tablero.</dd></dl>
+<dl class="def"><dt>Diff</dt><dd>La comparación entre el antes y el después de un archivo.</dd></dl>
+<dl class="def"><dt>Entorno en la nube</dt><dd>La configuración guardada con la que arrancan las sesiones de Claude Code: acceso a la red, secretos, script y variables.</dd></dl>
+<dl class="def"><dt>Esquema</dt><dd>La capa de reglas del cerebro: CLAUDE.md, AGENTS.md y el prompt maestro.</dd></dl>
+<dl class="def"><dt>Fase 1 / Fase 2</dt><dd>Las dos fases de Arvyon: Aprender (9 nov – 15 dic de 2026) y Actuar (cuando se cumplan los criterios de paso).</dd></dl>
+<dl class="def"><dt>Force push</dt><dd>Subir cambios reescribiendo la historia de una rama. Peligroso; Claude Code lo tiene bloqueado.</dd></dl>
+<dl class="def"><dt>Frontmatter</dt><dd>La ficha entre líneas --- al principio de cada página: tipo, área, estado, confianza, resumen, fuentes y fechas.</dd></dl>
+<dl class="def"><dt>Fuente</dt><dd>Material original que se guarda en raw/ y se resume en wiki/14-fuentes/.</dd></dl>
+<dl class="def"><dt>GitHub</dt><dd>El servicio en internet donde vive el repositorio con todo su historial.</dd></dl>
+<dl class="def"><dt>Índice (index.md)</dt><dd>El catálogo de todas las páginas del cerebro. El agente lo lee primero en cada consulta.</dd></dl>
+<dl class="def"><dt>Ingesta</dt><dd>Darle una fuente al agente para que la lea, la resuma y la integre en todas las páginas afectadas.</dd></dl>
+<dl class="def"><dt>JSON</dt><dd>Formato de texto en el que viajan los datos entre aplicaciones.</dd></dl>
+<dl class="def"><dt>Laguna</dt><dd>Un dato que falta o que hay que verificar. Se anotan en wiki/_meta/lagunas.md.</dd></dl>
+<dl class="def"><dt>LLM</dt><dd>Modelo de lenguaje grande, como Claude, GPT o Gemini.</dd></dl>
+<dl class="def"><dt>main</dt><dd>La rama principal del repositorio: la versión oficial del cerebro.</dd></dl>
+<dl class="def"><dt>Markdown</dt><dd>Formato de texto sencillo con títulos (#), listas (-) y enlaces. Todas las páginas del cerebro están en Markdown.</dd></dl>
+<dl class="def"><dt>Merge / unir</dt><dd>Juntar los cambios de una rama con otra. Al unir un pull request, sus cambios pasan a main.</dd></dl>
+<dl class="def"><dt>Método 4D</dt><dd>El método de trabajo de Arvyon: Descubrir, Diseñar, Desplegar y Demostrar.</dd></dl>
+<dl class="def"><dt>n8n</dt><dd>Herramienta de automatización sin código, la más usada por la competencia que atiende pymes en Colombia.</dd></dl>
+<dl class="def"><dt>Obsidian</dt><dd>Aplicación gratuita para leer y navegar archivos Markdown enlazados. Es el lector del cerebro.</dd></dl>
+<dl class="def"><dt>OpenCode</dt><dd>Agente de código abierto que funciona en tu computador; lee AGENTS.md.</dd></dl>
+<dl class="def"><dt>Prompt maestro</dt><dd>El documento completo con el rol, las reglas, los flujos, la agenda y el currículo del cerebro (PROMPT-MAESTRO.md).</dd></dl>
+<dl class="def"><dt>Proxy</dt><dd>Un intermediario por el que pasan las conexiones de la máquina en la nube. Filtra sitios y añade credenciales por fuera.</dd></dl>
+<dl class="def"><dt>Pull</dt><dd>Bajar a tu computador los cambios que hay en GitHub.</dd></dl>
+<dl class="def"><dt>Pull request (PR)</dt><dd>Solicitud para unir los cambios de una rama a main, con revisión previa.</dd></dl>
+<dl class="def"><dt>Push</dt><dd>Subir commits a GitHub.</dd></dl>
+<dl class="def"><dt>RAG</dt><dd>Técnica en la que el modelo busca fragmentos de documentos en cada pregunta. No acumula conocimiento, a diferencia de la wiki LLM.</dd></dl>
+<dl class="def"><dt>raw/</dt><dd>La carpeta de fuentes originales. Nunca se modifica.</dd></dl>
+<dl class="def"><dt>Registro (log.md)</dt><dd>El diario cronológico del cerebro. Solo se añaden entradas.</dd></dl>
+<dl class="def"><dt>Repositorio</dt><dd>La carpeta de un proyecto en GitHub, con todo su historial. El de Arvyon es arvyonfoa/Arvyon.</dd></dl>
+<dl class="def"><dt>Revert</dt><dd>Un commit que deshace otro sin borrar la historia.</dd></dl>
+<dl class="def"><dt>Revisión de salud</dt><dd>El programa herramientas/revisar_wiki.py, que encuentra enlaces rotos, páginas sin ficha, huérfanas o vencidas.</dd></dl>
+<dl class="def"><dt>Script de configuración</dt><dd>Programa que se ejecuta al crear la máquina de una sesión, antes de que arranque Claude, para instalar herramientas.</dd></dl>
+<dl class="def"><dt>Secreto de red</dt><dd>Clave de API guardada en el entorno que el proxy añade a las peticiones sin que Claude la vea.</dd></dl>
+<dl class="def"><dt>Segundo cerebro</dt><dd>Una colección ordenada de lo que sabes, guardada fuera de tu cabeza. En Arvyon la mantiene un agente.</dd></dl>
+<dl class="def"><dt>Sesión de estudio</dt><dd>El flujo de la Fase 1: estudias, el agente ingiere tus apuntes, explica, propone un ejercicio y comprueba lo aprendido.</dd></dl>
+<dl class="def"><dt>Tesis</dt><dd>La síntesis viva del negocio: 8 hipótesis con su estado. Está en wiki/00-panorama/tesis-arvyon.md.</dd></dl>
+<dl class="def"><dt>Variable de entorno</dt><dd>Valor de configuración que leen los comandos de la sesión. No sirve para claves.</dd></dl>
+<dl class="def"><dt>Wiki LLM</dt><dd>Una wiki escrita y mantenida por un modelo de lenguaje: el patrón en el que se basa el cerebro.</dd></dl>
+<dl class="def"><dt>Wikilink</dt><dd>Un enlace entre páginas escrito como [[nombre-de-pagina]].</dd></dl>
+</div>
+<p class="gloss-empty" id="gloss-empty" hidden>No hay términos con esa palabra. Prueba con otra.</p>
+
+<h2 id="glosario-preguntas">Preguntas frecuentes</h2>
+<details class="fold"><summary><span>¿Tengo que escribir las páginas yo?</span></summary><div class="fold-body"><p>No. Tú das fuentes e instrucciones; el agente escribe. Si quieres corregir algo, díselo y él lo cambia.</p></div></details>
+<details class="fold"><summary><span>¿Qué pasa si cierro el chat sin pedir commit?</span></summary><div class="fold-body"><p>Lo que no se subió a GitHub se pierde cuando la máquina de la sesión se recupera. Pide siempre «haz commit y push» antes de terminar.</p></div></details>
+<details class="fold"><summary><span>¿Puedo usar otro agente que no sea Claude Code?</span></summary><div class="fold-body"><p>Sí. OpenCode y otros leen AGENTS.md. Si notas que no siguen las reglas, pégales el prompt maestro completo.</p></div></details>
+<details class="fold"><summary><span>¿Por qué el agente no une los pull requests él mismo?</span></summary><div class="fold-body"><p>Porque la decisión de qué entra en la versión oficial es tuya. Así siempre sabes qué cambió.</p></div></details>
+<details class="fold"><summary><span>¿Qué hago si un PR tiene conflictos?</span></summary><div class="fold-body"><p>Pide al agente que traiga main a la rama y los resuelva. Después revisas y unes.</p></div></details>
+<details class="fold"><summary><span>¿Cómo deshago algo que ya uní?</span></summary><div class="fold-body"><p>Pide un revert: un commit nuevo que deshace el anterior sin borrar la historia.</p></div></details>
+<details class="fold"><summary><span>¿Puedo guardar contraseñas en el cerebro?</span></summary><div class="fold-body"><p>No. Ni en el repositorio ni en las variables de entorno. Las claves van como secretos de red, y nunca se pegan en el chat.</p></div></details>
+<details class="fold"><summary><span>¿Cada cuánto se actualiza este manual?</span></summary><div class="fold-body"><p>Solo cuando el fundador lo pide. Cada cambio sube la versión y queda en el historial de la portada.</p></div></details>
+
+      <nav class="pager"><a class="prev" href="#empresa"><small>Anterior</small>Cómo se crea la empresa</a></nav></section>
+      <p class="foot">Manual Cerebro Arvyon v1.0 · 2026-11-08 · Archivo único y descargable: <code>Cerebro/manual/manual-cerebro-arvyon.html</code>. Se actualiza solo cuando el fundador lo decide.</p>
+    </article>
+  </main>
+</div>
+</body>
+</html>

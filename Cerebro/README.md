@@ -2,7 +2,7 @@
 
 Es una wiki de Markdown que **mantiene un agente LLM** (Claude Code) y que tú lees en **Obsidian**. Tú consigues las fuentes y haces las preguntas. El agente resume, cruza, archiva y mantiene todo al día.
 
-> **¿Primera vez?** Abre el manual: `manual/index.html` (en tu computador, con doble clic, o desde GitHub descargando la carpeta).
+> **¿Primera vez?** Abre el manual: `manual/manual-cerebro-arvyon.html`. Es un solo archivo: descárgalo y ábrelo con doble clic en cualquier navegador.
 
 ## Qué hay aquí
 
@@ -14,7 +14,7 @@ Es una wiki de Markdown que **mantiene un agente LLM** (Claude Code) y que tú l
 | `log.md` | Lo que pasó y cuándo. |
 | `raw/` | Tus fuentes originales. **Nunca se editan.** |
 | `wiki/` | Lo que escribe el agente. |
-| `manual/` | El Manual Cerebro Arvyon: sitio HTML de varias páginas que explica todo el sistema. |
+| `manual/` | El Manual Cerebro Arvyon: un solo archivo HTML que explica todo el sistema. |
 | `herramientas/revisar_wiki.py` | La revisión de salud: enlaces rotos, huérfanas, frontmatter y páginas fuera del índice. |
 
 ## Puesta en marcha (una sola vez)

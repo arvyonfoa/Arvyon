@@ -63,3 +63,6 @@
 - Nuevo sitio HTML de 9 páginas en `manual/` (estilo y comportamiento comunes en `manual/assets/`): inicio, el proyecto, qué es un segundo cerebro, mapa del cerebro, cómo se usa, GitHub, la nube de Claude Code y sus entornos, cómo se crea la empresa, glosario y preguntas.
 - Regla: el manual solo se actualiza cuando el fundador lo pide (en `CLAUDE.md` y en el prompt maestro).
 - Nuevo `CLAUDE.md` en la raíz del repositorio que apunta a `Cerebro/CLAUDE.md`, para que el agente encuentre las reglas aunque la sesión empiece en la raíz.
+
+## [2026-11-08] schema | Manual en un solo archivo
+- A pedido del fundador, el manual pasa a ser un único archivo HTML autocontenido y descargable: `manual/manual-cerebro-arvyon.html`. Se eliminan las 9 páginas sueltas y `manual/assets/`. Se retira la copia publicada en claude.ai.
