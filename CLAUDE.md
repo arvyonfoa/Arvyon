@@ -7,4 +7,4 @@ Antes de hacer cualquier cosa:
 2. Trabaja dentro de `Cerebro/`. El contexto completo está en `Cerebro/PROMPT-MAESTRO.md`.
 3. No modifiques `Raw/` ni `Cerebro/raw/`: son fuentes originales.
 
-El manual para humanos está en `Cerebro/manual/index.html`.
+El manual para humanos está en `Cerebro/manual/manual-cerebro-arvyon.html` (un solo archivo HTML).

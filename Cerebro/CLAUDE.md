@@ -78,8 +78,8 @@ Tipos: `setup`, `ingest`, `query`, `research`, `study`, `lint`, `decision`, `sch
 4. Propón el siguiente paso.
 
 ## Manual Cerebro Arvyon
-- Está en `manual/` (sitio de varias páginas HTML; empieza en `manual/index.html`, estilo común en `manual/assets/`).
-- **Solo se actualiza cuando el fundador lo pide.** Al hacerlo: sube la versión (v1.0 → v1.1 para cambios pequeños, v2.0 para cambios grandes) en la cabecera de todas las páginas, añade una fila a «Cómo se actualiza este manual» en `manual/index.html` y escribe una entrada `schema` en `log.md`.
+- Es **un solo archivo HTML autocontenido**: `manual/manual-cerebro-arvyon.html` (CSS y JavaScript dentro; cada capítulo es una `<section class="chapter">` y se navega con `#capitulo`). No lo dividas en varios archivos.
+- **Solo se actualiza cuando el fundador lo pide.** Al hacerlo: sube la versión (v1.0 → v1.1 para cambios pequeños, v2.0 para cambios grandes) en la cabecera, añade una fila a «Cómo se actualiza este manual» (capítulo Inicio) y escribe una entrada `schema` en `log.md`.
 - Mantén el manual coherente con el cerebro: si cambian la fase, las carpetas o las reglas, avisa al fundador de que el manual quedó desactualizado.
 
 ## Mapa rápido
