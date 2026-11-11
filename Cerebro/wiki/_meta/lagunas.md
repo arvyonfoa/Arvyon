@@ -6,7 +6,7 @@ confianza: media
 resumen: "Lista viva de datos que faltan, fuentes por conseguir y afirmaciones por verificar, detectadas en ingestas y revisiones."
 fuentes: []
 creado: 2026-11-03
-actualizado: 2026-11-08
+actualizado: 2026-11-11
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -37,6 +37,17 @@ Cada `[!question] Por verificar` de la wiki debería tener aquí su línea. Al r
 - [ ] Texto final del artículo 4 modificado por el Reglamento (UE) 2026/1744 (EUR-Lex) → [[reglamento-europeo-de-ia]]
 - [ ] Cobro de Meta por mensajes de WhatsApp en Colombia desde el 2026-10-01 (afirmación de un proveedor) → [[whatsapp-business]]
 - [ ] Guías oficiales gratuitas de Microsoft 365 Copilot y de Gemini en Google Workspace → [[herramientas-para-pymes]]
+
+## Abiertas en la investigación del 2026-11-11
+- [ ] Comentarios del video de Eric Risco (señales de demanda) → [[2026-10-youtube-eric-risco-software-factory]]
+- [ ] ¿Se publicó RSC Factory? No estaba público el 2026-11-11 → [[eric-risco]]
+- [ ] Cifras exactas del experimento de OpenAI (número de cambios y tamaño del equipo) en su artículo original → [[evaluacion-video-software-factory]]
+- [ ] Que Astra esté «entrenado con refuerzo» para revisar interfaces, como dice el video → [[evaluacion-video-software-factory]]
+- [ ] Texto vigente de las condiciones de Anthropic sobre suscripciones en herramientas de terceros → [[pi-coding-agent]]
+- [ ] Texto vigente de la política de YouTube sobre contenido no auténtico y contenido sintético → [[contenido-y-marca-personal]]
+- [ ] Lista de OWASP para aplicaciones con agentes y «regla de dos» de Meta, en sus documentos originales → [[gobernanza-y-regulacion]]
+- [ ] Cifras de METR, DORA, RouteLLM y FrugalGPT en sus documentos originales → [[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]
+- [ ] Precios vigentes por modelo y por nivel de razonamiento de los principales proveedores → [[enrutamiento-de-modelos]]
 
 ## Conexiones
 - [[agenda-de-investigacion]]: donde se planifican.

@@ -83,3 +83,23 @@
 - Avance del currículo: 0 niveles marcados (la Fase 1 empieza el 2026-11-09).
 - Revisiones que vencen pronto: ninguna antes del 2027-02-03; ese mes vencen unas 70 páginas de mercado y herramientas.
 - Entidades mencionadas en 5 o más páginas sin página propia: n8n, Microsoft Copilot, Make, Zapier, HubSpot, Siigo, Alegra. Se propone crearlas cuando se estudien en la Etapa 2.
+
+## [2026-11-11] research | Fábricas de IA, harness engineering con Pi y enrutamiento de modelos
+- Pregunta del fundador: ¿aportan a mi aprendizaje la fábrica de software y la de contenido del video de Eric Risco, el *harness engineering* basado en Pi y la disciplina de elegir modelo y razonamiento para ahorrar? ¿Qué le faltó al video? ¿Qué más debo saber?
+- El plan de estudio del día queda pendiente por decisión del fundador.
+- Entregado primero en PDF (20 páginas), aprobado por el fundador antes de entrar al cerebro: `raw/informes/2026-11-11-informe-fabricas-de-ia-arneses-enrutamiento.pdf`.
+- Investigación de escritorio: no se contactó a nadie ni se probó ninguna herramienta (Fase 1).
+
+## [2026-11-11] ingest | Video de Eric Risco «Monta tu Software Factory» e investigación web asociada
+- Fuentes en raw: `raw/transcripciones/2026-10-23-eric-risco-software-factory.md` (subtítulos automáticos completos), `raw/articulos/2026-11-11-investigacion-web-fabricas-arneses-enrutamiento.md` y el informe en PDF.
+- Páginas nuevas (8): [[2026-10-youtube-eric-risco-software-factory]], [[2026-11-investigacion-web-fabricas-arneses-enrutamiento]], [[fabrica-de-ia]], [[arnes-de-agentes]], [[enrutamiento-de-modelos]], [[eric-risco]], [[pi-coding-agent]], [[evaluacion-video-software-factory]].
+- Páginas tocadas (10): [[curriculo]], [[automatizacion-de-procesos]], [[rag-y-agentes]], [[medicion-de-roi]], [[gobernanza-y-regulacion]], [[contenido-y-marca-personal]], [[youtube]] (primeras lecciones de formato), [[tendencias]], [[lagunas]], [[glosario]].
+- Fiabilidad: video 3 de 5 (practicante con interés comercial y sin cifras propias); fuentes de contraste entre 2 y 5 (tabla en la página de la investigación).
+- Paso 4 del flujo (conversar los puntos clave): se cumplió con el PDF previo y el «Ingiérelo» del fundador.
+- Contradicciones marcadas: 2 (si Pi trae conectores MCP; nombres de las versiones del modelo Sol) y una advertencia de término («AI factory» también nombra los centros de datos de Nvidia).
+- Tesis: sin cambios; ninguna hipótesis central se refuerza ni se debilita. Decisiones: sin cambios.
+- Currículo: no cambia el calendario; se añadió dónde entra cada idea (semanas 2 a 5 y Fase 2). Avance: 0 niveles marcados.
+- Lagunas nuevas: 9 (comentarios del video, publicación de RSC Factory, cifras originales de OpenAI, políticas de YouTube y de Anthropic, precios por modelo, entre otras).
+- Límites: no se vio la imagen del video; la página original de OpenAI no se pudo leer; varias cifras llegan por fuentes secundarias.
+- Manual: no se tocó. Sigue vigente; no menciona los conceptos nuevos.
+- Siguiente: retomar el plan de estudio (semana 1, «IA Para Todos»); en la semana 3, diseñar la demo de cotización como una fábrica de IA.
