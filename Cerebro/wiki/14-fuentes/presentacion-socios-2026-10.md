@@ -6,7 +6,7 @@ confianza: alta
 resumen: "Propuesta de negocio de 19 diapositivas: idea, problema, diferencial, clientes, paquetes, método, ingresos, canales, operación, socios, hoja de ruta y riesgos."
 fuentes: []
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-12
 revisar_antes: 2027-11-03
 etiquetas: [interno]
 ---
@@ -23,7 +23,7 @@ etiquetas: [interno]
 | Archivo en raw/ | [[presentacion-consultora-ia.pdf]] · [[presentacion-consultora-ia.html]] (`raw/00-internos/`) |
 | Tipo | documento interno |
 | Idioma | español |
-| Fiabilidad (1–5) | 5 para las intenciones del negocio · 3 para los datos externos (citas secundarias) |
+| Fiabilidad (2–5) | 5 para las intenciones del negocio · 3 para los datos externos (citas secundarias) |
 | Universo / muestra | — |
 
 ## Resumen en 5 líneas

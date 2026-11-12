@@ -6,7 +6,7 @@ confianza: media
 resumen: "Catálogo verificado en la web (2026-11-08) de cursos y lecturas de alfabetización en IA: Elements of AI, IA Para Todos, AI Fluency, Google AI Essentials, OpenAI Academy, Cointeligencia y Platzi."
 fuentes: []
 creado: 2026-11-08
-actualizado: 2026-11-08
+actualizado: 2026-11-12
 revisar_antes: 2027-02-08
 etiquetas: [fase-1]
 ---
@@ -22,7 +22,7 @@ etiquetas: [fase-1]
 | Archivo en raw/ | [[2026-11-08-investigacion-web-cursos-etapa-1]] (`raw/cursos/`) |
 | Tipo | investigación web agrupada |
 | Idioma | español e inglés |
-| Fiabilidad (1–5) | 4 para las páginas oficiales de cada curso · 3 para la prensa (algunas notas son de 2021 y 2024) |
+| Fiabilidad (2–5) | 4 para las páginas oficiales de cada curso · 3 para la prensa (algunas notas son de 2021 y 2024) |
 
 ## Resumen en 5 líneas
 1. Hay cursos gratuitos y serios de alfabetización en IA para no técnicos, varios en español.

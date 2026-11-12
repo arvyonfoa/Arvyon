@@ -6,7 +6,7 @@ confianza: media
 resumen: "Video de Eric Risco (17 min): qué es una fábrica de IA, cómo monta la suya con especificación, constructor, cuatro revisores, aprobador y puerta humana, y su fábrica de contenido."
 fuentes: []
 creado: 2026-11-11
-actualizado: 2026-11-11
+actualizado: 2026-11-12
 revisar_antes: 2027-02-11
 etiquetas: [fase-1, video, agentes]
 ---
@@ -24,7 +24,7 @@ etiquetas: [fase-1, video, agentes]
 | Tipo | video |
 | Idioma | español (España) |
 | Duración | 17 min 21 s, 10 capítulos |
-| Fiabilidad (1–5) | 3 — motivo: practicante con experiencia real, pero con interés comercial (promociona su proyecto), sin cifras propias y con un solo caso |
+| Fiabilidad (2–5) | 3 — motivo: practicante con experiencia real, pero con interés comercial (promociona su proyecto), sin cifras propias y con un solo caso |
 | Universo / muestra | Un caso: su propia aplicación, que «va a lanzar muy pronto» |
 
 > [!note] Hecho

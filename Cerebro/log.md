@@ -135,3 +135,13 @@
 - Reglas de calidad (sección 11): commit, push y *pull request*; no trabajar en `main`; no pedir claves en el chat; no escribir reglas en `CLAUDE.md`.
 - No se tocaron la tesis, las decisiones, el calendario de estudio ni el manual.
 - `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
+
+## [2026-11-12] schema | Fiabilidad de las fuentes: escala de 2 a 5 con tabla de criterios y validación
+- Decisión del fundador: se aplica la regla aclarada (un vendedor no pasa de 3 cuando habla del mercado o de sus beneficios; la documentación técnica sobre su propia herramienta puede llegar a 4) y la tabla de notas de 2 a 5 queda como criterio oficial.
+- `PROMPT-MAESTRO.md`: nueva sección 5.7 con la tabla (5, 4, 3 y 2), el tope para vendedores, cuándo se baja un punto, la regla de que por debajo de 2 no se ingiere, las notas múltiples y la relación con `confianza`. El paso 3 de la ingesta (7.2) remite a esa tabla.
+- `AGENTS.md`: resumen de la escala en las convenciones y en el paso 3 de la ingesta.
+- `herramientas/revisar_wiki.py`: da error si una página de fuente no tiene nota de fiabilidad o si la nota está fuera de 2 a 5.
+- Plantilla de fuente y las 7 páginas de `14-fuentes/`: la fila pasa a llamarse «Fiabilidad (2–5)». Se revisaron las 27 notas existentes contra la tabla: todas están entre 2 y 5 y ninguna cambia. Solo se reescribió el motivo de dos (Anthropic y OpenCode) para citar el tope de 4.
+- [[glosario]]: término «Fiabilidad (de una fuente)».
+- Manual: no se tocó. No menciona la escala de fiabilidad, y su descripción de la revisión de salud no incluye la comprobación nueva.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.

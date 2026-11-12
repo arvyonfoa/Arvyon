@@ -10,6 +10,7 @@ ERRORES (el código de salida es 1 si hay alguno):
   - enlaces [[...]] que no apuntan a ningún archivo de la bóveda
   - nombres de página duplicados (Obsidian resuelve los enlaces por nombre)
   - páginas de wiki/ que no aparecen en index.md
+  - páginas de tipo 'fuente' sin nota de fiabilidad, o con una nota fuera de 2 a 5
 
 AVISOS:
   - páginas huérfanas (ninguna otra página de wiki/ las enlaza; index.md no cuenta)
@@ -49,6 +50,9 @@ FECHAS = ["creado", "actualizado", "revisar_antes"]
 RE_ENLACE = re.compile(r"!?\[\[([^\]\n]+?)\]\]")
 RE_BLOQUE_CODIGO = re.compile(r"```.*?```", re.S)
 RE_CODIGO_LINEA = re.compile(r"`[^`\n]*`")
+RE_FILA_FIABILIDAD = re.compile(r"^\|\s*Fiabilidad[^|]*\|(.*)\|\s*$", re.M)
+RE_NOTA = re.compile(r"^\s*(\d+)(?:\s*[–-]\s*(\d+))?(?!\d)")
+NOTA_MIN, NOTA_MAX = 2, 5  # escala de fiabilidad (PROMPT-MAESTRO.md, sección 5.7)
 
 
 def leer_frontmatter(texto: str) -> dict[str, str] | None:
@@ -76,6 +80,38 @@ def destino(enlace: str) -> str:
     objetivo = enlace.split("|", 1)[0].split("#", 1)[0].rstrip("\\").strip()
     objetivo = objetivo.rsplit("/", 1)[-1]
     return objetivo[:-3] if objetivo.endswith(".md") else objetivo
+
+
+def notas_de_fiabilidad(texto: str) -> list[int] | None:
+    """Notas de fiabilidad de una página de fuente; None si no tiene la fila en la ficha.
+
+    La fila admite una nota ("4 — motivo"), un rango ("2–3: motivo") o varias separadas
+    por "·" ("5 para … · 3 para …"). Si la fila no trae números (por ejemplo, "Ver la
+    tabla por fuente"), las notas se leen de la columna "Fiab." de la tabla de fuentes.
+    """
+    fila = RE_FILA_FIABILIDAD.search(texto)
+    if fila is None:
+        return None
+    notas: list[int] = []
+    for parte in fila.group(1).split("·"):
+        m = RE_NOTA.match(parte)
+        if m:
+            notas.extend(int(g) for g in m.groups() if g)
+    if notas:
+        return notas
+    columna = None
+    for linea in texto.splitlines():
+        if not linea.startswith("|"):
+            columna = None
+            continue
+        celdas = [c.strip() for c in linea.strip().strip("|").split("|")]
+        if columna is None:
+            columna = next((i for i, c in enumerate(celdas) if c.startswith("Fiab.")), None)
+        elif columna < len(celdas):
+            m = RE_NOTA.match(celdas[columna])
+            if m:
+                notas.extend(int(g) for g in m.groups() if g)
+    return notas
 
 
 def main() -> int:
@@ -153,6 +189,17 @@ def main() -> int:
         if not fm.get("resumen"):
             errores.append(f"{rel}: 'resumen' vacío")
         estados[fm.get("estado", "?")] += 1
+
+        if fm.get("tipo") == "fuente":
+            notas = notas_de_fiabilidad(texto)
+            if notas is None:
+                errores.append(f"{rel}: falta la fila 'Fiabilidad (2–5)' en la ficha")
+            elif not notas:
+                errores.append(f"{rel}: la fila de fiabilidad no tiene ninguna nota")
+            else:
+                for n in notas:
+                    if not NOTA_MIN <= n <= NOTA_MAX:
+                        errores.append(f"{rel}: nota de fiabilidad {n} fuera de {NOTA_MIN} a {NOTA_MAX}")
 
         if p.stem not in en_indice:
             errores.append(f"{rel}: no aparece en index.md")

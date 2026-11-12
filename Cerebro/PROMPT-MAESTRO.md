@@ -8,7 +8,7 @@
 >
 > Este prompt también funciona en una carpeta vacía: en ese caso el agente crea toda la estructura desde cero.
 >
-> **Última actualización: 2026-11-12.** El esquema operativo pasa a `AGENTS.md` (migración a OpenCode), se añaden las reglas de Git y GitHub y el flujo de abrir y cerrar sesión, y el currículo recoge las ideas de la investigación del 2026-11-11. Cada cambio de este archivo queda en `log.md` como `schema`.
+> **Última actualización: 2026-11-12.** El esquema operativo pasa a `AGENTS.md` (migración a OpenCode), se añaden las reglas de Git y GitHub y el flujo de abrir y cerrar sesión, el currículo recoge las ideas de la investigación del 2026-11-11 y la fiabilidad de las fuentes se puntúa de 2 a 5 con la tabla de la sección 5.7. Cada cambio de este archivo queda en `log.md` como `schema`.
 
 ---
 
@@ -220,13 +220,31 @@ Usa callouts de Obsidian:
 - Lo más importante va arriba: cada página de tema empieza con `## En una frase` y `## Lo que sabemos`.
 - Si una página pasa de unas 400 líneas, divídela y deja la original como página central con enlaces.
 
+### 5.7 Fiabilidad de las fuentes (de 2 a 5)
+Cada fuente lleva una nota de fiabilidad de **2 a 5** y su **motivo**, en la ficha de su página de `14-fuentes/`. La nota sale de cuatro preguntas: quién lo dice, con qué método, de qué fecha y sobre qué universo.
+
+| Nota | Qué fuente la recibe | Ejemplos |
+|---|---|---|
+| **5** | Fuente primaria y verificable: el texto oficial de una norma, una estadística oficial con su metodología o un estudio revisado por pares. También un documento propio de Arvyon, pero solo sobre las intenciones de Arvyon | EUR-Lex, DANE, un artículo de NeurIPS |
+| **4** | Fuente primaria o independiente y sólida que no llega a 5: una empresa que cuenta su propio caso con cifras y límites, una organización sectorial, el análisis independiente de un experto, un experimento con datos y límites declarados, o la documentación y las guías técnicas de un proveedor sobre su propia herramienta | Stripe, FinOps Foundation, la documentación de OpenCode |
+| **3** | Fuente con interés comercial o sin datos propios: un vendedor que habla del mercado o de los beneficios de lo que vende, un manifiesto, la opinión de un practicante, un tutorial, la prensa o una cita secundaria | El video de un divulgador que promociona su proyecto |
+| **2** | Fuente débil: afirmación promocional sin datos comprobables, clasificación publicada por quien aparece en ella, interpretación de un aficionado o texto sin autor o sin fecha claros. Solo sirve como pista | La página de servicios de un competidor |
+
+Reglas:
+1. **Tope para vendedores.** Quien vende IA no pasa de 3 cuando habla del mercado o de los beneficios de lo que vende. Cuando documenta cómo funciona su propia herramienta puede llegar a 4.
+2. **Se baja un punto**, sin pasar por debajo de 2, si la fuente se leyó a través de un resumen y no en el original, si tiene inconsistencias internas o si está vieja para un tema que cambia rápido. Nunca se sube.
+3. **Por debajo de 2 no es una fuente.** No se ingiere. Si da una pista útil, se anota en `_meta/lagunas.md` para buscar una fuente mejor.
+4. **Varias notas en una página.** Si la página agrupa varias fuentes o mezcla tipos de afirmación, se puntúa cada parte (por ejemplo: «5 para las intenciones del negocio · 3 para los datos externos»).
+5. **Relación con `confianza` (5.2).** Una página solo llega a confianza `alta` con una fuente reciente de 4 o 5; con fuentes de 3 queda en `media`; apoyada solo en fuentes de 2 queda en `baja`.
+6. **Validación.** `herramientas/revisar_wiki.py` da error si una página de fuente no tiene nota o si la nota está fuera de 2 a 5.
+
 ## 6. Tipos de página (secciones obligatorias)
 
 Las plantillas completas están en `wiki/_plantillas/`. Si no existen, créalas con estas secciones:
 
 | Tipo | Secciones |
 |---|---|
-| **fuente** | Ficha (autor, medio, fecha, URL, ruta en raw/, tipo, idioma, fiabilidad 1–5) · Resumen en 5 líneas · Ideas clave (con página o minuto) · Datos y cifras (tabla) · Qué cambia en la wiki (páginas tocadas) · Contradicciones · Citas textuales útiles · Preguntas que abre |
+| **fuente** | Ficha (autor, medio, fecha, URL, ruta en raw/, tipo, idioma, fiabilidad 2–5 con su motivo) · Resumen en 5 líneas · Ideas clave (con página o minuto) · Datos y cifras (tabla) · Qué cambia en la wiki (páginas tocadas) · Contradicciones · Citas textuales útiles · Preguntas que abre |
 | **tema** | En una frase · Lo que sabemos (HECHO/ESTIMACIÓN/SUPUESTO) · Implicaciones para Arvyon · Preguntas a investigar (casillas) · Fuentes sugeridas · Conexiones |
 | **entidad** | Qué es · Datos básicos · Relevancia para Arvyon · Menciones (fuentes) · Conexiones |
 | **concepto** | Definición · Por qué importa · Cómo lo aplicamos · Ejemplos · Conexiones |
@@ -251,7 +269,7 @@ Las plantillas completas están en `wiki/_plantillas/`. Si no existen, créalas 
 ### 7.2 Ingesta de una fuente (el flujo más importante)
 1. **Ubica** la fuente en `raw/`. Si te pasan una URL, guarda primero el contenido en Markdown en la subcarpeta adecuada de `raw/` (con la URL y la fecha de captura en la cabecera). Nunca resumas algo que no quedó guardado.
 2. **Lee la fuente completa.** Si tiene imágenes, lee primero el texto y después las imágenes relevantes.
-3. **Evalúa la fiabilidad (1–5):** quién lo dice, con qué método, de qué fecha y con qué universo. Las fuentes de vendedores (por ejemplo, informes de una empresa que vende IA) puntúan como máximo 3 cuando hablan del mercado o de los beneficios de lo que venden. La documentación técnica de un proveedor sobre cómo funciona su propia herramienta puede llegar a 4.
+3. **Evalúa la fiabilidad (de 2 a 5)** con la tabla y las reglas de la sección 5.7, y escribe el motivo.
 4. **Conversa con el humano:** dale de 3 a 7 puntos clave y pregunta qué quiere destacar. Si te pidió modo autónomo, sáltate este paso y anótalo en el log.
 5. **Escribe la página de fuente** en `wiki/14-fuentes/` con la plantilla.
 6. **Actualiza las páginas de tema** afectadas: añade los HECHOS con su cita, ajusta las ESTIMACIONES y sube o baja la `confianza`.
@@ -289,7 +307,7 @@ Las plantillas completas están en `wiki/_plantillas/`. Si no existen, créalas 
 5. Cierra marcando la casilla de la pregunta en la página de tema y registra `research` en el log.
 
 ### 7.7 Revisión de salud semanal (lint)
-1. Ejecuta `python3 herramientas/revisar_wiki.py`. El script informa de enlaces rotos, páginas sin frontmatter o con campos faltantes, páginas que no están en el índice, páginas huérfanas (sin enlaces entrantes), nombres duplicados y páginas con `revisar_antes` vencido.
+1. Ejecuta `python3 herramientas/revisar_wiki.py`. El script informa de enlaces rotos, páginas sin frontmatter o con campos faltantes, páginas que no están en el índice, fuentes sin nota de fiabilidad o con una nota fuera de 2 a 5, páginas huérfanas (sin enlaces entrantes), nombres duplicados y páginas con `revisar_antes` vencido.
 2. Además, revisa a mano:
    - contradicciones sin resolver;
    - afirmaciones superadas por fuentes más nuevas;

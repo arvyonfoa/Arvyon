@@ -6,7 +6,7 @@ confianza: media
 resumen: "Investigación web (2026-11-11) sobre fábricas de software con agentes (Stripe, StrongDM, OpenAI), harness engineering (Thoughtworks), Pi, enrutamiento de modelos (FinOps Foundation, Anthropic) y seguridad de agentes."
 fuentes: []
 creado: 2026-11-11
-actualizado: 2026-11-11
+actualizado: 2026-11-12
 revisar_antes: 2027-02-11
 etiquetas: [fase-1, agentes]
 ---
@@ -22,7 +22,7 @@ etiquetas: [fase-1, agentes]
 | Archivo en raw/ | [[2026-11-11-investigacion-web-fabricas-arneses-enrutamiento]] (`raw/articulos/`) |
 | Tipo | investigación web agrupada |
 | Idioma | inglés y español |
-| Fiabilidad (1–5) | Ver la tabla por fuente |
+| Fiabilidad (2–5) | Ver la tabla por fuente |
 
 ## Fuentes y fiabilidad
 | Fuente | Fecha | Fiab. | Motivo |
@@ -33,7 +33,7 @@ etiquetas: [fase-1, agentes]
 | B. Böckeler, «Harness engineering» (martinfowler.com) | 2026-04-02 | 4 | Análisis independiente de Thoughtworks |
 | N. Jain, «Are Harnesses Worth the Cost?» | 2026-10-13 | 4 | Experimento con datos y límites declarados |
 | FinOps Foundation, costos de tokens | 2026-10-28 | 4 | Organización sectorial; cifras indicativas |
-| Anthropic, «Building effective agents» | 2024-12-19 | 4 | Primaria; proveedor de IA (máximo 4) |
+| Anthropic, «Building effective agents» | 2024-12-19 | 4 | Guía técnica de un proveedor de IA sobre sus propias herramientas (tope de 4) |
 | Sitio de Pi y blog de Mario Zechner | 2026-11-11; 2025-11-30 | 4 | Primarias sobre la herramienta |
 | Fazt, tutorial de Pi | 2026-09-12 | 3 | Secundaria, en español |
 | Panickssery y otros, NeurIPS 2024 | 2024 | 5 | Revisado por pares |

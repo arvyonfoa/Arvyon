@@ -22,7 +22,7 @@ etiquetas: []
 | Archivo en raw/ | `raw/…` |
 | Tipo | informe · artículo · video · podcast · norma · datos · entrevista · curso |
 | Idioma | |
-| Fiabilidad (1–5) | _ — motivo: |
+| Fiabilidad (2–5) | _ — motivo: (tabla en `PROMPT-MAESTRO.md` §5.7) |
 | Universo / muestra | |
 
 ## Resumen en 5 líneas

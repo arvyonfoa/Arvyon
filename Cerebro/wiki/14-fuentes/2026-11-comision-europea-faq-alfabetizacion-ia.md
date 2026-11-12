@@ -6,7 +6,7 @@ confianza: media
 resumen: "Página oficial de la Comisión sobre el artículo 4 del Reglamento de IA: modificado por el Ómnibus Digital (Reglamento (UE) 2026/1744); ya no se exige un nivel 'suficiente'."
 fuentes: []
 creado: 2026-11-08
-actualizado: 2026-11-08
+actualizado: 2026-11-12
 revisar_antes: 2027-05-08
 etiquetas: []
 ---
@@ -23,7 +23,7 @@ etiquetas: []
 | Archivo en raw/ | [[2026-11-08-ce-faq-alfabetizacion-ia]] (`raw/legal/`) |
 | Tipo | norma (interpretación oficial) |
 | Idioma | inglés |
-| Fiabilidad (1–5) | 4: fuente oficial, pero la propia página tiene una inconsistencia interna |
+| Fiabilidad (2–5) | 4: fuente oficial, pero la propia página tiene una inconsistencia interna |
 
 ## Resumen en 5 líneas
 1. El artículo 4 (alfabetización en IA) se aplica desde el 2025-02-02.

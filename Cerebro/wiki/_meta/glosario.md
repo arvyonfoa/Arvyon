@@ -26,6 +26,7 @@ etiquetas: []
 | Enrutamiento de modelos | Enviar cada tarea al modelo más barato que la resuelve bien | [[enrutamiento-de-modelos]] |
 | Evaluación (eval) | Prueba para una IA: una entrada, una salida y una regla para calificarla | [[medicion-de-roi]] |
 | Fábrica de IA | Proceso repetible y auditable con IA dentro, con pasos de código, de agente y de aprobación humana | [[fabrica-de-ia]] |
+| Fiabilidad (de una fuente) | Nota de 2 a 5 que dice cuánto confiar en una fuente, según quién lo dice, con qué método, de qué fecha y sobre qué universo | `PROMPT-MAESTRO.md` §5.7 |
 | FinOps para IA | Gestión financiera del gasto en IA | [[enrutamiento-de-modelos]] |
 | Flujo (workflow) | Automatización cuyo camino lo fija el código, no el modelo | [[automatizacion-de-procesos]] |
 | IA en la sombra | Uso de IA en la empresa sin conocimiento ni reglas | [[ia-en-la-sombra]] |

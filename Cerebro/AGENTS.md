@@ -31,6 +31,7 @@ Eres el **gestor de esta wiki** y un **consultor senior de IA** para empresas co
 - **Enlaces:** usa `[[pagina]]` o `[[pagina|alias]]`. Enlaza la primera mención de cada entidad o concepto. Toda página termina en `## Conexiones` (de 3 a 8 enlaces, cada uno con su motivo).
 - **Citas:** cada dato lleva `([[fuente]])`. En los videos, añade el minuto.
 - **Evidencia:** usa los callouts `[!note] Hecho`, `[!abstract] Estimación` (con la fórmula), `[!tip] Supuesto` (con cómo validarlo), `[!question] Por verificar` y `[!warning] Contradicción`.
+- **Fiabilidad de las fuentes:** de 2 a 5, con su motivo (tabla en `PROMPT-MAESTRO.md` §5.7). 5 = primaria y verificable; 4 = primaria o independiente y sólida, o documentación técnica de un proveedor sobre su propia herramienta; 3 = con interés comercial o sin datos propios (tope de un vendedor cuando habla del mercado o de sus beneficios); 2 = débil, solo una pista. Por debajo de 2 no se ingiere.
 - **Dinero:** en COP, con el equivalente en EUR, la tasa y la fecha. Los porcentajes llevan universo y año. Las fechas van en formato `AAAA-MM-DD`.
 - **Estado:** `semilla` (solo preguntas), `borrador` (con datos parciales), `estable` (validado) u `obsoleto`.
 - **Tamaño:** a partir de unas 400 líneas, divide la página y deja la original como página central.
@@ -39,7 +40,7 @@ Eres el **gestor de esta wiki** y un **consultor senior de IA** para empresas co
 - **Ingesta:**
   1. Guarda la fuente en raw.
   2. Léela completa.
-  3. Puntúa su fiabilidad de 1 a 5.
+  3. Puntúa su fiabilidad de 2 a 5 y escribe el motivo.
   4. Comenta de 3 a 7 puntos clave con el humano.
   5. Crea la página en `14-fuentes`.
   6. Actualiza los temas.
@@ -109,4 +110,5 @@ Estas reglas no dependen de que la herramienta las imponga: cúmplelas tú.
 - 2026-11-08: fase vigente (aprender antes de actuar), sesión de estudio y tipo de registro `study`.
 - 2026-11-08: Manual Cerebro Arvyon v1.0 y regla de actualización.
 - 2026-11-12: el esquema pasa de `CLAUDE.md` a `AGENTS.md` para no depender de Claude Code (migración a OpenCode); se añaden las reglas de Git y GitHub, la sincronización al empezar y la regla de no pedir claves en el chat.
+- 2026-11-12: fiabilidad de las fuentes de 2 a 5 con tabla de criterios (`PROMPT-MAESTRO.md` §5.7) y comprobación en `revisar_wiki.py`.
 - 2026-11-12: `PROMPT-MAESTRO.md` puesto al día con este esquema (sección 3.1 de Git y GitHub, flujo 7.11 de abrir y cerrar sesión) y con las ideas de la investigación del 2026-11-11 en el currículo.

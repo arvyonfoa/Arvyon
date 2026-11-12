@@ -22,7 +22,7 @@ etiquetas: [herramienta, agentes]
 | Archivo en raw/ | [[2026-11-12-investigacion-web-opencode]] (`raw/articulos/`) |
 | Tipo | investigación web agrupada (12 páginas) |
 | Idioma | inglés |
-| Fiabilidad (1–5) | 4 — motivo: fuente primaria sobre la herramienta; máximo 4 porque es el propio proveedor y la documentación cambia a menudo |
+| Fiabilidad (2–5) | 4 — motivo: documentación técnica del proveedor sobre su propia herramienta (tope de 4); cambia a menudo |
 | Universo / muestra | No aplica |
 
 ## Resumen en 5 líneas
