@@ -125,3 +125,13 @@
 - No se creó `opencode.jsonc`: el manual trae un ejemplo de permisos sin probar para que el fundador lo pida si lo quiere.
 - `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
 - Siguiente: instalar OpenCode, conectar un modelo y GitHub con el capítulo 7, y retomar el plan de estudio (semana 1, «IA Para Todos»).
+
+## [2026-11-12] schema | Prompt maestro puesto al día
+- A pedido del fundador. `PROMPT-MAESTRO.md` queda coherente con `AGENTS.md` y con la wiki.
+- Nuevo en el prompt: regla de oro 6 (las reglas las cumple el agente, no la herramienta), sección 3.1 «Git y GitHub», flujo 7.11 «Abrir y cerrar cada sesión», y `manual/` y los archivos de la raíz en la estructura de carpetas.
+- Currículo (sección 9.2): los bloques 1, 2, 4, 5, 6, 8, 10, 11 y 12 recogen las ideas de la investigación del 2026-11-11 ([[arnes-de-agentes]], [[fabrica-de-ia]], [[enrutamiento-de-modelos]], seguridad de agentes, costo por resultado exitoso). El calendario de la sección 9.3 no cambia.
+- Agenda (sección 8): canales de referencia en [[youtube]] y tendencias nuevas en [[tendencias]].
+- Regla aclarada, pendiente de que el fundador la confirme: la fiabilidad máxima de 3 para fuentes de vendedores se aplica cuando hablan del mercado o de los beneficios de lo que venden; la documentación técnica de un proveedor sobre su propia herramienta puede llegar a 4. Así se puntuó ya en las ingestas del 2026-11-11 y del 2026-11-12.
+- Reglas de calidad (sección 11): commit, push y *pull request*; no trabajar en `main`; no pedir claves en el chat; no escribir reglas en `CLAUDE.md`.
+- No se tocaron la tesis, las decisiones, el calendario de estudio ni el manual.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.

@@ -109,3 +109,4 @@ Estas reglas no dependen de que la herramienta las imponga: cúmplelas tú.
 - 2026-11-08: fase vigente (aprender antes de actuar), sesión de estudio y tipo de registro `study`.
 - 2026-11-08: Manual Cerebro Arvyon v1.0 y regla de actualización.
 - 2026-11-12: el esquema pasa de `CLAUDE.md` a `AGENTS.md` para no depender de Claude Code (migración a OpenCode); se añaden las reglas de Git y GitHub, la sincronización al empezar y la regla de no pedir claves en el chat.
+- 2026-11-12: `PROMPT-MAESTRO.md` puesto al día con este esquema (sección 3.1 de Git y GitHub, flujo 7.11 de abrir y cerrar sesión) y con las ideas de la investigación del 2026-11-11 en el currículo.
