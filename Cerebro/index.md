@@ -4,9 +4,9 @@
 > Formato: `[[página]]: resumen de una línea · *estado* · número de fuentes`.
 > Las plantillas están en `wiki/_plantillas/` y no se indexan.
 
-**Páginas:** 113 · **Fuentes ingeridas:** 6 · **Última actualización:** 2026-11-11 · **Fase vigente:** 1 · Aprender (9 nov–15 dic)
+**Páginas:** 115 · **Fuentes ingeridas:** 7 · **Última actualización:** 2026-11-12 · **Fase vigente:** 1 · Aprender (9 nov–15 dic)
 
-**Manual para humanos:** `manual/manual-cerebro-arvyon.html` (v1.1)
+**Manual para humanos:** `manual/manual-cerebro-arvyon.html` (v2.2)
 
 **Empieza por aquí (Fase 1):** [[curriculo]] → [[guia-etapa-1]] → [[dec-009-fase-de-aprendizaje]] → [[tesis-arvyon]]
 
@@ -126,6 +126,7 @@
 - [[eric-risco]]: Divulgador español de IA y agentes de programación en YouTube, autor de RSC Harness; canal de referencia de formato y fuente del concepto de fábrica de IA. · *borrador* · fuentes: 2
 - [[ley-1581-de-2012]]: Ley colombiana de protección de datos personales; marco del tratamiento de datos de los clientes de Arvyon. · *borrador* · fuentes: 1
 - [[mincomercio]]: Ministerio colombiano; fuente de los datos sobre mipymes citados en la presentación. · *borrador* · fuentes: 1
+- [[opencode]]: Agente de código abierto que funciona en el computador del usuario; desde el 2026-11-12 es el agente con el que se mantiene este cerebro, con Claude Code como alternativa. · *borrador* · fuentes: 1
 - [[pi-coding-agent]]: Agente de programación minimalista y de código abierto, pensado para que cada quien construya su propio arnés; herramienta para programadores, fuera del plan de la Fase 1. · *borrador* · fuentes: 1
 - [[reglamento-europeo-de-ia]]: Reglamento (UE) 2024/1689 sobre inteligencia artificial: niveles de riesgo, prácticas prohibidas y alfabetización en IA. · *borrador* · fuentes: 2
 - [[rgpd]]: Reglamento (UE) 2016/679 de protección de datos; obligaciones de Arvyon como empresa en la UE y parte de su diferencial. · *borrador* · fuentes: 1
@@ -151,6 +152,7 @@
 - [[2026-11-comision-europea-faq-alfabetizacion-ia]]: Página oficial de la Comisión sobre el artículo 4 del Reglamento de IA: modificado por el Ómnibus Digital (Reglamento (UE) 2026/1744); ya no se exige un nivel 'suficiente'. · *borrador* · fuentes: 0
 - [[2026-11-investigacion-web-cursos-etapa-1]]: Catálogo verificado en la web (2026-11-08) de cursos y lecturas de alfabetización en IA: Elements of AI, IA Para Todos, AI Fluency, Google AI Essentials, OpenAI Academy, Cointeligencia y Platzi. · *borrador* · fuentes: 0
 - [[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]: Investigación web (2026-11-11) sobre fábricas de software con agentes (Stripe, StrongDM, OpenAI), harness engineering (Thoughtworks), Pi, enrutamiento de modelos (FinOps Foundation, Anthropic) y seguridad de agentes. · *borrador* · fuentes: 0
+- [[2026-11-investigacion-web-opencode]]: Documentación oficial de OpenCode versión 2 (2026-11-12): solo lee AGENTS.md, permite casi todo por defecto, se conecta a modelos con /connect y su integración con GitHub está documentada para la versión 1. · *borrador* · fuentes: 0
 - [[presentacion-socios-2026-10]]: Propuesta de negocio de 19 diapositivas: idea, problema, diferencial, clientes, paquetes, método, ingresos, canales, operación, socios, hoja de ruta y riesgos. · *estable* · fuentes: 0
 
 ## 15 · Análisis archivados

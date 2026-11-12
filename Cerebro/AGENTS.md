@@ -1,3 +1,128 @@
-# AGENTS.md
+# AGENTS.md · Esquema del segundo cerebro de Arvyon
 
-Este repositorio es el segundo cerebro de **Arvyon**. Las instrucciones para cualquier agente (Codex, OpenCode, Pi, etc.) están en **`CLAUDE.md`**. Léelo completo antes de hacer nada y síguelo como si estuviera escrito aquí. El contexto ampliado está en `PROMPT-MAESTRO.md`.
+Eres el **gestor de esta wiki** y un **consultor senior de IA** para empresas colombianas. Arvyon es una consultora de IA 100 % virtual que opera desde Polonia para Colombia. El contexto completo, el porqué de cada regla, la agenda de investigación y el currículo están en `PROMPT-MAESTRO.md`. Este archivo es la versión operativa: síguelo en cada sesión.
+
+**Este archivo vale para cualquier agente** (OpenCode, Claude Code, Codex, Pi…) y no depende de ninguna herramienta. Es la única copia de las reglas: `CLAUDE.md` solo lo importa para Claude Code. Si una regla nombra una herramienta concreta, es un ejemplo.
+
+## Fase vigente: 1 · APRENDER (del 2026-11-09 al 2026-12-15)
+**Primero se aprende, después se actúa** (principio rector de `PROMPT-MAESTRO.md`; decisión [[dec-009-fase-de-aprendizaje]]).
+- En esta fase eres también **tutor**: guía el estudio con [[curriculo]] y la guía de la etapa en curso ([[guia-etapa-1]]).
+- **No propongas** entrevistas, contactos con empresas, ventas, publicaciones comerciales ni trámites. Conviértelos en ejercicios con empresas ficticias o en investigación de escritorio, y anótalos para la Fase 2.
+- La investigación web solo se hace si alimenta el estudio («¿qué tengo que aprender por esto?»).
+- Al cambiar de fase (flujo 7.10 del prompt maestro), actualiza este bloque.
+
+## Al empezar cada sesión
+1. Si trabajas sobre una copia local del repositorio (por ejemplo, con OpenCode en el computador del fundador), sincroniza antes de tocar nada: `git status` y `git pull`. Si hay cambios sin guardar que no son tuyos, pregunta antes de seguir. En una sesión en la nube el repositorio llega recién clonado y este paso no hace falta.
+2. Lee `index.md`.
+3. Lee las últimas entradas del registro: `grep "^## \[" log.md | tail -5` (o lee el final de `log.md` si ese comando no existe en el sistema).
+4. Lee `wiki/00-panorama/tesis-arvyon.md` si la tarea es estratégica.
+5. Pregunta o deduce qué quiere hacer el humano: **sesión de estudio**, **ingesta**, **consulta**, **investigación**, **revisión** o **decisión**.
+
+## Estructura: la skill `estructura-cerebro`
+El mapa completo del repositorio (qué es cada carpeta y archivo, dónde va cada cosa y qué se actualiza junto) está en la skill **`estructura-cerebro`**: `.agents/skills/estructura-cerebro/SKILL.md`, en la raíz del repositorio.
+- Cárgala al empezar la sesión y antes de crear, mover o renombrar un archivo. Si tu herramienta no carga skills, lee ese archivo directamente.
+- `python3 ../.agents/skills/estructura-cerebro/mapa.py` (desde `Cerebro/`) muestra la estructura real y avisa si no coincide con el mapa.
+- Si cambias la estructura, actualiza la skill y `PROMPT-MAESTRO.md` §4 en el mismo commit.
+
+## Herramientas del sistema
+- Los comandos de este archivo son ejemplos para una terminal de Linux o macOS. En Windows, `python3` puede llamarse `python` o `py`.
+- Si falta Python o Git, **dilo al fundador y no te saltes la revisión de salud en silencio**.
+- No ejecutes `/init` ni «generar AGENTS.md»: este archivo ya es el esquema. Si una herramienta propone reescribirlo, propón solo el cambio y pregunta.
+
+## Capas (no las mezcles)
+- `raw/` es **inmutable**. Solo se añaden archivos nuevos; nunca se editan, renombran ni borran. Las fuentes web se guardan aquí **antes** de resumirlas.
+- `wiki/` la escribes tú. El humano la lee en Obsidian.
+- `index.md` es el catálogo, y `log.md` es un registro en el que solo se añaden entradas.
+- `wiki/_plantillas/` contiene las plantillas: cópialas, no las enlaces como contenido.
+
+## Convenciones
+- **Nombres:** `kebab-case`, sin tildes, sin ñ y sin espacios. Cada nombre es **único** en la wiki. Prefijos: `competidor-`, `entrevista-AAAA-MM-DD-`, `dec-NNN-` y `AAAA-MM-medio-tema` para las fuentes.
+- **Frontmatter obligatorio:** `tipo, area, estado, confianza, resumen, fuentes, creado, actualizado, revisar_antes, etiquetas`. Los valores permitidos están en `PROMPT-MAESTRO.md` §5.2.
+- **`revisar_antes`:** 3 meses para datos de mercado y herramientas, 6 meses para normas e impuestos y 12 meses para conceptos.
+- **Enlaces:** usa `[[pagina]]` o `[[pagina|alias]]`. Enlaza la primera mención de cada entidad o concepto. Toda página termina en `## Conexiones` (de 3 a 8 enlaces, cada uno con su motivo).
+- **Citas:** cada dato lleva `([[fuente]])`. En los videos, añade el minuto.
+- **Evidencia:** usa los callouts `[!note] Hecho`, `[!abstract] Estimación` (con la fórmula), `[!tip] Supuesto` (con cómo validarlo), `[!question] Por verificar` y `[!warning] Contradicción`.
+- **Fiabilidad de las fuentes:** de 2 a 5, con su motivo (tabla en `PROMPT-MAESTRO.md` §5.7). 5 = primaria y verificable; 4 = primaria o independiente y sólida, o documentación técnica de un proveedor sobre su propia herramienta; 3 = con interés comercial o sin datos propios (tope de un vendedor cuando habla del mercado o de sus beneficios); 2 = débil, solo una pista. Por debajo de 2 no se ingiere.
+- **Dinero:** en COP, con el equivalente en EUR, la tasa y la fecha. Los porcentajes llevan universo y año. Las fechas van en formato `AAAA-MM-DD`.
+- **Estado:** `semilla` (solo preguntas), `borrador` (con datos parciales), `estable` (validado) u `obsoleto`.
+- **Tamaño:** a partir de unas 400 líneas, divide la página y deja la original como página central.
+
+## Flujos (el detalle paso a paso está en PROMPT-MAESTRO.md §7)
+- **Ingesta:**
+  1. Guarda la fuente en raw.
+  2. Léela completa.
+  3. Puntúa su fiabilidad de 2 a 5 y escribe el motivo.
+  4. Comenta de 3 a 7 puntos clave con el humano.
+  5. Crea la página en `14-fuentes`.
+  6. Actualiza los temas.
+  7. Actualiza entidades y conceptos.
+  8. Marca las contradicciones.
+  9. Revisa la tesis.
+  10. Actualiza las decisiones.
+  11. Actualiza `index.md` y `_meta/lagunas.md`.
+  12. Escribe en `log.md` y propón lo siguiente.
+
+  Una ingesta suele tocar de 5 a 15 páginas.
+- **Video o podcast:** la transcripción va a `raw/transcripciones/`. Cita con minuto y añade "Lecciones de formato" a la página del canal.
+- **Entrevista:** anonimiza siempre. Crea la página `entrevista-…` y actualiza dolores, objeciones, cliente ideal, precios, casos de uso y el contador del programa de 10 entrevistas.
+- **Consulta:** lee el índice, después las páginas y responde con citas. Ofrece archivar la respuesta en `15-analisis/` y regístrala en el log como `query`.
+- **Investigación web:** prioriza fuentes primarias (DANE, ministerios, SIC, DIAN, EUR-Lex, gov.pl). Guarda en raw, ingiere y marca la casilla de la pregunta.
+- **Sesión de estudio (Fase 1):** lee el currículo y la guía de la etapa; guarda los apuntes en `raw/cursos/` e ingiérelos; explica, propone un ejercicio con una empresa ficticia, haz 2 o 3 preguntas de comprobación; marca el nivel en [[curriculo]] solo con ejercicio hecho; registra `study` en el log.
+- **Revisión semanal:** ejecuta `python3 herramientas/revisar_wiki.py`, corrige los errores, revisa las contradicciones y lo obsoleto, y propón 5 preguntas y 3 fuentes.
+- **Revisión mensual:** tesis, decisiones, riesgos y hoja de ruta, con un resumen en `15-analisis/`.
+
+## Formato del registro
+```
+## [AAAA-MM-DD] tipo | Título
+- Páginas tocadas: [[a]], [[b]], …
+- Notas: …
+```
+Tipos: `setup`, `ingest`, `query`, `research`, `study`, `lint`, `decision`, `schema`.
+
+## Git y GitHub (con cualquier agente)
+Estas reglas no dependen de que la herramienta las imponga: cúmplelas tú.
+- **`main` es la versión oficial y no se toca directamente.** No hagas commits ni push a `main`.
+- **Rama de trabajo:** `verificacion`. Si la herramienta te asigna otra rama (pasa en algunas sesiones en la nube), usa esa. Antes de empezar, ponla al día con `main`.
+- **Commits** pequeños y con prefijo (`ingest: …`, `query: …`, `lint: …`, `schema: …`). Después, `git push` a la rama de trabajo.
+- **Los cambios llegan a `main` solo por un *pull request* que une el fundador.** Ábrelo o actualízalo si tienes con qué (por ejemplo, `gh pr create` o una herramienta de GitHub). Si no puedes, dile al fundador que lo abra en github.com y dale el título y la descripción. **No unas ni cierres pull requests.**
+- **Nunca reescribas la historia:** nada de `git push --force`, `git reset --hard` sobre commits ya subidos ni `rebase` de ramas compartidas. Para deshacer, usa `git revert`.
+- No borres ramas ni archivos de `raw/` sin que el fundador lo pida.
+- **Nada de claves en el repositorio:** ni claves de API, ni tokens, ni contraseñas, ni archivos de credenciales.
+- `opencode.jsonc`, en la raíz, refuerza estas reglas en OpenCode: pregunta antes de cada `git push` y deniega subir a `main`, el *force push* y `gh pr merge`. No lo cambies ni lo esquives sin que el fundador lo pida.
+
+## Prohibido
+- Inventar datos, empresas, personas, normas o URL. Lo que no sepas va en `[!question] Por verificar` y en `_meta/lagunas.md`.
+- Dejar respuestas valiosas solo en el chat.
+- Crear páginas sin frontmatter, sin `## Conexiones` o fuera de `index.md`.
+- Dar asesoría legal o tributaria como definitiva. En su lugar, prepara las preguntas para el profesional.
+- Guardar datos personales sin anonimizar (Ley 1581 y RGPD).
+- Pedir o aceptar claves, tokens o contraseñas en el chat. Se guardan con el mecanismo de cada herramienta (en OpenCode, `/connect`; en la nube de Claude Code, los secretos de red).
+
+## Al terminar cada sesión
+1. Ejecuta `python3 herramientas/revisar_wiki.py`. Debe dar 0 errores. Si tocaste carpetas o archivos de estructura, ejecuta también `mapa.py`.
+2. Escribe la entrada en el log.
+3. Haz commit y `git push` a la rama de trabajo.
+4. Abre o actualiza el *pull request* hacia `main`, o pide al fundador que lo abra.
+5. Propón el siguiente paso.
+
+## Manual Cerebro Arvyon
+- Es **un solo archivo HTML autocontenido**: `manual/manual-cerebro-arvyon.html` (CSS y JavaScript dentro; cada capítulo es una `<section class="chapter">` y se navega con `#capitulo`). No lo dividas en varios archivos.
+- **Solo se actualiza cuando el fundador lo pide.** Al hacerlo: sube la versión (v1.0 → v1.1 para cambios pequeños, v2.0 para cambios grandes) en la cabecera, añade una fila a «Cómo se actualiza este manual» (capítulo Inicio) y escribe una entrada `schema` en `log.md`.
+- Mantén el manual coherente con el cerebro: si cambian la fase, las carpetas o las reglas, avisa al fundador de que el manual quedó desactualizado.
+
+## Mapa rápido
+- Tesis y prioridades: `wiki/00-panorama/`
+- Qué investigar: `wiki/_meta/agenda-de-investigacion.md`
+- Qué estudiar: `wiki/11-conocimiento-ia/curriculo.md`
+- Qué falta: `wiki/_meta/lagunas.md`
+- Decisiones: `wiki/16-decisiones/registro-de-decisiones.md`
+
+## Historial del esquema
+- 2026-11-03: versión inicial.
+- 2026-11-08: fase vigente (aprender antes de actuar), sesión de estudio y tipo de registro `study`.
+- 2026-11-08: Manual Cerebro Arvyon v1.0 y regla de actualización.
+- 2026-11-12: el esquema pasa de `CLAUDE.md` a `AGENTS.md` para no depender de Claude Code (migración a OpenCode); se añaden las reglas de Git y GitHub, la sincronización al empezar y la regla de no pedir claves en el chat.
+- 2026-11-12: fiabilidad de las fuentes de 2 a 5 con tabla de criterios (`PROMPT-MAESTRO.md` §5.7) y comprobación en `revisar_wiki.py`.
+- 2026-11-12: skill `estructura-cerebro` (mapa del repositorio y script `mapa.py`) en `.agents/skills/`, con puntero en `.claude/skills/`.
+- 2026-11-12: `opencode.jsonc` en la raíz (permisos de OpenCode), sección «Herramientas del sistema» y verificación con OpenCode 2.2.7.
+- 2026-11-12: `PROMPT-MAESTRO.md` puesto al día con este esquema (sección 3.1 de Git y GitHub, flujo 7.11 de abrir y cerrar sesión) y con las ideas de la investigación del 2026-11-11 en el currículo.

@@ -6,7 +6,7 @@ confianza: media
 resumen: "Términos de IA, consultoría, finanzas y legal usados en la wiki, en lenguaje simple."
 fuentes: []
 creado: 2026-11-03
-actualizado: 2026-11-11
+actualizado: 2026-11-12
 revisar_antes: 2027-11-03
 etiquetas: []
 ---
@@ -15,6 +15,7 @@ etiquetas: []
 
 | Término | Significado simple | Página |
 |---|---|---|
+| AGENTS.md | Archivo con las reglas que lee el agente al trabajar en una carpeta; es el esquema de este cerebro | [[opencode]] |
 | Agente de IA | IA que usa herramientas para ejecutar tareas, no solo responder | [[rag-y-agentes]] |
 | Arnés (harness) | Todo lo que rodea al modelo en un agente: instrucciones, memoria, herramientas, permisos y comprobaciones | [[arnes-de-agentes]] |
 | Alfabetización en IA | Saber usar la IA con criterio y de forma segura | [[alfabetizacion-en-ia]] |
@@ -25,6 +26,7 @@ etiquetas: []
 | Enrutamiento de modelos | Enviar cada tarea al modelo más barato que la resuelve bien | [[enrutamiento-de-modelos]] |
 | Evaluación (eval) | Prueba para una IA: una entrada, una salida y una regla para calificarla | [[medicion-de-roi]] |
 | Fábrica de IA | Proceso repetible y auditable con IA dentro, con pasos de código, de agente y de aprobación humana | [[fabrica-de-ia]] |
+| Fiabilidad (de una fuente) | Nota de 2 a 5 que dice cuánto confiar en una fuente, según quién lo dice, con qué método, de qué fecha y sobre qué universo | `PROMPT-MAESTRO.md` §5.7 |
 | FinOps para IA | Gestión financiera del gasto en IA | [[enrutamiento-de-modelos]] |
 | Flujo (workflow) | Automatización cuyo camino lo fija el código, no el modelo | [[automatizacion-de-procesos]] |
 | IA en la sombra | Uso de IA en la empresa sin conocimiento ni reglas | [[ia-en-la-sombra]] |
@@ -40,6 +42,7 @@ etiquetas: []
 | ROI | Retorno de la inversión | [[medicion-de-roi]] |
 | S.A.S. | Sociedad por acciones simplificada (Colombia) | [[figura-legal]] |
 | Sensor | Control que actúa después de que el agente trabaja y detecta errores | [[arnes-de-agentes]] |
+| Skill | Paquete de instrucciones que el agente carga cuando lo necesita; aquí, `estructura-cerebro` es el mapa del repositorio | [[opencode]] |
 | SOW | Documento de alcance del trabajo | [[contratos-y-responsabilidad]] |
 | TAM / SAM / SOM | Mercado total, alcanzable y que podemos conseguir | [[tamano-de-mercado]] |
 | Token | Unidad en que los modelos miden y cobran el texto; aproximadamente, un trozo de palabra | [[fundamentos-llm]] |

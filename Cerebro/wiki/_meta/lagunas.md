@@ -6,7 +6,7 @@ confianza: media
 resumen: "Lista viva de datos que faltan, fuentes por conseguir y afirmaciones por verificar, detectadas en ingestas y revisiones."
 fuentes: []
 creado: 2026-11-03
-actualizado: 2026-11-11
+actualizado: 2026-11-12
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -48,6 +48,14 @@ Cada `[!question] Por verificar` de la wiki debería tener aquí su línea. Al r
 - [ ] Lista de OWASP para aplicaciones con agentes y «regla de dos» de Meta, en sus documentos originales → [[gobernanza-y-regulacion]]
 - [ ] Cifras de METR, DORA, RouteLLM y FrugalGPT en sus documentos originales → [[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]
 - [ ] Precios vigentes por modelo y por nivel de razonamiento de los principales proveedores → [[enrutamiento-de-modelos]]
+
+## Abiertas en la migración a OpenCode (2026-11-12)
+- [x] ¿Funciona `opencode github install` con la versión 2 de OpenCode? No: el comando no existe en la 2.2.7 (prueba del 2026-11-12) → [[opencode]]
+- [x] ¿En qué ruta guarda OpenCode sus datos? Lo muestra `opencode debug paths`; en Linux, `~/.local/share/opencode` → [[opencode]]
+- [ ] ¿Admite OpenCode una suscripción personal de Claude, o solo clave de API? → [[opencode]]
+- [x] ¿Existe el comando `/init` en la versión 2? Sí → [[2026-11-investigacion-web-opencode]]
+- [x] ¿Carga OpenCode la skill `estructura-cerebro` desde `.agents/skills/`? Sí, la lista en la 2.2.7 → [[opencode]]
+- [ ] Primera conversación real con OpenCode en el computador del fundador: ¿sigue las reglas, carga la skill por su cuenta y pregunta antes de `git push`? → [[opencode]]
 
 ## Conexiones
 - [[agenda-de-investigacion]]: donde se planifican.

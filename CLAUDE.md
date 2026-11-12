@@ -1,10 +1,7 @@
 # CLAUDE.md (raíz del repositorio)
 
-Este repositorio es de **Arvyon**, una consultora de IA. El trabajo vive en la carpeta **`Cerebro/`**: un segundo cerebro (wiki mantenida por un LLM).
+Este archivo existe solo para Claude Code, que busca `CLAUDE.md` y no `AGENTS.md`. Las instrucciones del repositorio están en **`AGENTS.md`**, que vale para cualquier agente. La línea siguiente lo importa completo:
 
-Antes de hacer cualquier cosa:
-1. Lee `Cerebro/CLAUDE.md`, que tiene las reglas y la fase vigente del proyecto.
-2. Trabaja dentro de `Cerebro/`. El contexto completo está en `Cerebro/PROMPT-MAESTRO.md`.
-3. No modifiques `Cerebro/raw/`: son las fuentes originales (ahí está también la presentación para socios).
+@AGENTS.md
 
-El manual para humanos está en `Cerebro/manual/manual-cerebro-arvyon.html` (un solo archivo HTML).
+Si arriba no aparece el contenido de `AGENTS.md`, ábrelo y léelo entero antes de hacer nada. Después lee `Cerebro/AGENTS.md`.

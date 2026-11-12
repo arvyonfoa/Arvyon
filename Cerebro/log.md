@@ -103,3 +103,76 @@
 - Límites: no se vio la imagen del video; la página original de OpenAI no se pudo leer; varias cifras llegan por fuentes secundarias.
 - Manual: no se tocó. Sigue vigente; no menciona los conceptos nuevos.
 - Siguiente: retomar el plan de estudio (semana 1, «IA Para Todos»); en la semana 3, diseñar la demo de cotización como una fábrica de IA.
+
+## [2026-11-12] ingest | Documentación oficial de OpenCode (versión 2)
+- Motivo: el fundador migra de Claude Code a OpenCode. Investigación de escritorio sobre la herramienta con la que se mantiene el cerebro; no se instaló ni se probó.
+- Fuente en raw: `raw/articulos/2026-11-12-investigacion-web-opencode.md` (12 páginas de `opencode.ai/docs`).
+- Páginas nuevas (2): [[2026-11-investigacion-web-opencode]], [[opencode]].
+- Páginas tocadas (4): [[stack-herramientas]], [[arnes-de-agentes]], [[glosario]], [[lagunas]].
+- Fiabilidad: 4 de 5 (fuente primaria del proveedor; cambia a menudo).
+- Hallazgos que obligan a cambiar el esquema: la versión 2 solo lee `AGENTS.md` (ya no usa `CLAUDE.md` como respaldo) y permite casi todas las acciones sin preguntar.
+- Contradicción marcada: 1 (la documentación de la versión 1 y la de la versión 2 sobre `CLAUDE.md`).
+- Lagunas nuevas: 4 (integración con GitHub en la versión 2, ruta de las credenciales, suscripción de Claude, comando `/init`).
+- Tesis, decisiones y currículo: sin cambios.
+
+## [2026-11-12] schema | El esquema pasa a AGENTS.md y el manual sube a v2.0 (migración a OpenCode)
+- A pedido del fundador. Nuevo `AGENTS.md` en la raíz del repositorio.
+- `Cerebro/AGENTS.md` es ahora el esquema completo y vale para cualquier agente. `Cerebro/CLAUDE.md` y el `CLAUDE.md` de la raíz solo importan el `AGENTS.md` de su carpeta, para Claude Code. Hay una única copia de las reglas.
+- Reglas nuevas en el esquema, porque fuera de la nube ya no las impone la herramienta: sección «Git y GitHub» (rama de trabajo `verificacion`, nada directo en `main`, sin *force push*, los *pull requests* los une el fundador, nada de claves en el repositorio), sincronizar con `git pull` al empezar en una copia local y no pedir claves en el chat.
+- `PROMPT-MAESTRO.md` y los dos `README.md`: las menciones al esquema apuntan a `AGENTS.md`.
+- Manual v2.0: capítulo nuevo 7 «OpenCode en tu computador» (qué cambia, instalación, modelos, conexión con GitHub, protecciones, sesión de trabajo, errores comunes); se conserva todo lo de Claude Code; estado, historial de *pull requests* y glosario al día. Los capítulos de la empresa y del glosario pasan a ser el 8 y el 9.
+- Corrección en el manual: las puntas de flecha de los diagramas no se dibujaban fuera del capítulo Inicio (identificadores repetidos); ahora cada diagrama tiene los suyos.
+- No se creó `opencode.jsonc`: el manual trae un ejemplo de permisos sin probar para que el fundador lo pida si lo quiere.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
+- Siguiente: instalar OpenCode, conectar un modelo y GitHub con el capítulo 7, y retomar el plan de estudio (semana 1, «IA Para Todos»).
+
+## [2026-11-12] schema | Prompt maestro puesto al día
+- A pedido del fundador. `PROMPT-MAESTRO.md` queda coherente con `AGENTS.md` y con la wiki.
+- Nuevo en el prompt: regla de oro 6 (las reglas las cumple el agente, no la herramienta), sección 3.1 «Git y GitHub», flujo 7.11 «Abrir y cerrar cada sesión», y `manual/` y los archivos de la raíz en la estructura de carpetas.
+- Currículo (sección 9.2): los bloques 1, 2, 4, 5, 6, 8, 10, 11 y 12 recogen las ideas de la investigación del 2026-11-11 ([[arnes-de-agentes]], [[fabrica-de-ia]], [[enrutamiento-de-modelos]], seguridad de agentes, costo por resultado exitoso). El calendario de la sección 9.3 no cambia.
+- Agenda (sección 8): canales de referencia en [[youtube]] y tendencias nuevas en [[tendencias]].
+- Regla aclarada, pendiente de que el fundador la confirme: la fiabilidad máxima de 3 para fuentes de vendedores se aplica cuando hablan del mercado o de los beneficios de lo que venden; la documentación técnica de un proveedor sobre su propia herramienta puede llegar a 4. Así se puntuó ya en las ingestas del 2026-11-11 y del 2026-11-12.
+- Reglas de calidad (sección 11): commit, push y *pull request*; no trabajar en `main`; no pedir claves en el chat; no escribir reglas en `CLAUDE.md`.
+- No se tocaron la tesis, las decisiones, el calendario de estudio ni el manual.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
+
+## [2026-11-12] schema | Fiabilidad de las fuentes: escala de 2 a 5 con tabla de criterios y validación
+- Decisión del fundador: se aplica la regla aclarada (un vendedor no pasa de 3 cuando habla del mercado o de sus beneficios; la documentación técnica sobre su propia herramienta puede llegar a 4) y la tabla de notas de 2 a 5 queda como criterio oficial.
+- `PROMPT-MAESTRO.md`: nueva sección 5.7 con la tabla (5, 4, 3 y 2), el tope para vendedores, cuándo se baja un punto, la regla de que por debajo de 2 no se ingiere, las notas múltiples y la relación con `confianza`. El paso 3 de la ingesta (7.2) remite a esa tabla.
+- `AGENTS.md`: resumen de la escala en las convenciones y en el paso 3 de la ingesta.
+- `herramientas/revisar_wiki.py`: da error si una página de fuente no tiene nota de fiabilidad o si la nota está fuera de 2 a 5.
+- Plantilla de fuente y las 7 páginas de `14-fuentes/`: la fila pasa a llamarse «Fiabilidad (2–5)». Se revisaron las 27 notas existentes contra la tabla: todas están entre 2 y 5 y ninguna cambia. Solo se reescribió el motivo de dos (Anthropic y OpenCode) para citar el tope de 4.
+- [[glosario]]: término «Fiabilidad (de una fuente)».
+- Manual: no se tocó. No menciona la escala de fiabilidad, y su descripción de la revisión de salud no incluye la comprobación nueva.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
+
+## [2026-11-12] schema | Skill estructura-cerebro, manual v2.1 y prompt maestro al día
+- A pedido del fundador.
+- **Skill nueva `estructura-cerebro`** en la raíz del repositorio: `.agents/skills/estructura-cerebro/SKILL.md` (el mapa: qué es cada carpeta y archivo, dónde va cada cosa y qué se actualiza junto) y `mapa.py` (imprime la estructura real y avisa si no coincide con el mapa). Para Claude Code hay un puntero en `.claude/skills/estructura-cerebro/SKILL.md`, sin contenido propio. La skill no tiene reglas: las reglas siguen en `AGENTS.md` y en el prompt maestro.
+- Por qué en `.agents/skills/`: es una carpeta neutral que OpenCode lee; `.claude/skills/` es la única que busca Claude Code. Fuente: `raw/articulos/2026-11-12-investigacion-web-opencode-skills.md`, añadida a [[2026-11-investigacion-web-opencode]] y a [[opencode]].
+- `AGENTS.md` (raíz y `Cerebro/`), `PROMPT-MAESTRO.md` (sección 4, flujo 7.11 y reglas de la sección 11) y el `README.md` de la raíz remiten a la skill.
+- **Manual v2.1:** sección nueva «Cuánto confiar en cada fuente» (capítulo 2), árbol de la raíz y apartado de la skill (capítulo 3), la comprobación de fiabilidad en la revisión de salud, `@estructura-cerebro` en la tabla de OpenCode, dos términos del glosario y dos preguntas frecuentes. `index.md` cita la versión nueva del manual.
+- [[glosario]]: término «Skill». [[lagunas]]: probar que OpenCode carga la skill.
+- No se probó la skill en OpenCode (no está instalado en esta sesión). `mapa.py` sí se ejecutó: 0 problemas.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
+- Siguiente: unir el pull request, instalar OpenCode con el capítulo 7 del manual y retomar el plan de estudio (semana 1, «IA Para Todos»).
+
+## [2026-11-12] lint | Verificación final de la migración a OpenCode (prueba con la versión 2.2.7)
+- A pedido del fundador: comprobar qué faltaba y actualizar prompt maestro, `AGENTS.md`, skill y manual.
+- **Prueba real.** Se instaló OpenCode 2.2.7 en una carpeta temporal de la sesión, sin conectar un modelo ni enviar mensajes. Resultados en `raw/articulos/2026-11-12-prueba-opencode-2-2-7.md`:
+  - abierto en `Cerebro/`, vigila `Cerebro/AGENTS.md` y el `AGENTS.md` de la raíz; no lee `CLAUDE.md`;
+  - encuentra la skill `estructura-cerebro` en `.agents/skills/`, desde la raíz y desde `Cerebro/`;
+  - aplica las reglas de `opencode.jsonc`; un archivo inválido no se aplica;
+  - no existe `opencode github`; sí existen `/init`, `/review` y `/goal`, y los agentes `build` y `plan`.
+- **Lo que faltaba y se añadió:**
+  - `opencode.jsonc` en la raíz: pregunta antes de cada `git push` y deniega subir a `main`, el *force push* y `gh pr merge`. Sustituye a las protecciones que ponía la nube.
+  - Requisitos del computador (Git, GitHub CLI y Python 3) y qué hacer si falta Python: sección «Herramientas del sistema» en `AGENTS.md`, flujo 7.11 del prompt maestro y manual.
+  - Regla de no ejecutar `/init` ni reescribir `AGENTS.md`.
+  - Skill y `mapa.py`: conocen `opencode.jsonc`.
+  - Manual v2.2: «Lista para migrar» con una prueba de arranque de cinco preguntas, requisitos del computador, el archivo de permisos ya creado y tres errores comunes nuevos.
+- Wiki: [[opencode]], [[2026-11-investigacion-web-opencode]], [[stack-herramientas]] y [[lagunas]] (4 lagunas cerradas, 1 nueva: la primera conversación real con OpenCode).
+- Auditoría de restos: sin referencias a la rama antigua ni a la escala 1–5 de fiabilidad fuera del historial; sin nombres de archivo problemáticos en Windows; versión del manual igual en cabecera, portada, pie e índice.
+- Claude Code: en esta sesión aparece la skill `estructura-cerebro` (el puntero de `.claude/skills/` funciona) y el `CLAUDE.md` importa `AGENTS.md`.
+- Sin comprobar: una conversación real con un modelo, la aplicación de escritorio y el sistema operativo del fundador.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos. `mapa.py`: 0 problemas.
+- Siguiente: unir el pull request, seguir la «Lista para migrar» del capítulo 7 y retomar el plan de estudio (semana 1, «IA Para Todos»).

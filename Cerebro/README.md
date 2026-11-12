@@ -1,6 +1,6 @@
 # Cerebro · Segundo cerebro de Arvyon
 
-Es una wiki de Markdown que **mantiene un agente LLM** (Claude Code) y que tú lees en **Obsidian**. Tú consigues las fuentes y haces las preguntas. El agente resume, cruza, archiva y mantiene todo al día.
+Es una wiki de Markdown que **mantiene un agente LLM** (OpenCode o Claude Code) y que tú lees en **Obsidian**. Tú consigues las fuentes y haces las preguntas. El agente resume, cruza, archiva y mantiene todo al día.
 
 > **¿Primera vez?** Abre el manual: `manual/manual-cerebro-arvyon.html`. Es un solo archivo: descárgalo y ábrelo con doble clic en cualquier navegador.
 
@@ -9,11 +9,13 @@ Es una wiki de Markdown que **mantiene un agente LLM** (Claude Code) y que tú l
 | Archivo o carpeta | Para qué sirve |
 |---|---|
 | `PROMPT-MAESTRO.md` | El prompt completo: rol, reglas, flujos paso a paso, agenda de investigación y currículo de consultor de IA. Pégalo en cualquier agente. |
-| `CLAUDE.md` / `AGENTS.md` | El esquema operativo que el agente lee en cada sesión. |
+| `AGENTS.md` | El esquema operativo que el agente lee en cada sesión. Vale para cualquier agente (OpenCode, Claude Code, Codex…). |
+| `CLAUDE.md` | Solo importa `AGENTS.md`, para Claude Code. No tiene reglas propias. |
 | `index.md` | El catálogo de todas las páginas. |
 | `log.md` | Lo que pasó y cuándo. |
 | `raw/` | Tus fuentes originales. **Nunca se editan.** |
 | `wiki/` | Lo que escribe el agente. |
+| Skill `estructura-cerebro` | El mapa del repositorio para el agente. Está en la raíz: `.agents/skills/estructura-cerebro/`. |
 | `manual/` | El Manual Cerebro Arvyon: un solo archivo HTML que explica todo el sistema. |
 | `herramientas/revisar_wiki.py` | La revisión de salud: enlaces rotos, huérfanas, frontmatter y páginas fuera del índice. |
 
@@ -25,7 +27,7 @@ Es una wiki de Markdown que **mantiene un agente LLM** (Claude Code) y que tú l
    - **Marp Slides**: para presentaciones generadas desde la wiki (opcional).
 3. **Obsidian Web Clipper** (extensión del navegador): configura la carpeta de destino en `raw/articulos/`.
 4. **Descarga de imágenes:** en *Settings → Hotkeys* busca "Download attachments for current file" y asígnale `Ctrl+Shift+D`. Después de recortar un artículo, pulsa el atajo.
-5. **Agente:** abre Claude Code en esta carpeta y pega el contenido de `PROMPT-MAESTRO.md` (de *INICIO* a *FIN*). En las sesiones siguientes basta con decir lo que quieres hacer.
+5. **Agente:** abre OpenCode (o Claude Code) en esta carpeta. El agente lee `AGENTS.md` por su cuenta; si es un agente nuevo o no sigue las reglas, pega el contenido de `PROMPT-MAESTRO.md` (de *INICIO* a *FIN*). En las sesiones siguientes basta con decir lo que quieres hacer. La instalación de OpenCode y su conexión con GitHub están en el capítulo 7 del manual.
 
 ## Rutina recomendada
 

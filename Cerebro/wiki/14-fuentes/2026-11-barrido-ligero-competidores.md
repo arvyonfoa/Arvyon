@@ -6,7 +6,7 @@ confianza: media
 resumen: "Barrido web de unas 15 consultoras y agencias de IA que atienden empresas colombianas: qué saben, qué herramientas usan, qué entregan y algunos precios publicados."
 fuentes: []
 creado: 2026-11-08
-actualizado: 2026-11-08
+actualizado: 2026-11-12
 revisar_antes: 2027-02-08
 etiquetas: [fase-1]
 ---
@@ -22,7 +22,7 @@ etiquetas: [fase-1]
 | Archivo en raw/ | [[2026-11-08-barrido-ligero-competidores]] (`raw/competencia/`) |
 | Tipo | investigación web agrupada (ligera) |
 | Idioma | español |
-| Fiabilidad (1–5) | 2–3: son afirmaciones comerciales de cada empresa; dos rankings los publican empresas que se incluyen a sí mismas |
+| Fiabilidad (2–5) | 2–3: son afirmaciones comerciales de cada empresa; dos rankings los publican empresas que se incluyen a sí mismas |
 
 ## Resumen en 5 líneas
 1. Las agencias que atienden pymes venden casi lo mismo: **asistentes de WhatsApp con IA, automatizaciones con n8n, integración con el CRM y con el software contable colombiano**, y capacitación.
