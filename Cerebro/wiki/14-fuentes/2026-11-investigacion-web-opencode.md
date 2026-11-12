@@ -19,8 +19,8 @@ etiquetas: [herramienta, agentes]
 | Autor / institución | Equipo de OpenCode (documentación oficial) |
 | Medio | Web: `opencode.ai/docs` |
 | Fecha de captura | 2026-11-12 |
-| Archivo en raw/ | [[2026-11-12-investigacion-web-opencode]] (`raw/articulos/`) |
-| Tipo | investigación web agrupada (12 páginas) |
+| Archivo en raw/ | [[2026-11-12-investigacion-web-opencode]] y [[2026-11-12-investigacion-web-opencode-skills]] (`raw/articulos/`) |
+| Tipo | investigación web agrupada (13 páginas) |
 | Idioma | inglés |
 | Fiabilidad (2–5) | 4 — motivo: documentación técnica del proveedor sobre su propia herramienta (tope de 4); cambia a menudo |
 | Universo / muestra | No aplica |
@@ -34,7 +34,8 @@ OpenCode es un agente de código abierto que funciona en el computador del usuar
 3. **Permisos abiertos por defecto.** La política base permite todo, salvo leer archivos `.env`, que pregunta. Las restricciones se escriben en `opencode.jsonc`.
 4. **Modelos con `/connect`.** Admite OpenCode Go (10 USD al mes), un plan ChatGPT Plus o Pro, GitHub Copilot y claves de API de otros proveedores.
 5. **Deshacer con `/undo`.** Revierte el último mensaje y sus cambios en archivos, si la carpeta es un repositorio Git. No crea commits.
-6. **GitHub.** En el computador, OpenCode usa el Git ya instalado. La integración que responde a `/oc` dentro de GitHub está documentada para la versión 1.
+6. **Skills.** OpenCode busca skills en `.opencode/skills` y, por compatibilidad, en `.claude/skills` y `.agents/skills`, desde la carpeta actual hasta la raíz del proyecto. El modelo ve solo la descripción y carga el cuerpo cuando lo necesita; a mano se invocan con `@identificador`.
+7. **GitHub.** En el computador, OpenCode usa el Git ya instalado. La integración que responde a `/oc` dentro de GitHub está documentada para la versión 1.
 
 ## Datos y cifras
 | Dato | Valor | Universo y año | Página |
@@ -61,6 +62,7 @@ OpenCode es un agente de código abierto que funciona en el computador del usuar
 - [ ] ¿Dónde guarda OpenCode las credenciales?
 - [ ] ¿Se puede usar una suscripción personal de Claude dentro de OpenCode?
 - [ ] ¿Existe `/init` en la versión 2?
+- [ ] ¿Seguirá OpenCode leyendo `.agents/skills` y `.claude/skills`? La documentación las llama carpetas de compatibilidad.
 
 ## Conexiones
 - [[opencode]]: la herramienta que describe.

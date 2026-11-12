@@ -145,3 +145,14 @@
 - [[glosario]]: término «Fiabilidad (de una fuente)».
 - Manual: no se tocó. No menciona la escala de fiabilidad, y su descripción de la revisión de salud no incluye la comprobación nueva.
 - `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
+
+## [2026-11-12] schema | Skill estructura-cerebro, manual v2.1 y prompt maestro al día
+- A pedido del fundador.
+- **Skill nueva `estructura-cerebro`** en la raíz del repositorio: `.agents/skills/estructura-cerebro/SKILL.md` (el mapa: qué es cada carpeta y archivo, dónde va cada cosa y qué se actualiza junto) y `mapa.py` (imprime la estructura real y avisa si no coincide con el mapa). Para Claude Code hay un puntero en `.claude/skills/estructura-cerebro/SKILL.md`, sin contenido propio. La skill no tiene reglas: las reglas siguen en `AGENTS.md` y en el prompt maestro.
+- Por qué en `.agents/skills/`: es una carpeta neutral que OpenCode lee; `.claude/skills/` es la única que busca Claude Code. Fuente: `raw/articulos/2026-11-12-investigacion-web-opencode-skills.md`, añadida a [[2026-11-investigacion-web-opencode]] y a [[opencode]].
+- `AGENTS.md` (raíz y `Cerebro/`), `PROMPT-MAESTRO.md` (sección 4, flujo 7.11 y reglas de la sección 11) y el `README.md` de la raíz remiten a la skill.
+- **Manual v2.1:** sección nueva «Cuánto confiar en cada fuente» (capítulo 2), árbol de la raíz y apartado de la skill (capítulo 3), la comprobación de fiabilidad en la revisión de salud, `@estructura-cerebro` en la tabla de OpenCode, dos términos del glosario y dos preguntas frecuentes. `index.md` cita la versión nueva del manual.
+- [[glosario]]: término «Skill». [[lagunas]]: probar que OpenCode carga la skill.
+- No se probó la skill en OpenCode (no está instalado en esta sesión). `mapa.py` sí se ejecutó: 0 problemas.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
+- Siguiente: unir el pull request, instalar OpenCode con el capítulo 7 del manual y retomar el plan de estudio (semana 1, «IA Para Todos»).

@@ -8,6 +8,8 @@ Antes de hacer cualquier cosa:
 3. No modifiques `Cerebro/raw/`: son las fuentes originales (ahí está también la presentación para socios). Solo se añaden archivos nuevos.
 4. No hagas commits ni push a `main`. Trabaja en la rama `verificacion`; los cambios llegan a `main` por un *pull request* que une el fundador.
 
+Si dudas de dónde va algo, carga la skill `estructura-cerebro` (`.agents/skills/estructura-cerebro/SKILL.md`): es el mapa de todo el repositorio. Su script `mapa.py` muestra la estructura real.
+
 El manual para humanos está en `Cerebro/manual/manual-cerebro-arvyon.html` (un solo archivo HTML).
 
 Los archivos `CLAUDE.md` (aquí y en `Cerebro/`) no tienen reglas propias: solo importan el `AGENTS.md` de su carpeta para Claude Code.

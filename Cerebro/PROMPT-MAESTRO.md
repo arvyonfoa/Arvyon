@@ -8,7 +8,7 @@
 >
 > Este prompt también funciona en una carpeta vacía: en ese caso el agente crea toda la estructura desde cero.
 >
-> **Última actualización: 2026-11-12.** El esquema operativo pasa a `AGENTS.md` (migración a OpenCode), se añaden las reglas de Git y GitHub y el flujo de abrir y cerrar sesión, el currículo recoge las ideas de la investigación del 2026-11-11 y la fiabilidad de las fuentes se puntúa de 2 a 5 con la tabla de la sección 5.7. Cada cambio de este archivo queda en `log.md` como `schema`.
+> **Última actualización: 2026-11-12.** El esquema operativo pasa a `AGENTS.md` (migración a OpenCode), se añaden las reglas de Git y GitHub y el flujo de abrir y cerrar sesión, el currículo recoge las ideas de la investigación del 2026-11-11 la fiabilidad de las fuentes se puntúa de 2 a 5 con la tabla de la sección 5.7 y la skill `estructura-cerebro` guarda el mapa de todo el repositorio (sección 4). Cada cambio de este archivo queda en `log.md` como `schema`.
 
 ---
 
@@ -159,7 +159,11 @@ Cerebro/
     └── _meta/                  agenda de investigación, lagunas, glosario
 ```
 
-`Cerebro/` vive dentro del repositorio `arvyonfoa/Arvyon`. En la raíz del repositorio hay otro `AGENTS.md` corto (con su `CLAUDE.md`) que remite a `Cerebro/AGENTS.md`, para que el agente encuentre las reglas aunque se abra en la raíz.
+`Cerebro/` vive dentro del repositorio `arvyonfoa/Arvyon`. En la raíz del repositorio hay, además:
+- otro `AGENTS.md` corto (con su `CLAUDE.md`) que remite a `Cerebro/AGENTS.md`, para que el agente encuentre las reglas aunque se abra en la raíz;
+- la skill **`estructura-cerebro`**, en `.agents/skills/estructura-cerebro/` (`SKILL.md` y `mapa.py`), con un puntero en `.claude/skills/estructura-cerebro/` para Claude Code.
+
+**La skill es el mapa; este prompt y `AGENTS.md` son las reglas.** La skill dice qué es cada carpeta y cada archivo, dónde se guarda cada cosa y qué archivos se actualizan juntos. Su script `mapa.py` imprime la estructura real y avisa si no coincide con el mapa. Cárgala al empezar la sesión y antes de crear, mover o renombrar un archivo; si tu herramienta no carga skills, lee el archivo directamente. Si cambias la estructura, actualiza en el mismo commit esta sección y la skill.
 
 ## 5. Convenciones
 
@@ -339,12 +343,13 @@ Las plantillas completas están en `wiki/_plantillas/`. Si no existen, créalas 
 ### 7.11 Abrir y cerrar cada sesión
 **Al abrir:**
 1. Si trabajas sobre una copia local del repositorio (por ejemplo, con OpenCode en el computador del fundador), sincroniza antes de tocar nada: `git status` y `git pull`. Si hay cambios sin guardar que no son tuyos, pregunta antes de seguir. En una sesión en la nube el repositorio llega recién clonado.
-2. Lee `index.md` y las últimas entradas del registro: `grep "^## \[" log.md | tail -5`.
-3. Lee `wiki/00-panorama/tesis-arvyon.md` si la tarea es estratégica.
-4. Pregunta o deduce qué quiere hacer el humano: sesión de estudio, ingesta, consulta, investigación, revisión o decisión.
+2. Carga la skill `estructura-cerebro` si no tienes clara la estructura, o ejecuta `python3 ../.agents/skills/estructura-cerebro/mapa.py`.
+3. Lee `index.md` y las últimas entradas del registro: `grep "^## \[" log.md | tail -5`.
+4. Lee `wiki/00-panorama/tesis-arvyon.md` si la tarea es estratégica.
+5. Pregunta o deduce qué quiere hacer el humano: sesión de estudio, ingesta, consulta, investigación, revisión o decisión.
 
 **Al cerrar:**
-1. Ejecuta `python3 herramientas/revisar_wiki.py`. Debe dar 0 errores.
+1. Ejecuta `python3 herramientas/revisar_wiki.py`. Debe dar 0 errores. Si tocaste carpetas o archivos de estructura, ejecuta también `mapa.py`.
 2. Escribe la entrada en `log.md`.
 3. Haz commit y `git push` a la rama de trabajo (sección 3.1).
 4. Abre o actualiza el *pull request* hacia `main`, o pide al fundador que lo abra.
@@ -676,7 +681,8 @@ Los bloques 6, 9, 11-A y 12 quedan para la Fase 2. El detalle de cada etapa (cur
 - **Sí** haz commit y `git push` a la rama de trabajo después de cada sesión, con un mensaje del tipo `ingest: <fuente>` o `lint: semana AAAA-WW`, y abre o actualiza el *pull request* (sección 3.1).
 - **No** trabajes en `main`, **no** unas *pull requests* y **no** reescribas la historia de Git.
 - **No** pidas ni aceptes claves, tokens o contraseñas en el chat, ni las guardes en el repositorio.
-- **No** escribas reglas en `CLAUDE.md` ni en archivos propios de una herramienta: las reglas van en `AGENTS.md` y en este prompt.
+- **No** escribas reglas en `CLAUDE.md`, en la skill ni en archivos propios de una herramienta: las reglas van en `AGENTS.md` y en este prompt.
+- **No** crees, muevas ni renombres carpetas o archivos de estructura sin actualizar la skill `estructura-cerebro` y la sección 4.
 
 ## 12. Tu primera tarea
 

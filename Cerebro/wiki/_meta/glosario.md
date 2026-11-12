@@ -42,6 +42,7 @@ etiquetas: []
 | ROI | Retorno de la inversión | [[medicion-de-roi]] |
 | S.A.S. | Sociedad por acciones simplificada (Colombia) | [[figura-legal]] |
 | Sensor | Control que actúa después de que el agente trabaja y detecta errores | [[arnes-de-agentes]] |
+| Skill | Paquete de instrucciones que el agente carga cuando lo necesita; aquí, `estructura-cerebro` es el mapa del repositorio | [[opencode]] |
 | SOW | Documento de alcance del trabajo | [[contratos-y-responsabilidad]] |
 | TAM / SAM / SOM | Mercado total, alcanzable y que podemos conseguir | [[tamano-de-mercado]] |
 | Token | Unidad en que los modelos miden y cobran el texto; aproximadamente, un trozo de palabra | [[fundamentos-llm]] |

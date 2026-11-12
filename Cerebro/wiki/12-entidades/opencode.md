@@ -27,6 +27,7 @@ OpenCode es un agente de código abierto que lee y escribe archivos, ejecuta com
 | Permisos por defecto | Permite casi todo sin preguntar; solo pregunta antes de leer archivos `.env` |
 | Modelos | Se conectan con `/connect`: OpenCode Go (10 USD al mes), plan ChatGPT Plus o Pro, GitHub Copilot o claves de API |
 | Deshacer | `/undo` y `/redo`; restaura archivos si la carpeta es un repositorio Git |
+| Skills | Las busca en `.opencode/skills` y, por compatibilidad, en `.agents/skills` y `.claude/skills`. La del cerebro es `estructura-cerebro`, en `.agents/skills/` |
 
 ## Diferencias con Claude Code en la nube
 | | Claude Code en la nube | OpenCode |

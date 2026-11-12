@@ -329,7 +329,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
 </svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
     <span class="topbar-spacer"></span>
-    <span class="version-pill">v2.0 · 2026-11-12</span>
+    <span class="version-pill">v2.1 · 2026-11-12</span>
     <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
   </div>
 </header>
@@ -350,7 +350,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <main>
     <article class="content">
 <section class="chapter" id="inicio" data-nombre="Inicio">
-      <p class="eyebrow">Versión 2 · 12 de noviembre de 2026</p>
+      <p class="eyebrow">Versión 2.1 · 12 de noviembre de 2026</p>
 
 <div class="hero">
   <h1>Manual Cerebro Arvyon</h1>
@@ -431,6 +431,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 <div class="prompt" data-copy="Actualiza el Manual Cerebro Arvyon: [qué quieres cambiar]. Sube la versión y anótalo en el historial.">Actualiza el Manual Cerebro Arvyon: [qué quieres cambiar]. Sube la versión y anótalo en el historial.</div>
 <div class="table-wrap"><table>
   <tr><th>Versión</th><th>Fecha</th><th>Cambios</th></tr>
+  <tr><td><code>v2.1</code></td><td class="num">2026-11-12</td><td>Fiabilidad de las fuentes de 2 a 5, con su tabla de criterios y su comprobación en la revisión de salud. Nueva skill <code>estructura-cerebro</code>: el mapa del repositorio para el agente.</td></tr>
   <tr><td><code>v2.0</code></td><td class="num">2026-11-12</td><td>Migración a OpenCode: capítulo nuevo «OpenCode en tu computador» (instalación, modelos, conexión con GitHub y protecciones). Las reglas pasan de <code>CLAUDE.md</code> a <code>AGENTS.md</code>. Se conserva todo lo de Claude Code. Estado e historial de pull requests al día.</td></tr>
   <tr><td><code>v1.1</code></td><td class="num">2026-11-08</td><td>Limpieza del repositorio: la presentación queda solo en <code>Cerebro/raw/00-internos/</code>; estado de los pull requests al día.</td></tr>
   <tr><td><code>v1.0</code></td><td class="num">2026-11-08</td><td>Primera versión: proyecto, segundo cerebro, mapa, uso diario, GitHub, nube y entornos, creación de la empresa, glosario. Un solo archivo HTML descargable.</td></tr>
@@ -630,6 +631,24 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 <div class="note"><p class="note-title">Por verificar</p><p>Algo que falta confirmar. Además queda anotado en <code>wiki/_meta/lagunas.md</code>.</p></div>
 <div class="note bad"><p class="note-title">Contradicción</p><p>Dos fuentes dicen cosas distintas. Se muestran las dos, sin promediar, con la posible causa.</p></div>
 
+<h2 id="segundo-cerebro-fiabilidad">Cuánto confiar en cada fuente</h2>
+<p>No todas las fuentes valen lo mismo. Al ingerir una fuente, el agente le pone una <strong>nota de fiabilidad de 2 a 5</strong> y escribe el motivo en la ficha de su página (<code>wiki/14-fuentes/</code>). La nota sale de cuatro preguntas: quién lo dice, con qué método, de qué fecha y sobre qué universo.</p>
+<div class="table-wrap"><table>
+  <tr><th>Nota</th><th>Qué fuente la recibe</th><th>Ejemplo</th></tr>
+  <tr><td><span class="tag green">5</span></td><td>Primaria y verificable: el texto oficial de una norma, una estadística oficial con su metodología o un estudio revisado por pares. También un documento propio de Arvyon, pero solo sobre las intenciones de Arvyon</td><td>EUR-Lex, DANE, un artículo científico</td></tr>
+  <tr><td><span class="tag blue">4</span></td><td>Primaria o independiente y sólida: una empresa que cuenta su propio caso con cifras y límites, una organización sectorial, un análisis independiente, o la documentación técnica de un proveedor sobre su propia herramienta</td><td>La documentación de OpenCode</td></tr>
+  <tr><td><span class="tag amber">3</span></td><td>Con interés comercial o sin datos propios: un vendedor que habla del mercado o de sus beneficios, un manifiesto, la opinión de un practicante, un tutorial, la prensa o una cita secundaria</td><td>El video de un divulgador que promociona su proyecto</td></tr>
+  <tr><td><span class="tag red">2</span></td><td>Débil: promoción sin datos comprobables, una clasificación publicada por quien aparece en ella o un texto sin autor o sin fecha claros. Solo sirve como pista</td><td>La página de servicios de un competidor</td></tr>
+</table></div>
+<ol class="steps">
+  <li><strong>Tope para vendedores.</strong> Quien vende IA no pasa de 3 cuando habla del mercado o de los beneficios de lo que vende. Cuando explica cómo funciona su propia herramienta puede llegar a 4.</li>
+  <li><strong>Se baja un punto</strong> si la fuente se leyó a través de un resumen, tiene inconsistencias o está vieja para un tema que cambia rápido. Nunca se sube.</li>
+  <li><strong>Por debajo de 2 no es una fuente.</strong> No entra al cerebro. Si da una pista útil, se anota en la lista de lagunas para buscar algo mejor.</li>
+  <li><strong>Una página puede tener varias notas</strong> si agrupa varias fuentes. Ejemplo: «5 para las intenciones del negocio · 3 para los datos externos».</li>
+  <li><strong>La nota limita la confianza de la página.</strong> Una página solo llega a confianza alta con una fuente reciente de 4 o 5; apoyada solo en fuentes de 2, queda en baja.</li>
+</ol>
+<div class="note ok"><p class="note-title">Se comprueba sola</p><p>La revisión de salud da error si una página de fuente no tiene nota o si la nota está fuera de 2 a 5. La tabla completa está en la sección 5.7 de <code>PROMPT-MAESTRO.md</code>.</p></div>
+
       <nav class="pager"><a class="prev" href="#proyecto"><small>Anterior</small>El proyecto Arvyon</a><a class="next" href="#mapa"><small>Siguiente</small>Mapa del cerebro</a></nav></section><section class="chapter" id="mapa" data-nombre="Mapa del cerebro">
       <p class="eyebrow">Capítulo 3</p>
 
@@ -637,6 +656,16 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 <p class="lead">Este capítulo recorre el cerebro carpeta por carpeta. Todo está dentro de la carpeta <code>Cerebro/</code> del repositorio.</p>
 
 <h2 id="mapa-vista-general">Vista general</h2>
+<p>El repositorio tiene pocas cosas en la raíz; casi todo está dentro de <code>Cerebro/</code>.</p>
+<div class="tree"><span class="f">Arvyon/</span>                         <span class="c">la raíz del repositorio</span>
+├── <span class="f">AGENTS.md</span>                   <span class="c">instrucciones cortas para cualquier agente</span>
+├── <span class="f">CLAUDE.md</span>                   <span class="c">solo importa AGENTS.md, para Claude Code</span>
+├── README.md
+├── <span class="f">.agents/skills/</span>
+│   └── estructura-cerebro/     <span class="c">la skill: el mapa del repositorio para el agente</span>
+├── .claude/skills/
+│   └── estructura-cerebro/     <span class="c">puntero a la skill, para Claude Code</span>
+└── <span class="f">Cerebro/</span>                    <span class="c">el segundo cerebro (el árbol de abajo)</span></div>
 <div class="tree"><span class="f">Cerebro/</span>
 ├── <span class="f">PROMPT-MAESTRO.md</span>   <span class="c">el prompt completo: rol, reglas, flujos, agenda y currículo</span>
 ├── <span class="f">AGENTS.md</span>           <span class="c">las reglas que el agente lee en cada sesión (cualquier agente)</span>
@@ -662,6 +691,11 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 <p><code>AGENTS.md</code> es la versión corta y operativa de las reglas. Arriba dice la fase vigente; también trae las reglas de Git y GitHub. Vale para cualquier agente: OpenCode lo lee directamente, igual que Codex y otros.</p>
 <p><code>CLAUDE.md</code> ya no tiene reglas propias. Solo importa <code>AGENTS.md</code>, porque Claude Code busca un archivo con ese nombre. Así hay una única copia de las reglas y los dos agentes siguen las mismas.</p>
 <p>En la raíz del repositorio hay otra pareja <code>AGENTS.md</code> y <code>CLAUDE.md</code>, cortita, que avisa al agente de que el cerebro está en <code>Cerebro/</code>.</p></div></details>
+<details class="fold"><summary><span>La skill <code>estructura-cerebro</code> · el mapa para el agente</span></summary><div class="fold-body">
+<p>Una <em>skill</em> es un paquete de instrucciones que el agente carga cuando lo necesita. Esta es el mapa de todo el repositorio: qué es cada carpeta y cada archivo, dónde se guarda cada cosa y qué archivos hay que actualizar juntos. No contiene reglas: las reglas siguen en <code>AGENTS.md</code> y en el prompt maestro.</p>
+<p>Está en la raíz del repositorio, en <code>.agents/skills/estructura-cerebro/</code>. OpenCode la lee de ahí; para Claude Code hay un puntero en <code>.claude/skills/</code>. Trae un programa, <code>mapa.py</code>, que muestra la estructura real y avisa si falta algo o si hay una carpeta que el mapa no conoce.</p>
+<pre><code>python3 .agents/skills/estructura-cerebro/mapa.py</code></pre>
+<div class="prompt">Carga la skill estructura-cerebro, ejecuta mapa.py y dime si la estructura real coincide con el mapa.</div></div></details>
 <details class="fold"><summary><span><code>index.md</code> · el catálogo</span></summary><div class="fold-body">
 <p>Lista todas las páginas de la wiki por área, cada una con un resumen de una línea, su estado y su número de fuentes. <strong>El agente lo lee primero en cada consulta.</strong> Para ti es la forma más rápida de saber qué hay.</p></div></details>
 <details class="fold"><summary><span><code>log.md</code> · el registro</span></summary><div class="fold-body">
@@ -670,7 +704,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 - Fuentes guardadas e ingeridas: …
 - Páginas nuevas: [[guia-etapa-1]], [[capacidades-de-la-competencia]] …</code></pre></div></details>
 <details class="fold"><summary><span><code>herramientas/revisar_wiki.py</code> · la revisión de salud</span></summary><div class="fold-body">
-<p>Un pequeño programa que revisa el cerebro: enlaces rotos, páginas sin datos obligatorios, páginas que faltan en el índice, páginas huérfanas (que nadie enlaza), nombres repetidos y páginas con la fecha de revisión vencida. El agente lo ejecuta al terminar cada sesión.</p>
+<p>Un pequeño programa que revisa el cerebro: enlaces rotos, páginas sin datos obligatorios, páginas que faltan en el índice, fuentes sin nota de fiabilidad o con una nota fuera de 2 a 5, páginas huérfanas (que nadie enlaza), nombres repetidos y páginas con la fecha de revisión vencida. El agente lo ejecuta al terminar cada sesión.</p>
 <pre><code>python3 herramientas/revisar_wiki.py
 Revisión de salud · 2026-11-08 · 105 páginas en wiki/
 ERRORES (0)
@@ -1403,6 +1437,7 @@ opencode</code></pre>
   <tr><td><code>/undo</code></td><td>Deshace tu último mensaje y los cambios en archivos que vinieron después</td></tr>
   <tr><td><code>/redo</code></td><td>Recupera lo que deshiciste con <code>/undo</code></td></tr>
   <tr><td><code>/btw</code> y una pregunta</td><td>Hace una pregunta rápida sin añadirla a la conversación</td></tr>
+  <tr><td><code>@estructura-cerebro</code></td><td>Carga la skill con el mapa del repositorio</td></tr>
   <tr><td><code>@</code> y un nombre de archivo</td><td>Adjunta ese archivo al mensaje</td></tr>
   <tr><td><code>!</code> al principio de un mensaje vacío</td><td>Ejecuta un comando de terminal, por ejemplo <code>git status</code></td></tr>
   <tr><td><kbd>Ctrl</kbd> + <kbd>P</kbd></td><td>Abre la lista de todos los comandos</td></tr>
@@ -1567,6 +1602,7 @@ opencode</code></pre>
 <dl class="def"><dt>Entorno en la nube</dt><dd>La configuración guardada con la que arrancan las sesiones de Claude Code: acceso a la red, secretos, script y variables.</dd></dl>
 <dl class="def"><dt>Esquema</dt><dd>La capa de reglas del cerebro: AGENTS.md (que CLAUDE.md importa) y el prompt maestro.</dd></dl>
 <dl class="def"><dt>Fase 1 / Fase 2</dt><dd>Las dos fases de Arvyon: Aprender (9 nov – 15 dic de 2026) y Actuar (cuando se cumplan los criterios de paso).</dd></dl>
+<dl class="def"><dt>Fiabilidad</dt><dd>Nota de 2 a 5 que el agente pone a cada fuente según quién lo dice, con qué método, de qué fecha y sobre qué universo. 5 es una fuente primaria y verificable; 2 es solo una pista.</dd></dl>
 <dl class="def"><dt>Force push</dt><dd>Subir cambios reescribiendo la historia de una rama. Peligroso; Claude Code lo tiene bloqueado y AGENTS.md lo prohíbe con cualquier agente.</dd></dl>
 <dl class="def"><dt>Frontmatter</dt><dd>La ficha entre líneas --- al principio de cada página: tipo, área, estado, confianza, resumen, fuentes y fechas.</dd></dl>
 <dl class="def"><dt>Fuente</dt><dd>Material original que se guarda en raw/ y se resume en wiki/14-fuentes/.</dd></dl>
@@ -1595,11 +1631,12 @@ opencode</code></pre>
 <dl class="def"><dt>Registro (log.md)</dt><dd>El diario cronológico del cerebro. Solo se añaden entradas.</dd></dl>
 <dl class="def"><dt>Repositorio</dt><dd>La carpeta de un proyecto en GitHub, con todo su historial. El de Arvyon es arvyonfoa/Arvyon.</dd></dl>
 <dl class="def"><dt>Revert</dt><dd>Un commit que deshace otro sin borrar la historia.</dd></dl>
-<dl class="def"><dt>Revisión de salud</dt><dd>El programa herramientas/revisar_wiki.py, que encuentra enlaces rotos, páginas sin ficha, huérfanas o vencidas.</dd></dl>
+<dl class="def"><dt>Revisión de salud</dt><dd>El programa herramientas/revisar_wiki.py, que encuentra enlaces rotos, páginas sin ficha, fuentes sin nota de fiabilidad, huérfanas o vencidas.</dd></dl>
 <dl class="def"><dt>Script de configuración</dt><dd>Programa que se ejecuta al crear la máquina de una sesión, antes de que arranque Claude, para instalar herramientas.</dd></dl>
 <dl class="def"><dt>Secreto de red</dt><dd>Clave de API guardada en el entorno que el proxy añade a las peticiones sin que Claude la vea.</dd></dl>
 <dl class="def"><dt>Segundo cerebro</dt><dd>Una colección ordenada de lo que sabes, guardada fuera de tu cabeza. En Arvyon la mantiene un agente.</dd></dl>
 <dl class="def"><dt>Sesión de estudio</dt><dd>El flujo de la Fase 1: estudias, el agente ingiere tus apuntes, explica, propone un ejercicio y comprueba lo aprendido.</dd></dl>
+<dl class="def"><dt>Skill</dt><dd>Paquete de instrucciones que el agente carga cuando lo necesita. La skill estructura-cerebro es el mapa del repositorio y trae el programa mapa.py.</dd></dl>
 <dl class="def"><dt>Tesis</dt><dd>La síntesis viva del negocio: 8 hipótesis con su estado. Está en wiki/00-panorama/tesis-arvyon.md.</dd></dl>
 <dl class="def"><dt>Variable de entorno</dt><dd>Valor de configuración que leen los comandos de la sesión. No sirve para claves.</dd></dl>
 <dl class="def"><dt>Wiki LLM</dt><dd>Una wiki escrita y mantenida por un modelo de lenguaje: el patrón en el que se basa el cerebro.</dd></dl>
@@ -1613,6 +1650,8 @@ opencode</code></pre>
 <details class="fold"><summary><span>¿Puedo usar otro agente que no sea Claude Code?</span></summary><div class="fold-body"><p>Sí. Las reglas están en AGENTS.md, que leen OpenCode, Codex y otros agentes; Claude Code las recibe a través de CLAUDE.md. Si un agente no las sigue, pégale el prompt maestro completo. Ver <a href="#opencode">OpenCode en tu computador</a>.</p></div></details>
 <details class="fold"><summary><span>¿Tengo que dejar Claude Code para usar OpenCode?</span></summary><div class="fold-body"><p>No. Los dos siguen las mismas reglas. Solo termina con commit y push en uno antes de empezar en el otro.</p></div></details>
 <details class="fold"><summary><span>¿Cómo conecto GitHub con OpenCode?</span></summary><div class="fold-body"><p>No hace falta una app: OpenCode usa el Git de tu computador con tu cuenta. Inicia sesión con «gh auth login», clona el repositorio y abre OpenCode en la carpeta Cerebro. El paso a paso está en <a href="#opencode-github">conectar GitHub con OpenCode</a>.</p></div></details>
+<details class="fold"><summary><span>¿Cómo sabe el agente dónde va cada cosa?</span></summary><div class="fold-body"><p>Con la skill estructura-cerebro, que es el mapa del repositorio, y con su programa mapa.py, que muestra la estructura real. Las reglas están aparte, en AGENTS.md y en el prompt maestro.</p></div></details>
+<details class="fold"><summary><span>¿Qué significa la nota de fiabilidad de una fuente?</span></summary><div class="fold-body"><p>Cuánto se puede confiar en ella, de 2 a 5. Ver <a href="#segundo-cerebro-fiabilidad">cuánto confiar en cada fuente</a>.</p></div></details>
 <details class="fold"><summary><span>¿Por qué el agente no une los pull requests él mismo?</span></summary><div class="fold-body"><p>Porque la decisión de qué entra en la versión oficial es tuya. Así siempre sabes qué cambió.</p></div></details>
 <details class="fold"><summary><span>¿Qué hago si un PR tiene conflictos?</span></summary><div class="fold-body"><p>Pide al agente que traiga main a la rama y los resuelva. Después revisas y unes.</p></div></details>
 <details class="fold"><summary><span>¿Cómo deshago algo que ya uní?</span></summary><div class="fold-body"><p>Pide un revert: un commit nuevo que deshace el anterior sin borrar la historia.</p></div></details>
@@ -1620,7 +1659,7 @@ opencode</code></pre>
 <details class="fold"><summary><span>¿Cada cuánto se actualiza este manual?</span></summary><div class="fold-body"><p>Solo cuando el fundador lo pide. Cada cambio sube la versión y queda en el historial de la portada.</p></div></details>
 
       <nav class="pager"><a class="prev" href="#empresa"><small>Anterior</small>Cómo se crea la empresa</a></nav></section>
-      <p class="foot">Manual Cerebro Arvyon v2.0 · 2026-11-12 · Archivo único y descargable: <code>Cerebro/manual/manual-cerebro-arvyon.html</code>. Se actualiza solo cuando el fundador lo decide.</p>
+      <p class="foot">Manual Cerebro Arvyon v2.1 · 2026-11-12 · Archivo único y descargable: <code>Cerebro/manual/manual-cerebro-arvyon.html</code>. Se actualiza solo cuando el fundador lo decide.</p>
     </article>
   </main>
 </div>

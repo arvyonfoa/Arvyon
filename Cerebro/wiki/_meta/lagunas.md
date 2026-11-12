@@ -54,6 +54,7 @@ Cada `[!question] Por verificar` de la wiki debería tener aquí su línea. Al r
 - [ ] ¿En qué ruta guarda OpenCode las credenciales de los proveedores? → [[opencode]]
 - [ ] ¿Admite OpenCode una suscripción personal de Claude, o solo clave de API? → [[opencode]]
 - [ ] ¿Existe el comando `/init` en la versión 2? → [[2026-11-investigacion-web-opencode]]
+- [ ] ¿Carga OpenCode de verdad la skill `estructura-cerebro` desde `.agents/skills/`? Hay que probarlo en la primera sesión con OpenCode → [[opencode]]
 
 ## Conexiones
 - [[agenda-de-investigacion]]: donde se planifican.
