@@ -4,9 +4,9 @@ area: marketing
 estado: borrador
 confianza: baja
 resumen: "Estrategia propuesta para YouTube como canal estratégico: hipótesis, pilares, formatos, ritmo, SEO, métricas y reaprovechamiento."
-fuentes: ["[[presentacion-socios-2026-10]]"]
+fuentes: ["[[presentacion-socios-2026-10]]", "[[2026-10-youtube-eric-risco-software-factory]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-11
 revisar_antes: 2027-02-03
 etiquetas: [canal-estrategico]
 ---
@@ -56,6 +56,22 @@ Instagram genera confianza rápida. YouTube genera **autoridad y búsquedas que 
 
 ## Lecciones de formato
 *(Las añade el agente al ingerir videos: flujo 7.3 del prompt maestro).*
+
+### Video técnico de 17 minutos con 424.685 vistas en 19 días ([[2026-10-youtube-eric-risco-software-factory]], [[eric-risco]])
+| Elemento | Qué hace el video | Qué tomar para Arvyon |
+|---|---|---|
+| Gancho | Empieza con un dolor en los primeros 30 segundos: «el cuello de botella eres tú» | Abrir con el problema del empresario, no con una presentación |
+| Analogía | Explica el concepto con una fábrica de coches antes de lo técnico | Una imagen cotidiana antes de cada concepto |
+| Caso propio | Su propio sistema, paso a paso, con un diagrama que se va completando | Mostrar un caso real o una demo que se construye en pantalla |
+| Ampliación del público | A mitad del video: «esto también sirve a quien no programa» | Decir pronto para quién es el video |
+| Prueba social | Al final cita a OpenAI y a Stripe | Citar casos conocidos, con la fuente verificada |
+| Llamada a la acción | Ligada al siguiente video y a un producto futuro | Ligarla al diagnóstico o a la guía ([[iman-de-clientes]]) |
+| Descripción | Resumen, 10 capítulos con minutos, enlaces y etiquetas | Igual a la pauta de SEO de esta página |
+
+> [!tip] Supuesto
+> El formato funciona con un público técnico (programadores). Falta comprobar si el mismo esquema retiene a un gerente de pyme. Se valida al mapear canales de IA para negocios en la Fase 2.
+
+Pendiente: no se capturaron los comentarios del video, que son señales de demanda ([[senales-de-demanda]], [[lagunas]]).
 
 ## Conexiones
 - [[instagram]]: los Shorts se reaprovechan como reels.

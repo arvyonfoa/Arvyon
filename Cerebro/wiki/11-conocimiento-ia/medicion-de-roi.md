@@ -1,12 +1,12 @@
 ---
 tipo: estudio
 area: conocimiento
-estado: semilla
+estado: borrador
 confianza: media
 resumen: "Bloque 10: línea base, KPIs, cálculo del ROI y del periodo de recuperación, e informes de resultados que justifican la renovación."
-fuentes: []
+fuentes: ["[[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-11
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -36,8 +36,18 @@ Para la automatización de cotizaciones del bloque 4: define la línea base, mid
 - Video de YouTube: «Cómo saber si la IA te está ahorrando dinero (con números)».
 - Base de cada [[caso-de-exito]].
 
+## El costo de la IA dentro del ROI (2026-11)
+- **Costo por resultado exitoso.** La FinOps Foundation recomienda medir lo que cuesta todo el proceso contando solo los casos que superan el umbral de calidad; los intentos fallidos también se pagan ([[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]).
+- **Evaluaciones.** Para saber si una automatización funciona hace falta un conjunto de casos de prueba con su respuesta correcta y una regla para calificar. Sin eso no hay línea base ni forma de elegir modelo.
+- **Las cinco preguntas del costo:** cuántas veces al mes, qué modelo más barato pasa la prueba, qué se repite, qué puede esperar y cuánto cuesta cada resultado correcto frente a hacerlo a mano ([[enrutamiento-de-modelos]]).
+
+> [!abstract] Estimación · fórmula
+> Costo por resultado exitoso = (costo de todas las ejecuciones del mes, incluidas las fallidas) ÷ (número de resultados que pasaron la comprobación).
+> Ahorro mensual = (casos resueltos × minutos ahorrados por caso × costo por minuto de la persona) − costo mensual de la IA − horas de revisión humana.
+
 ## Conexiones
 - [[curriculo]]: bloque n.º 10.
 - [[unit-economics]]: las finanzas de Arvyon (otra perspectiva).
 - [[estrategia-de-precios]]: el valor medido justifica el precio.
 - [[datos-y-reportes]]: el tablero.
+- [[enrutamiento-de-modelos]]: cómo se controla el costo de la IA.

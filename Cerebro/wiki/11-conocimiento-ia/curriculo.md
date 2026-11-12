@@ -4,9 +4,9 @@ area: conocimiento
 estado: borrador
 confianza: media
 resumen: "Página central del estudio: mapa de lo que piden las empresas, 12 bloques por niveles, plan de la Fase 1 (9 nov–15 dic) y avance."
-fuentes: ["[[2026-11-barrido-ligero-competidores]]", "[[2026-11-investigacion-web-cursos-etapa-1]]"]
+fuentes: ["[[2026-11-barrido-ligero-competidores]]", "[[2026-11-investigacion-web-cursos-etapa-1]]", "[[2026-10-youtube-eric-risco-software-factory]]", "[[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]"]
 creado: 2026-11-03
-actualizado: 2026-11-08
+actualizado: 2026-11-11
 revisar_antes: 2027-02-03
 etiquetas: [curriculo]
 ---
@@ -77,6 +77,19 @@ Según [[capacidades-de-la-competencia]] ([[2026-11-barrido-ligero-competidores]
 - En la Etapa 1, practicar también con **Copilot en Microsoft 365 y Gemini en Google Workspace**, que es lo que la competencia enseña «con las herramientas que el equipo ya tiene».
 - En la Etapa 2, priorizar **n8n** (la herramienta más citada) y la integración con **Siigo y Alegra**.
 - En la Etapa 3, preparar los entregables que ya son estándar: política de uso de IA, seguimiento a 30 y 60 días, medición.
+
+## Lo que la investigación del 2026-11-11 añade al plan
+El análisis [[evaluacion-video-software-factory]] ([[2026-10-youtube-eric-risco-software-factory]], [[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]) no cambia el calendario. Añade ideas a bloques que ya estaban:
+
+| Cuándo | Bloque | Idea nueva |
+|---|---|---|
+| Semana 2 | 2 y 3 | Agente = modelo + arnés ([[arnes-de-agentes]]); ingeniería de contexto; por qué hay modelos pequeños, medios y grandes ([[enrutamiento-de-modelos]]) |
+| Semana 3 | 4 | Flujo o agente; los tres tipos de pasos; diseñar la demo de cotización como una [[fabrica-de-ia]] |
+| Semana 4 | 5 y 7 | Puerta humana por riesgo y no por tamaño; registro de cada paso |
+| Semana 5 | 8-I, 10 y 11 | Seguridad de agentes; evaluaciones y costo por resultado exitoso; las doce piezas como guía de una propuesta; escribir especificaciones |
+| Fase 2 | 6 y 12 | Conectores y habilidades (MCP y *Skills*); fábrica de contenido para el canal; [[pi-coding-agent]], opcional |
+
+**No se añade al plan:** montar una fábrica de software, instalar RSC Harness o Pi, ni aprender a programar antes del 15 de diciembre ([[programacion-y-bases-de-datos]]).
 
 ## Reparto sugerido por rol
 - **Rol 1 · Crecimiento:** prioridad en los bloques 11, 12, 2 y 10 ([[roles-de-socios]]).

@@ -6,7 +6,7 @@ confianza: media
 resumen: "Términos de IA, consultoría, finanzas y legal usados en la wiki, en lenguaje simple."
 fuentes: []
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-11
 revisar_antes: 2027-11-03
 etiquetas: []
 ---
@@ -16,11 +16,19 @@ etiquetas: []
 | Término | Significado simple | Página |
 |---|---|---|
 | Agente de IA | IA que usa herramientas para ejecutar tareas, no solo responder | [[rag-y-agentes]] |
+| Arnés (harness) | Todo lo que rodea al modelo en un agente: instrucciones, memoria, herramientas, permisos y comprobaciones | [[arnes-de-agentes]] |
 | Alfabetización en IA | Saber usar la IA con criterio y de forma segura | [[alfabetizacion-en-ia]] |
 | CAC | Costo de conseguir un cliente | [[unit-economics]] |
+| Costo por resultado exitoso | Lo que cuesta un proceso con IA contando solo los casos que salieron bien | [[enrutamiento-de-modelos]] |
 | DOFA | Debilidades, Oportunidades, Fortalezas y Amenazas | [[dofa]] |
 | Embudo | Pasos desde que alguien nos conoce hasta que es cliente | [[embudo]] |
+| Enrutamiento de modelos | Enviar cada tarea al modelo más barato que la resuelve bien | [[enrutamiento-de-modelos]] |
+| Evaluación (eval) | Prueba para una IA: una entrada, una salida y una regla para calificarla | [[medicion-de-roi]] |
+| Fábrica de IA | Proceso repetible y auditable con IA dentro, con pasos de código, de agente y de aprobación humana | [[fabrica-de-ia]] |
+| FinOps para IA | Gestión financiera del gasto en IA | [[enrutamiento-de-modelos]] |
+| Flujo (workflow) | Automatización cuyo camino lo fija el código, no el modelo | [[automatizacion-de-procesos]] |
 | IA en la sombra | Uso de IA en la empresa sin conocimiento ni reglas | [[ia-en-la-sombra]] |
+| Inyección de instrucciones | Ataque en el que un texto ajeno le da órdenes al agente | [[gobernanza-y-regulacion]] |
 | KPI | Indicador clave que se mide | [[medicion-de-roi]] |
 | LLM | Modelo de lenguaje (ChatGPT, Claude, Gemini…) | [[fundamentos-llm]] |
 | LTV | Valor total que deja un cliente durante su relación con nosotros | [[unit-economics]] |
@@ -31,8 +39,10 @@ etiquetas: []
 | Retención en la fuente | Impuesto que el cliente descuenta del pago y entrega al Estado | [[impuestos-y-facturacion]] |
 | ROI | Retorno de la inversión | [[medicion-de-roi]] |
 | S.A.S. | Sociedad por acciones simplificada (Colombia) | [[figura-legal]] |
+| Sensor | Control que actúa después de que el agente trabaja y detecta errores | [[arnes-de-agentes]] |
 | SOW | Documento de alcance del trabajo | [[contratos-y-responsabilidad]] |
 | TAM / SAM / SOM | Mercado total, alcanzable y que podemos conseguir | [[tamano-de-mercado]] |
+| Token | Unidad en que los modelos miden y cobran el texto; aproximadamente, un trozo de palabra | [[fundamentos-llm]] |
 
 ## Conexiones
 - [[curriculo]]: donde se estudian estos términos.

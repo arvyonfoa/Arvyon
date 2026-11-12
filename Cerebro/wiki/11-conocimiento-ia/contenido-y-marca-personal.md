@@ -1,12 +1,12 @@
 ---
 tipo: estudio
 area: conocimiento
-estado: semilla
+estado: borrador
 confianza: media
 resumen: "Bloque 12: guion, ganchos, SEO de YouTube, miniaturas, retención y un sistema de contenido sostenible para dos socios."
-fuentes: []
+fuentes: ["[[2026-10-youtube-eric-risco-software-factory]]", "[[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-11
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -35,8 +35,18 @@ Produce el primer video largo de [[youtube]] a partir del ejercicio del bloque 4
 - Uso directo: los canales [[youtube]] e [[instagram]] de Arvyon.
 - Posible módulo futuro: «Marketing y contenido con IA» para clientes ([[paquete-a-la-medida]]).
 
+## Fábrica de contenido (2026-11)
+El mismo patrón de [[fabrica-de-ia]] aplicado a editar video: grabación en bruto → recorte de silencios y errores → animaciones → transiciones y unión → miniaturas → revisión humana → subida manual ([[2026-10-youtube-eric-risco-software-factory]], min 13:51).
+- El modelo hace de director: lee la transcripción con tiempos y da órdenes a programas de edición. Solo cubre la posproducción; la idea, el guion y la cámara siguen siendo humanos ([[evaluacion-video-software-factory]]).
+- El «gusto» se escribe: una guía de estilo (ritmo, tipo de animación, qué se corta) es la memoria de esa fábrica.
+- Para la Fase 2: empezar por lo barato y útil (silencios, subtítulos, descripción y capítulos).
+
+> [!question] Por verificar
+> YouTube retira la monetización al contenido repetitivo o producido en masa, con o sin IA, y pide etiquetar el contenido realista alterado o sintético. Viene de prensa; falta leer la política oficial ([[lagunas]]).
+
 ## Conexiones
 - [[curriculo]]: bloque n.º 12.
 - [[sistema-de-contenido]]: el sistema.
 - [[metricas-de-marketing]]: la medición.
 - [[posicionamiento]]: el mensaje.
+- [[eric-risco]]: caso de estudio de formato y de fábrica de contenido.

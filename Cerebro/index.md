@@ -4,7 +4,7 @@
 > Formato: `[[página]]: resumen de una línea · *estado* · número de fuentes`.
 > Las plantillas están en `wiki/_plantillas/` y no se indexan.
 
-**Páginas:** 105 · **Fuentes ingeridas:** 4 · **Última actualización:** 2026-11-08 · **Fase vigente:** 1 · Aprender (9 nov–15 dic)
+**Páginas:** 113 · **Fuentes ingeridas:** 6 · **Última actualización:** 2026-11-11 · **Fase vigente:** 1 · Aprender (9 nov–15 dic)
 
 **Manual para humanos:** `manual/manual-cerebro-arvyon.html` (v1.1)
 
@@ -80,7 +80,7 @@
 - [[pagina-web]]: Estructura de 7 secciones, señales de confianza y la métrica única de la web de Arvyon. · *borrador* · fuentes: 1
 - [[sistema-de-contenido]]: Cómo una idea se convierte en video de YouTube, Shorts, reels, carrusel, blog y LinkedIn, más el banco de ideas. · *semilla* · fuentes: 0
 - [[whatsapp-business]]: Canal de cierre donde conversa el empresario colombiano: catálogo, respuestas rápidas, agenda y etiquetas. · *borrador* · fuentes: 2
-- [[youtube]]: Estrategia propuesta para YouTube como canal estratégico: hipótesis, pilares, formatos, ritmo, SEO, métricas y reaprovechamiento. · *borrador* · fuentes: 1
+- [[youtube]]: Estrategia propuesta para YouTube como canal estratégico: hipótesis, pilares, formatos, ritmo, SEO, métricas y reaprovechamiento. · *borrador* · fuentes: 2
 
 ## 08 · Operación
 
@@ -97,25 +97,25 @@
 - [[dofa]]: Debilidades, Oportunidades, Fortalezas y Amenazas de Arvyon, en un primer borrador a partir de la presentación. · *borrador* · fuentes: 1
 - [[financiacion-y-convocatorias]]: Programas públicos en Colombia y en Polonia o la UE que podrían financiar la adopción de IA en clientes o el arranque de Arvyon. · *semilla* · fuentes: 0
 - [[nichos-y-alianzas]]: Nichos con encaje especial (exportadores a la UE, servicios profesionales) y canales de referidos (contadores, cámaras, gremios, software). · *semilla* · fuentes: 0
-- [[tendencias]]: Radar trimestral de tendencias tecnológicas, regulatorias y de mercado que crean o destruyen oportunidades. · *semilla* · fuentes: 0
+- [[tendencias]]: Radar trimestral de tendencias tecnológicas, regulatorias y de mercado que crean o destruyen oportunidades. · *borrador* · fuentes: 1
 
 ## 11 · Conocimiento de IA (currículo)
 
-- [[curriculo]]: Página central del estudio: mapa de lo que piden las empresas, 12 bloques por niveles, plan de la Fase 1 (9 nov–15 dic) y avance. · *borrador* · fuentes: 2
+- [[curriculo]]: Página central del estudio: mapa de lo que piden las empresas, 12 bloques por niveles, plan de la Fase 1 (9 nov–15 dic) y avance. · *borrador* · fuentes: 4
 - [[guia-etapa-1]]: Guía detallada de la Etapa 1: calendario de 2 semanas, cursos y lecturas con qué son y para qué sirven, lo que no cubren, ejercicios y preguntas de comprobación. · *borrador* · fuentes: 3
 - [[alfabetizacion-tecnica]]: Bloque complementario de la Etapa 2: lo mínimo técnico para construir automatizaciones (API, JSON, webhooks, claves, datos en tablas), sin aprender a programar. · *semilla* · fuentes: 0
-- [[automatizacion-de-procesos]]: Bloque 4: automatizar cotizaciones, facturas, correos y reportes con Make, n8n o Zapier y con IA en medio del flujo. · *semilla* · fuentes: 1
-- [[contenido-y-marca-personal]]: Bloque 12: guion, ganchos, SEO de YouTube, miniaturas, retención y un sistema de contenido sostenible para dos socios. · *semilla* · fuentes: 0
+- [[automatizacion-de-procesos]]: Bloque 4: automatizar cotizaciones, facturas, correos y reportes con Make, n8n o Zapier y con IA en medio del flujo. · *semilla* · fuentes: 2
+- [[contenido-y-marca-personal]]: Bloque 12: guion, ganchos, SEO de YouTube, miniaturas, retención y un sistema de contenido sostenible para dos socios. · *borrador* · fuentes: 2
 - [[datos-y-reportes]]: Bloque 7: limpiar datos, analizar con IA y construir tableros para que la gerencia decida con números. · *semilla* · fuentes: 0
 - [[fundamentos-llm]]: Bloque 1: qué es un modelo de lenguaje, qué puede y qué no puede hacer, cuánto cuesta y qué pasa con los datos. · *semilla* · fuentes: 1
 - [[gestion-del-cambio]]: Bloque 9: por qué fallan las adopciones, el modelo ADKAR, campeones internos y formación por roles con métricas de adopción. · *semilla* · fuentes: 0
-- [[gobernanza-y-regulacion]]: Bloque 8: política de uso de IA, IA en la sombra, Ley 1581, RGPD, Reglamento Europeo de IA y marcos como ISO/IEC 42001 y NIST AI RMF. · *semilla* · fuentes: 0
+- [[gobernanza-y-regulacion]]: Bloque 8: política de uso de IA, IA en la sombra, Ley 1581, RGPD, Reglamento Europeo de IA y marcos como ISO/IEC 42001 y NIST AI RMF. · *borrador* · fuentes: 1
 - [[habilidades-de-consultoria]]: Bloque 11: entrevista de descubrimiento, propuestas, alcance, precio por valor, manejo de objeciones y venta consultiva. · *semilla* · fuentes: 0
 - [[herramientas-para-pymes]]: Bloque 3: qué herramientas usan y pueden pagar las pymes colombianas, por caso de uso, por presupuesto y por riesgo. · *semilla* · fuentes: 1
 - [[ia-en-whatsapp-y-atencion]]: Bloque 5: asistentes de WhatsApp con base de conocimiento y traspaso a un humano, métricas y costos de la plataforma. · *semilla* · fuentes: 1
-- [[medicion-de-roi]]: Bloque 10: línea base, KPIs, cálculo del ROI y del periodo de recuperación, e informes de resultados que justifican la renovación. · *semilla* · fuentes: 0
+- [[medicion-de-roi]]: Bloque 10: línea base, KPIs, cálculo del ROI y del periodo de recuperación, e informes de resultados que justifican la renovación. · *borrador* · fuentes: 1
 - [[prompting-para-empresas]]: Bloque 2: escribir instrucciones claras para la IA, crear bibliotecas por área y enseñarlo en un taller de 3 horas. · *semilla* · fuentes: 1
-- [[rag-y-agentes]]: Bloque 6: asistentes que responden con los documentos de la empresa y agentes que ejecutan tareas, con sus riesgos y costos. · *semilla* · fuentes: 0
+- [[rag-y-agentes]]: Bloque 6: asistentes que responden con los documentos de la empresa y agentes que ejecutan tareas, con sus riesgos y costos. · *borrador* · fuentes: 2
 
 ## 12 · Entidades
 
@@ -123,8 +123,10 @@
 - [[conpes-4144]]: Documento CONPES de febrero de 2025 que establece la Política Nacional de Inteligencia Artificial de Colombia. · *borrador* · fuentes: 1
 - [[dian]]: Autoridad tributaria colombiana: RUT, facturación electrónica y retenciones. · *borrador* · fuentes: 0
 - [[endeavor]]: Organización de apoyo al emprendimiento; autora del informe «Colombia AI Pulse» citado en la presentación. · *borrador* · fuentes: 1
+- [[eric-risco]]: Divulgador español de IA y agentes de programación en YouTube, autor de RSC Harness; canal de referencia de formato y fuente del concepto de fábrica de IA. · *borrador* · fuentes: 2
 - [[ley-1581-de-2012]]: Ley colombiana de protección de datos personales; marco del tratamiento de datos de los clientes de Arvyon. · *borrador* · fuentes: 1
 - [[mincomercio]]: Ministerio colombiano; fuente de los datos sobre mipymes citados en la presentación. · *borrador* · fuentes: 1
+- [[pi-coding-agent]]: Agente de programación minimalista y de código abierto, pensado para que cada quien construya su propio arnés; herramienta para programadores, fuera del plan de la Fase 1. · *borrador* · fuentes: 1
 - [[reglamento-europeo-de-ia]]: Reglamento (UE) 2024/1689 sobre inteligencia artificial: niveles de riesgo, prácticas prohibidas y alfabetización en IA. · *borrador* · fuentes: 2
 - [[rgpd]]: Reglamento (UE) 2016/679 de protección de datos; obligaciones de Arvyon como empresa en la UE y parte de su diferencial. · *borrador* · fuentes: 1
 - [[sic]]: Autoridad colombiana de protección de datos personales, de competencia y de propiedad industrial (marcas). · *borrador* · fuentes: 0
@@ -132,8 +134,11 @@
 ## 13 · Conceptos
 
 - [[alfabetizacion-en-ia]]: Conocimientos y habilidades mínimas para usar la IA con criterio; obligación del Reglamento Europeo de IA y producto de Arvyon. · *borrador* · fuentes: 1
+- [[arnes-de-agentes]]: El arnés es todo lo que rodea al modelo en un agente (instrucciones, memoria, herramientas, permisos y comprobaciones); diseñarlo bien es el harness engineering. · *borrador* · fuentes: 2
 - [[brecha-de-adopcion]]: Distancia entre cuántas empresas quieren usar IA y cuántas la usan de verdad: el espacio de mercado de Arvyon. · *borrador* · fuentes: 1
 - [[caso-de-exito]]: Historia documentada de un cliente con números de antes y después; el motor del embudo. · *borrador* · fuentes: 1
+- [[enrutamiento-de-modelos]]: Enviar cada tarea al modelo y al nivel de razonamiento más baratos que la resuelven bien; es parte de FinOps para IA, la gestión del gasto en IA. · *borrador* · fuentes: 2
+- [[fabrica-de-ia]]: Proceso repetible y auditable con IA dentro, hecho de pasos de código, pasos de agente y aprobación humana; sirve como criterio de diagnóstico para cualquier proceso de una empresa. · *borrador* · fuentes: 2
 - [[ia-en-la-sombra]]: Uso de herramientas de IA por empleados sin conocimiento ni reglas de la empresa; riesgo de datos y oportunidad de venta. · *borrador* · fuentes: 0
 - [[iman-de-clientes]]: Recurso gratuito que se ofrece a cambio de un contacto y que lleva al diagnóstico exprés. · *borrador* · fuentes: 1
 - [[ingreso-recurrente]]: Ingreso que se repite cada mes por suscripción o acompañamiento; da estabilidad y valor a la empresa. · *borrador* · fuentes: 0
@@ -141,13 +146,16 @@
 
 ## 14 · Fuentes
 
+- [[2026-10-youtube-eric-risco-software-factory]]: Video de Eric Risco (17 min): qué es una fábrica de IA, cómo monta la suya con especificación, constructor, cuatro revisores, aprobador y puerta humana, y su fábrica de contenido. · *borrador* · fuentes: 0
 - [[2026-11-barrido-ligero-competidores]]: Barrido web de unas 15 consultoras y agencias de IA que atienden empresas colombianas: qué saben, qué herramientas usan, qué entregan y algunos precios publicados. · *borrador* · fuentes: 0
 - [[2026-11-comision-europea-faq-alfabetizacion-ia]]: Página oficial de la Comisión sobre el artículo 4 del Reglamento de IA: modificado por el Ómnibus Digital (Reglamento (UE) 2026/1744); ya no se exige un nivel 'suficiente'. · *borrador* · fuentes: 0
 - [[2026-11-investigacion-web-cursos-etapa-1]]: Catálogo verificado en la web (2026-11-08) de cursos y lecturas de alfabetización en IA: Elements of AI, IA Para Todos, AI Fluency, Google AI Essentials, OpenAI Academy, Cointeligencia y Platzi. · *borrador* · fuentes: 0
+- [[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]: Investigación web (2026-11-11) sobre fábricas de software con agentes (Stripe, StrongDM, OpenAI), harness engineering (Thoughtworks), Pi, enrutamiento de modelos (FinOps Foundation, Anthropic) y seguridad de agentes. · *borrador* · fuentes: 0
 - [[presentacion-socios-2026-10]]: Propuesta de negocio de 19 diapositivas: idea, problema, diferencial, clientes, paquetes, método, ingresos, canales, operación, socios, hoja de ruta y riesgos. · *estable* · fuentes: 0
 
 ## 15 · Análisis archivados
 
+- [[evaluacion-video-software-factory]]: Evaluación del video de Eric Risco sobre fábricas de software: buen mapa con relato optimista; aciertos, exageraciones, cinco incoherencias, doce piezas que faltan y ocho temas nuevos para el estudio. · *borrador* · fuentes: 2
 - [[programacion-y-bases-de-datos]]: Respuesta del consultor: no en la Fase 1; sí alfabetización técnica (API, JSON, webhooks, datos en tablas) y, después del 15 de diciembre, Python básico y SQL básico. · *borrador* · fuentes: 1
 
 ## 16 · Decisiones

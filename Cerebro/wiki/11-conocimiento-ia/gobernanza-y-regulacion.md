@@ -1,12 +1,12 @@
 ---
 tipo: estudio
 area: conocimiento
-estado: semilla
+estado: borrador
 confianza: media
 resumen: "Bloque 8: política de uso de IA, IA en la sombra, Ley 1581, RGPD, Reglamento Europeo de IA y marcos como ISO/IEC 42001 y NIST AI RMF."
-fuentes: []
+fuentes: ["[[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-11
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -36,8 +36,19 @@ Redacta la política de uso de IA de una pyme ficticia de 30 empleados: herramie
 - Módulo: «Política de IA y datos» ([[paquete-a-la-medida]]) y la política de Transforma; versión ligera en la guía de Inicia.
 - Video de YouTube: «Qué datos NUNCA debes pegar en ChatGPT (y cómo poner reglas en tu empresa)».
 
+## Seguridad de agentes (2026-11)
+- **Inyección de instrucciones** (*prompt injection*): un texto ajeno (un correo, un mensaje de WhatsApp, una página web) le da órdenes al agente y este las obedece.
+- **La «tríada letal»** (Simon Willison, 2025): el riesgo es máximo cuando un agente tiene a la vez datos privados, contenido no confiable y un canal para enviar información fuera. La defensa es quitar una de las tres.
+- **Caso real:** en febrero de 2026, el título de un aviso en GitHub manipuló al robot de clasificación del proyecto Cline y acabó en la publicación no autorizada de una versión que se instaló en unas 4.000 máquinas ([[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]).
+- **Referencia:** OWASP publicó en diciembre de 2025 su lista de los diez riesgos de aplicaciones con agentes.
+- **Regla práctica para una política de uso:** permisos mínimos para cada agente, aprobación humana para acciones con dinero, datos personales o textos legales, y registro de lo que hace ([[fabrica-de-ia]]).
+
+> [!question] Por verificar
+> El contenido exacto de la lista de OWASP y de la «regla de dos» de Meta se conoce por resúmenes; falta leer los documentos originales ([[lagunas]]).
+
 ## Conexiones
 - [[curriculo]]: bloque n.º 8.
 - [[proteccion-de-datos]]: el cumplimiento propio de Arvyon.
 - [[alfabetizacion-en-ia]]: obligación del Reglamento Europeo de IA.
 - [[politica-publica-ia]]: contexto colombiano.
+- [[arnes-de-agentes]]: los permisos y las comprobaciones son parte del arnés.
