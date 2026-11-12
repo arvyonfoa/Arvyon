@@ -156,3 +156,23 @@
 - No se probó la skill en OpenCode (no está instalado en esta sesión). `mapa.py` sí se ejecutó: 0 problemas.
 - `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
 - Siguiente: unir el pull request, instalar OpenCode con el capítulo 7 del manual y retomar el plan de estudio (semana 1, «IA Para Todos»).
+
+## [2026-11-12] lint | Verificación final de la migración a OpenCode (prueba con la versión 2.2.7)
+- A pedido del fundador: comprobar qué faltaba y actualizar prompt maestro, `AGENTS.md`, skill y manual.
+- **Prueba real.** Se instaló OpenCode 2.2.7 en una carpeta temporal de la sesión, sin conectar un modelo ni enviar mensajes. Resultados en `raw/articulos/2026-11-12-prueba-opencode-2-2-7.md`:
+  - abierto en `Cerebro/`, vigila `Cerebro/AGENTS.md` y el `AGENTS.md` de la raíz; no lee `CLAUDE.md`;
+  - encuentra la skill `estructura-cerebro` en `.agents/skills/`, desde la raíz y desde `Cerebro/`;
+  - aplica las reglas de `opencode.jsonc`; un archivo inválido no se aplica;
+  - no existe `opencode github`; sí existen `/init`, `/review` y `/goal`, y los agentes `build` y `plan`.
+- **Lo que faltaba y se añadió:**
+  - `opencode.jsonc` en la raíz: pregunta antes de cada `git push` y deniega subir a `main`, el *force push* y `gh pr merge`. Sustituye a las protecciones que ponía la nube.
+  - Requisitos del computador (Git, GitHub CLI y Python 3) y qué hacer si falta Python: sección «Herramientas del sistema» en `AGENTS.md`, flujo 7.11 del prompt maestro y manual.
+  - Regla de no ejecutar `/init` ni reescribir `AGENTS.md`.
+  - Skill y `mapa.py`: conocen `opencode.jsonc`.
+  - Manual v2.2: «Lista para migrar» con una prueba de arranque de cinco preguntas, requisitos del computador, el archivo de permisos ya creado y tres errores comunes nuevos.
+- Wiki: [[opencode]], [[2026-11-investigacion-web-opencode]], [[stack-herramientas]] y [[lagunas]] (4 lagunas cerradas, 1 nueva: la primera conversación real con OpenCode).
+- Auditoría de restos: sin referencias a la rama antigua ni a la escala 1–5 de fiabilidad fuera del historial; sin nombres de archivo problemáticos en Windows; versión del manual igual en cabecera, portada, pie e índice.
+- Claude Code: en esta sesión aparece la skill `estructura-cerebro` (el puntero de `.claude/skills/` funciona) y el `CLAUDE.md` importa `AGENTS.md`.
+- Sin comprobar: una conversación real con un modelo, la aplicación de escritorio y el sistema operativo del fundador.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos. `mapa.py`: 0 problemas.
+- Siguiente: unir el pull request, seguir la «Lista para migrar» del capítulo 7 y retomar el plan de estudio (semana 1, «IA Para Todos»).

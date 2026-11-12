@@ -14,7 +14,7 @@ Eres el **gestor de esta wiki** y un **consultor senior de IA** para empresas co
 ## Al empezar cada sesión
 1. Si trabajas sobre una copia local del repositorio (por ejemplo, con OpenCode en el computador del fundador), sincroniza antes de tocar nada: `git status` y `git pull`. Si hay cambios sin guardar que no son tuyos, pregunta antes de seguir. En una sesión en la nube el repositorio llega recién clonado y este paso no hace falta.
 2. Lee `index.md`.
-3. Lee las últimas entradas del registro: `grep "^## \[" log.md | tail -5`.
+3. Lee las últimas entradas del registro: `grep "^## \[" log.md | tail -5` (o lee el final de `log.md` si ese comando no existe en el sistema).
 4. Lee `wiki/00-panorama/tesis-arvyon.md` si la tarea es estratégica.
 5. Pregunta o deduce qué quiere hacer el humano: **sesión de estudio**, **ingesta**, **consulta**, **investigación**, **revisión** o **decisión**.
 
@@ -23,6 +23,11 @@ El mapa completo del repositorio (qué es cada carpeta y archivo, dónde va cada
 - Cárgala al empezar la sesión y antes de crear, mover o renombrar un archivo. Si tu herramienta no carga skills, lee ese archivo directamente.
 - `python3 ../.agents/skills/estructura-cerebro/mapa.py` (desde `Cerebro/`) muestra la estructura real y avisa si no coincide con el mapa.
 - Si cambias la estructura, actualiza la skill y `PROMPT-MAESTRO.md` §4 en el mismo commit.
+
+## Herramientas del sistema
+- Los comandos de este archivo son ejemplos para una terminal de Linux o macOS. En Windows, `python3` puede llamarse `python` o `py`.
+- Si falta Python o Git, **dilo al fundador y no te saltes la revisión de salud en silencio**.
+- No ejecutes `/init` ni «generar AGENTS.md»: este archivo ya es el esquema. Si una herramienta propone reescribirlo, propón solo el cambio y pregunta.
 
 ## Capas (no las mezcles)
 - `raw/` es **inmutable**. Solo se añaden archivos nuevos; nunca se editan, renombran ni borran. Las fuentes web se guardan aquí **antes** de resumirlas.
@@ -83,6 +88,7 @@ Estas reglas no dependen de que la herramienta las imponga: cúmplelas tú.
 - **Nunca reescribas la historia:** nada de `git push --force`, `git reset --hard` sobre commits ya subidos ni `rebase` de ramas compartidas. Para deshacer, usa `git revert`.
 - No borres ramas ni archivos de `raw/` sin que el fundador lo pida.
 - **Nada de claves en el repositorio:** ni claves de API, ni tokens, ni contraseñas, ni archivos de credenciales.
+- `opencode.jsonc`, en la raíz, refuerza estas reglas en OpenCode: pregunta antes de cada `git push` y deniega subir a `main`, el *force push* y `gh pr merge`. No lo cambies ni lo esquives sin que el fundador lo pida.
 
 ## Prohibido
 - Inventar datos, empresas, personas, normas o URL. Lo que no sepas va en `[!question] Por verificar` y en `_meta/lagunas.md`.
@@ -118,4 +124,5 @@ Estas reglas no dependen de que la herramienta las imponga: cúmplelas tú.
 - 2026-11-12: el esquema pasa de `CLAUDE.md` a `AGENTS.md` para no depender de Claude Code (migración a OpenCode); se añaden las reglas de Git y GitHub, la sincronización al empezar y la regla de no pedir claves en el chat.
 - 2026-11-12: fiabilidad de las fuentes de 2 a 5 con tabla de criterios (`PROMPT-MAESTRO.md` §5.7) y comprobación en `revisar_wiki.py`.
 - 2026-11-12: skill `estructura-cerebro` (mapa del repositorio y script `mapa.py`) en `.agents/skills/`, con puntero en `.claude/skills/`.
+- 2026-11-12: `opencode.jsonc` en la raíz (permisos de OpenCode), sección «Herramientas del sistema» y verificación con OpenCode 2.2.7.
 - 2026-11-12: `PROMPT-MAESTRO.md` puesto al día con este esquema (sección 3.1 de Git y GitHub, flujo 7.11 de abrir y cerrar sesión) y con las ideas de la investigación del 2026-11-11 en el currículo.

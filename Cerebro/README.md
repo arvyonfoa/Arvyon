@@ -15,6 +15,7 @@ Es una wiki de Markdown que **mantiene un agente LLM** (OpenCode o Claude Code) 
 | `log.md` | Lo que pasó y cuándo. |
 | `raw/` | Tus fuentes originales. **Nunca se editan.** |
 | `wiki/` | Lo que escribe el agente. |
+| Skill `estructura-cerebro` | El mapa del repositorio para el agente. Está en la raíz: `.agents/skills/estructura-cerebro/`. |
 | `manual/` | El Manual Cerebro Arvyon: un solo archivo HTML que explica todo el sistema. |
 | `herramientas/revisar_wiki.py` | La revisión de salud: enlaces rotos, huérfanas, frontmatter y páginas fuera del índice. |
 

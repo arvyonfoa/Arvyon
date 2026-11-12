@@ -1,0 +1,16 @@
+{
+  // Permisos de OpenCode para este repositorio. Las reglas completas están en Cerebro/AGENTS.md.
+  // Gana la última regla que coincide: por eso las prohibiciones van al final.
+  "$schema": "https://opencode.ai/config.json",
+  "permissions": [
+    // Antes de subir cambios a GitHub, OpenCode pregunta.
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
+    // Nunca sube directamente a main: los cambios llegan por un pull request.
+    { "action": "shell", "resource": "git push origin main *", "effect": "deny" },
+    // Nunca reescribe la historia.
+    { "action": "shell", "resource": "git push --force *", "effect": "deny" },
+    { "action": "shell", "resource": "git push -f *", "effect": "deny" },
+    // Los pull requests los une el fundador, no el agente.
+    { "action": "shell", "resource": "gh pr merge *", "effect": "deny" }
+  ]
+}

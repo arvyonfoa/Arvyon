@@ -17,6 +17,8 @@ python3 .agents/skills/estructura-cerebro/mapa.py
 
 (desde `Cerebro/`: `python3 ../.agents/skills/estructura-cerebro/mapa.py`)
 
+En Windows, `python3` puede llamarse `python` o `py`.
+
 El script imprime el árbol real con el número de archivos de cada carpeta y avisa si falta algo esperado o si hay una carpeta que este mapa no conoce. Si avisa, resuélvelo o cuéntaselo al fundador antes de seguir.
 
 ## 2. Los tres niveles
@@ -28,6 +30,7 @@ El script imprime el árbol real con el número de archivos de cada carpeta y av
 | `AGENTS.md` | Instrucciones cortas para cualquier agente; remite a `Cerebro/AGENTS.md` |
 | `CLAUDE.md` | Solo importa `AGENTS.md`, para Claude Code. Sin reglas propias |
 | `README.md` | Presentación del repositorio para humanos |
+| `opencode.jsonc` | Permisos de OpenCode: pregunta antes de `git push` y deniega subir a `main`, el *force push* y unir *pull requests* |
 | `.agents/skills/estructura-cerebro/` | Esta skill: `SKILL.md` y `mapa.py` |
 | `.claude/skills/estructura-cerebro/` | Puntero a esta skill, para Claude Code. Sin contenido propio |
 | `Cerebro/` | El segundo cerebro. **Todo el trabajo ocurre aquí** |
@@ -114,7 +117,7 @@ El script imprime el árbol real con el número de archivos de cada carpeta y av
 |---|---|
 | Crear una página en `wiki/` | `index.md` (entrada y contador de páginas), un enlace desde otra página y `log.md` |
 | Ingerir una fuente | El archivo en `raw/`, su página en `14-fuentes/` con la nota de fiabilidad, los temas, entidades y conceptos afectados, `index.md` (contador de fuentes), `_meta/lagunas.md` y `log.md` |
-| Cambiar una regla | `Cerebro/AGENTS.md` (y su historial), `PROMPT-MAESTRO.md` y una entrada `schema` en `log.md`. Avisa de que el manual quedó desactualizado |
+| Cambiar una regla | `Cerebro/AGENTS.md` (y su historial), `PROMPT-MAESTRO.md` y una entrada `schema` en `log.md`. Si la regla es de Git, también `opencode.jsonc`. Avisa de que el manual quedó desactualizado |
 | Cambiar de fase | El bloque de fase de `AGENTS.md`, la decisión en `16-decisiones/`, la agenda de investigación y la hoja de ruta |
 | Añadir, mover o quitar una carpeta o un archivo de la raíz o de `Cerebro/` | Esta skill (tablas y `mapa.py`), la sección 4 de `PROMPT-MAESTRO.md` y, si el fundador lo pide, el manual |
 | Actualizar el manual | La versión en tres sitios (cabecera, portada y pie), la tabla «Cómo se actualiza este manual», la versión citada en `index.md` y una entrada `schema` en `log.md` |

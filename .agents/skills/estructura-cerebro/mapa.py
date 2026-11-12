@@ -21,6 +21,7 @@ RAIZ = {
     "AGENTS.md": "instrucciones para cualquier agente",
     "CLAUDE.md": "solo importa AGENTS.md",
     "README.md": "presentación del repositorio",
+    "opencode.jsonc": "permisos de OpenCode",
     ".agents/skills/estructura-cerebro/SKILL.md": "esta skill",
     ".claude/skills/estructura-cerebro/SKILL.md": "puntero a la skill, para Claude Code",
     "Cerebro": "el segundo cerebro",

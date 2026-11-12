@@ -6,7 +6,7 @@
 
 **Páginas:** 115 · **Fuentes ingeridas:** 7 · **Última actualización:** 2026-11-12 · **Fase vigente:** 1 · Aprender (9 nov–15 dic)
 
-**Manual para humanos:** `manual/manual-cerebro-arvyon.html` (v2.1)
+**Manual para humanos:** `manual/manual-cerebro-arvyon.html` (v2.2)
 
 **Empieza por aquí (Fase 1):** [[curriculo]] → [[guia-etapa-1]] → [[dec-009-fase-de-aprendizaje]] → [[tesis-arvyon]]
 

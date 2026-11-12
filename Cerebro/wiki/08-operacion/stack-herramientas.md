@@ -27,7 +27,7 @@ Lo que necesita una consultora 100 % virtual: videollamadas, WhatsApp Business, 
 | Asistentes de IA (planes empresariales) | Trabajo interno y demos | | | |
 | Automatización | Demos y entregas | | | |
 | Contenido | Grabación, edición, diseño | | | |
-| Gestión del conocimiento | Este segundo cerebro: Obsidian + Git + agente | Obsidian, Git y [[opencode]] (desde el 2026-11-12; Claude Code queda como alternativa) | ✅ | Las reglas están en `AGENTS.md` y valen para cualquier agente |
+| Gestión del conocimiento | Este segundo cerebro: Obsidian + Git + agente | Obsidian, Git y [[opencode]] (desde el 2026-11-12; Claude Code queda como alternativa) | ✅ | Las reglas están en `AGENTS.md` y valen para cualquier agente. En el computador hacen falta Git, GitHub CLI y Python 3 |
 
 > [!question] Por verificar
 > Precios y planes de todas las herramientas: cambian a menudo. Por eso `revisar_antes` es de 3 meses.

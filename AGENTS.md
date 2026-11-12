@@ -10,6 +10,8 @@ Antes de hacer cualquier cosa:
 
 Si dudas de dónde va algo, carga la skill `estructura-cerebro` (`.agents/skills/estructura-cerebro/SKILL.md`): es el mapa de todo el repositorio. Su script `mapa.py` muestra la estructura real.
 
+`opencode.jsonc` son los permisos de OpenCode para este repositorio: pregunta antes de cada `git push` y deniega subir a `main`, el *force push* y unir *pull requests*.
+
 El manual para humanos está en `Cerebro/manual/manual-cerebro-arvyon.html` (un solo archivo HTML).
 
 Los archivos `CLAUDE.md` (aquí y en `Cerebro/`) no tienen reglas propias: solo importan el `AGENTS.md` de su carpeta para Claude Code.

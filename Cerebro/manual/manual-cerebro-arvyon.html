@@ -329,7 +329,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
 </svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
     <span class="topbar-spacer"></span>
-    <span class="version-pill">v2.1 · 2026-11-12</span>
+    <span class="version-pill">v2.2 · 2026-11-12</span>
     <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
   </div>
 </header>
@@ -350,7 +350,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <main>
     <article class="content">
 <section class="chapter" id="inicio" data-nombre="Inicio">
-      <p class="eyebrow">Versión 2.1 · 12 de noviembre de 2026</p>
+      <p class="eyebrow">Versión 2.2 · 12 de noviembre de 2026</p>
 
 <div class="hero">
   <h1>Manual Cerebro Arvyon</h1>
@@ -431,6 +431,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 <div class="prompt" data-copy="Actualiza el Manual Cerebro Arvyon: [qué quieres cambiar]. Sube la versión y anótalo en el historial.">Actualiza el Manual Cerebro Arvyon: [qué quieres cambiar]. Sube la versión y anótalo en el historial.</div>
 <div class="table-wrap"><table>
   <tr><th>Versión</th><th>Fecha</th><th>Cambios</th></tr>
+  <tr><td><code>v2.2</code></td><td class="num">2026-11-12</td><td>Verificación con OpenCode 2.2.7: lista para migrar, requisitos del computador y archivo de permisos <code>opencode.jsonc</code>, ya creado y comprobado.</td></tr>
   <tr><td><code>v2.1</code></td><td class="num">2026-11-12</td><td>Fiabilidad de las fuentes de 2 a 5, con su tabla de criterios y su comprobación en la revisión de salud. Nueva skill <code>estructura-cerebro</code>: el mapa del repositorio para el agente.</td></tr>
   <tr><td><code>v2.0</code></td><td class="num">2026-11-12</td><td>Migración a OpenCode: capítulo nuevo «OpenCode en tu computador» (instalación, modelos, conexión con GitHub y protecciones). Las reglas pasan de <code>CLAUDE.md</code> a <code>AGENTS.md</code>. Se conserva todo lo de Claude Code. Estado e historial de pull requests al día.</td></tr>
   <tr><td><code>v1.1</code></td><td class="num">2026-11-08</td><td>Limpieza del repositorio: la presentación queda solo en <code>Cerebro/raw/00-internos/</code>; estado de los pull requests al día.</td></tr>
@@ -661,6 +662,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 ├── <span class="f">AGENTS.md</span>                   <span class="c">instrucciones cortas para cualquier agente</span>
 ├── <span class="f">CLAUDE.md</span>                   <span class="c">solo importa AGENTS.md, para Claude Code</span>
 ├── README.md
+├── <span class="f">opencode.jsonc</span>              <span class="c">permisos de OpenCode para este repositorio</span>
 ├── <span class="f">.agents/skills/</span>
 │   └── estructura-cerebro/     <span class="c">la skill: el mapa del repositorio para el agente</span>
 ├── .claude/skills/
@@ -1245,7 +1247,7 @@ ZONA_HORARIA=America/Bogota</code></pre>
 <h1>OpenCode en tu computador</h1>
 <p class="lead">OpenCode es un agente de código abierto que trabaja en tu propio computador, no en la nube. Este capítulo explica qué cambia frente a Claude Code, cómo se instala, cómo se conecta con GitHub y cómo conservar las protecciones que antes ponía la nube.</p>
 
-<div class="note"><p class="note-title">De dónde sale este capítulo</p><p>Se escribió con la documentación oficial de OpenCode, versión 2, leída el 12 de noviembre de 2026 (<code>opencode.ai/docs</code>). El agente <strong>no instaló ni probó</strong> OpenCode. Como la herramienta cambia rápido, si un comando no funciona como dice aquí, manda la documentación oficial. Las notas de la lectura están en <code>raw/articulos/2026-11-12-investigacion-web-opencode.md</code>.</p></div>
+<div class="note"><p class="note-title">De dónde sale este capítulo</p><p>De la documentación oficial de OpenCode (<code>opencode.ai/docs</code>) y de una prueba de la versión 2.2.7 sobre este repositorio, las dos del 12 de noviembre de 2026. La prueba se hizo en una máquina Linux y <strong>sin conectar un modelo de IA</strong>: comprobó que OpenCode lee los dos <code>AGENTS.md</code>, encuentra la skill <code>estructura-cerebro</code> y aplica el archivo de permisos. No se probó una conversación real, ni la aplicación de escritorio, ni Windows o macOS. Si un comando no funciona como dice aquí, manda la documentación oficial.</p></div>
 
 <h2 id="opencode-que-es">Qué es y qué cambia</h2>
 <p>Con Claude Code en la nube, el agente trabajaba en una máquina prestada que se borraba. Con OpenCode, el agente trabaja sobre <strong>la carpeta del repositorio que está en tu disco</strong>: la misma que abres con Obsidian. OpenCode no trae un modelo de IA propio: tú eliges a cuál se conecta.</p>
@@ -1304,14 +1306,46 @@ ZONA_HORARIA=America/Bogota</code></pre>
   <tr><td>Cómo entra a GitHub</td><td>Con la app de Claude para GitHub y un proxy</td><td>Con el Git de tu computador y tu propia cuenta</td></tr>
   <tr><td>Modelo de IA</td><td>Claude</td><td>El que conectes con <code>/connect</code></td></tr>
   <tr><td>Dónde van las claves</td><td>En los secretos de red del entorno</td><td>En tu computador, guardadas por <code>/connect</code></td></tr>
-  <tr><td>Qué hace sin preguntar</td><td>Lo que permita el modo de permisos de la sesión</td><td>Casi todo: por defecto solo pregunta antes de leer archivos <code>.env</code></td></tr>
+  <tr><td>Qué hace sin preguntar</td><td>Lo que permita el modo de permisos de la sesión</td><td>Casi todo: por defecto solo pregunta antes de leer archivos <code>.env</code>. En este repositorio, además, pregunta antes de subir cambios</td></tr>
   <tr><td>Si cierras sin subir</td><td>El trabajo se pierde cuando la máquina se borra</td><td>El trabajo sigue en tu disco, pero GitHub no lo tiene</td></tr>
   <tr><td>Cuándo ves los cambios en Obsidian</td><td>Después de unir el PR y hacer <em>pull</em></td><td>Al instante, porque es la misma carpeta</td></tr>
 </table></div>
 <div class="note ok"><p class="note-title">El cerebro ya está preparado</p><p>Las reglas pasaron de <code>CLAUDE.md</code> a <code>AGENTS.md</code>, que vale para cualquier agente. Hay uno en la raíz del repositorio y otro, el completo, en <code>Cerebro/</code>. No tienes que cambiar nada en los archivos para empezar.</p></div>
 
+<h2 id="opencode-lista">Lista para migrar</h2>
+<p>Sigue estos pasos en orden. Cada uno se explica más abajo.</p>
+<ol class="steps">
+  <li><strong>Une el pull request pendiente en GitHub.</strong> Hasta que no esté en <code>main</code>, tu computador no tiene las reglas nuevas.</li>
+  <li><strong>Prepara el computador:</strong> Git, GitHub CLI y Python 3. Ver <a href="#opencode-instalar">lo que debe tener tu computador</a>.</li>
+  <li><strong>Inicia sesión en GitHub</strong> con <code>gh auth login</code> y trae el repositorio: clónalo o, si ya lo tienes, actualízalo. Ver <a href="#opencode-github-git">Git en tu computador</a>.</li>
+  <li><strong>Instala OpenCode</strong> y ábrelo en la carpeta <code>Arvyon/Cerebro</code>.</li>
+  <li><strong>Conecta un modelo de IA</strong> con <code>/connect</code>. Ver <a href="#opencode-modelo">conectar un modelo</a>.</li>
+  <li><strong>Haz la prueba de arranque</strong> con el mensaje de abajo. Si las cinco respuestas son correctas, la migración está hecha.</li>
+</ol>
+<div class="prompt">Prueba de arranque, sin cambiar nada: 1) dime en qué fase está Arvyon según AGENTS.md; 2) carga la skill estructura-cerebro y ejecuta mapa.py; 3) ejecuta la revisión de salud; 4) dime en qué rama estamos y si está al día con GitHub; 5) dime qué harías antes de un git push.</div>
+<div class="table-wrap"><table>
+  <tr><th>Pregunta</th><th>Respuesta correcta</th></tr>
+  <tr><td>1 · Fase</td><td>Fase 1 · Aprender, del 9 de noviembre al 15 de diciembre de 2026</td></tr>
+  <tr><td>2 · Mapa</td><td><code>mapa.py</code> termina con «Resultado: OK»</td></tr>
+  <tr><td>3 · Salud</td><td>0 errores</td></tr>
+  <tr><td>4 · Rama</td><td><code>verificacion</code>, al día con GitHub</td></tr>
+  <tr><td>5 · Antes de subir</td><td>Revisión de salud, registro y commit; sube solo a <code>verificacion</code> y abre un pull request. OpenCode te pregunta antes de subir</td></tr>
+</table></div>
+
 <h2 id="opencode-instalar">Instalar OpenCode</h2>
-<p>Hay dos formas. Elige una; las dos usan la misma carpeta y las mismas reglas.</p>
+<h3>Lo que debe tener tu computador</h3>
+<p>En la nube todo venía instalado. En tu computador hay que instalarlo una vez.</p>
+<div class="table-wrap"><table>
+  <tr><th>Programa</th><th>Para qué lo necesita el cerebro</th><th>Cómo saber si ya lo tienes</th></tr>
+  <tr><td><strong>Git</strong></td><td>Guardar el historial y hablar con GitHub</td><td><code>git --version</code></td></tr>
+  <tr><td><strong>GitHub CLI</strong></td><td>Iniciar sesión en GitHub y abrir pull requests</td><td><code>gh --version</code></td></tr>
+  <tr><td><strong>Python 3</strong></td><td>La revisión de salud y el mapa de la skill</td><td><code>python3 --version</code> (en Windows, <code>python --version</code> o <code>py --version</code>)</td></tr>
+  <tr><td><strong>Obsidian</strong></td><td>Leer el cerebro</td><td>Ya lo usas</td></tr>
+  <tr><td><strong>OpenCode</strong></td><td>El agente</td><td><code>opencode --version</code></td></tr>
+</table></div>
+<div class="note warn"><p class="note-title">Sin Python no hay revisión de salud</p><p>Si falta Python, el agente no puede comprobar la wiki al terminar. Las reglas le mandan avisarte en vez de saltarse la revisión.</p></div>
+<h3>Dos formas de instalar OpenCode</h3>
+<p>Elige una; las dos usan la misma carpeta y las mismas reglas.</p>
 <div class="grid">
   <div class="card"><p class="card-kicker">Opción A · la más sencilla</p><h3>Aplicación de escritorio</h3><p>Se descarga desde <code>opencode.ai</code>. Hay versión para macOS (Apple silicon e Intel), Windows (x64 y ARM64) y Linux. Se instala como cualquier programa y, al abrirla, eliges la carpeta del proyecto.</p></div>
   <div class="card"><p class="card-kicker">Opción B</p><h3>Terminal</h3><p>Se instala con un comando y se abre escribiendo <code>opencode</code> dentro de la carpeta del proyecto. Es la forma que describe casi toda la documentación.</p></div>
@@ -1343,7 +1377,7 @@ opencode upgrade</code></pre>
   <tr><td><strong>GitHub Copilot</strong></td><td><code>/connect</code> → GitHub Copilot → <em>Login with GitHub Copilot</em></td><td>Tu plan de Copilot; la cuenta necesita acceso a Copilot Chat</td></tr>
   <tr><td><strong>Clave de API de un proveedor</strong> (por ejemplo, Anthropic, para seguir con Claude)</td><td><code>/connect</code> → el proveedor → pegas la clave en el cuadro</td><td>Pago por uso, según lo que consumas</td></tr>
 </table></div>
-<div class="note warn"><p class="note-title">Por verificar</p><p>La documentación de OpenCode no dice si se puede usar una suscripción personal de Claude (Pro o Max). Lo seguro es contar con una clave de API de pago por uso si quieres seguir con Claude. Tampoco dice en qué carpeta guarda las claves.</p></div>
+<div class="note warn"><p class="note-title">Por verificar</p><p>La documentación de OpenCode no dice si se puede usar una suscripción personal de Claude (Pro o Max). Lo seguro es contar con una clave de API de pago por uso si quieres seguir con Claude. Para ver en qué carpetas de tu computador guarda OpenCode sus datos, escribe <code>opencode debug paths</code> en la terminal.</p></div>
 <div class="note bad"><p class="note-title">Las claves nunca van en el chat</p><p>Escríbelas solo en el cuadro que abre <code>/connect</code>. No las pegues en un mensaje al agente ni las guardes en un archivo del repositorio.</p></div>
 <p>No todas las tareas necesitan el modelo más caro. La página <code>enrutamiento-de-modelos</code> de la wiki explica cómo elegir.</p>
 
@@ -1375,7 +1409,7 @@ opencode</code></pre>
 <ol class="steps">
   <li>Al empezar, el agente trae lo último de GitHub (<code>git pull</code>). Lo manda <code>AGENTS.md</code>.</li>
   <li>Le pides algo. El agente trabaja en la rama <code>verificacion</code>, nunca en <code>main</code>.</li>
-  <li>Hace commits y <strong>push</strong> a <code>verificacion</code>.</li>
+  <li>Hace commits y <strong>push</strong> a <code>verificacion</code>. OpenCode te pregunta antes de subir: acepta si el destino es <code>verificacion</code>.</li>
   <li>Se abre el <strong>pull request</strong> hacia <code>main</code>. Lo abre el agente con <code>gh pr create</code>, o lo abres tú en github.com con el botón <em>Compare &amp; pull request</em>.</li>
   <li>Tú revisas y unes el PR en GitHub, igual que antes. Ver <a href="#github-decidir">cómo revisar y decidir</a>.</li>
   <li>Después de unir, pide al agente: «trae main y pon la rama de trabajo al día».</li>
@@ -1392,31 +1426,39 @@ opencode</code></pre>
   <tr><td>Clave del modelo</td><td>Se guarda en GitHub, en <em>Settings → Secrets and variables → Actions</em>, no en el repositorio</td></tr>
   <tr><td>Uso</td><td>Comentar <code>/oc explica este cambio</code> o <code>/oc corrige esto</code> en un PR o en un <em>issue</em></td></tr>
 </table></div>
-<div class="note warn"><p class="note-title">Por verificar · no lo actives todavía</p><p>Esta integración está documentada para la <strong>versión 1</strong>. La documentación de la versión 2 no tiene el comando <code>opencode github</code>: solo muestra un ejemplo de GitHub Actions que revisa un PR con <code>opencode run --standalone</code>. Además, exige guardar una clave de pago en GitHub y deja que un agente escriba en el repositorio sin que tú estés delante. Para el cerebro no hace falta: con la forma 1 basta.</p></div>
+<div class="note warn"><p class="note-title">No disponible en la versión 2.2.7</p><p>Esta integración está documentada para la <strong>versión 1</strong>. En la versión 2.2.7 el comando <code>opencode github</code> no existe (comprobado); la documentación de la versión 2 solo muestra un ejemplo de GitHub Actions que revisa un PR con <code>opencode run --standalone</code>. Además, exige guardar una clave de pago en GitHub y deja que un agente escriba en el repositorio sin que tú estés delante. Para el cerebro no hace falta: con la forma 1 basta.</p></div>
 
 <h2 id="opencode-protecciones">Las protecciones que ya no pone la herramienta</h2>
 <p>En la nube, varias protecciones venían puestas. En tu computador, el agente actúa con <strong>tu</strong> cuenta y con tus permisos. Por eso las protecciones pasaron a estar escritas como reglas.</p>
 <div class="table-wrap"><table>
   <tr><th>Protección</th><th>En Claude Code (nube)</th><th>En OpenCode</th></tr>
-  <tr><td>No tocar <code>main</code></td><td>La sesión solo podía subir a su rama</td><td>Regla en <code>AGENTS.md</code>: trabajar en <code>verificacion</code></td></tr>
-  <tr><td>No reescribir la historia (<em>force push</em>)</td><td>Bloqueado por la herramienta</td><td>Regla en <code>AGENTS.md</code>; se puede bloquear con el archivo de permisos</td></tr>
-  <tr><td>Solo tú unes los PR</td><td>El agente no podía unirlos</td><td>Regla en <code>AGENTS.md</code>. Ojo: con tu cuenta, técnicamente podría</td></tr>
+  <tr><td>No tocar <code>main</code></td><td>La sesión solo podía subir a su rama</td><td>Regla en <code>AGENTS.md</code> (trabajar en <code>verificacion</code>) y bloqueo en <code>opencode.jsonc</code></td></tr>
+  <tr><td>No reescribir la historia (<em>force push</em>)</td><td>Bloqueado por la herramienta</td><td>Regla en <code>AGENTS.md</code> y bloqueo en <code>opencode.jsonc</code></td></tr>
+  <tr><td>Solo tú unes los PR</td><td>El agente no podía unirlos</td><td>Regla en <code>AGENTS.md</code> y bloqueo de <code>gh pr merge</code> en <code>opencode.jsonc</code></td></tr>
   <tr><td>Las claves fuera de la vista del agente</td><td>Secretos de red</td><td><code>/connect</code>; nunca en el chat ni en el repositorio</td></tr>
-  <tr><td>Pedir permiso antes de actuar</td><td>Según el modo de la sesión</td><td>Por defecto no pregunta casi nada</td></tr>
+  <tr><td>Pedir permiso antes de actuar</td><td>Según el modo de la sesión</td><td>Por defecto no pregunta casi nada; con <code>opencode.jsonc</code> pregunta antes de cada <em>push</em></td></tr>
 </table></div>
-<h3>Refuerzo opcional: un archivo de permisos</h3>
-<p>OpenCode lee un archivo <code>opencode.jsonc</code> en la carpeta del proyecto. Con estas reglas pregunta antes de cada <em>push</em> y se niega a hacer <em>force push</em> o a unir un PR. Gana la última regla que coincide, así que las prohibiciones van al final.</p>
+<h3>El archivo de permisos: <code>opencode.jsonc</code></h3>
+<p>Está en la raíz del repositorio y OpenCode lo lee solo, lo abras en <code>Arvyon</code> o en <code>Arvyon/Cerebro</code>. Gana la última regla que coincide; por eso las prohibiciones van al final.</p>
+<div class="table-wrap"><table>
+  <tr><th>Cuando el agente intenta…</th><th>OpenCode…</th></tr>
+  <tr><td>Subir cambios (<code>git push</code>)</td><td><span class="tag amber">Te pregunta</span></td></tr>
+  <tr><td>Subir directamente a <code>main</code></td><td><span class="tag red">Lo impide</span></td></tr>
+  <tr><td>Reescribir la historia (<code>git push --force</code>)</td><td><span class="tag red">Lo impide</span></td></tr>
+  <tr><td>Unir un pull request (<code>gh pr merge</code>)</td><td><span class="tag red">Lo impide</span></td></tr>
+</table></div>
 <pre><code>{
   "$schema": "https://opencode.ai/config.json",
   "permissions": [
     { "action": "shell", "resource": "git push *", "effect": "ask" },
+    { "action": "shell", "resource": "git push origin main *", "effect": "deny" },
     { "action": "shell", "resource": "git push --force *", "effect": "deny" },
     { "action": "shell", "resource": "git push -f *", "effect": "deny" },
     { "action": "shell", "resource": "gh pr merge *", "effect": "deny" }
   ]
 }</code></pre>
-<div class="note warn"><p class="note-title">Ejemplo sin probar</p><p>Está construido con los patrones de la documentación, pero no se probó. El archivo <strong>no está creado</strong> en el repositorio. Si lo quieres, pídeselo al agente y comprueba con él que funciona.</p></div>
-<div class="prompt">Crea opencode.jsonc en la raíz del repositorio con las reglas de permisos del capítulo 7 del manual, comprueba que OpenCode lo carga sin errores y explícame cómo lo probaste.</div>
+<div class="note ok"><p class="note-title">Comprobado</p><p>OpenCode 2.2.7 carga este archivo y aplica las cinco reglas al agente. Lo que no se pudo probar es qué comandos exactos coinciden con cada patrón, porque eso exige una conversación con un modelo. Por eso la primera regla pregunta antes de <strong>cualquier</strong> subida: tú ves el comando y decides.</p></div>
+<div class="note warn"><p class="note-title">Cuando te pregunte</p><p>Lee el comando. Si sube a <code>verificacion</code>, elige <em>Allow once</em>. Si ves <code>main</code> o <code>--force</code>, recházalo. No abras OpenCode con la opción <code>--auto</code>: aprueba sola todo lo que no esté prohibido.</p></div>
 <p>GitHub también permite proteger la rama <code>main</code> desde la web del repositorio (<em>Settings → Rules</em>) para que nadie pueda subir a ella sin un pull request. Es la protección más fuerte, porque no depende del agente. <strong>Por verificar:</strong> si está disponible en tu plan de GitHub para este repositorio.</p>
 
 <h2 id="opencode-sesion">Una sesión de trabajo</h2>
@@ -1440,6 +1482,7 @@ opencode</code></pre>
   <tr><td><code>@estructura-cerebro</code></td><td>Carga la skill con el mapa del repositorio</td></tr>
   <tr><td><code>@</code> y un nombre de archivo</td><td>Adjunta ese archivo al mensaje</td></tr>
   <tr><td><code>!</code> al principio de un mensaje vacío</td><td>Ejecuta un comando de terminal, por ejemplo <code>git status</code></td></tr>
+  <tr><td><kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>Cambia de agente: <em>build</em> trabaja; <em>plan</em> solo lee y planifica, sin cambiar archivos</td></tr>
   <tr><td><kbd>Ctrl</kbd> + <kbd>P</kbd></td><td>Abre la lista de todos los comandos</td></tr>
 </table></div>
 <div class="note"><p class="note-title">Qué deshace <code>/undo</code> y qué no</p><p>Deshace cambios en archivos que aún están en tu computador. No deshace lo que ya subió a GitHub ni los efectos de comandos de terminal. Para deshacer algo que ya está en GitHub se pide un <em>revert</em>.</p></div>
@@ -1457,6 +1500,9 @@ opencode</code></pre>
 
 <h2 id="opencode-errores">Errores comunes</h2>
 <details class="fold"><summary><span>OpenCode no sigue las reglas del cerebro</span></summary><div class="fold-body"><p>Casi siempre es porque se abrió en otra carpeta. Ábrelo en <code>Arvyon/Cerebro</code> (o en <code>Arvyon</code>). Si sigue igual, dile: «Lee AGENTS.md y Cerebro/AGENTS.md completos antes de seguir». Como último recurso, pega el prompt maestro.</p></div></details>
+<details class="fold"><summary><span>OpenCode ofrece el comando <code>/init</code></span></summary><div class="fold-body"><p>No lo uses: sirve para crear o reescribir <code>AGENTS.md</code>, y el del cerebro ya está escrito. Si lo ejecutaste por error, pide al agente: «Muéstrame qué cambió en AGENTS.md y deshaz lo que no sea una mejora clara».</p></div></details>
+<details class="fold"><summary><span>OpenCode me pregunta antes de subir cambios</span></summary><div class="fold-body"><p>Es lo esperado: lo manda <code>opencode.jsonc</code>. Acepta si el comando sube a <code>verificacion</code>.</p></div></details>
+<details class="fold"><summary><span>El agente dice que no encuentra Python</span></summary><div class="fold-body"><p>Instala Python 3. En Windows el comando puede llamarse <code>python</code> o <code>py</code> en vez de <code>python3</code>; díselo al agente.</p></div></details>
 <details class="fold"><summary><span>El push falla o pide usuario y contraseña</span></summary><div class="fold-body"><p>Falta iniciar sesión: escribe <code>gh auth login</code> en la terminal. Mientras tanto, puedes subir los commits con GitHub Desktop (<em>Push origin</em>).</p></div></details>
 <details class="fold"><summary><span>El agente hizo commits en <code>main</code></span></summary><div class="fold-body"><p>Si todavía no los subió, pídele: «Pasa esos commits a la rama verificacion y deja main igual que en GitHub». Si ya los subió, no borres nada: pide un <em>revert</em> y que rehaga el cambio en la rama de trabajo.</p></div></details>
 <details class="fold"><summary><span>Usé Claude Code y OpenCode el mismo día y Git habla de conflictos</span></summary><div class="fold-body"><p>Las dos copias cambiaron el mismo archivo. Pide al agente: «Trae los cambios de GitHub y resuelve los conflictos sin perder nada; explícame qué elegiste». Después revisa el PR.</p></div></details>
@@ -1620,6 +1666,7 @@ opencode</code></pre>
 <dl class="def"><dt>n8n</dt><dd>Herramienta de automatización sin código, la más usada por la competencia que atiende pymes en Colombia.</dd></dl>
 <dl class="def"><dt>Obsidian</dt><dd>Aplicación gratuita para leer y navegar archivos Markdown enlazados. Es el lector del cerebro.</dd></dl>
 <dl class="def"><dt>OpenCode</dt><dd>Agente de código abierto que funciona en tu computador, en la terminal o en una aplicación de escritorio. Lee AGENTS.md, usa el modelo de IA que conectes y entra a GitHub con el Git de tu computador.</dd></dl>
+<dl class="def"><dt>opencode.jsonc</dt><dd>Archivo de permisos de OpenCode, en la raíz del repositorio. Hace que pregunte antes de subir cambios y le impide tocar main, reescribir la historia o unir pull requests.</dd></dl>
 <dl class="def"><dt>Prompt maestro</dt><dd>El documento completo con el rol, las reglas, los flujos, la agenda y el currículo del cerebro (PROMPT-MAESTRO.md).</dd></dl>
 <dl class="def"><dt>Proveedor de modelos</dt><dd>La empresa o el servicio que pone el modelo de IA que usa un agente. En OpenCode se conecta con /connect.</dd></dl>
 <dl class="def"><dt>Proxy</dt><dd>Un intermediario por el que pasan las conexiones de la máquina en la nube. Filtra sitios y añade credenciales por fuera.</dd></dl>
@@ -1659,7 +1706,7 @@ opencode</code></pre>
 <details class="fold"><summary><span>¿Cada cuánto se actualiza este manual?</span></summary><div class="fold-body"><p>Solo cuando el fundador lo pide. Cada cambio sube la versión y queda en el historial de la portada.</p></div></details>
 
       <nav class="pager"><a class="prev" href="#empresa"><small>Anterior</small>Cómo se crea la empresa</a></nav></section>
-      <p class="foot">Manual Cerebro Arvyon v2.1 · 2026-11-12 · Archivo único y descargable: <code>Cerebro/manual/manual-cerebro-arvyon.html</code>. Se actualiza solo cuando el fundador lo decide.</p>
+      <p class="foot">Manual Cerebro Arvyon v2.2 · 2026-11-12 · Archivo único y descargable: <code>Cerebro/manual/manual-cerebro-arvyon.html</code>. Se actualiza solo cuando el fundador lo decide.</p>
     </article>
   </main>
 </div>
