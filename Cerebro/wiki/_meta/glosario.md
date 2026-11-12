@@ -6,7 +6,7 @@ confianza: media
 resumen: "Términos de IA, consultoría, finanzas y legal usados en la wiki, en lenguaje simple."
 fuentes: []
 creado: 2026-11-03
-actualizado: 2026-11-11
+actualizado: 2026-11-12
 revisar_antes: 2027-11-03
 etiquetas: []
 ---
@@ -15,6 +15,7 @@ etiquetas: []
 
 | Término | Significado simple | Página |
 |---|---|---|
+| AGENTS.md | Archivo con las reglas que lee el agente al trabajar en una carpeta; es el esquema de este cerebro | [[opencode]] |
 | Agente de IA | IA que usa herramientas para ejecutar tareas, no solo responder | [[rag-y-agentes]] |
 | Arnés (harness) | Todo lo que rodea al modelo en un agente: instrucciones, memoria, herramientas, permisos y comprobaciones | [[arnes-de-agentes]] |
 | Alfabetización en IA | Saber usar la IA con criterio y de forma segura | [[alfabetizacion-en-ia]] |

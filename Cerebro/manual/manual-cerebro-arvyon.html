@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Manual Cerebro Arvyon</title>
-<meta name="description" content="Manual para aprender a usar el segundo cerebro de Arvyon, GitHub y la nube de Claude Code.">
+<meta name="description" content="Manual para aprender a usar el segundo cerebro de Arvyon, GitHub, la nube de Claude Code y OpenCode.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
@@ -329,7 +329,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <path d="M13 17.5 L19 14.5" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
 </svg><span><span class="brand-name">Manual Cerebro Arvyon</span><br><span class="brand-sub">Segundo cerebro · wiki LLM</span></span></a>
     <span class="topbar-spacer"></span>
-    <span class="version-pill">v1.1 · 2026-11-08</span>
+    <span class="version-pill">v2.0 · 2026-11-12</span>
     <button type="button" class="theme-btn" id="theme-btn">Tema oscuro</button>
   </div>
 </header>
@@ -339,7 +339,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
       <summary>Capítulos del manual</summary>
       <div class="nav-panel">
         <p class="nav-title">Capítulos</p>
-        <ul class="nav-list" id="chapters"><li><a href="#inicio" data-cap="inicio"><span class="nav-num">·</span><span>Inicio</span></a></li><li><a href="#proyecto" data-cap="proyecto"><span class="nav-num">1</span><span>El proyecto Arvyon</span></a></li><li><a href="#segundo-cerebro" data-cap="segundo-cerebro"><span class="nav-num">2</span><span>Qué es un segundo cerebro</span></a></li><li><a href="#mapa" data-cap="mapa"><span class="nav-num">3</span><span>Mapa del cerebro</span></a></li><li><a href="#uso" data-cap="uso"><span class="nav-num">4</span><span>Cómo se usa</span></a></li><li><a href="#github" data-cap="github"><span class="nav-num">5</span><span>GitHub sin miedo</span></a></li><li><a href="#nube" data-cap="nube"><span class="nav-num">6</span><span>La nube de Claude Code</span></a></li><li><a href="#empresa" data-cap="empresa"><span class="nav-num">7</span><span>Cómo se crea la empresa</span></a></li><li><a href="#glosario" data-cap="glosario"><span class="nav-num">8</span><span>Glosario y preguntas</span></a></li></ul>
+        <ul class="nav-list" id="chapters"><li><a href="#inicio" data-cap="inicio"><span class="nav-num">·</span><span>Inicio</span></a></li><li><a href="#proyecto" data-cap="proyecto"><span class="nav-num">1</span><span>El proyecto Arvyon</span></a></li><li><a href="#segundo-cerebro" data-cap="segundo-cerebro"><span class="nav-num">2</span><span>Qué es un segundo cerebro</span></a></li><li><a href="#mapa" data-cap="mapa"><span class="nav-num">3</span><span>Mapa del cerebro</span></a></li><li><a href="#uso" data-cap="uso"><span class="nav-num">4</span><span>Cómo se usa</span></a></li><li><a href="#github" data-cap="github"><span class="nav-num">5</span><span>GitHub sin miedo</span></a></li><li><a href="#nube" data-cap="nube"><span class="nav-num">6</span><span>La nube de Claude Code</span></a></li><li><a href="#opencode" data-cap="opencode"><span class="nav-num">7</span><span>OpenCode en tu computador</span></a></li><li><a href="#empresa" data-cap="empresa"><span class="nav-num">8</span><span>Cómo se crea la empresa</span></a></li><li><a href="#glosario" data-cap="glosario"><span class="nav-num">9</span><span>Glosario y preguntas</span></a></li></ul>
         <div id="toc-block">
           <p class="nav-title">En esta página</p>
           <ul class="nav-list toc" id="toc"></ul>
@@ -350,11 +350,11 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <main>
     <article class="content">
 <section class="chapter" id="inicio" data-nombre="Inicio">
-      <p class="eyebrow">Versión 1 · 8 de noviembre de 2026</p>
+      <p class="eyebrow">Versión 2 · 12 de noviembre de 2026</p>
 
 <div class="hero">
   <h1>Manual Cerebro Arvyon</h1>
-  <p class="lead">Este manual explica, desde cero, cómo funciona el segundo cerebro de Arvyon: qué hay dentro, cómo se usa con Claude Code, cómo se guarda en GitHub y cómo se está construyendo la empresa paso a paso.</p>
+  <p class="lead">Este manual explica, desde cero, cómo funciona el segundo cerebro de Arvyon: qué hay dentro, cómo se usa con un agente (OpenCode o Claude Code), cómo se guarda en GitHub y cómo se está construyendo la empresa paso a paso.</p>
 </div>
 
 <div class="quick">
@@ -364,22 +364,22 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 </div>
 
 <h2 id="inicio-sistema">El sistema en 30 segundos</h2>
-<p>Hay cuatro piezas. Tú decides y preguntas; el agente (Claude Code) lee, escribe y ordena; GitHub guarda todo con su historial; Obsidian te deja leer el cerebro cómodamente en tu computador.</p>
+<p>Hay cuatro piezas. Tú decides y preguntas; el agente (OpenCode o Claude Code) lee, escribe y ordena; GitHub guarda todo con su historial; Obsidian te deja leer el cerebro cómodamente en tu computador.</p>
 <figure class="diagram">
   <div class="svg-wrap">
   <svg viewBox="0 0 760 300" role="img" aria-labelledby="d-sis-t">
-    <title id="d-sis-t">Cómo se conectan el fundador, Claude Code, GitHub y Obsidian</title>
+    <title id="d-sis-t">Cómo se conectan el fundador, el agente, GitHub y Obsidian</title>
     <defs>
-  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
-  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+  <marker id="fl1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
 </defs>
     <rect x="20" y="110" width="150" height="80" rx="10" class="box-amber"/>
     <text x="95" y="145" text-anchor="middle" class="t-b">Tú</text>
     <text x="95" y="166" text-anchor="middle" class="t-s">el fundador decide</text>
 
     <rect x="300" y="20" width="170" height="80" rx="10" class="box-a"/>
-    <text x="385" y="55" text-anchor="middle" class="t-b">Claude Code</text>
-    <text x="385" y="76" text-anchor="middle" class="t-s">el agente trabaja</text>
+    <text x="385" y="55" text-anchor="middle" class="t-b">El agente</text>
+    <text x="385" y="76" text-anchor="middle" class="t-s">OpenCode o Claude Code</text>
 
     <rect x="290" y="200" width="190" height="80" rx="10" class="box"/>
     <text x="385" y="232" text-anchor="middle" class="t-b">GitHub</text>
@@ -389,13 +389,13 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
     <text x="665" y="145" text-anchor="middle" class="t-b">Obsidian</text>
     <text x="665" y="166" text-anchor="middle" class="t-s">tú lees y navegas</text>
 
-    <path d="M170 135 L298 72" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M170 135 L298 72" class="ln-a" marker-end="url(#fla1)"/>
     <text x="70" y="100" class="t-a">pides: «ingiere», «explica»</text>
-    <path d="M385 100 L385 198" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M385 100 L385 198" class="ln-a" marker-end="url(#fla1)"/>
     <text x="395" y="150" class="t-a">escribe, commit, push, PR</text>
-    <path d="M170 168 L288 228" class="ln" marker-end="url(#fl)"/>
+    <path d="M170 168 L288 228" class="ln" marker-end="url(#fl1)"/>
     <text x="150" y="226" class="t-s">revisas y unes el PR</text>
-    <path d="M482 228 L588 168" class="ln" marker-end="url(#fl)"/>
+    <path d="M482 228 L588 168" class="ln" marker-end="url(#fl1)"/>
     <text x="520" y="230" class="t-s">descargas (pull)</text>
   </svg>
   </div>
@@ -407,20 +407,22 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <a class="card" href="#proyecto"><p class="card-kicker">Capítulo 1</p><h3>El proyecto Arvyon</h3><p>La consultora, su propuesta, sus clientes, sus paquetes y sus dos fases.</p></a>
   <a class="card" href="#segundo-cerebro"><p class="card-kicker">Capítulo 2</p><h3>Qué es un segundo cerebro</h3><p>La idea de la wiki LLM, sus tres capas y quién hace qué.</p></a>
   <a class="card" href="#mapa"><p class="card-kicker">Capítulo 3</p><h3>Mapa del cerebro</h3><p>Cada carpeta, cada archivo y cada apartado de la wiki, explicado.</p></a>
-  <a class="card" href="#uso"><p class="card-kicker">Capítulo 4</p><h3>Cómo se usa</h3><p>Claude Code, OpenCode y Obsidian; flujos paso a paso y frases listas para copiar.</p></a>
+  <a class="card" href="#uso"><p class="card-kicker">Capítulo 4</p><h3>Cómo se usa</h3><p>OpenCode, Claude Code y Obsidian; flujos paso a paso y frases listas para copiar.</p></a>
   <a class="card" href="#github"><p class="card-kicker">Capítulo 5</p><h3>GitHub sin miedo</h3><p>Repositorios, commits, ramas y pull requests, con el historial real del proyecto.</p></a>
   <a class="card" href="#nube"><p class="card-kicker">Capítulo 6</p><h3>La nube de Claude Code</h3><p>Por qué todo vive en GitHub y qué son los entornos: red, secretos, script y variables.</p></a>
-  <a class="card" href="#empresa"><p class="card-kicker">Capítulo 7</p><h3>Cómo se crea la empresa</h3><p>La línea de tiempo, las decisiones y el paso a paso hasta los primeros clientes.</p></a>
-  <a class="card" href="#glosario"><p class="card-kicker">Capítulo 8</p><h3>Glosario y preguntas</h3><p>Todas las palabras nuevas, con buscador, y las dudas más comunes.</p></a>
+  <a class="card" href="#opencode"><p class="card-kicker">Capítulo 7</p><h3>OpenCode en tu computador</h3><p>Qué cambia frente a Claude Code, cómo se instala, cómo se conecta con GitHub y qué protecciones hay que escribir.</p></a>
+  <a class="card" href="#empresa"><p class="card-kicker">Capítulo 8</p><h3>Cómo se crea la empresa</h3><p>La línea de tiempo, las decisiones y el paso a paso hasta los primeros clientes.</p></a>
+  <a class="card" href="#glosario"><p class="card-kicker">Capítulo 9</p><h3>Glosario y preguntas</h3><p>Todas las palabras nuevas, con buscador, y las dudas más comunes.</p></a>
 </div>
 
 <h2 id="inicio-estado">Dónde estamos hoy</h2>
 <div class="table-wrap"><table>
-  <tr><th>Tema</th><th>Estado al 8 de noviembre de 2026</th></tr>
+  <tr><th>Tema</th><th>Estado al 12 de noviembre de 2026</th></tr>
   <tr><td>Fase del proyecto</td><td><span class="tag amber">Fase 1 · Aprender</span> del 9 de noviembre al 15 de diciembre de 2026</td></tr>
   <tr><td>Etapa de estudio en curso</td><td>Etapa 1 · Usar la IA con criterio (9 al 22 de noviembre)</td></tr>
-  <tr><td>Tamaño del cerebro</td><td class="num">105 páginas en la wiki · 4 fuentes ingeridas · 0 errores de salud</td></tr>
-  <tr><td>Pull requests</td><td>#1, #3 y #4 unidos · #2 cerrado sin unir</td></tr>
+  <tr><td>Tamaño del cerebro</td><td class="num">115 páginas en la wiki · 7 fuentes ingeridas · 0 errores de salud</td></tr>
+  <tr><td>Pull requests</td><td>#1 y del #3 al #7 unidos · #2 cerrado sin unir</td></tr>
+  <tr><td>Agente</td><td>Migración a OpenCode en curso; Claude Code sigue disponible. Las reglas están en <code>AGENTS.md</code> y valen para los dos</td></tr>
   <tr><td>Decisiones</td><td>3 decididas (nombre Arvyon, YouTube como canal, aprender primero) · 6 abiertas</td></tr>
 </table></div>
 
@@ -429,6 +431,7 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 <div class="prompt" data-copy="Actualiza el Manual Cerebro Arvyon: [qué quieres cambiar]. Sube la versión y anótalo en el historial.">Actualiza el Manual Cerebro Arvyon: [qué quieres cambiar]. Sube la versión y anótalo en el historial.</div>
 <div class="table-wrap"><table>
   <tr><th>Versión</th><th>Fecha</th><th>Cambios</th></tr>
+  <tr><td><code>v2.0</code></td><td class="num">2026-11-12</td><td>Migración a OpenCode: capítulo nuevo «OpenCode en tu computador» (instalación, modelos, conexión con GitHub y protecciones). Las reglas pasan de <code>CLAUDE.md</code> a <code>AGENTS.md</code>. Se conserva todo lo de Claude Code. Estado e historial de pull requests al día.</td></tr>
   <tr><td><code>v1.1</code></td><td class="num">2026-11-08</td><td>Limpieza del repositorio: la presentación queda solo en <code>Cerebro/raw/00-internos/</code>; estado de los pull requests al día.</td></tr>
   <tr><td><code>v1.0</code></td><td class="num">2026-11-08</td><td>Primera versión: proyecto, segundo cerebro, mapa, uso diario, GitHub, nube y entornos, creación de la empresa, glosario. Un solo archivo HTML descargable.</td></tr>
 </table></div>
@@ -457,8 +460,8 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <svg viewBox="0 0 760 230" role="img" aria-labelledby="d-puente-t">
     <title id="d-puente-t">Arvyon como puente entre Polonia y Colombia</title>
     <defs>
-  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
-  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+  <marker id="fl2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
 </defs>
     <rect x="20" y="40" width="220" height="150" rx="12" class="box-a"/>
     <text x="130" y="78" text-anchor="middle" class="t-b">Polonia · UE</text>
@@ -474,9 +477,9 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
     <text x="630" y="152" text-anchor="middle" class="t-m">mañana: 8:00 a 12:00</text>
     <text x="630" y="174" text-anchor="middle" class="t-s">Ley 1581 de 2012</text>
 
-    <path d="M244 100 L516 100" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M244 100 L516 100" class="ln-a" marker-end="url(#fla2)"/>
     <text x="380" y="88" text-anchor="middle" class="t-a">métodos probados en Europa</text>
-    <path d="M516 140 L244 140" class="ln" marker-end="url(#fl)"/>
+    <path d="M516 140 L244 140" class="ln" marker-end="url(#fl2)"/>
     <text x="380" y="132" text-anchor="middle" class="t-s">necesidades de la empresa</text>
     <rect x="320" y="160" width="120" height="30" rx="15" class="solid-a"/>
     <text x="380" y="180" text-anchor="middle" class="t-on">6 a 7 horas</text>
@@ -558,12 +561,12 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
   <svg viewBox="0 0 760 330" role="img" aria-labelledby="d-capas-t">
     <title id="d-capas-t">Las tres capas del cerebro: esquema, wiki y fuentes</title>
     <defs>
-  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
-  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+  <marker id="fl3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
 </defs>
     <rect x="170" y="20" width="420" height="76" rx="10" class="box-violet"/>
     <text x="380" y="50" text-anchor="middle" class="t-b">3 · Esquema: las reglas</text>
-    <text x="380" y="74" text-anchor="middle" class="t-m">CLAUDE.md · AGENTS.md · PROMPT-MAESTRO.md</text>
+    <text x="380" y="74" text-anchor="middle" class="t-m">AGENTS.md · CLAUDE.md · PROMPT-MAESTRO.md</text>
 
     <rect x="170" y="126" width="420" height="76" rx="10" class="box-a"/>
     <text x="380" y="156" text-anchor="middle" class="t-b">2 · Wiki: lo que sabemos</text>
@@ -573,19 +576,19 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
     <text x="380" y="262" text-anchor="middle" class="t-b">1 · Fuentes: la verdad original</text>
     <text x="380" y="286" text-anchor="middle" class="t-m">raw/ (nunca se modifica)</text>
 
-    <path d="M380 230 L380 206" class="ln-a" marker-end="url(#fla)"/>
-    <path d="M380 98 L380 122" class="ln" marker-end="url(#fl)"/>
+    <path d="M380 230 L380 206" class="ln-a" marker-end="url(#fla3)"/>
+    <path d="M380 98 L380 122" class="ln" marker-end="url(#fl3)"/>
 
     <text x="20" y="258" class="t-b">Tú</text>
     <text x="20" y="278" class="t-s">añades fuentes</text>
-    <path d="M128 270 L166 270" class="ln" marker-end="url(#fl)"/>
+    <path d="M128 270 L166 270" class="ln" marker-end="url(#fl3)"/>
     <text x="20" y="152" class="t-b">Tú</text>
     <text x="20" y="172" class="t-s">lees y preguntas</text>
-    <path d="M166 164 L134 164" class="ln" marker-end="url(#fl)"/>
+    <path d="M166 164 L134 164" class="ln" marker-end="url(#fl3)"/>
 
     <text x="608" y="152" class="t-b">Agente</text>
     <text x="608" y="172" class="t-s">escribe y mantiene</text>
-    <path d="M660 182 L660 250 L594 250" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M660 182 L660 250 L594 250" class="ln-a" marker-end="url(#fla3)"/>
     <text x="608" y="234" class="t-a">lee</text>
     <text x="608" y="46" class="t-b">Juntos</text>
     <text x="608" y="66" class="t-s">ajustan las reglas</text>
@@ -636,8 +639,8 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 <h2 id="mapa-vista-general">Vista general</h2>
 <div class="tree"><span class="f">Cerebro/</span>
 ├── <span class="f">PROMPT-MAESTRO.md</span>   <span class="c">el prompt completo: rol, reglas, flujos, agenda y currículo</span>
-├── <span class="f">CLAUDE.md</span>           <span class="c">las reglas que Claude Code lee en cada sesión</span>
-├── <span class="f">AGENTS.md</span>           <span class="c">lo mismo para otros agentes (OpenCode, Codex)</span>
+├── <span class="f">AGENTS.md</span>           <span class="c">las reglas que el agente lee en cada sesión (cualquier agente)</span>
+├── <span class="f">CLAUDE.md</span>           <span class="c">solo importa AGENTS.md, para Claude Code</span>
 ├── <span class="f">README.md</span>           <span class="c">guía rápida para el humano</span>
 ├── <span class="f">index.md</span>            <span class="c">catálogo de todas las páginas</span>
 ├── <span class="f">log.md</span>              <span class="c">registro de todo lo que pasó, en orden</span>
@@ -655,9 +658,10 @@ body.js .chapter + .chapter { border-top: 0; margin-top: 0; padding-top: 0; }
 <details class="fold" open><summary><span><code>PROMPT-MAESTRO.md</code> · el prompt maestro</span></summary><div class="fold-body">
 <p>Es el documento más completo. Empieza con el principio rector (primero se aprende, después se actúa) y explica el rol del agente, el contexto de Arvyon, la arquitectura, las convenciones, los flujos paso a paso, la agenda de investigación y el currículo.</p>
 <p><strong>Cuándo usarlo:</strong> se copia y se pega en un agente nuevo, o cuando el agente parece haber olvidado las reglas.</p></div></details>
-<details class="fold"><summary><span><code>CLAUDE.md</code> y <code>AGENTS.md</code> · el esquema</span></summary><div class="fold-body">
-<p><code>CLAUDE.md</code> es la versión corta y operativa de las reglas. Claude Code la lee al trabajar en la carpeta. Arriba dice la fase vigente. <code>AGENTS.md</code> solo remite a <code>CLAUDE.md</code>, para que otros agentes como OpenCode o Codex sigan las mismas reglas.</p>
-<p>En la raíz del repositorio hay otro <code>CLAUDE.md</code> cortito que avisa al agente de que el cerebro está en <code>Cerebro/</code>.</p></div></details>
+<details class="fold"><summary><span><code>AGENTS.md</code> y <code>CLAUDE.md</code> · el esquema</span></summary><div class="fold-body">
+<p><code>AGENTS.md</code> es la versión corta y operativa de las reglas. Arriba dice la fase vigente; también trae las reglas de Git y GitHub. Vale para cualquier agente: OpenCode lo lee directamente, igual que Codex y otros.</p>
+<p><code>CLAUDE.md</code> ya no tiene reglas propias. Solo importa <code>AGENTS.md</code>, porque Claude Code busca un archivo con ese nombre. Así hay una única copia de las reglas y los dos agentes siguen las mismas.</p>
+<p>En la raíz del repositorio hay otra pareja <code>AGENTS.md</code> y <code>CLAUDE.md</code>, cortita, que avisa al agente de que el cerebro está en <code>Cerebro/</code>.</p></div></details>
 <details class="fold"><summary><span><code>index.md</code> · el catálogo</span></summary><div class="fold-body">
 <p>Lista todas las páginas de la wiki por área, cada una con un resumen de una línea, su estado y su número de fuentes. <strong>El agente lo lee primero en cada consulta.</strong> Para ti es la forma más rápida de saber qué hay.</p></div></details>
 <details class="fold"><summary><span><code>log.md</code> · el registro</span></summary><div class="fold-body">
@@ -793,17 +797,23 @@ etiquetas: [fase-1, etapa-1]
       <p class="eyebrow">Capítulo 4</p>
 
 <h1>Cómo se usa el cerebro</h1>
-<p class="lead">El cerebro se usa conversando con un agente (Claude Code u OpenCode) y leyendo en Obsidian. No hace falta escribir las páginas a mano: tú das las fuentes y las instrucciones; el agente escribe.</p>
+<p class="lead">El cerebro se usa conversando con un agente (OpenCode o Claude Code) y leyendo en Obsidian. No hace falta escribir las páginas a mano: tú das las fuentes y las instrucciones; el agente escribe.</p>
 
 <h2 id="uso-herramientas">Las herramientas</h2>
 <div class="grid">
-  <div class="card"><p class="card-kicker">El agente</p><h3>Claude Code</h3><p>El agente de Anthropic. Se usa en la web (claude.ai/code), en la app de escritorio o en el teléfono, y trabaja en una máquina en la nube con tu repositorio. Lee <code>CLAUDE.md</code> automáticamente.</p></div>
-  <div class="card"><p class="card-kicker">Alternativa</p><h3>OpenCode u otros</h3><p>Agentes de código abierto que funcionan en tu computador. Leen <code>AGENTS.md</code>, que los manda a <code>CLAUDE.md</code>. Si notas que no siguen las reglas, pégales el prompt maestro.</p></div>
+  <div class="card"><p class="card-kicker">El agente</p><h3>Claude Code</h3><p>El agente de Anthropic. Se usa en la web (claude.ai/code), en la app de escritorio o en el teléfono, y trabaja en una máquina en la nube con tu repositorio. Lee <code>CLAUDE.md</code>, que importa las reglas de <code>AGENTS.md</code>. Ver <a href="#nube">La nube de Claude Code</a>.</p></div>
+  <div class="card"><p class="card-kicker">El agente</p><h3>OpenCode</h3><p>Agente de código abierto que trabaja en tu computador, sobre tu copia del repositorio, con el modelo de IA que conectes. Lee <code>AGENTS.md</code>, igual que Codex y otros agentes. Ver <a href="#opencode">OpenCode en tu computador</a>.</p></div>
   <div class="card"><p class="card-kicker">El lector</p><h3>Obsidian</h3><p>Una aplicación gratuita para leer y navegar archivos Markdown. Ves los enlaces, la vista gráfica y las tablas automáticas del tablero.</p></div>
   <div class="card"><p class="card-kicker">El archivo</p><h3>GitHub</h3><p>Donde vive el cerebro con todo su historial. Ahí revisas y aceptas los cambios del agente. Ver <a href="#github">GitHub sin miedo</a>.</p></div>
 </div>
 
 <h2 id="uso-preparacion">Preparación (una sola vez)</h2>
+<h3>En OpenCode</h3>
+<ol class="steps">
+  <li>Instala OpenCode y conecta un modelo de IA. Ver <a href="#opencode-instalar">instalar</a> y <a href="#opencode-modelo">conectar un modelo</a>.</li>
+  <li>Deja lista la conexión con GitHub en tu computador. Ver <a href="#opencode-github">conectar GitHub con OpenCode</a>.</li>
+  <li>Abre OpenCode en la carpeta <code>Arvyon/Cerebro</code> y escribe tu primer mensaje. El agente lee <code>AGENTS.md</code> por su cuenta.</li>
+</ol>
 <h3>En Claude Code</h3>
 <ol class="steps">
   <li>Entra a <strong>claude.ai/code</strong> (o abre la app de Claude y ve a Code).</li>
@@ -818,11 +828,11 @@ etiquetas: [fase-1, etapa-1]
   <li>En <em>Settings → Community plugins</em>, instala <strong>Dataview</strong> para que funcione el tablero.</li>
   <li>Cada vez que unas un pull request en GitHub, pulsa <em>Fetch origin</em> y <em>Pull</em> en GitHub Desktop para traer los cambios.</li>
 </ol>
-<div class="note warn"><p class="note-title">No edites el cerebro en dos sitios a la vez</p><p>Si cambias archivos en Obsidian y el agente cambia los mismos en la nube, Git tendrá que unir dos versiones distintas (un «conflicto»). Lo más simple: <strong>lee en Obsidian y pide los cambios al agente</strong>.</p></div>
+<div class="note warn"><p class="note-title">No edites el cerebro en dos sitios a la vez</p><p>Si cambias archivos en Obsidian y el agente cambia los mismos en la nube, Git tendrá que unir dos versiones distintas (un «conflicto»). Lo más simple: <strong>lee en Obsidian y pide los cambios al agente</strong>. Con OpenCode, el agente y Obsidian comparten la misma carpeta, y la regla es la misma.</p></div>
 
 <h2 id="uso-empezar">Cómo empezar una sesión</h2>
 <p>Al empezar, el agente lee el índice, las últimas entradas del registro y la fase vigente. Tú solo dices qué quieres hacer:</p>
-<div class="prompt">Hola. Lee Cerebro/CLAUDE.md, dime en qué fase estamos y propón la sesión de estudio de hoy.</div>
+<div class="prompt">Hola. Lee Cerebro/AGENTS.md, dime en qué fase estamos y propón la sesión de estudio de hoy.</div>
 <div class="prompt">Ejecuta la revisión de salud y dime en 10 líneas cómo está el cerebro.</div>
 
 <h2 id="uso-sesion-de-estudio">Flujo 1 · Sesión de estudio (Fase 1)</h2>
@@ -845,8 +855,8 @@ etiquetas: [fase-1, etapa-1]
   <svg viewBox="0 0 760 210" role="img" aria-labelledby="d-ing-t">
     <title id="d-ing-t">Flujo de ingesta de una fuente</title>
     <defs>
-  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
-  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+  <marker id="fl5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
 </defs>
     <rect x="10" y="30" width="130" height="64" rx="10" class="box-amber"/>
     <text x="75" y="58" text-anchor="middle" class="t-b">Fuente</text><text x="75" y="79" text-anchor="middle" class="t-m">raw/</text>
@@ -858,13 +868,13 @@ etiquetas: [fase-1, etapa-1]
     <text x="555" y="58" text-anchor="middle" class="t-b">Integración</text><text x="555" y="79" text-anchor="middle" class="t-s">5 a 15 páginas</text>
     <rect x="650" y="30" width="100" height="64" rx="10" class="box-green"/>
     <text x="700" y="58" text-anchor="middle" class="t-b">Registro</text><text x="700" y="79" text-anchor="middle" class="t-m">index · log</text>
-    <path d="M142 62 L166 62" class="ln-a" marker-end="url(#fla)"/>
-    <path d="M302 62 L326 62" class="ln-a" marker-end="url(#fla)"/>
-    <path d="M462 62 L486 62" class="ln-a" marker-end="url(#fla)"/>
-    <path d="M622 62 L646 62" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M142 62 L166 62" class="ln-a" marker-end="url(#fla5)"/>
+    <path d="M302 62 L326 62" class="ln-a" marker-end="url(#fla5)"/>
+    <path d="M462 62 L486 62" class="ln-a" marker-end="url(#fla5)"/>
+    <path d="M622 62 L646 62" class="ln-a" marker-end="url(#fla5)"/>
     <text x="555" y="128" text-anchor="middle" class="t-s">temas · entidades · conceptos</text>
     <text x="555" y="148" text-anchor="middle" class="t-s">contradicciones · tesis · decisiones</text>
-    <path d="M700 96 L700 170 L380 170" class="ln" marker-end="url(#fl)"/>
+    <path d="M700 96 L700 170 L380 170" class="ln" marker-end="url(#fl5)"/>
     <text x="370" y="175" text-anchor="end" class="t-a">commit, push y pull request</text>
   </svg>
   </div>
@@ -889,7 +899,7 @@ etiquetas: [fase-1, etapa-1]
 <div class="prompt">Convierte el bloque [número] del currículo en un guion de video de YouTube de 10 minutos y guárdalo como idea en sistema-de-contenido.</div>
 <div class="prompt">¿Qué contradicciones hay abiertas en el cerebro? Dame una tabla.</div>
 <div class="prompt">Archiva tu última respuesta en wiki/15-analisis/ y actualiza el índice y el registro.</div>
-<div class="prompt">El agente olvidó las reglas. Vuelve a leer Cerebro/CLAUDE.md y Cerebro/PROMPT-MAESTRO.md antes de seguir.</div>
+<div class="prompt">El agente olvidó las reglas. Vuelve a leer Cerebro/AGENTS.md y Cerebro/PROMPT-MAESTRO.md antes de seguir.</div>
 
 <h2 id="uso-rutina">Rutina recomendada</h2>
 <div class="table-wrap"><table>
@@ -901,9 +911,9 @@ etiquetas: [fase-1, etapa-1]
 </table></div>
 
 <h2 id="uso-errores">Errores comunes</h2>
-<details class="fold"><summary><span>El agente propone hacer entrevistas durante la Fase 1</span></summary><div class="fold-body"><p>Recuérdale la fase: «Estamos en la Fase 1; conviértelo en un ejercicio con una empresa ficticia». Las reglas de <code>CLAUDE.md</code> lo prohíben, pero un agente nuevo puede no haberlas leído.</p></div></details>
+<details class="fold"><summary><span>El agente propone hacer entrevistas durante la Fase 1</span></summary><div class="fold-body"><p>Recuérdale la fase: «Estamos en la Fase 1; conviértelo en un ejercicio con una empresa ficticia». Las reglas de <code>AGENTS.md</code> lo prohíben, pero un agente nuevo puede no haberlas leído.</p></div></details>
 <details class="fold"><summary><span>Edité un archivo de <code>raw/</code> por error</span></summary><div class="fold-body"><p>No pasa nada grave: Git guarda la versión anterior. Pide al agente: «Restaura el archivo [ruta] a su última versión en main».</p></div></details>
-<details class="fold"><summary><span>Una respuesta buena se quedó en el chat</span></summary><div class="fold-body"><p>Pide que la archive en <code>wiki/15-analisis/</code>. Lo que no está en el repositorio se pierde cuando termina la sesión en la nube.</p></div></details>
+<details class="fold"><summary><span>Una respuesta buena se quedó en el chat</span></summary><div class="fold-body"><p>Pide que la archive en <code>wiki/15-analisis/</code>. Lo que no está en el repositorio se pierde cuando termina la sesión en la nube. Con OpenCode queda en tu disco, pero GitHub no lo tiene hasta que se sube.</p></div></details>
 <details class="fold"><summary><span>Obsidian no muestra el tablero</span></summary><div class="fold-body"><p>Falta el plugin Dataview. Instálalo en <em>Settings → Community plugins</em>.</p></div></details>
 
       <nav class="pager"><a class="prev" href="#mapa"><small>Anterior</small>Mapa del cerebro</a><a class="next" href="#github"><small>Siguiente</small>GitHub sin miedo</a></nav></section><section class="chapter" id="github" data-nombre="GitHub sin miedo">
@@ -943,7 +953,7 @@ etiquetas: [fase-1, etapa-1]
   <dt>Revert</dt>
   <dd>Un commit nuevo que deshace otro commit, sin borrar la historia. Es la forma segura de deshacer.</dd>
   <dt>Force push</dt>
-  <dd>Subir cambios reescribiendo la historia de una rama. Es peligroso porque puede borrar trabajo; por eso Claude Code lo tiene bloqueado y usa <em>revert</em> en su lugar.</dd>
+  <dd>Subir cambios reescribiendo la historia de una rama. Es peligroso porque puede borrar trabajo; por eso Claude Code lo tiene bloqueado y las reglas de <code>AGENTS.md</code> lo prohíben con cualquier agente. Se usa <em>revert</em> en su lugar.</dd>
   <dt>Clonar</dt>
   <dd>Descargar una copia completa del repositorio a tu computador (lo que haces con GitHub Desktop).</dd>
 </dl>
@@ -954,8 +964,8 @@ etiquetas: [fase-1, etapa-1]
   <svg viewBox="0 0 760 330" role="img" aria-labelledby="d-git-t">
     <title id="d-git-t">Historial real: la rama main y la rama de trabajo de Claude con los pull requests 1, 2 y 3</title>
     <defs>
-  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
-  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+  <marker id="fl6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
 </defs>
     <text x="10" y="84" class="t-b">main</text>
     <path d="M70 80 L740 80" class="ln" />
@@ -974,7 +984,7 @@ etiquetas: [fase-1, etapa-1]
     <path d="M271 87 L344 203" class="ln-d"/>
     <circle cx="350" cy="210" r="8" class="dot"/><text x="350" y="262" text-anchor="middle" class="t-s">trae main</text>
     <circle cx="410" cy="210" r="8" class="dot"/><text x="410" y="240" text-anchor="middle" class="t-s">README</text>
-    <path d="M414 202 L446 88" class="ln-green" marker-end="url(#fl)"/>
+    <path d="M414 202 L446 88" class="ln-green" marker-end="url(#fl6)"/>
     <circle cx="450" cy="80" r="10" class="dot-main"/><text x="450" y="56" text-anchor="middle" class="t-m">780275a</text><text x="450" y="36" text-anchor="middle" class="t-a">PR #1 unido</text>
 
     <circle cx="520" cy="210" r="8" class="dot-red"/><text x="520" y="240" text-anchor="middle" class="t-s">Sprint 1</text><text x="520" y="258" text-anchor="middle" class="t-s">PR #2 cerrado</text>
@@ -985,7 +995,7 @@ etiquetas: [fase-1, etapa-1]
     <text x="665" y="161" text-anchor="middle" class="t-a">PR #3 abierto</text>
   </svg>
   </div>
-  <figcaption>Arriba, la rama principal; abajo, la rama de trabajo de Claude Code. Los cambios suben a <code>main</code> solo cuando unes un pull request. Después de unir el PR #1, la rama de trabajo vuelve a empezar desde <code>main</code>.</figcaption>
+  <figcaption>Arriba, la rama principal; abajo, la rama de trabajo del agente. Los cambios suben a <code>main</code> solo cuando unes un pull request. Después de unir el PR #1, la rama de trabajo vuelve a empezar desde <code>main</code>.</figcaption>
 </figure>
 <div class="table-wrap"><table>
   <tr><th>Pull request</th><th>Qué contenía</th><th>Qué pasó</th></tr>
@@ -993,12 +1003,15 @@ etiquetas: [fase-1, etapa-1]
   <tr><td><span class="tag red">#2</span></td><td>El plan del Sprint 1 (entrevistas, contador, competencia)</td><td>Cerrado sin unir: decidiste aprender primero. Su commit se deshizo con un <em>revert</em></td></tr>
   <tr><td><span class="tag blue">#3</span></td><td>La fase de aprendizaje, la guía de la Etapa 1, la competencia y este manual</td><td>Unido a <code>main</code> el 8 de noviembre</td></tr>
   <tr><td><span class="tag green">#4</span></td><td>El manual en un solo archivo HTML</td><td>Unido a <code>main</code> el 8 de noviembre</td></tr>
+  <tr><td><span class="tag green">#5</span></td><td>La limpieza de todo el repositorio</td><td>Unido a <code>main</code> el 8 de noviembre</td></tr>
+  <tr><td><span class="tag green">#6</span></td><td>La revisión de salud antes de empezar la Fase 1. Primer PR desde la rama <code>verificacion</code></td><td>Unido a <code>main</code> el 8 de noviembre</td></tr>
+  <tr><td><span class="tag green">#7</span></td><td>La ingesta del video sobre fábricas de software y la investigación asociada</td><td>Unido a <code>main</code> el 12 de noviembre</td></tr>
 </table></div>
 
 <h2 id="github-ciclo">El ciclo de un cambio</h2>
 <ol class="steps">
-  <li>Le pides algo al agente en Claude Code.</li>
-  <li>El agente trabaja en su rama (en este proyecto, <code>claude/magical-bohr-5nj070</code>) y hace commits.</li>
+  <li>Le pides algo al agente (en OpenCode o en Claude Code).</li>
+  <li>El agente trabaja en su rama (en este proyecto, <code>verificacion</code>; hasta el PR #5 fue <code>claude/magical-bohr-5nj070</code>) y hace commits.</li>
   <li>Hace <strong>push</strong>: los commits suben a GitHub, a esa rama.</li>
   <li>Abre un <strong>pull request</strong> hacia <code>main</code>, o añade los commits a uno que ya esté abierto.</li>
   <li>Tú revisas el PR en GitHub y decides: unir, pedir cambios o cerrar.</li>
@@ -1032,11 +1045,12 @@ etiquetas: [fase-1, etapa-1]
   <li><strong>No dejes PR abiertos mucho tiempo.</strong> Cuanto más esperan, más probable es un conflicto.</li>
   <li><strong>Deshaz con revert, nunca reescribiendo la historia.</strong></li>
   <li><strong>Un PR unido está terminado.</strong> El trabajo nuevo va en un PR nuevo.</li>
-  <li><strong>Nunca subas claves ni contraseñas al repositorio.</strong> Para eso existen los <a href="#nube-secretos">secretos de red</a>.</li>
+  <li><strong>Nunca subas claves ni contraseñas al repositorio.</strong> Para eso existen los <a href="#nube-secretos">secretos de red</a> (Claude Code) y el comando <code>/connect</code> (<a href="#opencode-modelo">OpenCode</a>).</li>
 </ol>
 
 <h2 id="github-permisos">Quién puede hacer qué</h2>
 <p>Claude Code entra a GitHub con la <strong>app de Claude para GitHub</strong>, que tú autorizaste para el repositorio <code>arvyonfoa/Arvyon</code>. En la nube, tus credenciales reales nunca entran en la máquina: un proxy de GitHub las pone por fuera. Ese proxy no permite borrar ramas ni subir etiquetas, y solo da acceso a los repositorios conectados a la sesión.</p>
+<p>OpenCode entra de otra forma: usa el Git de tu computador con tu propia cuenta, así que puede hacer lo mismo que tú. Por eso sus límites están escritos en <code>AGENTS.md</code>. Ver <a href="#opencode-github">conectar GitHub con OpenCode</a> y <a href="#opencode-protecciones">las protecciones</a>.</p>
 <div class="note"><p class="note-title">Quien une los PR eres tú</p><p>El agente puede abrir, actualizar y comentar pull requests, pero la decisión de unir o cerrar es tuya.</p></div>
 
       <nav class="pager"><a class="prev" href="#uso"><small>Anterior</small>Cómo se usa</a><a class="next" href="#nube"><small>Siguiente</small>La nube de Claude Code</a></nav></section><section class="chapter" id="nube" data-nombre="La nube de Claude Code">
@@ -1045,6 +1059,8 @@ etiquetas: [fase-1, etapa-1]
 <h1>La nube de Claude Code</h1>
 <p class="lead">Cuando usas Claude Code desde la web, la app de escritorio o el teléfono, el agente no trabaja en tu computador: trabaja en una máquina temporal en la nube. Entender eso explica por qué todo tiene que terminar en GitHub.</p>
 
+<div class="note"><p class="note-title">Solo para Claude Code</p><p>Este capítulo describe Claude Code en la nube. Con OpenCode el agente trabaja en tu computador y aquí no aplica nada: ve a <a href="#opencode">OpenCode en tu computador</a>.</p></div>
+
 <h2 id="nube-sesion">Qué es una sesión en la nube</h2>
 <p>Cada sesión recibe una <strong>máquina virtual nueva</strong>: un computador prestado, con Ubuntu 24.04, unos 4 procesadores, 16 GB de memoria y 30 GB de disco (límites aproximados que pueden cambiar). En esa máquina se clona tu repositorio, Claude trabaja y, al final, sube los cambios a GitHub.</p>
 <figure class="diagram">
@@ -1052,8 +1068,8 @@ etiquetas: [fase-1, etapa-1]
   <svg viewBox="0 0 760 250" role="img" aria-labelledby="d-ses-t">
     <title id="d-ses-t">Ciclo de vida de una sesión en la nube</title>
     <defs>
-  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
-  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+  <marker id="fl7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
 </defs>
     <rect x="10" y="30" width="130" height="70" rx="10" class="box-amber"/>
     <text x="75" y="60" text-anchor="middle" class="t-b">Abres sesión</text><text x="75" y="82" text-anchor="middle" class="t-s">repo + entorno</text>
@@ -1065,17 +1081,17 @@ etiquetas: [fase-1, etapa-1]
     <text x="540" y="60" text-anchor="middle" class="t-b">Clona el repo</text><text x="540" y="82" text-anchor="middle" class="t-m">arvyonfoa/Arvyon</text>
     <rect x="630" y="30" width="120" height="70" rx="10" class="box-a"/>
     <text x="690" y="60" text-anchor="middle" class="t-b">Claude</text><text x="690" y="82" text-anchor="middle" class="t-s">trabaja</text>
-    <path d="M142 65 L161 65" class="ln" marker-end="url(#fl)"/>
-    <path d="M297 65 L316 65" class="ln" marker-end="url(#fl)"/>
-    <path d="M452 65 L471 65" class="ln" marker-end="url(#fl)"/>
-    <path d="M607 65 L626 65" class="ln" marker-end="url(#fl)"/>
-    <path d="M690 102 L690 150" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M142 65 L161 65" class="ln" marker-end="url(#fl7)"/>
+    <path d="M297 65 L316 65" class="ln" marker-end="url(#fl7)"/>
+    <path d="M452 65 L471 65" class="ln" marker-end="url(#fl7)"/>
+    <path d="M607 65 L626 65" class="ln" marker-end="url(#fl7)"/>
+    <path d="M690 102 L690 150" class="ln-a" marker-end="url(#fla7)"/>
     <rect x="560" y="152" width="190" height="64" rx="10" class="box-green"/>
     <text x="655" y="180" text-anchor="middle" class="t-b">Commit y push</text><text x="655" y="200" text-anchor="middle" class="t-s">a GitHub: se guarda</text>
     <rect x="200" y="152" width="300" height="64" rx="10" class="box-red"/>
     <text x="350" y="180" text-anchor="middle" class="t-b">Inactiva: se pausa; luego se borra</text>
     <text x="350" y="200" text-anchor="middle" class="t-s">lo que no se subió, se pierde</text>
-    <path d="M556 184 L504 184" class="ln" marker-end="url(#fl)"/>
+    <path d="M556 184 L504 184" class="ln" marker-end="url(#fl7)"/>
   </svg>
   </div>
   <figcaption>Tras unos minutos sin actividad, la máquina se pausa con sus archivos; si pasa mucho tiempo, se recupera para otros usuarios y hay que empezar en una máquina nueva.</figcaption>
@@ -1120,8 +1136,8 @@ api.ejemplo.com
   <svg viewBox="0 0 760 220" role="img" aria-labelledby="d-sec-t">
     <title id="d-sec-t">Cómo viaja una petición con un secreto de red</title>
     <defs>
-  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
-  <marker id="fla" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+  <marker id="fl8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
 </defs>
     <rect x="10" y="50" width="200" height="110" rx="12" class="box"/>
     <text x="110" y="85" text-anchor="middle" class="t-b">Máquina de la sesión</text>
@@ -1135,8 +1151,8 @@ api.ejemplo.com
     <text x="650" y="85" text-anchor="middle" class="t-b">Servicio externo</text>
     <text x="650" y="108" text-anchor="middle" class="t-m">api.ejemplo.com</text>
     <text x="650" y="128" text-anchor="middle" class="t-s">responde normal</text>
-    <path d="M212 105 L286 105" class="ln" marker-end="url(#fl)"/>
-    <path d="M472 105 L546 105" class="ln-a" marker-end="url(#fla)"/>
+    <path d="M212 105 L286 105" class="ln" marker-end="url(#fl8)"/>
+    <path d="M472 105 L546 105" class="ln-a" marker-end="url(#fla8)"/>
     <text x="510" y="96" text-anchor="middle" class="t-a">+ clave</text>
     <text x="380" y="195" text-anchor="middle" class="t-s">La clave nunca entra en la máquina ni aparece en archivos o variables.</text>
   </svg>
@@ -1189,8 +1205,230 @@ ZONA_HORARIA=America/Bogota</code></pre>
 <div class="note ok"><p class="note-title">Hoy está bien así</p><p>El acceso completo es práctico para la investigación web de la Fase 1, y el entorno no guarda claves, así que hay poco que proteger.</p></div>
 <div class="note warn"><p class="note-title">Cuándo revisarlo</p><p>Si un día guardas un secreto de red (por ejemplo, la clave de un CRM o de WhatsApp para una demo), considera pasar a <strong>Personalizado</strong> con solo los sitios necesarios. Así, aunque el agente lea una página web con instrucciones maliciosas, no podrá enviar información a cualquier sitio.</p></div>
 
-      <nav class="pager"><a class="prev" href="#github"><small>Anterior</small>GitHub sin miedo</a><a class="next" href="#empresa"><small>Siguiente</small>Cómo se crea la empresa</a></nav></section><section class="chapter" id="empresa" data-nombre="Cómo se crea la empresa">
+      <nav class="pager"><a class="prev" href="#github"><small>Anterior</small>GitHub sin miedo</a><a class="next" href="#opencode"><small>Siguiente</small>OpenCode en tu computador</a></nav></section><section class="chapter" id="opencode" data-nombre="OpenCode en tu computador">
       <p class="eyebrow">Capítulo 7</p>
+
+<h1>OpenCode en tu computador</h1>
+<p class="lead">OpenCode es un agente de código abierto que trabaja en tu propio computador, no en la nube. Este capítulo explica qué cambia frente a Claude Code, cómo se instala, cómo se conecta con GitHub y cómo conservar las protecciones que antes ponía la nube.</p>
+
+<div class="note"><p class="note-title">De dónde sale este capítulo</p><p>Se escribió con la documentación oficial de OpenCode, versión 2, leída el 12 de noviembre de 2026 (<code>opencode.ai/docs</code>). El agente <strong>no instaló ni probó</strong> OpenCode. Como la herramienta cambia rápido, si un comando no funciona como dice aquí, manda la documentación oficial. Las notas de la lectura están en <code>raw/articulos/2026-11-12-investigacion-web-opencode.md</code>.</p></div>
+
+<h2 id="opencode-que-es">Qué es y qué cambia</h2>
+<p>Con Claude Code en la nube, el agente trabajaba en una máquina prestada que se borraba. Con OpenCode, el agente trabaja sobre <strong>la carpeta del repositorio que está en tu disco</strong>: la misma que abres con Obsidian. OpenCode no trae un modelo de IA propio: tú eliges a cuál se conecta.</p>
+<figure class="diagram">
+  <div class="svg-wrap">
+  <svg viewBox="0 0 760 300" role="img" aria-labelledby="d-oc-t">
+    <title id="d-oc-t">Cómo se conectan el fundador, OpenCode, el modelo de IA, la carpeta local, Obsidian y GitHub</title>
+    <defs>
+  <marker id="fl9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker>
+  <marker id="fla9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head-a"/></marker>
+</defs>
+    <rect x="20" y="30" width="150" height="80" rx="10" class="box-amber"/>
+    <text x="95" y="65" text-anchor="middle" class="t-b">Tú</text>
+    <text x="95" y="86" text-anchor="middle" class="t-s">pides y decides</text>
+
+    <rect x="270" y="30" width="200" height="80" rx="10" class="box-a"/>
+    <text x="370" y="65" text-anchor="middle" class="t-b">OpenCode</text>
+    <text x="370" y="86" text-anchor="middle" class="t-s">el agente, en tu computador</text>
+
+    <rect x="590" y="30" width="150" height="80" rx="10" class="box-violet"/>
+    <text x="665" y="65" text-anchor="middle" class="t-b">Modelo de IA</text>
+    <text x="665" y="86" text-anchor="middle" class="t-s">el proveedor que elijas</text>
+
+    <rect x="20" y="200" width="150" height="80" rx="10" class="box-green"/>
+    <text x="95" y="235" text-anchor="middle" class="t-b">Obsidian</text>
+    <text x="95" y="256" text-anchor="middle" class="t-s">lees la misma carpeta</text>
+
+    <rect x="270" y="200" width="200" height="80" rx="10" class="box"/>
+    <text x="370" y="235" text-anchor="middle" class="t-b">Carpeta Arvyon</text>
+    <text x="370" y="256" text-anchor="middle" class="t-s">copia local del repositorio</text>
+
+    <rect x="590" y="200" width="150" height="80" rx="10" class="box"/>
+    <text x="665" y="235" text-anchor="middle" class="t-b">GitHub</text>
+    <text x="665" y="256" text-anchor="middle" class="t-m">arvyonfoa/Arvyon</text>
+
+    <path d="M172 70 L266 70" class="ln-a" marker-end="url(#fla9)"/>
+    <text x="219" y="58" text-anchor="middle" class="t-a">pides</text>
+    <path d="M474 70 L586 70" class="ln" marker-start="url(#fl9)" marker-end="url(#fl9)"/>
+    <text x="530" y="58" text-anchor="middle" class="t-s">texto y respuesta</text>
+    <path d="M370 112 L370 196" class="ln-a" marker-end="url(#fla9)"/>
+    <text x="382" y="150" class="t-a">lee, escribe y usa Git</text>
+    <text x="382" y="168" class="t-s">sigue las reglas de AGENTS.md</text>
+    <path d="M266 240 L174 240" class="ln" marker-end="url(#fl9)"/>
+    <text x="220" y="228" text-anchor="middle" class="t-s">al instante</text>
+    <path d="M474 240 L586 240" class="ln-a" marker-start="url(#fla9)" marker-end="url(#fla9)"/>
+    <text x="530" y="228" text-anchor="middle" class="t-a">push y pull</text>
+    <text x="530" y="262" text-anchor="middle" class="t-s">con tu cuenta</text>
+  </svg>
+  </div>
+  <figcaption>Del computador solo salen dos cosas: el texto que OpenCode envía al modelo de IA (incluido el contenido de los archivos que lee) y los commits que suben a GitHub.</figcaption>
+</figure>
+<div class="table-wrap"><table>
+  <tr><th>Tema</th><th>Claude Code en la nube</th><th>OpenCode en tu computador</th></tr>
+  <tr><td>Dónde trabaja el agente</td><td>En una máquina temporal que se borra</td><td>En tu computador, sobre tu copia del repositorio</td></tr>
+  <tr><td>Qué archivo de reglas lee</td><td><code>CLAUDE.md</code> (que ahora importa <code>AGENTS.md</code>)</td><td><strong>Solo <code>AGENTS.md</code>.</strong> La versión 2 ya no lee <code>CLAUDE.md</code></td></tr>
+  <tr><td>Cómo entra a GitHub</td><td>Con la app de Claude para GitHub y un proxy</td><td>Con el Git de tu computador y tu propia cuenta</td></tr>
+  <tr><td>Modelo de IA</td><td>Claude</td><td>El que conectes con <code>/connect</code></td></tr>
+  <tr><td>Dónde van las claves</td><td>En los secretos de red del entorno</td><td>En tu computador, guardadas por <code>/connect</code></td></tr>
+  <tr><td>Qué hace sin preguntar</td><td>Lo que permita el modo de permisos de la sesión</td><td>Casi todo: por defecto solo pregunta antes de leer archivos <code>.env</code></td></tr>
+  <tr><td>Si cierras sin subir</td><td>El trabajo se pierde cuando la máquina se borra</td><td>El trabajo sigue en tu disco, pero GitHub no lo tiene</td></tr>
+  <tr><td>Cuándo ves los cambios en Obsidian</td><td>Después de unir el PR y hacer <em>pull</em></td><td>Al instante, porque es la misma carpeta</td></tr>
+</table></div>
+<div class="note ok"><p class="note-title">El cerebro ya está preparado</p><p>Las reglas pasaron de <code>CLAUDE.md</code> a <code>AGENTS.md</code>, que vale para cualquier agente. Hay uno en la raíz del repositorio y otro, el completo, en <code>Cerebro/</code>. No tienes que cambiar nada en los archivos para empezar.</p></div>
+
+<h2 id="opencode-instalar">Instalar OpenCode</h2>
+<p>Hay dos formas. Elige una; las dos usan la misma carpeta y las mismas reglas.</p>
+<div class="grid">
+  <div class="card"><p class="card-kicker">Opción A · la más sencilla</p><h3>Aplicación de escritorio</h3><p>Se descarga desde <code>opencode.ai</code>. Hay versión para macOS (Apple silicon e Intel), Windows (x64 y ARM64) y Linux. Se instala como cualquier programa y, al abrirla, eliges la carpeta del proyecto.</p></div>
+  <div class="card"><p class="card-kicker">Opción B</p><h3>Terminal</h3><p>Se instala con un comando y se abre escribiendo <code>opencode</code> dentro de la carpeta del proyecto. Es la forma que describe casi toda la documentación.</p></div>
+</div>
+<h3>Comandos de instalación en la terminal</h3>
+<pre><code># macOS y Linux
+curl -fsSL https://opencode.ai/v2/install | bash
+
+# Con Homebrew (macOS)
+brew install anomalyco/tap/opencode-v2
+
+# Con npm (cualquier sistema que tenga Node.js)
+npm install -g @opencode/cli
+
+# Actualizar más adelante
+opencode upgrade</code></pre>
+<div class="note warn"><p class="note-title">En Windows</p><p>La documentación dice que los gestores de paquetes de Windows no están soportados. Usa la aplicación de escritorio o descarga el archivo <code>.zip</code> con el programa desde el sitio oficial.</p></div>
+
+<h2 id="opencode-modelo">Conectar un modelo de IA</h2>
+<ol class="steps">
+  <li>Abre OpenCode y escribe <code>/connect</code>.</li>
+  <li>Elige un proveedor de la lista y sigue los pasos: iniciar sesión en el navegador o escribir la clave en el cuadro que abre OpenCode.</li>
+  <li>Escribe <code>/models</code> y elige el modelo con el que vas a trabajar.</li>
+</ol>
+<div class="table-wrap"><table>
+  <tr><th>Opción</th><th>Cómo se conecta</th><th>Qué pagas</th></tr>
+  <tr><td><strong>OpenCode Go</strong></td><td>Te suscribes en la consola de OpenCode, copias la clave y la conectas como «OpenCode Go»</td><td class="num">10 USD al mes</td></tr>
+  <tr><td><strong>Plan ChatGPT Plus o Pro</strong></td><td><code>/connect</code> → OpenAI → <em>Sign in with ChatGPT</em></td><td>Tu plan actual; el uso cuenta contra ese plan</td></tr>
+  <tr><td><strong>GitHub Copilot</strong></td><td><code>/connect</code> → GitHub Copilot → <em>Login with GitHub Copilot</em></td><td>Tu plan de Copilot; la cuenta necesita acceso a Copilot Chat</td></tr>
+  <tr><td><strong>Clave de API de un proveedor</strong> (por ejemplo, Anthropic, para seguir con Claude)</td><td><code>/connect</code> → el proveedor → pegas la clave en el cuadro</td><td>Pago por uso, según lo que consumas</td></tr>
+</table></div>
+<div class="note warn"><p class="note-title">Por verificar</p><p>La documentación de OpenCode no dice si se puede usar una suscripción personal de Claude (Pro o Max). Lo seguro es contar con una clave de API de pago por uso si quieres seguir con Claude. Tampoco dice en qué carpeta guarda las claves.</p></div>
+<div class="note bad"><p class="note-title">Las claves nunca van en el chat</p><p>Escríbelas solo en el cuadro que abre <code>/connect</code>. No las pegues en un mensaje al agente ni las guardes en un archivo del repositorio.</p></div>
+<p>No todas las tareas necesitan el modelo más caro. La página <code>enrutamiento-de-modelos</code> de la wiki explica cómo elegir.</p>
+
+<h2 id="opencode-github">Conectar GitHub con OpenCode</h2>
+<p>OpenCode no necesita una «app» para entrar a GitHub, como Claude Code en la nube. Usa el programa <strong>Git</strong> de tu computador con <strong>tu cuenta</strong>. «Conectar GitHub» puede significar tres cosas, y solo la primera es necesaria.</p>
+<div class="table-wrap"><table>
+  <tr><th>Forma</th><th>Para qué sirve</th><th>¿Hace falta?</th></tr>
+  <tr><td><strong>1 · Git en tu computador</strong></td><td>Que el agente pueda traer cambios, hacer commits y subirlos al repositorio</td><td><span class="tag green">Sí</span></td></tr>
+  <tr><td><strong>2 · GitHub Copilot como modelo</strong></td><td>Usar tu cuenta de GitHub para darle un modelo de IA a OpenCode</td><td><span class="tag">Opcional</span></td></tr>
+  <tr><td><strong>3 · OpenCode dentro de GitHub</strong></td><td>Que OpenCode responda cuando lo mencionas en un comentario de un pull request</td><td><span class="tag amber">Más adelante</span></td></tr>
+</table></div>
+
+<h3 id="opencode-github-git">1 · Git en tu computador con tu cuenta (necesaria)</h3>
+<ol class="steps">
+  <li>Instala <strong>Git</strong> y <strong>GitHub CLI</strong> (el programa <code>gh</code>, de GitHub). GitHub CLI guarda tu inicio de sesión para que Git pueda subir cambios sin pedirte la contraseña.</li>
+  <li>En la terminal, escribe <code>gh auth login</code>. Elige <em>GitHub.com</em>, protocolo <em>HTTPS</em>, acepta que Git use esas credenciales e inicia sesión en el navegador.</li>
+  <li>Si todavía no tienes el repositorio en tu computador, clónalo con <code>gh repo clone arvyonfoa/Arvyon</code>. Si ya lo clonaste con GitHub Desktop para Obsidian, usa esa misma carpeta: no hace falta una segunda copia.</li>
+  <li>Entra a la carpeta del cerebro y abre OpenCode: <code>cd Arvyon/Cerebro</code> y después <code>opencode</code>. En la aplicación de escritorio, elige la carpeta <code>Arvyon/Cerebro</code>.</li>
+  <li>Comprueba la conexión con el mensaje de abajo.</li>
+</ol>
+<pre><code>gh auth login
+gh repo clone arvyonfoa/Arvyon
+cd Arvyon/Cerebro
+opencode</code></pre>
+<div class="prompt">Ejecuta git status y git remote -v. Dime en qué rama estamos y si puedes conectarte a GitHub. No cambies nada.</div>
+<div class="note"><p class="note-title">Si el agente no logra subir los cambios</p><p>No pasa nada: sus commits quedan guardados en tu computador. Abre <strong>GitHub Desktop</strong>, pulsa <em>Push origin</em> y, si hace falta, <em>Create Pull Request</em>. El resultado es el mismo.</p></div>
+
+<h3 id="opencode-github-ciclo">El ciclo de un cambio con OpenCode</h3>
+<ol class="steps">
+  <li>Al empezar, el agente trae lo último de GitHub (<code>git pull</code>). Lo manda <code>AGENTS.md</code>.</li>
+  <li>Le pides algo. El agente trabaja en la rama <code>verificacion</code>, nunca en <code>main</code>.</li>
+  <li>Hace commits y <strong>push</strong> a <code>verificacion</code>.</li>
+  <li>Se abre el <strong>pull request</strong> hacia <code>main</code>. Lo abre el agente con <code>gh pr create</code>, o lo abres tú en github.com con el botón <em>Compare &amp; pull request</em>.</li>
+  <li>Tú revisas y unes el PR en GitHub, igual que antes. Ver <a href="#github-decidir">cómo revisar y decidir</a>.</li>
+  <li>Después de unir, pide al agente: «trae main y pon la rama de trabajo al día».</li>
+</ol>
+
+<h3 id="opencode-github-copilot">2 · GitHub Copilot como modelo (opcional)</h3>
+<p>Si tu cuenta de GitHub tiene Copilot, OpenCode puede usar sus modelos: <code>/connect</code> → <em>GitHub Copilot</em> → <em>Login with GitHub Copilot</em>, y después <code>/models</code>. Esto <strong>no</strong> le da acceso al repositorio: solo usa tu cuenta de GitHub como proveedor del modelo de IA. El acceso al repositorio siempre es el de la forma 1.</p>
+
+<h3 id="opencode-github-actions">3 · OpenCode dentro de GitHub (más adelante)</h3>
+<p>Existe una integración para que OpenCode trabaje desde GitHub, sin tu computador: escribes <code>/opencode</code> o <code>/oc</code> en un comentario de un <em>issue</em> o de un pull request, y un proceso de GitHub Actions responde, corrige o abre un PR.</p>
+<div class="table-wrap"><table>
+  <tr><th>Paso</th><th>Qué dice la documentación (versión 1)</th></tr>
+  <tr><td>Instalar</td><td>Dentro de la carpeta del repositorio: <code>opencode github install</code>. Un asistente instala la app de GitHub <code>opencode-agent</code>, crea el archivo <code>.github/workflows/opencode.yml</code> y pide los secretos</td></tr>
+  <tr><td>Clave del modelo</td><td>Se guarda en GitHub, en <em>Settings → Secrets and variables → Actions</em>, no en el repositorio</td></tr>
+  <tr><td>Uso</td><td>Comentar <code>/oc explica este cambio</code> o <code>/oc corrige esto</code> en un PR o en un <em>issue</em></td></tr>
+</table></div>
+<div class="note warn"><p class="note-title">Por verificar · no lo actives todavía</p><p>Esta integración está documentada para la <strong>versión 1</strong>. La documentación de la versión 2 no tiene el comando <code>opencode github</code>: solo muestra un ejemplo de GitHub Actions que revisa un PR con <code>opencode run --standalone</code>. Además, exige guardar una clave de pago en GitHub y deja que un agente escriba en el repositorio sin que tú estés delante. Para el cerebro no hace falta: con la forma 1 basta.</p></div>
+
+<h2 id="opencode-protecciones">Las protecciones que ya no pone la herramienta</h2>
+<p>En la nube, varias protecciones venían puestas. En tu computador, el agente actúa con <strong>tu</strong> cuenta y con tus permisos. Por eso las protecciones pasaron a estar escritas como reglas.</p>
+<div class="table-wrap"><table>
+  <tr><th>Protección</th><th>En Claude Code (nube)</th><th>En OpenCode</th></tr>
+  <tr><td>No tocar <code>main</code></td><td>La sesión solo podía subir a su rama</td><td>Regla en <code>AGENTS.md</code>: trabajar en <code>verificacion</code></td></tr>
+  <tr><td>No reescribir la historia (<em>force push</em>)</td><td>Bloqueado por la herramienta</td><td>Regla en <code>AGENTS.md</code>; se puede bloquear con el archivo de permisos</td></tr>
+  <tr><td>Solo tú unes los PR</td><td>El agente no podía unirlos</td><td>Regla en <code>AGENTS.md</code>. Ojo: con tu cuenta, técnicamente podría</td></tr>
+  <tr><td>Las claves fuera de la vista del agente</td><td>Secretos de red</td><td><code>/connect</code>; nunca en el chat ni en el repositorio</td></tr>
+  <tr><td>Pedir permiso antes de actuar</td><td>Según el modo de la sesión</td><td>Por defecto no pregunta casi nada</td></tr>
+</table></div>
+<h3>Refuerzo opcional: un archivo de permisos</h3>
+<p>OpenCode lee un archivo <code>opencode.jsonc</code> en la carpeta del proyecto. Con estas reglas pregunta antes de cada <em>push</em> y se niega a hacer <em>force push</em> o a unir un PR. Gana la última regla que coincide, así que las prohibiciones van al final.</p>
+<pre><code>{
+  "$schema": "https://opencode.ai/config.json",
+  "permissions": [
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
+    { "action": "shell", "resource": "git push --force *", "effect": "deny" },
+    { "action": "shell", "resource": "git push -f *", "effect": "deny" },
+    { "action": "shell", "resource": "gh pr merge *", "effect": "deny" }
+  ]
+}</code></pre>
+<div class="note warn"><p class="note-title">Ejemplo sin probar</p><p>Está construido con los patrones de la documentación, pero no se probó. El archivo <strong>no está creado</strong> en el repositorio. Si lo quieres, pídeselo al agente y comprueba con él que funciona.</p></div>
+<div class="prompt">Crea opencode.jsonc en la raíz del repositorio con las reglas de permisos del capítulo 7 del manual, comprueba que OpenCode lo carga sin errores y explícame cómo lo probaste.</div>
+<p>GitHub también permite proteger la rama <code>main</code> desde la web del repositorio (<em>Settings → Rules</em>) para que nadie pueda subir a ella sin un pull request. Es la protección más fuerte, porque no depende del agente. <strong>Por verificar:</strong> si está disponible en tu plan de GitHub para este repositorio.</p>
+
+<h2 id="opencode-sesion">Una sesión de trabajo</h2>
+<ol class="steps">
+  <li>Abre OpenCode en <code>Arvyon/Cerebro</code>.</li>
+  <li>Di qué quieres hacer. El agente lee <code>AGENTS.md</code> por su cuenta, sincroniza con GitHub y lee el índice y el registro.</li>
+  <li>Trabaja con él: sesión de estudio, ingesta, consulta o revisión. Los flujos son los del <a href="#uso">capítulo 4</a>.</li>
+  <li>Antes de cerrar, pide que termine la sesión: revisión de salud, registro, commit, push y pull request.</li>
+</ol>
+<div class="prompt">Hola. Sincroniza con GitHub, dime en qué fase estamos y propón la sesión de estudio de hoy.</div>
+<div class="prompt">Termina la sesión: revisión de salud, entrada en el registro, commit, push a verificacion y abre el pull request hacia main.</div>
+<div class="table-wrap"><table>
+  <tr><th>Qué escribes</th><th>Qué hace</th></tr>
+  <tr><td><code>/connect</code></td><td>Conecta un proveedor de modelos</td></tr>
+  <tr><td><code>/models</code></td><td>Cambia de modelo</td></tr>
+  <tr><td><code>/new</code></td><td>Empieza una conversación nueva</td></tr>
+  <tr><td><code>/sessions</code></td><td>Vuelve a una conversación anterior</td></tr>
+  <tr><td><code>/undo</code></td><td>Deshace tu último mensaje y los cambios en archivos que vinieron después</td></tr>
+  <tr><td><code>/redo</code></td><td>Recupera lo que deshiciste con <code>/undo</code></td></tr>
+  <tr><td><code>/btw</code> y una pregunta</td><td>Hace una pregunta rápida sin añadirla a la conversación</td></tr>
+  <tr><td><code>@</code> y un nombre de archivo</td><td>Adjunta ese archivo al mensaje</td></tr>
+  <tr><td><code>!</code> al principio de un mensaje vacío</td><td>Ejecuta un comando de terminal, por ejemplo <code>git status</code></td></tr>
+  <tr><td><kbd>Ctrl</kbd> + <kbd>P</kbd></td><td>Abre la lista de todos los comandos</td></tr>
+</table></div>
+<div class="note"><p class="note-title">Qué deshace <code>/undo</code> y qué no</p><p>Deshace cambios en archivos que aún están en tu computador. No deshace lo que ya subió a GitHub ni los efectos de comandos de terminal. Para deshacer algo que ya está en GitHub se pide un <em>revert</em>.</p></div>
+
+<h2 id="opencode-obsidian">OpenCode y Obsidian en la misma carpeta</h2>
+<p>Como el agente escribe en la misma carpeta que lee Obsidian, ves cada página nueva en cuanto se guarda. Ten presentes dos cosas:</p>
+<ol class="steps">
+  <li><strong>Lo que ves en Obsidian puede no estar todavía en <code>main</code>.</strong> Mientras no unas el pull request, es una propuesta que vive en la rama de trabajo.</li>
+  <li><strong>No escribas en Obsidian mientras el agente trabaja.</strong> Lee en Obsidian y pide los cambios al agente.</li>
+</ol>
+
+<h2 id="opencode-claude-code">¿Y Claude Code?</h2>
+<p>Sigue funcionando. <code>CLAUDE.md</code> ya no tiene reglas propias: importa <code>AGENTS.md</code>, así que los dos agentes siguen exactamente las mismas. El <a href="#nube">capítulo 6</a> sigue valiendo para cuando uses Claude Code.</p>
+<div class="note warn"><p class="note-title">Si alternas entre los dos</p><p>Termina siempre con commit y push, y empieza siempre trayendo lo último de GitHub. Así las dos copias (la de la nube y la de tu computador) no se separan.</p></div>
+
+<h2 id="opencode-errores">Errores comunes</h2>
+<details class="fold"><summary><span>OpenCode no sigue las reglas del cerebro</span></summary><div class="fold-body"><p>Casi siempre es porque se abrió en otra carpeta. Ábrelo en <code>Arvyon/Cerebro</code> (o en <code>Arvyon</code>). Si sigue igual, dile: «Lee AGENTS.md y Cerebro/AGENTS.md completos antes de seguir». Como último recurso, pega el prompt maestro.</p></div></details>
+<details class="fold"><summary><span>El push falla o pide usuario y contraseña</span></summary><div class="fold-body"><p>Falta iniciar sesión: escribe <code>gh auth login</code> en la terminal. Mientras tanto, puedes subir los commits con GitHub Desktop (<em>Push origin</em>).</p></div></details>
+<details class="fold"><summary><span>El agente hizo commits en <code>main</code></span></summary><div class="fold-body"><p>Si todavía no los subió, pídele: «Pasa esos commits a la rama verificacion y deja main igual que en GitHub». Si ya los subió, no borres nada: pide un <em>revert</em> y que rehaga el cambio en la rama de trabajo.</p></div></details>
+<details class="fold"><summary><span>Usé Claude Code y OpenCode el mismo día y Git habla de conflictos</span></summary><div class="fold-body"><p>Las dos copias cambiaron el mismo archivo. Pide al agente: «Trae los cambios de GitHub y resuelve los conflictos sin perder nada; explícame qué elegiste». Después revisa el PR.</p></div></details>
+<details class="fold"><summary><span>Un comando de este capítulo no existe</span></summary><div class="fold-body"><p>Puede que tu versión sea distinta. Actualiza con <code>opencode upgrade</code>, abre la lista de comandos con <kbd>Ctrl</kbd> + <kbd>P</kbd> y consulta <code>opencode.ai/docs</code>.</p></div></details>
+
+      <nav class="pager"><a class="prev" href="#nube"><small>Anterior</small>La nube de Claude Code</a><a class="next" href="#empresa"><small>Siguiente</small>Cómo se crea la empresa</a></nav></section><section class="chapter" id="empresa" data-nombre="Cómo se crea la empresa">
+      <p class="eyebrow">Capítulo 8</p>
 
 <h1>Cómo se crea la empresa</h1>
 <p class="lead">Este capítulo cuenta cómo se está construyendo Arvyon: qué se hizo hasta hoy, qué viene después y qué decisiones faltan. El cerebro registra cada paso, así que siempre puedes reconstruir por qué se hizo algo.</p>
@@ -1234,6 +1472,8 @@ ZONA_HORARIA=America/Bogota</code></pre>
   <tr><td class="num">2026-11-03</td><td>Se propuso un Sprint 1 con entrevistas y consulta al contador</td><td>PR #2, cerrado sin unir</td></tr>
   <tr><td class="num">2026-11-06</td><td>Decisión: primero aprender, después actuar</td><td><code>dec-009-fase-de-aprendizaje</code></td></tr>
   <tr><td class="num">2026-11-08</td><td>Fechas de la Fase 1, prompt maestro actualizado, guía de la Etapa 1, barrido de competidores y este manual</td><td>PR #3</td></tr>
+  <tr><td class="num">2026-11-11</td><td>Investigación sobre fábricas de IA, arneses de agentes y enrutamiento de modelos, a partir de un video</td><td>PR #7</td></tr>
+  <tr><td class="num">2026-11-12</td><td>Migración a OpenCode: las reglas pasan a <code>AGENTS.md</code> y el manual llega a la versión 2.0</td><td><code>Cerebro/AGENTS.md</code> · <a href="#opencode">capítulo 7</a></td></tr>
 </table></div>
 
 <h2 id="empresa-fase-1">Fase 1 · Aprender (9 de noviembre a 15 de diciembre)</h2>
@@ -1300,8 +1540,8 @@ ZONA_HORARIA=America/Bogota</code></pre>
   <li><strong>Todo queda en GitHub</strong> a través de pull requests que tú revisas.</li>
 </ol>
 
-      <nav class="pager"><a class="prev" href="#nube"><small>Anterior</small>La nube de Claude Code</a><a class="next" href="#glosario"><small>Siguiente</small>Glosario y preguntas</a></nav></section><section class="chapter" id="glosario" data-nombre="Glosario y preguntas">
-      <p class="eyebrow">Capítulo 8</p>
+      <nav class="pager"><a class="prev" href="#opencode"><small>Anterior</small>OpenCode en tu computador</a><a class="next" href="#glosario"><small>Siguiente</small>Glosario y preguntas</a></nav></section><section class="chapter" id="glosario" data-nombre="Glosario y preguntas">
+      <p class="eyebrow">Capítulo 9</p>
 
 <h1>Glosario y preguntas frecuentes</h1>
 <p class="lead">Todas las palabras nuevas del manual, en orden alfabético y con buscador.</p>
@@ -1310,13 +1550,13 @@ ZONA_HORARIA=America/Bogota</code></pre>
 <label for="gloss-search" class="nav-title">Buscar un término</label>
 <input id="gloss-search" class="search" type="search" placeholder="Por ejemplo: rama, secreto, ingesta" autocomplete="off">
 <div class="gloss">
-<dl class="def"><dt>Agente</dt><dd>Un programa de IA que no solo responde, sino que ejecuta tareas: lee archivos, escribe, busca en la web, hace commits. Claude Code es un agente.</dd></dl>
-<dl class="def"><dt>AGENTS.md</dt><dd>Archivo con las instrucciones para agentes distintos de Claude Code (OpenCode, Codex). En Arvyon remite a CLAUDE.md.</dd></dl>
+<dl class="def"><dt>Agente</dt><dd>Un programa de IA que no solo responde, sino que ejecuta tareas: lee archivos, escribe, busca en la web, hace commits. OpenCode y Claude Code son agentes.</dd></dl>
+<dl class="def"><dt>AGENTS.md</dt><dd>Archivo con las reglas que el agente lee al trabajar en una carpeta. Es el esquema operativo del cerebro y vale para cualquier agente (OpenCode, Claude Code, Codex).</dd></dl>
 <dl class="def"><dt>Alfabetización en IA</dt><dd>Saber usar la IA con criterio y de forma segura. El Reglamento Europeo de IA pide a las empresas que forman a su personal en esto.</dd></dl>
 <dl class="def"><dt>API</dt><dd>La forma en que dos programas se comunican. Una automatización usa APIs para conectar, por ejemplo, WhatsApp con una hoja de cálculo.</dd></dl>
 <dl class="def"><dt>Branch / rama</dt><dd>Una línea de trabajo paralela en Git. Los cambios se hacen en una rama y se unen a main con un pull request.</dd></dl>
 <dl class="def"><dt>Callout</dt><dd>Recuadro de color en Obsidian. En el cerebro marcan Hecho, Estimación, Supuesto, Por verificar y Contradicción.</dd></dl>
-<dl class="def"><dt>CLAUDE.md</dt><dd>Archivo de reglas que Claude Code lee al trabajar en una carpeta. Es el esquema operativo del cerebro.</dd></dl>
+<dl class="def"><dt>CLAUDE.md</dt><dd>Archivo que Claude Code lee al trabajar en una carpeta. En Arvyon no tiene reglas propias: solo importa AGENTS.md.</dd></dl>
 <dl class="def"><dt>Claude Code</dt><dd>El agente de Anthropic para trabajar con archivos y código. Se usa en la web, el escritorio, el teléfono o la terminal.</dd></dl>
 <dl class="def"><dt>Clonar</dt><dd>Descargar una copia completa de un repositorio a tu computador.</dd></dl>
 <dl class="def"><dt>Commit</dt><dd>Una foto guardada de los cambios, con un mensaje. Forma el historial del repositorio.</dd></dl>
@@ -1325,12 +1565,13 @@ ZONA_HORARIA=America/Bogota</code></pre>
 <dl class="def"><dt>Dataview</dt><dd>Plugin de Obsidian que crea tablas automáticas a partir de la ficha de las páginas. Lo usa el tablero.</dd></dl>
 <dl class="def"><dt>Diff</dt><dd>La comparación entre el antes y el después de un archivo.</dd></dl>
 <dl class="def"><dt>Entorno en la nube</dt><dd>La configuración guardada con la que arrancan las sesiones de Claude Code: acceso a la red, secretos, script y variables.</dd></dl>
-<dl class="def"><dt>Esquema</dt><dd>La capa de reglas del cerebro: CLAUDE.md, AGENTS.md y el prompt maestro.</dd></dl>
+<dl class="def"><dt>Esquema</dt><dd>La capa de reglas del cerebro: AGENTS.md (que CLAUDE.md importa) y el prompt maestro.</dd></dl>
 <dl class="def"><dt>Fase 1 / Fase 2</dt><dd>Las dos fases de Arvyon: Aprender (9 nov – 15 dic de 2026) y Actuar (cuando se cumplan los criterios de paso).</dd></dl>
-<dl class="def"><dt>Force push</dt><dd>Subir cambios reescribiendo la historia de una rama. Peligroso; Claude Code lo tiene bloqueado.</dd></dl>
+<dl class="def"><dt>Force push</dt><dd>Subir cambios reescribiendo la historia de una rama. Peligroso; Claude Code lo tiene bloqueado y AGENTS.md lo prohíbe con cualquier agente.</dd></dl>
 <dl class="def"><dt>Frontmatter</dt><dd>La ficha entre líneas --- al principio de cada página: tipo, área, estado, confianza, resumen, fuentes y fechas.</dd></dl>
 <dl class="def"><dt>Fuente</dt><dd>Material original que se guarda en raw/ y se resume en wiki/14-fuentes/.</dd></dl>
 <dl class="def"><dt>GitHub</dt><dd>El servicio en internet donde vive el repositorio con todo su historial.</dd></dl>
+<dl class="def"><dt>GitHub CLI (gh)</dt><dd>Programa oficial de GitHub para la terminal. Con «gh auth login» guarda tu inicio de sesión para que Git pueda subir cambios; con «gh pr create» abre un pull request.</dd></dl>
 <dl class="def"><dt>Índice (index.md)</dt><dd>El catálogo de todas las páginas del cerebro. El agente lo lee primero en cada consulta.</dd></dl>
 <dl class="def"><dt>Ingesta</dt><dd>Darle una fuente al agente para que la lea, la resuma y la integre en todas las páginas afectadas.</dd></dl>
 <dl class="def"><dt>JSON</dt><dd>Formato de texto en el que viajan los datos entre aplicaciones.</dd></dl>
@@ -1342,8 +1583,9 @@ ZONA_HORARIA=America/Bogota</code></pre>
 <dl class="def"><dt>Método 4D</dt><dd>El método de trabajo de Arvyon: Descubrir, Diseñar, Desplegar y Demostrar.</dd></dl>
 <dl class="def"><dt>n8n</dt><dd>Herramienta de automatización sin código, la más usada por la competencia que atiende pymes en Colombia.</dd></dl>
 <dl class="def"><dt>Obsidian</dt><dd>Aplicación gratuita para leer y navegar archivos Markdown enlazados. Es el lector del cerebro.</dd></dl>
-<dl class="def"><dt>OpenCode</dt><dd>Agente de código abierto que funciona en tu computador; lee AGENTS.md.</dd></dl>
+<dl class="def"><dt>OpenCode</dt><dd>Agente de código abierto que funciona en tu computador, en la terminal o en una aplicación de escritorio. Lee AGENTS.md, usa el modelo de IA que conectes y entra a GitHub con el Git de tu computador.</dd></dl>
 <dl class="def"><dt>Prompt maestro</dt><dd>El documento completo con el rol, las reglas, los flujos, la agenda y el currículo del cerebro (PROMPT-MAESTRO.md).</dd></dl>
+<dl class="def"><dt>Proveedor de modelos</dt><dd>La empresa o el servicio que pone el modelo de IA que usa un agente. En OpenCode se conecta con /connect.</dd></dl>
 <dl class="def"><dt>Proxy</dt><dd>Un intermediario por el que pasan las conexiones de la máquina en la nube. Filtra sitios y añade credenciales por fuera.</dd></dl>
 <dl class="def"><dt>Pull</dt><dd>Bajar a tu computador los cambios que hay en GitHub.</dd></dl>
 <dl class="def"><dt>Pull request (PR)</dt><dd>Solicitud para unir los cambios de una rama a main, con revisión previa.</dd></dl>
@@ -1367,16 +1609,18 @@ ZONA_HORARIA=America/Bogota</code></pre>
 
 <h2 id="glosario-preguntas">Preguntas frecuentes</h2>
 <details class="fold"><summary><span>¿Tengo que escribir las páginas yo?</span></summary><div class="fold-body"><p>No. Tú das fuentes e instrucciones; el agente escribe. Si quieres corregir algo, díselo y él lo cambia.</p></div></details>
-<details class="fold"><summary><span>¿Qué pasa si cierro el chat sin pedir commit?</span></summary><div class="fold-body"><p>Lo que no se subió a GitHub se pierde cuando la máquina de la sesión se recupera. Pide siempre «haz commit y push» antes de terminar.</p></div></details>
-<details class="fold"><summary><span>¿Puedo usar otro agente que no sea Claude Code?</span></summary><div class="fold-body"><p>Sí. OpenCode y otros leen AGENTS.md. Si notas que no siguen las reglas, pégales el prompt maestro completo.</p></div></details>
+<details class="fold"><summary><span>¿Qué pasa si cierro el chat sin pedir commit?</span></summary><div class="fold-body"><p>En Claude Code, lo que no se subió a GitHub se pierde cuando la máquina de la sesión se recupera. En OpenCode queda en tu disco, pero GitHub no lo tiene. Pide siempre «haz commit y push» antes de terminar.</p></div></details>
+<details class="fold"><summary><span>¿Puedo usar otro agente que no sea Claude Code?</span></summary><div class="fold-body"><p>Sí. Las reglas están en AGENTS.md, que leen OpenCode, Codex y otros agentes; Claude Code las recibe a través de CLAUDE.md. Si un agente no las sigue, pégale el prompt maestro completo. Ver <a href="#opencode">OpenCode en tu computador</a>.</p></div></details>
+<details class="fold"><summary><span>¿Tengo que dejar Claude Code para usar OpenCode?</span></summary><div class="fold-body"><p>No. Los dos siguen las mismas reglas. Solo termina con commit y push en uno antes de empezar en el otro.</p></div></details>
+<details class="fold"><summary><span>¿Cómo conecto GitHub con OpenCode?</span></summary><div class="fold-body"><p>No hace falta una app: OpenCode usa el Git de tu computador con tu cuenta. Inicia sesión con «gh auth login», clona el repositorio y abre OpenCode en la carpeta Cerebro. El paso a paso está en <a href="#opencode-github">conectar GitHub con OpenCode</a>.</p></div></details>
 <details class="fold"><summary><span>¿Por qué el agente no une los pull requests él mismo?</span></summary><div class="fold-body"><p>Porque la decisión de qué entra en la versión oficial es tuya. Así siempre sabes qué cambió.</p></div></details>
 <details class="fold"><summary><span>¿Qué hago si un PR tiene conflictos?</span></summary><div class="fold-body"><p>Pide al agente que traiga main a la rama y los resuelva. Después revisas y unes.</p></div></details>
 <details class="fold"><summary><span>¿Cómo deshago algo que ya uní?</span></summary><div class="fold-body"><p>Pide un revert: un commit nuevo que deshace el anterior sin borrar la historia.</p></div></details>
-<details class="fold"><summary><span>¿Puedo guardar contraseñas en el cerebro?</span></summary><div class="fold-body"><p>No. Ni en el repositorio ni en las variables de entorno. Las claves van como secretos de red, y nunca se pegan en el chat.</p></div></details>
+<details class="fold"><summary><span>¿Puedo guardar contraseñas en el cerebro?</span></summary><div class="fold-body"><p>No. Ni en el repositorio ni en las variables de entorno. En Claude Code las claves van como secretos de red; en OpenCode se escriben en el cuadro de /connect. Nunca se pegan en el chat.</p></div></details>
 <details class="fold"><summary><span>¿Cada cuánto se actualiza este manual?</span></summary><div class="fold-body"><p>Solo cuando el fundador lo pide. Cada cambio sube la versión y queda en el historial de la portada.</p></div></details>
 
       <nav class="pager"><a class="prev" href="#empresa"><small>Anterior</small>Cómo se crea la empresa</a></nav></section>
-      <p class="foot">Manual Cerebro Arvyon v1.1 · 2026-11-08 · Archivo único y descargable: <code>Cerebro/manual/manual-cerebro-arvyon.html</code>. Se actualiza solo cuando el fundador lo decide.</p>
+      <p class="foot">Manual Cerebro Arvyon v2.0 · 2026-11-12 · Archivo único y descargable: <code>Cerebro/manual/manual-cerebro-arvyon.html</code>. Se actualiza solo cuando el fundador lo decide.</p>
     </article>
   </main>
 </div>

@@ -103,3 +103,25 @@
 - Límites: no se vio la imagen del video; la página original de OpenAI no se pudo leer; varias cifras llegan por fuentes secundarias.
 - Manual: no se tocó. Sigue vigente; no menciona los conceptos nuevos.
 - Siguiente: retomar el plan de estudio (semana 1, «IA Para Todos»); en la semana 3, diseñar la demo de cotización como una fábrica de IA.
+
+## [2026-11-12] ingest | Documentación oficial de OpenCode (versión 2)
+- Motivo: el fundador migra de Claude Code a OpenCode. Investigación de escritorio sobre la herramienta con la que se mantiene el cerebro; no se instaló ni se probó.
+- Fuente en raw: `raw/articulos/2026-11-12-investigacion-web-opencode.md` (12 páginas de `opencode.ai/docs`).
+- Páginas nuevas (2): [[2026-11-investigacion-web-opencode]], [[opencode]].
+- Páginas tocadas (4): [[stack-herramientas]], [[arnes-de-agentes]], [[glosario]], [[lagunas]].
+- Fiabilidad: 4 de 5 (fuente primaria del proveedor; cambia a menudo).
+- Hallazgos que obligan a cambiar el esquema: la versión 2 solo lee `AGENTS.md` (ya no usa `CLAUDE.md` como respaldo) y permite casi todas las acciones sin preguntar.
+- Contradicción marcada: 1 (la documentación de la versión 1 y la de la versión 2 sobre `CLAUDE.md`).
+- Lagunas nuevas: 4 (integración con GitHub en la versión 2, ruta de las credenciales, suscripción de Claude, comando `/init`).
+- Tesis, decisiones y currículo: sin cambios.
+
+## [2026-11-12] schema | El esquema pasa a AGENTS.md y el manual sube a v2.0 (migración a OpenCode)
+- A pedido del fundador. Nuevo `AGENTS.md` en la raíz del repositorio.
+- `Cerebro/AGENTS.md` es ahora el esquema completo y vale para cualquier agente. `Cerebro/CLAUDE.md` y el `CLAUDE.md` de la raíz solo importan el `AGENTS.md` de su carpeta, para Claude Code. Hay una única copia de las reglas.
+- Reglas nuevas en el esquema, porque fuera de la nube ya no las impone la herramienta: sección «Git y GitHub» (rama de trabajo `verificacion`, nada directo en `main`, sin *force push*, los *pull requests* los une el fundador, nada de claves en el repositorio), sincronizar con `git pull` al empezar en una copia local y no pedir claves en el chat.
+- `PROMPT-MAESTRO.md` y los dos `README.md`: las menciones al esquema apuntan a `AGENTS.md`.
+- Manual v2.0: capítulo nuevo 7 «OpenCode en tu computador» (qué cambia, instalación, modelos, conexión con GitHub, protecciones, sesión de trabajo, errores comunes); se conserva todo lo de Claude Code; estado, historial de *pull requests* y glosario al día. Los capítulos de la empresa y del glosario pasan a ser el 8 y el 9.
+- Corrección en el manual: las puntas de flecha de los diagramas no se dibujaban fuera del capítulo Inicio (identificadores repetidos); ahora cada diagrama tiene los suyos.
+- No se creó `opencode.jsonc`: el manual trae un ejemplo de permisos sin probar para que el fundador lo pida si lo quiere.
+- `revisar_wiki.py`: 115 páginas, 0 errores, 0 avisos.
+- Siguiente: instalar OpenCode, conectar un modelo y GitHub con el capítulo 7, y retomar el plan de estudio (semana 1, «IA Para Todos»).

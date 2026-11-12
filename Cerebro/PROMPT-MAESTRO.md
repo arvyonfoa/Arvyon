@@ -1,10 +1,10 @@
 # PROMPT MAESTRO · Segundo cerebro de Arvyon
 
 > **Cómo usar este archivo**
-> 1. Abre tu agente (Claude Code, Codex, OpenCode…) en la carpeta `Cerebro/` del repositorio.
+> 1. Abre tu agente (OpenCode, Claude Code, Codex…) en la carpeta `Cerebro/` del repositorio.
 > 2. Copia todo lo que está entre `INICIO DEL PROMPT` y `FIN DEL PROMPT` y pégalo como primer mensaje.
-> 3. El agente verificará la estructura, leerá `CLAUDE.md`, comprobará en qué fase está Arvyon (aprender o actuar) y te propondrá el siguiente paso de esa fase.
-> 4. En las sesiones siguientes no hace falta pegarlo otra vez: `CLAUDE.md` contiene la versión operativa. Pégalo de nuevo solo si cambias de agente o si el agente "olvida" las reglas.
+> 3. El agente verificará la estructura, leerá `AGENTS.md`, comprobará en qué fase está Arvyon (aprender o actuar) y te propondrá el siguiente paso de esa fase.
+> 4. En las sesiones siguientes no hace falta pegarlo otra vez: `AGENTS.md` contiene la versión operativa y vale para cualquier agente (`CLAUDE.md` solo lo importa para Claude Code). Pégalo de nuevo solo si cambias de agente o si el agente "olvida" las reglas.
 >
 > Este prompt también funciona en una carpeta vacía: en ese caso el agente crea toda la estructura desde cero.
 
@@ -14,7 +14,7 @@
 
 ## Principio rector: primero se aprende, después se actúa
 
-Arvyon avanza en dos fases y **nunca se salta la primera**. Antes de proponer cualquier cosa, comprueba en qué fase estamos (la fase vigente está en `wiki/16-decisiones/dec-009-fase-de-aprendizaje.md` y en `CLAUDE.md`).
+Arvyon avanza en dos fases y **nunca se salta la primera**. Antes de proponer cualquier cosa, comprueba en qué fase estamos (la fase vigente está en `wiki/16-decisiones/dec-009-fase-de-aprendizaje.md` y en `AGENTS.md`).
 
 | | **Fase 1 · Aprender** | **Fase 2 · Actuar** |
 |---|---|---|
@@ -89,7 +89,7 @@ Herramientas:
 |---|---|---|---|
 | Fuentes originales | `raw/` | Solo el humano (o el agente al **guardar** una fuente web nueva) | **Inmutable.** Nunca edites, renombres ni borres un archivo de `raw/`. Es la fuente de verdad. |
 | Wiki | `wiki/` | Solo el agente | Resúmenes, entidades, conceptos, análisis, decisiones y síntesis. El humano la lee y la corrige hablando contigo. |
-| Esquema | `CLAUDE.md` (y `AGENTS.md`) | Agente y humano, juntos | Las reglas del juego. Se refinan con el tiempo; cada cambio queda en `log.md`. |
+| Esquema | `AGENTS.md` (y `CLAUDE.md`, que solo lo importa) | Agente y humano, juntos | Las reglas del juego. Se refinan con el tiempo; cada cambio queda en `log.md`. |
 
 Además:
 - `index.md`: catálogo de contenido. Es lo **primero** que lees en cada consulta.
@@ -106,7 +106,7 @@ Además:
 
 ```
 Cerebro/
-├── PROMPT-MAESTRO.md   CLAUDE.md   AGENTS.md   README.md
+├── PROMPT-MAESTRO.md   AGENTS.md   CLAUDE.md   README.md
 ├── index.md            ← catálogo (por área: enlace + resumen de una línea + estado + nº de fuentes)
 ├── log.md              ← "## [AAAA-MM-DD] tipo | título" (tipos: setup, ingest, query, research, study, lint, decision, schema)
 ├── herramientas/revisar_wiki.py   ← revisión automática de salud de la wiki
@@ -222,7 +222,7 @@ Las plantillas completas están en `wiki/_plantillas/`. Si no existen, créalas 
 
 ### 7.1 Arranque (solo la primera vez)
 1. Comprueba si existe la estructura de la sección 4. Crea lo que falte, sin borrar nada.
-2. Comprueba si existen `CLAUDE.md`, `index.md`, `log.md` y las plantillas. Si no, créalos según este prompt.
+2. Comprueba si existen `AGENTS.md`, `index.md`, `log.md` y las plantillas. Si no, créalos según este prompt.
 3. Copia la presentación de Arvyon a `raw/00-internos/` si no está ya.
 4. Ingiere la presentación con el flujo 7.2. Debe tocar como mínimo: tesis, segmentos, paquetes, Método 4D, modelo de ingresos, embudo, Instagram, YouTube, husos horarios, roles de socios, riesgos, hoja de ruta y las decisiones abiertas.
 5. Crea las páginas de cada área en estado `semilla`, con las preguntas de la sección 8.
@@ -298,7 +298,7 @@ Las plantillas completas están en `wiki/_plantillas/`. Si no existen, créalas 
 ### 7.10 Cambio de fase
 1. Revisa los criterios de paso del principio rector, uno por uno, con evidencia de la wiki.
 2. Presenta al fundador qué se cumple y qué falta, con tu recomendación.
-3. Si decide pasar, registra la decisión en `16-decisiones/`, actualiza `CLAUDE.md` (fase vigente), [[agenda-de-investigacion]] y [[hoja-de-ruta-90-dias]], y escribe una entrada `decision` en `log.md`.
+3. Si decide pasar, registra la decisión en `16-decisiones/`, actualiza `AGENTS.md` (fase vigente), [[agenda-de-investigacion]] y [[hoja-de-ruta-90-dias]], y escribe una entrada `decision` en `log.md`.
 
 ## 8. Agenda de investigación por área
 

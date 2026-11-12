@@ -6,7 +6,7 @@ confianza: baja
 resumen: "Herramientas internas por categoría (videollamadas, CRM, cobro, contenido, IA, automatización) con su costo por completar."
 fuentes: ["[[presentacion-socios-2026-10]]"]
 creado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-12
 revisar_antes: 2027-02-03
 etiquetas: []
 ---
@@ -27,7 +27,7 @@ Lo que necesita una consultora 100 % virtual: videollamadas, WhatsApp Business, 
 | Asistentes de IA (planes empresariales) | Trabajo interno y demos | | | |
 | Automatización | Demos y entregas | | | |
 | Contenido | Grabación, edición, diseño | | | |
-| Gestión del conocimiento | Este segundo cerebro: Obsidian + Git + agente | Obsidian, Git, Claude Code | ✅ | |
+| Gestión del conocimiento | Este segundo cerebro: Obsidian + Git + agente | Obsidian, Git y [[opencode]] (desde el 2026-11-12; Claude Code queda como alternativa) | ✅ | Las reglas están en `AGENTS.md` y valen para cualquier agente |
 
 > [!question] Por verificar
 > Precios y planes de todas las herramientas: cambian a menudo. Por eso `revisar_antes` es de 3 meses.

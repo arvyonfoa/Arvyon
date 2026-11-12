@@ -6,7 +6,7 @@ confianza: media
 resumen: "El arnés es todo lo que rodea al modelo en un agente (instrucciones, memoria, herramientas, permisos y comprobaciones); diseñarlo bien es el harness engineering."
 fuentes: ["[[2026-11-investigacion-web-fabricas-arneses-enrutamiento]]", "[[2026-10-youtube-eric-risco-software-factory]]"]
 creado: 2026-11-11
-actualizado: 2026-11-11
+actualizado: 2026-11-12
 revisar_antes: 2027-11-11
 etiquetas: [fase-1, agentes]
 ---
@@ -48,7 +48,7 @@ Cuando un error se repite, la persona mejora una guía o añade un sensor. El ob
 
 | Pieza del cerebro | Qué es en este vocabulario |
 |---|---|
-| `CLAUDE.md` y `PROMPT-MAESTRO.md` | Guías (instrucciones y reglas) |
+| `AGENTS.md` y `PROMPT-MAESTRO.md` | Guías (instrucciones y reglas); valen para cualquier agente ([[opencode]], Claude Code) |
 | `index.md`, `log.md` y la wiki | Memoria, el *brain* del video |
 | `herramientas/revisar_wiki.py` | Sensor computacional: siempre revisa lo mismo |
 | Los recuadros «Por verificar» y «Contradicción» | Sensor inferencial: el agente juzga su propia evidencia |
